@@ -1,0 +1,8 @@
+This is tags
+
+{{ range $i, $e := .Params.tags -}}
+    <!-- 如果不是第一个标签就加一个", " -->
+    {{- if $i -}}, {{ end -}}
+    <!-- 定义了一个指向标签页面的链接。relLangURL函数用于生成相对于当前语言的URL | urlize将标签名称转换为URL格式 {{ $e | humanize }} 显示标签名称。humanize函数用于将字符串转换为人类可读的格式。 -->
+    <a href='{{ "/tags/" | relLangURL }}{{ . | urlize }}'>{{ $e | humanize }}</a>
+{{- end -}}

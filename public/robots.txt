@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: qujihan.com/sitemap.xml

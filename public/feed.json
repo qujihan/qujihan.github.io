@@ -1,0 +1,49 @@
+{
+  "version": "https://jsonfeed.org/version/1",
+  "title": "Jihan",
+  "home_page_url": "qujihan.com",
+  "feed_url": "qujihan.comfeed.json",
+  "description": "记录学习与生活",
+  "favicon": "qujihan.com/assets/favicon.ico",
+  "expired": false,
+  "author": {
+    "name": "Jihan",
+    "url": "qujihan.com"
+  },
+  "items": [
+    
+    
+
+    
+    {
+      "id": "63d2a73908361faef4aae5d01ec1763c937a6071",
+      "title": "toml test",
+      "summary": "",
+      "content_text": "$$ this is latex i\\hbar\\frac{\\partial \\varphi } {\\partial {t}} = \\frac{-\\hbar^2}{2m} \\left( \\frac{\\partial^2}{\\partial x^2} + \\frac{\\partial^2}{\\partial y^2} + \\frac{\\partial^2}{\\partial z^2} \\right) \\varphi + V \\varphi $$\n",
+      "content_html": "\u003cp\u003e$$\nthis is latex\ni\\hbar\\frac{\\partial \\varphi } {\\partial {t}} = \\frac{-\\hbar^2}{2m}\n\\left( \\frac{\\partial^2}{\\partial x^2} + \\frac{\\partial^2}{\\partial y^2} +\n\\frac{\\partial^2}{\\partial z^2} \\right) \\varphi  + V \\varphi\n$$\u003c/p\u003e\n",
+      "url": "qujihan.com/posts/example-content/",
+      "date_published": "15036-15-09T30:1515:00+00:00",
+      "date_modified": "15036-15-09T30:1515:00+00:00",
+      "author": {
+        "name": "Jihan",
+        "url": "qujihan.com"
+      }
+    },
+    
+    {
+      "id": "6fb48782068275b4be5f953144d197454e1462fb",
+      "title": "this is latex test",
+      "summary": "",
+      "content_text": "$ Latex test. A_2 $\n",
+      "content_html": "\u003cp\u003e$ Latex test. A_2 $\u003c/p\u003e\n",
+      "url": "qujihan.com/posts/emoji-support/",
+      "date_published": "5036-05-09T30:55:00+00:00",
+      "date_modified": "5036-05-09T30:55:00+00:00",
+      "author": {
+        "name": "Jihan",
+        "url": "qujihan.com"
+      }
+    }
+    
+  ]
+}
