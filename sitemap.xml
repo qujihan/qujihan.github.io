@@ -1,1 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url><loc>qujihan.com/</loc><lastmod>2022-03-15T00:00:00+00:00</lastmod><priority>0</priority></url><url><loc>qujihan.com/tags/latex/</loc><lastmod>2022-03-15T00:00:00+00:00</lastmod></url><url><loc>qujihan.com/posts/</loc><lastmod>2022-03-15T00:00:00+00:00</lastmod></url><url><loc>qujihan.com/tags/</loc><lastmod>2022-03-15T00:00:00+00:00</lastmod></url><url><loc>qujihan.com/tags/toml/</loc><lastmod>2022-03-15T00:00:00+00:00</lastmod></url><url><loc>qujihan.com/posts/toml_test/</loc><lastmod>2022-03-15T00:00:00+00:00</lastmod></url><url><loc>qujihan.com/posts/latex_test/</loc><lastmod>2022-03-05T00:00:00+00:00</lastmod></url><url><loc>qujihan.com/about/</loc></url><url><loc>qujihan.com/tags/hugo/</loc></url><url><loc>qujihan.com/pages/</loc></url></urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>/</loc>
+    <lastmod>2022-03-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url><url>
+    <loc>/tags/latex/</loc>
+    <lastmod>2022-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/</loc>
+    <lastmod>2022-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2022-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/toml/</loc>
+    <lastmod>2022-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/toml_test/</loc>
+    <lastmod>2022-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/latex_test/</loc>
+    <lastmod>2022-03-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/about/</loc>
+  </url><url>
+    <loc>/tags/hugo/</loc>
+  </url><url>
+    <loc>/pages/</loc>
+  </url>
+</urlset>
