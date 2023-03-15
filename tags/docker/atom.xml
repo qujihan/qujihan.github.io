@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on Jihan</title>
+    <link>/tags/docker/</link>
+    <description>Recent content in docker on Jihan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 15 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/docker/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows中将Docker数据转到其他盘符</title>
+      <link>/posts/windows%E4%B8%AD%E5%B0%86docker%E6%95%B0%E6%8D%AE%E8%BD%AC%E5%88%B0%E5%85%B6%E4%BB%96%E7%9B%98%E7%AC%A6/</link>
+      <pubDate>Wed, 15 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/windows%E4%B8%AD%E5%B0%86docker%E6%95%B0%E6%8D%AE%E8%BD%AC%E5%88%B0%E5%85%B6%E4%BB%96%E7%9B%98%E7%AC%A6/</guid>
+      <description>以下皆是以移动到D:/wsl为例
+wsl --export docker-desktop D:\wsl\docker-desktop.tar wsl --export docker-desktop-data D:\wsl\docker-desktop-data.tar wsl --unregister docker-desktop wsl --unregister docker-desktop-data wsl --import docker-desktop D:\wsl\docker-desktop D:\wsl\docker-desktop.tar --version 2 wsl --import docker-desktop-data D:\wsl\docker-desktop-data D:\wsl\docker-desktop-data.tar --version 2 参考：
+Moving Docker wsl files #5829 docker/for-win Move VHD File · Issue #4320 microsoft/WSL </description>
+    </item>
+    
+  </channel>
+</rss>

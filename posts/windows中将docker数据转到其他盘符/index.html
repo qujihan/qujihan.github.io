@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Liste - ">
-    <title>toml test | Jihan</title>
+    <title>Windows中将Docker数据转到其他盘符 | Jihan</title>
     
     <meta name="description" content="记录学习与生活">
 
@@ -22,19 +22,7 @@
     <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAZhJREFUOE9908uLj3EUx/HXuF/LXYqhSAi506CMIsrKf2DHepqN7JQFG1s75U8QC+VSLgu5xUgpcpsMMkLCuPbR+dXP5PHsvs9zns95n8/5fDv8/XRgIlZjG5Yh7+7jIvrwAT9bv+Vj+zMW69GDTZhRxS9wCydxCZ+aBGZhPw5gNobQj8d1DsXRevdHYzjBfBzGDrzHU1wu9L0YjUN41ESwoApCcga3q9sX7MJGHC+ifxLMw74qOI9X5cFILEEoTuFJE0Hm3o275fzXKhyFRejCWQw0CUzASkzBDbytwulYV75EvHELI5D51+IZHpbAYnTiJl7/LwepH4/lmIMrJbAFL2sbn9uD077GzDkVc7EUGScdQ7WmsB8goRrEj/YcjMFCbC+j4npCMwkRfofuQr+GC5WFoRCkQ+ZLAvcgq0zeU/Qdvwo54Yq5z3EaJ+JTBNJ9M45hFdI9P76pHHwrP7LiJDHod9CLqy2BDTiIFZiMcYWeu5Cbl3NEk8iPuIcjuN4aYRq2YmcZljFmlkgmaBEFP7fyXN2Rwd8ZzWIhP28MMgAAAABJRU5ErkJggg==">
 
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        renderMathInElement(document.body, {
-            delimiters: [
-                {left: "$$", right: "$$", display: true},
-                {left: "$", right: "$", display: false}
-            ]
-        });
-    });
-</script>
+    
 
      
     
@@ -63,10 +51,13 @@
   
   
   <li class="">
+    <a href="/about/"><span>About</span></a>
+    
+  <li class="">
     <a href="/posts/"><span>Post</span></a>
     
   <li class="">
-    <a href="/about/"><span>About</span></a>
+    <a href="/tags/"><span>Tags</span></a>
     
   </li>
 </ul>
@@ -76,19 +67,25 @@
 
 <hr class="hr-list" style="padding: 0;margin: 0;">
     <section>
-      <h2 class="post">toml test</h2>
-      <p>$$
-this is latex
-i\hbar\frac{\partial \varphi } {\partial {t}} = \frac{-\hbar^2}{2m}
-\left( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} +
-\frac{\partial^2}{\partial z^2} \right) \varphi  + V \varphi
-$$</p>
+      <h2 class="post">Windows中将Docker数据转到其他盘符</h2>
+      <p>以下皆是以移动到D:/wsl为例</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wsl --export docker-desktop D:<span style="color:#8045ff">\w</span>sl<span style="color:#8045ff">\d</span>ocker-desktop.tar
+</span></span><span style="display:flex;"><span>wsl --export docker-desktop-data D:<span style="color:#8045ff">\w</span>sl<span style="color:#8045ff">\d</span>ocker-desktop-data.tar
+</span></span><span style="display:flex;"><span>wsl --unregister docker-desktop
+</span></span><span style="display:flex;"><span>wsl --unregister docker-desktop-data
+</span></span><span style="display:flex;"><span>wsl --import docker-desktop D:<span style="color:#8045ff">\w</span>sl<span style="color:#8045ff">\d</span>ocker-desktop D:<span style="color:#8045ff">\w</span>sl<span style="color:#8045ff">\d</span>ocker-desktop.tar --version <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>wsl --import docker-desktop-data D:<span style="color:#8045ff">\w</span>sl<span style="color:#8045ff">\d</span>ocker-desktop-data D:<span style="color:#8045ff">\w</span>sl<span style="color:#8045ff">\d</span>ocker-desktop-data.tar --version <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><p>参考：</p>
+<ol>
+<li><a href="https://github.com/docker/for-win/issues/5829">Moving Docker wsl files #5829 docker/for-win</a></li>
+<li><a href="https://github.com/microsoft/WSL/issues/4320#issuecomment-571758494">Move VHD File · Issue #4320 microsoft/WSL</a></li>
+</ol>
 
       
       <div class="post-date">
-        <span class="g time">March 15, 2022 </span> &#8729;
+        <span class="g time">March 15, 2023 </span> &#8729;
          
-         <a href="/tags/toml/">toml</a> <a href="/tags/latex/">latex</a>
+         <a href="/tags/windows/">windows</a> <a href="/tags/docker/">docker</a>
       </div>
       
     </section>

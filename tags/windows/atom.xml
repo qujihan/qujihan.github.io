@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>windows on Jihan</title>
+    <link>/tags/windows/</link>
+    <description>Recent content in windows on Jihan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 15 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/windows/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows中将Docker数据转到其他盘符</title>
+      <link>/posts/windows%E4%B8%AD%E5%B0%86docker%E6%95%B0%E6%8D%AE%E8%BD%AC%E5%88%B0%E5%85%B6%E4%BB%96%E7%9B%98%E7%AC%A6/</link>
+      <pubDate>Wed, 15 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/windows%E4%B8%AD%E5%B0%86docker%E6%95%B0%E6%8D%AE%E8%BD%AC%E5%88%B0%E5%85%B6%E4%BB%96%E7%9B%98%E7%AC%A6/</guid>
+      <description>以下皆是以移动到D:/wsl为例
+wsl --export docker-desktop D:\wsl\docker-desktop.tar wsl --export docker-desktop-data D:\wsl\docker-desktop-data.tar wsl --unregister docker-desktop wsl --unregister docker-desktop-data wsl --import docker-desktop D:\wsl\docker-desktop D:\wsl\docker-desktop.tar --version 2 wsl --import docker-desktop-data D:\wsl\docker-desktop-data D:\wsl\docker-desktop-data.tar --version 2 参考：
+Moving Docker wsl files #5829 docker/for-win Move VHD File · Issue #4320 microsoft/WSL </description>
+    </item>
+    
+    <item>
+      <title>那些我重装Windows/MacOS/Ubuntu时会做的事情</title>
+      <link>/posts/%E9%82%A3%E4%BA%9B%E9%87%8D%E8%A3%85%E7%9A%84%E6%97%B6%E5%80%99%E6%88%91%E4%BC%9A%E5%81%9A%E7%9A%84%E4%BA%8B%E6%83%85/</link>
+      <pubDate>Wed, 15 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E9%82%A3%E4%BA%9B%E9%87%8D%E8%A3%85%E7%9A%84%E6%97%B6%E5%80%99%E6%88%91%E4%BC%9A%E5%81%9A%E7%9A%84%E4%BA%8B%E6%83%85/</guid>
+      <description>Windows 跳过联网激活使用本地账号 在连接网络的界面按住Shift+F10调出CMD输入OOBE\BYPASSNRO
+安装软件 # Needed to run a remote script the first time Set-ExecutionPolicy RemoteSigned -Scope CurrentUser # set scoop dir is C:\Scoop md C:\Scoop irm get.scoop.sh -outfile &amp;#39;install.ps1&amp;#39; .\install.ps1 -ScoopDir &amp;#39;C:\Scoop&amp;#39; -ScoopGlobalDir &amp;#39;C:\Scoop&amp;#39; -NoProxy scoop install sudo git neovim scoop bucket add extras scoop install obsidian wechat potplayer trafficmonitor snipaste screentogif powertoys wezterm scoop bucket add nerd-fontasdfs sudo scoop install -g FiraCode-NF-Mono JetBrainsMono-NF-Mono scoop bucket add java scoop install gcc make cmake rust python go openjdk scoop bucket add im-select https://github.</description>
+    </item>
+    
+  </channel>
+</rss>
