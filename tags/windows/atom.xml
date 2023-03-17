@@ -20,10 +20,10 @@ Moving Docker wsl files #5829 docker/for-win Move VHD File · Issue #4320 micro
     
     <item>
       <title>那些我重装Windows/MacOS/Ubuntu时会做的事情</title>
-      <link>/posts/%E9%82%A3%E4%BA%9B%E9%87%8D%E8%A3%85%E7%9A%84%E6%97%B6%E5%80%99%E6%88%91%E4%BC%9A%E5%81%9A%E7%9A%84%E4%BA%8B%E6%83%85/</link>
+      <link>/posts/reload_machine/</link>
       <pubDate>Wed, 15 Mar 2023 00:00:00 +0000</pubDate>
       
-      <guid>/posts/%E9%82%A3%E4%BA%9B%E9%87%8D%E8%A3%85%E7%9A%84%E6%97%B6%E5%80%99%E6%88%91%E4%BC%9A%E5%81%9A%E7%9A%84%E4%BA%8B%E6%83%85/</guid>
+      <guid>/posts/reload_machine/</guid>
       <description>Windows 跳过联网激活使用本地账号 在连接网络的界面按住Shift+F10调出CMD输入OOBE\BYPASSNRO
 安装软件 # Needed to run a remote script the first time Set-ExecutionPolicy RemoteSigned -Scope CurrentUser # set scoop dir is C:\Scoop md C:\Scoop irm get.scoop.sh -outfile &amp;#39;install.ps1&amp;#39; .\install.ps1 -ScoopDir &amp;#39;C:\Scoop&amp;#39; -ScoopGlobalDir &amp;#39;C:\Scoop&amp;#39; -NoProxy scoop install sudo git neovim scoop bucket add extras scoop install obsidian wechat potplayer trafficmonitor snipaste screentogif powertoys wezterm scoop bucket add nerd-fontasdfs sudo scoop install -g FiraCode-NF-Mono JetBrainsMono-NF-Mono scoop bucket add java scoop install gcc make cmake rust python go openjdk scoop bucket add im-select https://github.</description>
     </item>

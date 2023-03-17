@@ -36,7 +36,7 @@
     
     <item>
       <title>那些我重装Windows/MacOS/Ubuntu时会做的事情</title>
-      <link>/posts/%E9%82%A3%E4%BA%9B%E9%87%8D%E8%A3%85%E7%9A%84%E6%97%B6%E5%80%99%E6%88%91%E4%BC%9A%E5%81%9A%E7%9A%84%E4%BA%8B%E6%83%85/</link>
+      <link>/posts/reload_machine/</link>
       <description>&lt;h2 id=&#34;windows&#34;&gt;Windows&lt;/h2&gt;
 &lt;h3 id=&#34;跳过联网激活使用本地账号&#34;&gt;跳过联网激活使用本地账号&lt;/h3&gt;
 &lt;p&gt;在连接网络的界面按住Shift+F10调出CMD输入&lt;code&gt;OOBE\BYPASSNRO&lt;/code&gt;&lt;/p&gt;
@@ -89,12 +89,18 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;go install golang.org/x/tools/gopls@latest
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;ubuntu&#34;&gt;Ubuntu&lt;/h2&gt;
 &lt;h3 id=&#34;设置ssh&#34;&gt;设置ssh&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh-keygen -t ed25519 -C &lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;qujihan@163.com&amp;#34;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# set ssh&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh-keygen -t ed25519 -C &lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;qujihan@163.com&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat .ssh/id_ed25519.pub
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh -T git@github.com
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# install NVIM v0.8.3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -LO https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;apt install ./nvim-linux64.deb
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
       <author>Jihan</author>
-      <guid>/posts/%E9%82%A3%E4%BA%9B%E9%87%8D%E8%A3%85%E7%9A%84%E6%97%B6%E5%80%99%E6%88%91%E4%BC%9A%E5%81%9A%E7%9A%84%E4%BA%8B%E6%83%85/</guid>
+      <guid>/posts/reload_machine/</guid>
       <pubDate>Wed, 15 Mar 2023 00:00:00 +0000</pubDate>
     </item>
     
