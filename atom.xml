@@ -15,7 +15,7 @@
     
     <item>
       <title>Windows中将Docker数据转到其他盘符</title>
-      <link>/posts/windows%E4%B8%AD%E5%B0%86docker%E6%95%B0%E6%8D%AE%E8%BD%AC%E5%88%B0%E5%85%B6%E4%BB%96%E7%9B%98%E7%AC%A6/</link>
+      <link>/posts/moving_docker_wsl_files/</link>
       <description>&lt;p&gt;以下皆是以移动到D:/wsl为例&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wsl --export docker-desktop D:&lt;span style=&#34;color:#8045ff&#34;&gt;\w&lt;/span&gt;sl&lt;span style=&#34;color:#8045ff&#34;&gt;\d&lt;/span&gt;ocker-desktop.tar
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wsl --export docker-desktop-data D:&lt;span style=&#34;color:#8045ff&#34;&gt;\w&lt;/span&gt;sl&lt;span style=&#34;color:#8045ff&#34;&gt;\d&lt;/span&gt;ocker-desktop-data.tar
@@ -30,7 +30,7 @@
 &lt;/ol&gt;
 </description>
       <author>Jihan</author>
-      <guid>/posts/windows%E4%B8%AD%E5%B0%86docker%E6%95%B0%E6%8D%AE%E8%BD%AC%E5%88%B0%E5%85%B6%E4%BB%96%E7%9B%98%E7%AC%A6/</guid>
+      <guid>/posts/moving_docker_wsl_files/</guid>
       <pubDate>Wed, 15 Mar 2023 00:00:00 +0000</pubDate>
     </item>
     
