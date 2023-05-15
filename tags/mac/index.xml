@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mac on 拾野知地</title>
-    <link>qujihan.com/tags/mac/</link>
+    <link>/tags/mac/</link>
     <description>Recent content in mac on 拾野知地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Wed, 15 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="qujihan.com/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/mac/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>那些我重装windows/macos/ubuntu时会做的事情</title>
-      <link>qujihan.com/posts/reload_machine/</link>
+      <link>/posts/reload_machine/</link>
       <pubDate>Wed, 15 Mar 2023 00:00:00 +0000</pubDate>
       
-      <guid>qujihan.com/posts/reload_machine/</guid>
+      <guid>/posts/reload_machine/</guid>
       <description>&lt;p&gt;一般都是那么做&lt;/p&gt;</description>
     </item>
     
