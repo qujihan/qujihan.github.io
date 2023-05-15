@@ -4,7 +4,7 @@
     
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="description" content="">
+    <meta name="description" content="A brief guide to setup KaTeX">
 
     
     <link rel="stylesheet" href="/qujihan.com/css/style.css">
@@ -55,23 +55,15 @@
     <main class="main"> 
 
 <section id="single">
-    <h1 class="title">Windows中将Docker数据转到其他盘符</h1>
-    
-        <div class="tags">
-            
-                <a href="qujihan.com/tags/windows">windows</a>
-            
-                <a href="qujihan.com/tags/docker">docker</a>
-            
-        </div>
+    <h1 class="title">Math Typesetting</h1>
     
     <div class="tip">
-        <time datetime="2023-03-15 00:00:00 &#43;0000 UTC">2023年03月15日</time>
+        <time datetime="2019-03-08 00:00:00 &#43;0000 UTC">2019年03月08日</time>
         <span class="split">
           ·
         </span>
         <span>
-          80字
+          114字
         </span>
         <span class="split">
           ·
@@ -88,25 +80,42 @@
             目录
         </summary>
         <div>
-            <nav id="TableOfContents"></nav>
+            <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#examples">Examples</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
         </div>
     </details>
 </aside>
 
     <div class="content">
-      <p>如何将Docker中的数据转移到其他盘符</p>
-<p>以下皆是以移动到D:/wsl为例</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wsl --export docker-desktop D:<span style="color:#ae81ff">\w</span>sl<span style="color:#ae81ff">\d</span>ocker-desktop.tar
-</span></span><span style="display:flex;"><span>wsl --export docker-desktop-data D:<span style="color:#ae81ff">\w</span>sl<span style="color:#ae81ff">\d</span>ocker-desktop-data.tar
-</span></span><span style="display:flex;"><span>wsl --unregister docker-desktop
-</span></span><span style="display:flex;"><span>wsl --unregister docker-desktop-data
-</span></span><span style="display:flex;"><span>wsl --import docker-desktop D:<span style="color:#ae81ff">\w</span>sl<span style="color:#ae81ff">\d</span>ocker-desktop D:<span style="color:#ae81ff">\w</span>sl<span style="color:#ae81ff">\d</span>ocker-desktop.tar --version <span style="color:#ae81ff">2</span>
-</span></span><span style="display:flex;"><span>wsl --import docker-desktop-data D:<span style="color:#ae81ff">\w</span>sl<span style="color:#ae81ff">\d</span>ocker-desktop-data D:<span style="color:#ae81ff">\w</span>sl<span style="color:#ae81ff">\d</span>ocker-desktop-data.tar --version <span style="color:#ae81ff">2</span>
-</span></span></code></pre></div><p>参考：</p>
-<ol>
-<li><a href="https://github.com/docker/for-win/issues/5829">Moving Docker wsl files #5829 docker/for-win</a></li>
-<li><a href="https://github.com/microsoft/WSL/issues/4320#issuecomment-571758494">Move VHD File · Issue #4320 microsoft/WSL</a></li>
-</ol>
+      <p>Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.</p>
+<p>In this example we will be using <a href="https://katex.org/">KaTeX</a></p>
+<ul>
+<li>Create a partial under <code>/layouts/partials/math.html</code></li>
+<li>Within this partial reference the <a href="https://katex.org/docs/autorender.html">Auto-render Extension</a> or host these scripts locally.</li>
+<li>Include the partial in your templates like so:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">{{</span> <span style="color:#66d9ef">if</span> or .Params.math .Site.Params.math <span style="color:#f92672">}}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{{</span> partial <span style="color:#e6db74">&#34;math.html&#34;</span> . <span style="color:#f92672">}}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{{</span> end <span style="color:#f92672">}}</span>
+</span></span></code></pre></div><ul>
+<li>To enable KaTex globally set the parameter <code>math</code> to <code>true</code> in a project&rsquo;s configuration</li>
+<li>To enable KaTex on a per page basis include the parameter <code>math: true</code> in content files</li>
+</ul>
+<p><strong>Note:</strong> Use the online reference of <a href="https://katex.org/docs/supported.html">Supported TeX Functions</a></p>
+
+<h3 id="examples">Examples</h3>
+
+<p>Block math:
+$$
+\varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } }
+$$</p>
     </div>
 </section>
 

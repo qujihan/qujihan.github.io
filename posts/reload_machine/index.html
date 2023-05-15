@@ -1,98 +1,140 @@
-<!doctype html>
-<html lang="en">
-  <head>
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Liste - ">
-    <title>那些我重装Windows/MacOS/Ubuntu时会做的事情 | Jihan</title>
-    
-    <meta name="description" content="记录学习与生活">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
 
     
-    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="stylesheet" href="/qujihan.com/css/style.css">
 
     
-    <link href="https://www.google-analytics.com" rel="preconnect" crossorigin>
-
-    
-    
-
-    
+    <title>拾野知地</title>
     <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAZhJREFUOE9908uLj3EUx/HXuF/LXYqhSAi506CMIsrKf2DHepqN7JQFG1s75U8QC+VSLgu5xUgpcpsMMkLCuPbR+dXP5PHsvs9zns95n8/5fDv8/XRgIlZjG5Yh7+7jIvrwAT9bv+Vj+zMW69GDTZhRxS9wCydxCZ+aBGZhPw5gNobQj8d1DsXRevdHYzjBfBzGDrzHU1wu9L0YjUN41ESwoApCcga3q9sX7MJGHC+ifxLMw74qOI9X5cFILEEoTuFJE0Hm3o275fzXKhyFRejCWQw0CUzASkzBDbytwulYV75EvHELI5D51+IZHpbAYnTiJl7/LwepH4/lmIMrJbAFL2sbn9uD077GzDkVc7EUGScdQ7WmsB8goRrEj/YcjMFCbC+j4npCMwkRfofuQr+GC5WFoRCkQ+ZLAvcgq0zeU/Qdvwo54Yq5z3EaJ+JTBNJ9M45hFdI9P76pHHwrP7LiJDHod9CLqy2BDTiIFZiMcYWeu5Cbl3NEk8iPuIcjuN4aYRq2YmcZljFmlkgmaBEFP7fyXN2Rwd8ZzWIhP28MMgAAAABJRU5ErkJggg==">
 
     
     
-
-     
     
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js" integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
     
-    <style>*,:after,:before{box-sizing:border-box;padding:0}body{font:1rem/1.5 '-apple-system',BlinkMacSystemFont,avenir next,avenir,helvetica,helvetica neue,ubuntu,roboto,noto,segoe ui,arial,sans-serif;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:2rem;background:#f5f5f5;color:#000}.skip-link{position:absolute;top:-40px;left:0;background:#eee;z-index:100}.skip-link:focus{top:0}h1,h2,h3,h4,h5,strong,b{font-size:inherit;font-weight:600}header{line-height:2;padding-bottom:1.5rem}.link{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none}.time{font-variant-numeric:tabular-nums;white-space:nowrap}blockquote{border-left:5px solid #eee;padding-left:1rem;margin:0}a,a:visited{color:inherit}a:hover,a.heading-link{text-decoration:none}pre{padding:.5rem;overflow:auto;overflow-x:scroll;overflow-wrap:normal}code,pre{font-family:San Francisco Mono,Monaco,consolas,lucida console,dejavu sans mono,bitstream vera sans mono,monospace;font-size:normal;font-size:small;background:#eee}code{margin:.1rem;border:none}ul{list-style-type:square}ul,ol{padding-left:1.2rem}.list{line-height:2;list-style-type:none;padding-left:0}.list li{padding-bottom:.1rem}.meta{color:#777}.content{max-width:70ch;margin:0 auto}header{line-height:2;display:flex;justify-content:space-between;padding-bottom:1rem}header a{text-decoration:none}header ul{list-style-type:none;padding:0}header li,header a{display:inline}h2.post{padding-top:.5rem}header ul a:first-child{padding-left:1rem}.nav{height:1px;background:#000;content:'';max-width:10%}.list li{display:flex;align-items:baseline}.list li time{flex:initial}.hr-list{margin-top:0;margin-bottom:0;margin-right:.5rem;margin-left:.5rem;height:1px;border:0;border-bottom:1px dotted #ccc;flex:1 0 1rem}.m,hr{border:0;margin:3rem 0}img{max-width:100%;height:auto}.post-date{margin:5% 0}.index-date{color:#9a9a9a}.animate-blink{animation:opacity 1s infinite;opacity:1}@keyframes opacity{0%{opacity:1}50%{opacity:.5}100%{opacity:0}}.tags{display:flex;justify-content:space-between}.tags ul{padding:0;margin:0}.tags li{display:inline}.avatar{height:120px;width:120px;position:relative;margin:-10px 0 0 15px;float:right;border-radius:50%} </style>
-  
-  
-  </head>
+</head>
 
 <body>
-  <a class="skip-link" href="#main">Skip to main</a>
-  <main id="main">
-  <div class="content">
-    <header>
-
-
-<p style="padding: 0;margin: 0;">
-  <a href="/">
-    <b>Jihan</b>
-    <span class="text-stone-500 animate-blink">▮</span>
-  </a>
-</p>
-
-
-<ul style="padding: 0;margin: 0;">
-  
-  
-  <li class="">
-    <a href="/about/"><span>About</span></a>
     
-  <li class="">
-    <a href="/posts/"><span>Post</span></a>
+
+<nav class="navigation">
+	
+		<a href="/"> <span class="arrow">←</span>首页</a>
+	
+	<a href="/posts">归档</a>
+	<a href="/tags">标签</a>
+	<a href="/about">关于</a>
+
+	
+
+	
+	  <a class="button" href="qujihan.com/index.xml">订阅</a>
+	
+</nav>
+
+
+    <main class="main"> 
+
+<section id="single">
+    <h1 class="title">那些我重装windows/macos/ubuntu时会做的事情</h1>
     
-  <li class="">
-    <a href="/tags/"><span>Tags</span></a>
+        <div class="tags">
+            
+                <a href="qujihan.com/tags/windows">windows</a>
+            
+                <a href="qujihan.com/tags/mac">mac</a>
+            
+                <a href="qujihan.com/tags/ubuntu">ubuntu</a>
+            
+        </div>
     
-  </li>
-</ul>
+    <div class="tip">
+        <time datetime="2023-03-15 00:00:00 &#43;0000 UTC">2023年03月15日</time>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          235字
+        </span>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          1分钟
+        </span>
+    </div>
 
-</header>
+    
+<aside class="toc">
+    <details>
+        <summary>
+            目录
+        </summary>
+        <div>
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#windows">Windows</a>
+      <ul>
+        <li><a href="#跳过联网激活使用本地账号">跳过联网激活使用本地账号</a></li>
+        <li><a href="#安装软件">安装软件</a></li>
+      </ul>
+    </li>
+    <li><a href="#macos">MacOS</a>
+      <ul>
+        <li><a href="#安装软件-1">安装软件</a></li>
+      </ul>
+    </li>
+    <li><a href="#ubuntu">Ubuntu</a>
+      <ul>
+        <li><a href="#设置ssh">设置ssh</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</aside>
 
-
-<hr class="hr-list" style="padding: 0;margin: 0;">
-    <section>
-      <h2 class="post">那些我重装Windows/MacOS/Ubuntu时会做的事情</h2>
-      <h2 id="windows">Windows</h2>
+    <div class="content">
+      <p>一般都是那么做</p>
+<h2 id="windows">Windows</h2>
 <h3 id="跳过联网激活使用本地账号">跳过联网激活使用本地账号</h3>
 <p>在连接网络的界面按住Shift+F10调出CMD输入<code>OOBE\BYPASSNRO</code></p>
 <h3 id="安装软件">安装软件</h3>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Needed to run a remote script the first time</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Needed to run a remote script the first time</span>
 </span></span><span style="display:flex;"><span>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser 
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># set scoop dir is C:\Scoop</span>
-</span></span><span style="display:flex;"><span>md C:<span style="color:#8045ff">\S</span>coop 
-</span></span><span style="display:flex;"><span>irm get.scoop.sh -outfile <span style="color:#d88200">&#39;install.ps1&#39;</span>
-</span></span><span style="display:flex;"><span>.<span style="color:#8045ff">\i</span>nstall.ps1 -ScoopDir <span style="color:#d88200">&#39;C:\Scoop&#39;</span> -ScoopGlobalDir <span style="color:#d88200">&#39;C:\Scoop&#39;</span> -NoProxy
+</span></span><span style="display:flex;"><span>md C:<span style="color:#ae81ff">\S</span>coop 
+</span></span><span style="display:flex;"><span>irm get.scoop.sh -outfile <span style="color:#e6db74">&#39;install.ps1&#39;</span>
+</span></span><span style="display:flex;"><span>.<span style="color:#ae81ff">\i</span>nstall.ps1 -ScoopDir <span style="color:#e6db74">&#39;C:\Scoop&#39;</span> -ScoopGlobalDir <span style="color:#e6db74">&#39;C:\Scoop&#39;</span> -NoProxy
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>scoop install sudo git neovim 
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>scoop bucket add extras
 </span></span><span style="display:flex;"><span>scoop install obsidian wechat potplayer trafficmonitor snipaste screentogif powertoys wezterm
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>scoop bucket add nerd-fontasdfs
-</span></span><span style="display:flex;"><span>sudo scoop install -g FiraCode-NF-Mono JetBrainsMono-NF-Mono
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>scoop bucket add java
 </span></span><span style="display:flex;"><span>scoop install gcc make cmake rust python go openjdk
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>scoop bucket add im-select https://github.com/daipeihust/im-select
-</span></span><span style="display:flex;"><span>scoop install im-select
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># winget install</span>
 </span></span><span style="display:flex;"><span>winget install  Microsoft.PowerShell Microsoft.VisualStudioCode
@@ -101,16 +143,12 @@
 </span></span><span style="display:flex;"><span>go install golang.org/x/tools/gopls@latest
 </span></span></code></pre></div><h2 id="macos">MacOS</h2>
 <h3 id="安装软件-1">安装软件</h3>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># install brew</span>
-</span></span><span style="display:flex;"><span>/bin/bash -c <span style="color:#d88200">&#34;</span><span style="color:#00a8c8">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span style="color:#00a8c8">)</span><span style="color:#d88200">&#34;</span>
-</span></span><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># install brew</span>
+</span></span><span style="display:flex;"><span>/bin/bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>brew install git neovim lazygit sevenzip stow
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>brew install --cask wechat qq alacritty weztrem emacs visual-studio-code docker tencent-lemon bob snipaste squirrel microsoft-edge onedrive obsidian homebrew/cask-fonts/font-jetbrains-mono-nerd-font
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># im-select</span>
-</span></span><span style="display:flex;"><span>brew tap daipeihust/tap <span style="color:#f92672">&amp;&amp;</span> brew install im-select
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># for shell</span>
 </span></span><span style="display:flex;"><span>brew install romkatv/powerlevel10k/powerlevel10k
@@ -120,28 +158,28 @@
 </span></span><span style="display:flex;"><span>go install golang.org/x/tools/gopls@latest
 </span></span></code></pre></div><h2 id="ubuntu">Ubuntu</h2>
 <h3 id="设置ssh">设置ssh</h3>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># set ssh</span>
-</span></span><span style="display:flex;"><span>ssh-keygen -t ed25519 -C <span style="color:#d88200">&#34;qujihan@163.com&#34;</span>
+</span></span><span style="display:flex;"><span>ssh-keygen -t ed25519 -C <span style="color:#e6db74">&#34;qujihan@163.com&#34;</span>
 </span></span><span style="display:flex;"><span>cat .ssh/id_ed25519.pub
 </span></span><span style="display:flex;"><span>ssh -T git@github.com
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># install NVIM v0.8.3</span>
-</span></span><span style="display:flex;"><span>curl -LO https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb
-</span></span><span style="display:flex;"><span>apt install ./nvim-linux64.deb
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># install neovim latest</span>
+</span></span><span style="display:flex;"><span>curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+</span></span><span style="display:flex;"><span>chmod u+x nvim.appimage
+</span></span><span style="display:flex;"><span>./nvim.appimage --appimage-extract
+</span></span><span style="display:flex;"><span>mv squashfs-root /
+</span></span><span style="display:flex;"><span>ln -s /squashfs-root/AppRun /usr/bin/nvim
 </span></span></code></pre></div>
-      
-      <div class="post-date">
-        <span class="g time">March 15, 2023 </span> &#8729;
-         
-         <a href="/tags/windows/">windows</a> <a href="/tags/mac/">mac</a> <a href="/tags/ubuntu/">ubuntu</a>
-      </div>
-      
-    </section>
-    
-    
-    
-  </div>
-</main>
+    </div>
+</section>
+
+ </main>
+    <footer id="footer">
+    <div class="copyright">
+        © Copyright 2023  ✿ Jihan
+    </div>
+</footer>
 </body>
+
 </html>
