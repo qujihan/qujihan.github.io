@@ -96,12 +96,12 @@
     <div class="content">
       <p>如何将Docker中的数据转移到其他盘符</p>
 <p>以下皆是以移动到D:/wsl为例</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wsl --export docker-desktop D:<span style="color:#ae81ff">\w</span>sl<span style="color:#ae81ff">\d</span>ocker-desktop.tar
-</span></span><span style="display:flex;"><span>wsl --export docker-desktop-data D:<span style="color:#ae81ff">\w</span>sl<span style="color:#ae81ff">\d</span>ocker-desktop-data.tar
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wsl --export docker-desktop D:<span style="color:#4070a0;font-weight:bold">\w</span>sl<span style="color:#4070a0;font-weight:bold">\d</span>ocker-desktop.tar
+</span></span><span style="display:flex;"><span>wsl --export docker-desktop-data D:<span style="color:#4070a0;font-weight:bold">\w</span>sl<span style="color:#4070a0;font-weight:bold">\d</span>ocker-desktop-data.tar
 </span></span><span style="display:flex;"><span>wsl --unregister docker-desktop
 </span></span><span style="display:flex;"><span>wsl --unregister docker-desktop-data
-</span></span><span style="display:flex;"><span>wsl --import docker-desktop D:<span style="color:#ae81ff">\w</span>sl<span style="color:#ae81ff">\d</span>ocker-desktop D:<span style="color:#ae81ff">\w</span>sl<span style="color:#ae81ff">\d</span>ocker-desktop.tar --version <span style="color:#ae81ff">2</span>
-</span></span><span style="display:flex;"><span>wsl --import docker-desktop-data D:<span style="color:#ae81ff">\w</span>sl<span style="color:#ae81ff">\d</span>ocker-desktop-data D:<span style="color:#ae81ff">\w</span>sl<span style="color:#ae81ff">\d</span>ocker-desktop-data.tar --version <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>wsl --import docker-desktop D:<span style="color:#4070a0;font-weight:bold">\w</span>sl<span style="color:#4070a0;font-weight:bold">\d</span>ocker-desktop D:<span style="color:#4070a0;font-weight:bold">\w</span>sl<span style="color:#4070a0;font-weight:bold">\d</span>ocker-desktop.tar --version <span style="color:#40a070">2</span>
+</span></span><span style="display:flex;"><span>wsl --import docker-desktop-data D:<span style="color:#4070a0;font-weight:bold">\w</span>sl<span style="color:#4070a0;font-weight:bold">\d</span>ocker-desktop-data D:<span style="color:#4070a0;font-weight:bold">\w</span>sl<span style="color:#4070a0;font-weight:bold">\d</span>ocker-desktop-data.tar --version <span style="color:#40a070">2</span>
 </span></span></code></pre></div><p>参考：</p>
 <ol>
 <li><a href="https://github.com/docker/for-win/issues/5829">Moving Docker wsl files #5829 docker/for-win</a></li>

@@ -73,7 +73,7 @@
           ·
         </span>
         <span>
-          235字
+          254字
         </span>
         <span class="split">
           ·
@@ -115,18 +115,15 @@
 </aside>
 
     <div class="content">
-      <p>一般都是那么做</p>
-<h2 id="windows">Windows</h2>
-<h3 id="跳过联网激活使用本地账号">跳过联网激活使用本地账号</h3>
-<p>在连接网络的界面按住Shift+F10调出CMD输入<code>OOBE\BYPASSNRO</code></p>
-<h3 id="安装软件">安装软件</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Needed to run a remote script the first time</span>
+      <p>这是一篇自用，但是大家可以参考的文章。</p>
+<h2 id="windows">Windows <a href="#windows" class="anchor">🔗</a></h2><h3 id="跳过联网激活使用本地账号">跳过联网激活使用本地账号 <a href="#%e8%b7%b3%e8%bf%87%e8%81%94%e7%bd%91%e6%bf%80%e6%b4%bb%e4%bd%bf%e7%94%a8%e6%9c%ac%e5%9c%b0%e8%b4%a6%e5%8f%b7" class="anchor">🔗</a></h3><p>在连接网络的界面按住Shift+F10调出CMD输入<code>OOBE\BYPASSNRO</code></p>
+<h3 id="安装软件">安装软件 <a href="#%e5%ae%89%e8%a3%85%e8%bd%af%e4%bb%b6" class="anchor">🔗</a></h3><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># Needed to run a remote script the first time</span>
 </span></span><span style="display:flex;"><span>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser 
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># set scoop dir is C:\Scoop</span>
-</span></span><span style="display:flex;"><span>md C:<span style="color:#ae81ff">\S</span>coop 
-</span></span><span style="display:flex;"><span>irm get.scoop.sh -outfile <span style="color:#e6db74">&#39;install.ps1&#39;</span>
-</span></span><span style="display:flex;"><span>.<span style="color:#ae81ff">\i</span>nstall.ps1 -ScoopDir <span style="color:#e6db74">&#39;C:\Scoop&#39;</span> -ScoopGlobalDir <span style="color:#e6db74">&#39;C:\Scoop&#39;</span> -NoProxy
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># set scoop dir is C:\Scoop</span>
+</span></span><span style="display:flex;"><span>md C:<span style="color:#4070a0;font-weight:bold">\S</span>coop 
+</span></span><span style="display:flex;"><span>irm get.scoop.sh -outfile <span style="color:#4070a0">&#39;install.ps1&#39;</span>
+</span></span><span style="display:flex;"><span>.<span style="color:#4070a0;font-weight:bold">\i</span>nstall.ps1 -ScoopDir <span style="color:#4070a0">&#39;C:\Scoop&#39;</span> -ScoopGlobalDir <span style="color:#4070a0">&#39;C:\Scoop&#39;</span> -NoProxy
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>scoop install sudo git neovim 
 </span></span><span style="display:flex;"><span>
@@ -136,35 +133,31 @@
 </span></span><span style="display:flex;"><span>scoop bucket add java
 </span></span><span style="display:flex;"><span>scoop install gcc make cmake rust python go openjdk
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># winget install</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># winget install</span>
 </span></span><span style="display:flex;"><span>winget install  Microsoft.PowerShell Microsoft.VisualStudioCode
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># for golang</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># for golang</span>
 </span></span><span style="display:flex;"><span>go install golang.org/x/tools/gopls@latest
-</span></span></code></pre></div><h2 id="macos">MacOS</h2>
-<h3 id="安装软件-1">安装软件</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># install brew</span>
-</span></span><span style="display:flex;"><span>/bin/bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><h2 id="macos">MacOS <a href="#macos" class="anchor">🔗</a></h2><h3 id="安装软件-1">安装软件 <a href="#%e5%ae%89%e8%a3%85%e8%bd%af%e4%bb%b6-1" class="anchor">🔗</a></h3><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># install brew</span>
+</span></span><span style="display:flex;"><span>/bin/bash -c <span style="color:#4070a0">&#34;</span><span style="color:#007020;font-weight:bold">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span style="color:#007020;font-weight:bold">)</span><span style="color:#4070a0">&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>brew install git neovim lazygit sevenzip stow
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>brew install --cask wechat qq alacritty weztrem emacs visual-studio-code docker tencent-lemon bob snipaste squirrel microsoft-edge onedrive obsidian homebrew/cask-fonts/font-jetbrains-mono-nerd-font
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># for shell</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># for shell</span>
 </span></span><span style="display:flex;"><span>brew install romkatv/powerlevel10k/powerlevel10k
 </span></span><span style="display:flex;"><span>brew install zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-git-prompt
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># for golang</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># for golang</span>
 </span></span><span style="display:flex;"><span>go install golang.org/x/tools/gopls@latest
-</span></span></code></pre></div><h2 id="ubuntu">Ubuntu</h2>
-<h3 id="设置ssh">设置ssh</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># set ssh</span>
-</span></span><span style="display:flex;"><span>ssh-keygen -t ed25519 -C <span style="color:#e6db74">&#34;qujihan@163.com&#34;</span>
+</span></span></code></pre></div><h2 id="ubuntu">Ubuntu <a href="#ubuntu" class="anchor">🔗</a></h2><h3 id="设置ssh">设置ssh <a href="#%e8%ae%be%e7%bd%aessh" class="anchor">🔗</a></h3><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># set ssh</span>
+</span></span><span style="display:flex;"><span>ssh-keygen -t ed25519 -C <span style="color:#4070a0">&#34;qujihan@163.com&#34;</span>
 </span></span><span style="display:flex;"><span>cat .ssh/id_ed25519.pub
 </span></span><span style="display:flex;"><span>ssh -T git@github.com
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># install neovim latest</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># install neovim latest</span>
 </span></span><span style="display:flex;"><span>curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 </span></span><span style="display:flex;"><span>chmod u+x nvim.appimage
 </span></span><span style="display:flex;"><span>./nvim.appimage --appimage-extract
