@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+
+    
+    <title>拾野知地</title>
+    <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAZhJREFUOE9908uLj3EUx/HXuF/LXYqhSAi506CMIsrKf2DHepqN7JQFG1s75U8QC+VSLgu5xUgpcpsMMkLCuPbR+dXP5PHsvs9zns95n8/5fDv8/XRgIlZjG5Yh7+7jIvrwAT9bv+Vj+zMW69GDTZhRxS9wCydxCZ+aBGZhPw5gNobQj8d1DsXRevdHYzjBfBzGDrzHU1wu9L0YjUN41ESwoApCcga3q9sX7MJGHC+ifxLMw74qOI9X5cFILEEoTuFJE0Hm3o275fzXKhyFRejCWQw0CUzASkzBDbytwulYV75EvHELI5D51+IZHpbAYnTiJl7/LwepH4/lmIMrJbAFL2sbn9uD077GzDkVc7EUGScdQ7WmsB8goRrEj/YcjMFCbC+j4npCMwkRfofuQr+GC5WFoRCkQ+ZLAvcgq0zeU/Qdvwo54Yq5z3EaJ+JTBNJ9M45hFdI9P76pHHwrP7LiJDHod9CLqy2BDTiIFZiMcYWeu5Cbl3NEk8iPuIcjuN4aYRq2YmcZljFmlkgmaBEFP7fyXN2Rwd8ZzWIhP28MMgAAAABJRU5ErkJggg==">
+
+    
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js" integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+    
+</head>
+
+<body>
+    
+
+<nav class="navigation">
+	
+		<a href="/"> <span class="arrow">←</span>首页</a>
+	
+	<a href="/posts">归档</a>
+	<a href="/tags">标签</a>
+	<a href="/about">关于</a>
+
+	
+
+	
+	  <a class="button" href="/index.xml">订阅</a>
+	
+</nav>
+
+
+    <main class="main"> 
+
+<section id="single">
+    <h1 class="title">一些关于二分查找的事情</h1>
+    
+        <div class="tags">
+            
+                <a href="tags/algorithm">algorithm</a>
+            
+        </div>
+    
+    <div class="tip">
+        <time datetime="2023-05-20 00:00:00 &#43;0000 UTC">2023年05月20日</time>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          342字
+        </span>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          1分钟
+        </span>
+    </div>
+
+    
+<aside class="toc">
+    <details>
+        <summary>
+            目录
+        </summary>
+        <div>
+            <nav id="TableOfContents"></nav>
+        </div>
+    </details>
+</aside>
+
+    <div class="content">
+      <p>对二分查找的理解</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// [left, right]
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// [left, len(nums)] 是符合更新right的那个if条件的集合
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// [0, right] 是符合更新left的那个if条件的集合
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">Bs1</span>(nums []<span style="color:#902000">int</span>, target <span style="color:#902000">int</span>) <span style="color:#902000">int</span> {
+</span></span><span style="display:flex;"><span>	left, right <span style="color:#666">:=</span> <span style="color:#40a070">0</span>, <span style="color:#007020">len</span>(nums)<span style="color:#666">-</span><span style="color:#40a070">1</span> <span style="color:#60a0b0;font-style:italic">// [left, right]
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>	<span style="color:#007020;font-weight:bold">for</span> left <span style="color:#666">&lt;=</span> right {
+</span></span><span style="display:flex;"><span>		mid <span style="color:#666">:=</span> left <span style="color:#666">+</span> (right<span style="color:#666">-</span>left)<span style="color:#666">/</span><span style="color:#40a070">2</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#007020;font-weight:bold">if</span> nums[mid] &lt; target { <span style="color:#60a0b0;font-style:italic">// or &lt;=,&gt;,&gt;=
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>			left = mid <span style="color:#666">+</span> <span style="color:#40a070">1</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#007020;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>			right = mid <span style="color:#666">-</span> <span style="color:#40a070">1</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#007020;font-weight:bold">return</span> left <span style="color:#60a0b0;font-style:italic">// or right
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>	<span style="color:#60a0b0;font-style:italic">// lower_bound 时,return left
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// [left, right)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// [left, len(nums)] 是符合更新right的那个if条件的集合
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// [0, right) 是符合更新left的那个if条件的集合
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">Bs2</span>(nums []<span style="color:#902000">int</span>, target <span style="color:#902000">int</span>) <span style="color:#902000">int</span> {
+</span></span><span style="display:flex;"><span>	left, right <span style="color:#666">:=</span> <span style="color:#40a070">0</span>, <span style="color:#007020">len</span>(nums) <span style="color:#60a0b0;font-style:italic">// [left, right)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>	<span style="color:#007020;font-weight:bold">for</span> left &lt; right {
+</span></span><span style="display:flex;"><span>		mid <span style="color:#666">:=</span> left <span style="color:#666">+</span> (right<span style="color:#666">-</span>left)<span style="color:#666">/</span><span style="color:#40a070">2</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#007020;font-weight:bold">if</span> nums[mid] &lt; target { <span style="color:#60a0b0;font-style:italic">// or &lt;=,&gt;,&gt;=
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>			left = mid <span style="color:#666">+</span> <span style="color:#40a070">1</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#007020;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>			right = mid
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#007020;font-weight:bold">return</span> left <span style="color:#60a0b0;font-style:italic">// or right
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>	<span style="color:#60a0b0;font-style:italic">// lower_bound 时,return left or right
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// (left, rihgt)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// (left, len(nums)] 是符合更新right的那个if条件的集合
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// [0, right) 是符合更新left的那个if条件的集合
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">Bs3</span>(nums []<span style="color:#902000">int</span>, target <span style="color:#902000">int</span>) <span style="color:#902000">int</span> {
+</span></span><span style="display:flex;"><span>	left, right <span style="color:#666">:=</span> <span style="color:#666">-</span><span style="color:#40a070">1</span>, <span style="color:#007020">len</span>(nums) <span style="color:#60a0b0;font-style:italic">//(left, rihgt)
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>	<span style="color:#007020;font-weight:bold">for</span> left<span style="color:#666">+</span><span style="color:#40a070">1</span> &lt; right {
+</span></span><span style="display:flex;"><span>		mid <span style="color:#666">:=</span> left <span style="color:#666">+</span> (right<span style="color:#666">-</span>left)<span style="color:#666">/</span><span style="color:#40a070">2</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#007020;font-weight:bold">if</span> nums[mid] &lt; target { <span style="color:#60a0b0;font-style:italic">// or &lt;=,&gt;,&gt;=
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>			left = mid
+</span></span><span style="display:flex;"><span>		} <span style="color:#007020;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>			right = mid
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#007020;font-weight:bold">return</span> left <span style="color:#60a0b0;font-style:italic">// or right
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>	<span style="color:#60a0b0;font-style:italic">// lower_bound 时,return right
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
+</span></span></code></pre></div>
+    </div>
+</section>
+
+ </main>
+    <footer id="footer">
+    <div class="copyright">
+        © Copyright 2023  ✿ Jihan
+    </div>
+</footer>
+</body>
+
+</html>
