@@ -78,14 +78,28 @@ tr:nth-child(odd)>td {
     overflow-x: auto;
 } */
 
+/* 行内代码 */
+code { 
+    font-family: Consolas;
+    color:darkseagreen;
+    background:#f3f3f5;
+}
+
+/* 行内代码 */
 p code {
     font-family: Consolas;
+    color:darkseagreen;
+    background:#f3f3f5;
 }
 
+/* 代码段 */
 pre code {
     font-family: Consolas;
+    /* color:darkseagreen; */
+    /* background:#f3f3f5; */
 }
 
+/* 每一个标题后面的标志 */
 .anchor {
     font-size: 5px;
     color: silver;

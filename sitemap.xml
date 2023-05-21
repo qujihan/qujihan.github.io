@@ -18,7 +18,13 @@
     <lastmod>2023-05-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/docker/</loc>
-    <lastmod>2023-03-15T00:00:00+00:00</lastmod>
+    <lastmod>2023-04-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/docker_handbook/</loc>
+    <lastmod>2023-04-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/handbook/</loc>
+    <lastmod>2023-04-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/mac/</loc>
     <lastmod>2023-03-15T00:00:00+00:00</lastmod>
@@ -38,7 +44,7 @@
     <loc>/tags/markdown/</loc>
     <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/markdown-syntax/</loc>
+    <loc>/posts/markdown/</loc>
     <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/about/</loc>

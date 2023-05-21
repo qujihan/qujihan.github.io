@@ -8,12 +8,21 @@
     <language>zh-Hans</language>
     <lastBuildDate>Sat, 20 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>一些关于二分查找的事情</title>
+      <title>一些对二分查找的理解</title>
       <link>/posts/binary_search/</link>
       <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/binary_search/</guid>
-      <description>&lt;p&gt;对二分查找的理解&lt;/p&gt;</description>
+      <description>&lt;p&gt;对二分查找的理解，以leetcode34为例&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Docker使用手册</title>
+      <link>/posts/docker_handbook/</link>
+      <pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/docker_handbook/</guid>
+      <description>&lt;p&gt;Docker的一些使用记录&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -36,10 +45,10 @@
     
     <item>
       <title>使用Hugo的一些特性去画图</title>
-      <link>/posts/markdown-syntax/</link>
+      <link>/posts/markdown/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
-      <guid>/posts/markdown-syntax/</guid>
+      <guid>/posts/markdown/</guid>
       <description>&lt;p&gt;当把代码的类型改成goat的时候,就可以画图了&lt;/p&gt;</description>
     </item>
     
