@@ -101,7 +101,7 @@
     <div class="content">
       <p>Docker的一些使用记录</p>
 <h2 id="基本的docker操作">基本的Docker操作 <a href="#%e5%9f%ba%e6%9c%ac%e7%9a%84docker%e6%93%8d%e4%bd%9c" class="anchor">🔗</a></h2><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker volume create volume_name
-</span></span><span style="display:flex;"><span>docker build -t --build-arg <span style="color:#bb60d5">arch</span><span style="color:#666">=</span>amd64 image_name .
+</span></span><span style="display:flex;"><span>docker build -t image_name --build-arg <span style="color:#bb60d5">arch</span><span style="color:#666">=</span>amd64  .
 </span></span><span style="display:flex;"><span>docker run -it --name container_name -v volume_name:root/data image_name
 </span></span><span style="display:flex;"><span>docker <span style="color:#007020">exec</span> -it container_name /bin/bash
 </span></span></code></pre></div><h2 id="dockerfile">dockerfile <a href="#dockerfile" class="anchor">🔗</a></h2><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#4070a0"> ubuntu:22.04</span><span style="">
