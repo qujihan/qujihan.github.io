@@ -60,7 +60,7 @@
           ·
         </span>
         <span>
-          476字
+          475字
         </span>
         <span class="split">
           ·
@@ -168,7 +168,7 @@
 就在 <code>~/.bashrc</code>中设置\</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># set proxy (at wsl or docker)</span>
 </span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># ~/.bashrc</span>
-</span></span><span style="display:flex;"><span>proxy<span style="color:#666">()</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>proxy<span style="color:#666">(){</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#bb60d5">hostip</span><span style="color:#666">=</span><span style="color:#007020;font-weight:bold">$(</span>cat /etc/resolv.conf | grep -oP <span style="color:#4070a0">&#34;(?&lt;=nameserver\ ).*&#34;</span><span style="color:#007020;font-weight:bold">)</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020">export</span> <span style="color:#bb60d5">http_proxy</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;http://</span><span style="color:#70a0d0">${</span><span style="color:#bb60d5">hostip</span><span style="color:#70a0d0">}</span><span style="color:#4070a0">:7890&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#007020">export</span> <span style="color:#bb60d5">https_proxy</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;http://</span><span style="color:#70a0d0">${</span><span style="color:#bb60d5">hostip</span><span style="color:#70a0d0">}</span><span style="color:#4070a0">:7890&#34;</span>
@@ -176,9 +176,9 @@
 </span></span><span style="display:flex;"><span><span style="color:#666">}</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>unproxy<span style="color:#666">(){</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#007020">unset</span> http_proxy
-</span></span><span style="display:flex;"><span>        <span style="color:#007020">unset</span> https_proxy
-</span></span><span style="display:flex;"><span>        <span style="color:#007020">unset</span> all_proxy
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">unset</span> http_proxy
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">unset</span> https_proxy
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">unset</span> all_proxy
 </span></span><span style="display:flex;"><span><span style="color:#666">}</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#007020">alias</span> <span style="color:#bb60d5">pp</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;proxy&#34;</span>
