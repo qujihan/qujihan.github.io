@@ -1,19 +1,11 @@
 /* basic */
-
-@font-face {
-    font-family: 'LXGW WenKai Lite';
-    src: url(fonts/LXGWWenKaiLite-Regular.ttf) format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
 body {
-    font-family: "LXGW WenKai Lite", sans-serif;
+    font-family: "LXGW WenKai Lite", sans-serif, Arial;
+    font-weight: 500;
+    
     color: #404040;
     line-height: 1.75;
     letter-spacing: 0.008em;
-    font: normal 15px/1.5em "helvetica Neue", Arial, sans-serif
 }
 
 .main {
@@ -131,7 +123,7 @@ pre code {
 }
 
 .profile h1 {
-    font-size: 25px;
+    font-size: 32px;
     font-weight: 600;
     letter-spacing: 0px;
     color: #404040;
@@ -140,14 +132,12 @@ pre code {
 }
 
 .profile h2 {
-    font-size: 20px;
+    font-size: 27px;
     font-weight: 300;
     color: #757575;
     margin-top: 12px;
     margin-bottom: 90px;
 }
-
-
 
 
 
@@ -158,6 +148,7 @@ nav.navigation {
     background: rgba(255, 255, 255, 0.9);
     margin: 0 auto;
     text-align: right;
+    /* text-align:center; */
     z-index: inherit;
 }
 
@@ -166,7 +157,7 @@ nav.navigation a {
     right: 6px;
     padding: 8px 8px;
     color: #5badf0;
-    font-size: 13px;
+    font-size: 17px;
     line-height: 1.35;
     border-radius: 3px;
 }
@@ -351,7 +342,7 @@ nav.navigation a.button{
 }
 
 #archive .total {
-    font-size: 15px;
+    font-size: 17px;
 }
 
 #archive .group {
@@ -359,13 +350,13 @@ nav.navigation a.button{
 }
 
 #archive .group .key {
-    font-size: 20px;
+    font-size: 30px;
     margin-bottom: 12px;
 }
 
 #archive .group .value {
     display: block;
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 12px;
 }
 
@@ -395,7 +386,7 @@ nav.navigation a.button{
     background: #f2f2f2;
     padding: 4px 7px;
     color: #999;
-    font-size: 14px;
+    font-size: 15px;
     margin-right: 3px;
 }
 
