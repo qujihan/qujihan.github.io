@@ -2,7 +2,7 @@
 body {
     font-family: "LXGW WenKai Lite", sans-serif, Arial;
     font-weight: 500;
-    
+
     color: #404040;
     line-height: 1.75;
     letter-spacing: 0.008em;
@@ -24,50 +24,55 @@ a:hover {
 
 /* markdown */
 blockquote {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding-left: 1em;
-  margin-left: 0px;
-  border-left: 3px solid #eee;
-  color: #757575;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 1em;
+    margin-left: 0px;
+    border-left: 3px solid #eee;
+    color: #757575;
 }
+
 table {
-  width: 100%;
-  margin: 40px 0;
-  border-collapse: collapse;
-  line-height: 1.5em;
+    width: 100%;
+    margin: 40px 0;
+    border-collapse: collapse;
+    line-height: 1.5em;
 }
 
-th, td {
-  text-align: left;
-  padding-right: 20px;
-  vertical-align: top;
+th,
+td {
+    text-align: left;
+    padding-right: 20px;
+    vertical-align: top;
 }
 
-table td, td {
-  border-spacing: none;
-  border-style: solid;
-  padding: 10px 15px;
-  border-width: 1px 0 0 0;
+table td,
+td {
+    border-spacing: none;
+    border-style: solid;
+    padding: 10px 15px;
+    border-width: 1px 0 0 0;
 }
-thead th, th {
-  text-align: left;
-  padding: 10px 15px;
-  height: 20px;
-  font-size: 13px;
-  font-weight: bold;
-  color: #444;
-  cursor: default;
-  white-space: nowrap;
-  border: 1px solid #dadadc;
+
+thead th,
+th {
+    text-align: left;
+    padding: 10px 15px;
+    height: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #444;
+    cursor: default;
+    white-space: nowrap;
+    border: 1px solid #dadadc;
 }
 
 tr>td {
-  border: 1px solid #dadadc;
+    border: 1px solid #dadadc;
 }
 
 tr:nth-child(odd)>td {
-  background: #fcfcfc;
+    background: #fcfcfc;
 }
 
 .highlight {
@@ -78,20 +83,22 @@ tr:nth-child(odd)>td {
 .highlight pre {
     padding: 7px;
     overflow-x: auto;
-} */
+}
+
+*/
 
 /* 行内代码 */
-code { 
+code {
     font-family: Consolas;
-    color:darkseagreen;
-    background:#f3f3f5;
+    color: darkseagreen;
+    background: #f3f3f5;
 }
 
 /* 行内代码 */
 p code {
     font-family: Consolas;
-    color:darkseagreen;
-    background:#f3f3f5;
+    color: darkseagreen;
+    background: #f3f3f5;
 }
 
 /* 代码段 */
@@ -167,8 +174,8 @@ nav.navigation a:hover {
     color: #0388d6;
 }
 
-nav.navigation a.button{
-    background: #5badf0; 
+nav.navigation a.button {
+    background: #5badf0;
     color: #fff;
     margin-left: 12px;
 }
@@ -201,7 +208,7 @@ nav.navigation a.button{
 }
 
 #footer .copyright {
-    margin: 20px auto ;
+    margin: 20px auto;
     font-size: 15px;
 }
 
@@ -218,7 +225,7 @@ nav.navigation a.button{
 }
 
 #list-page .title {
-    display: inline-block; 
+    display: inline-block;
     color: #404040;
     font-size: 20px;
     font-weight: 400;
@@ -227,7 +234,7 @@ nav.navigation a.button{
 }
 
 #list-page .title a {
-    color:#404040;
+    color: #404040;
     display: block;
 }
 
@@ -322,7 +329,7 @@ nav.navigation a.button{
 #archive {
     max-width: 60%;
     margin: 0 auto;
-    padding: 0 240px;
+    /* padding: 0 240px; */
 }
 
 #archive .total {
@@ -355,7 +362,7 @@ nav.navigation a.button{
 }
 
 #archive .group .value .title a {
-    color:#404040;
+    color: #404040;
 }
 
 #archive .group .value .title a:hover {
@@ -374,7 +381,7 @@ nav.navigation a.button{
     margin-right: 3px;
 }
 
-#archive .group .value .tags a:hover{
+#archive .group .value .tags a:hover {
     color: #0366d6;
 }
 
@@ -452,4 +459,46 @@ nav.navigation a.button{
     position: relative;
     top: 1px;
     color: #bbb;
+}
+
+@media screen and (max-width: 900px) {
+    #list-page {
+        max-width: 90%;
+        margin: 0 auto;
+        padding: 0 auto;
+    }
+
+    #single {
+        max-width: 90%;
+        margin: 60px auto 0 auto;
+        padding: 0 auto;
+    }
+
+    #list-page {
+        max-width: 90%;
+        margin: 0 auto;
+        padding: 0 auto;
+    }
+
+
+    #archive {
+        max-width: 90%;
+        margin: 0 auto;
+        padding: 0 auto;
+    }
+
+    #about {
+        max-width: 90%;
+        margin: 48px auto 0 auto;
+        padding: 0 auto;
+    }
+
+    /* page-404 */
+    #page-404 {
+        max-width: 90%;
+        margin: 0 auto;
+        padding: 0 auto;
+    }
+
+
 }
