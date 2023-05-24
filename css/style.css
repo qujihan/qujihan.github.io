@@ -97,6 +97,7 @@ p code {
 /* 代码段 */
 pre code {
     font-family: Consolas;
+    font-size: 15px;
     /* color:darkseagreen; */
     /* background:#f3f3f5; */
 }
@@ -117,13 +118,13 @@ pre code {
 
 .profile .avatar {
     display: inline-block;
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     border-radius: 28%;
 }
 
 .profile h1 {
-    font-size: 32px;
+    font-size: 35px;
     font-weight: 600;
     letter-spacing: 0px;
     color: #404040;
@@ -132,7 +133,7 @@ pre code {
 }
 
 .profile h2 {
-    font-size: 27px;
+    font-size: 30px;
     font-weight: 300;
     color: #757575;
     margin-top: 12px;
@@ -172,12 +173,6 @@ nav.navigation a.button{
     margin-left: 12px;
 }
 
-@media (max-width:324px){
-    nav.navigation a.button {
-        display: none;
-    }
-}
-
 /* part-toc */
 .toc {
     margin: auto;
@@ -198,7 +193,7 @@ nav.navigation a.button{
 
 /* part-footer */
 #footer {
-    margin-top: 30px;
+    margin-top: 70px;
     margin-bottom: 30px;
     text-align: center;
     color: #bbbbbb;
@@ -213,7 +208,7 @@ nav.navigation a.button{
 
 /* page-index */
 #list-page {
-    max-width: 580px;
+    max-width: 60%;
     margin: 0 auto;
     padding: 0 24px;
 }
@@ -278,7 +273,7 @@ nav.navigation a.button{
 
 /* page-sigle */
 #single {
-    max-width: 680px;
+    max-width: 60%;
     margin: 60px auto 0 auto;
     padding: 0 64px;
 }
@@ -288,18 +283,6 @@ nav.navigation a.button{
     font-size: 28px;
     font-weight: 400px;
     line-height: 48px;
-}
-
-@media (max-width: 700px){
-    #single {
-        padding: 0 18px;
-        margin: 20px auto 0 auto;
-    }
-
-    #single .title {
-        font-size: 24px;
-        line-height: 32px;
-    }
 }
 
 #single .tip {
@@ -315,6 +298,7 @@ nav.navigation a.button{
 
 #single .content {
     margin-top: 24px;
+    font-size: 17px;
 }
 
 #single .tags {
@@ -336,7 +320,7 @@ nav.navigation a.button{
 
 /* page-list */
 #archive {
-    max-width: 580px;
+    max-width: 60%;
     margin: 0 auto;
     padding: 0 240px;
 }
@@ -397,7 +381,7 @@ nav.navigation a.button{
 
 /* page-tags */
 #tags {
-    max-width: 700px;
+    max-width: 70%;
     margin: 48px auto 0 auto;
 }
 
@@ -420,7 +404,7 @@ nav.navigation a.button{
 
 /* page-about */
 #about {
-    max-width: 580px;
+    max-width: 60%;
     margin: 48px auto 0 auto;
     padding: 0 12px;
 }
@@ -429,7 +413,7 @@ nav.navigation a.button{
 
 /* page-404 */
 #page-404 {
-    max-width: 580px;
+    max-width: 60%;
     margin: 0 auto;
     padding: 0 24px;
 }
@@ -442,13 +426,14 @@ nav.navigation a.button{
 #page-404 .title {
     display: inline-block;
     color: #404040;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 400;
     margin: 0;
     width: 80%;
 }
 
 #page-404 .text {
+    font-size: 40px;
     text-align: center;
     margin-top: 60px;
 }
