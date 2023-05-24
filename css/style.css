@@ -186,15 +186,18 @@ nav.navigation a.button {
     background: #f8f8f8;
     border-radius: 0;
     padding: 10px 7px;
-    margin-top: 36px;
+    margin-top: 10px;
 }
 
 .toc details summary {
     cursor: zoom-in;
+    list-style-type: '✿';
+    text-align: center;
 }
 
 .toc ul {
     padding-inline-start: 24px;
+    list-style-type: none;
 }
 
 
