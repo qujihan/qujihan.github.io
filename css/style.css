@@ -4,7 +4,7 @@ body {
     font-weight: 500;
 
     color: #404040;
-    line-height: 1.75;
+    line-height: 1.25;
     letter-spacing: 0.008em;
 }
 
@@ -468,18 +468,11 @@ nav.navigation a.button {
         padding: 0 auto;
     }
 
-    #single {
-        max-width: 90%;
-        margin: 60px auto 0 auto;
-        padding: 0 auto;
-    }
-
     #list-page {
         max-width: 90%;
         margin: 0 auto;
         padding: 0 auto;
     }
-
 
     #archive {
         max-width: 90%;
@@ -493,12 +486,15 @@ nav.navigation a.button {
         padding: 0 auto;
     }
 
-    /* page-404 */
     #page-404 {
         max-width: 90%;
         margin: 0 auto;
         padding: 0 auto;
     }
 
-
+    #single {
+        max-width: 100%;
+        margin: 60px auto 0 auto;
+        padding: 0 0;
+    }
 }
