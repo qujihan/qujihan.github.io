@@ -6,7 +6,16 @@
     <description>Recent content on 拾野知地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Sat, 20 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何在vscode中设置一些快捷键</title>
+      <link>/posts/how_to_set_vscode/</link>
+      <pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/how_to_set_vscode/</guid>
+      <description>&lt;p&gt;WIP. 以后有空详细写&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>一些对二分查找的理解</title>
       <link>/posts/binary_search/</link>
