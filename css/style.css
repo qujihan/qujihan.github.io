@@ -89,21 +89,21 @@ tr:nth-child(odd)>td {
 
 /* 行内代码 */
 code {
-    font-family: Consolas;
+    font-family: "Fira Code","LXGW WenKai Lite";
     color: darkseagreen;
     background: #f3f3f5;
 }
 
 /* 行内代码 */
 p code {
-    font-family: Consolas;
+    font-family: "Fira Code","LXGW WenKai Lite";
     color: darkseagreen;
     background: #f3f3f5;
 }
 
 /* 代码段 */
 pre code {
-    font-family: Consolas;
+    font-family: "Fira Code","LXGW WenKai Lite";
     font-size: 15px;
     /* color:darkseagreen; */
     /* background:#f3f3f5; */
