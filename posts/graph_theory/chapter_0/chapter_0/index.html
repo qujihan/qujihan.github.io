@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html lang="zh">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="">
+
+    
+    <meta name="theme-color" content="#ffffff"/>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.min.css">
+
+    
+    <title>拾野知地</title>
+    <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAZhJREFUOE9908uLj3EUx/HXuF/LXYqhSAi506CMIsrKf2DHepqN7JQFG1s75U8QC+VSLgu5xUgpcpsMMkLCuPbR+dXP5PHsvs9zns95n8/5fDv8/XRgIlZjG5Yh7+7jIvrwAT9bv+Vj+zMW69GDTZhRxS9wCydxCZ+aBGZhPw5gNobQj8d1DsXRevdHYzjBfBzGDrzHU1wu9L0YjUN41ESwoApCcga3q9sX7MJGHC+ifxLMw74qOI9X5cFILEEoTuFJE0Hm3o275fzXKhyFRejCWQw0CUzASkzBDbytwulYV75EvHELI5D51+IZHpbAYnTiJl7/LwepH4/lmIMrJbAFL2sbn9uD077GzDkVc7EUGScdQ7WmsB8goRrEj/YcjMFCbC+j4npCMwkRfofuQr+GC5WFoRCkQ+ZLAvcgq0zeU/Qdvwo54Yq5z3EaJ+JTBNJ9M45hFdI9P76pHHwrP7LiJDHod9CLqy2BDTiIFZiMcYWeu5Cbl3NEk8iPuIcjuN4aYRq2YmcZljFmlkgmaBEFP7fyXN2Rwd8ZzWIhP28MMgAAAABJRU5ErkJggg==">
+
+    
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js" integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+    
+</head>
+
+<body>
+    
+
+<nav class="navigation">
+	
+		<a href="/"> <span class="arrow">←</span>首页</a>
+	
+	<a href="/posts">归档</a>
+	<a href="/tags">标签</a>
+	<a href="/about">关于</a>
+
+	
+	
+	  <a class="button" href="">订阅</a>
+	
+</nav>
+
+
+    <main class="main"> 
+
+<section id="single">
+    <h1 class="title">图论第零章 图论符号表与概念表</h1>
+    
+        <div class="tags">
+            
+                <a href="/tags/graph-theory">graph theory</a>
+            
+        </div>
+    
+    <div class="tip">
+        <time datetime="2023-05-19 00:00:00 &#43;0000 UTC">2023年05月19日</time>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          1201字
+        </span>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          3分钟
+        </span>
+    </div>
+
+    
+<aside class="toc">
+    <details>
+        <summary>
+            目录
+        </summary>
+        <div>
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#图的统计符号">图的统计符号</a></li>
+    <li><a href="#图的类型">图的类型</a></li>
+    <li><a href="#图的概念">图的概念</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</aside>
+
+    <div class="content">
+      <p>UESTC 2022 图论笔记</p>
+<h2 id="图的统计符号">图的统计符号 <a href="#%e5%9b%be%e7%9a%84%e7%bb%9f%e8%ae%a1%e7%ac%a6%e5%8f%b7" class="anchor">🔗</a></h2><ul>
+<li>$n(G)$：图的点</li>
+<li>$m(G)$：图的边</li>
+<li>$\phi(G)$：图的面</li>
+<li>$\delta(G)$：$G$的顶点最小值</li>
+<li>$\Delta(G)$：$G$的顶点最大值</li>
+<li>$w(e)$：e的权值</li>
+<li>$d(v)$：点$v$的度</li>
+<li>$d(u,v)$：最短路$(u,v)$的长度</li>
+<li>$\omega(G)$：$G$的连通分支数</li>
+<li>$\tau(G)$：$G$生成树的棵树</li>
+<li>$e(v)$：<strong>离心率</strong>（通俗版本：v到最远的那个点的距离）</li>
+<li>$r(G)$：<strong>半径</strong>（通俗版本：这个图的最小离心率）</li>
+<li>$A(G):$ 图$G$的邻接矩阵</li>
+<li>$D(G):$ 图$G$的度对角矩阵</li>
+<li>$\alpha(G):$ 图$G$的最小点覆盖数</li>
+<li>$deg(f)$：表示面$f$中含有边的个数（割边算两个）</li>
+<li>$o(G):$ $G$ 中的奇分支的个数</li>
+<li>$\chi(G)$: $G$ 点色数</li>
+<li>$\chi&rsquo;(G):$ $G$ 边色数</li>
+<li>$N_{G}(S):$ 可以简写成 $N(S)$ ，表示与 $S$ 中的顶点相邻的所有顶点的集合</li>
+<li>$q_r(G)$表示的是将简单图$G$的顶点集合$V$划分成r个不同的色组的色划分</li>
+</ul>
+<h2 id="图的类型">图的类型 <a href="#%e5%9b%be%e7%9a%84%e7%b1%bb%e5%9e%8b" class="anchor">🔗</a></h2><ul>
+<li>$K_n:$ n阶完全图</li>
+<li>$K_{m,n}:$ 完全二部图</li>
+<li>$Q_n:$ n阶超立方体</li>
+</ul>
+<h2 id="图的概念">图的概念 <a href="#%e5%9b%be%e7%9a%84%e6%a6%82%e5%bf%b5" class="anchor">🔗</a></h2><ul>
+<li>图的基本概念
+<ul>
+<li>简单图：无环、无重边的图</li>
+<li>图的度序列：每个点的度构成的非负整数组</li>
+<li>图的图序列：一个非负整数组是一个图的度序列，那么称为图序列/可图序列 ✱例题1</li>
+<li>图的同构：$G_1 \cong G_2$</li>
+<li>图的补图：图$G$的补图就是完全图减去图$G$</li>
+<li>自补图：补图与自身是相同的图</li>
+<li>图的计算-对称差：$G_1 \bigtriangleup G_2$ ：两个图的并集减去两个图的交集</li>
+<li>图的计算-联图：$G_1 \vee G_2$ ：$G_1$ 的每一个顶点与 $G_2$ 的每一个顶点连接在一起</li>
+<li>图的计算-积图：$G_1 \times G_2$ ：??</li>
+<li>偶图（二部图）：有两个点集合A、B，每条边的一个端点在A集合，另一个端点在B集合</li>
+</ul>
+</li>
+<li>树
+<ul>
+<li>树：不含圈的联通图</li>
+<li>森林：不含圈的图</li>
+<li>生成树：包含图 $G$ 所有顶点的树就是图 $G$ 的生成树</li>
+<li>最小生成树：赋权图中总权值最小的生成树</li>
+<li>根树：非平凡有向树中那个入度为0的结点</li>
+<li>完全m元树：每个分支都是 $m$ 个结点的树</li>
+</ul>
+</li>
+<li>Euler图与Hamilton图
+<ul>
+<li>Euler图、Eulhr回路、Euler迹：经过给定图中每一条边的图</li>
+<li>Hamilton图、Hamilton路：经过给定图中每一个点的图</li>
+<li>Hamilton圈：经过给定图中每一个点，并且途径是一个圈的图</li>
+</ul>
+</li>
+<li>匹配与因子分解
+<ul>
+<li>匹配 = 边独立集 = 对集合：图 $G$ 的边子集 $M$ 中的任意两个边都没有共同顶点</li>
+<li>最大匹配：$M$ 是包含边数最多的匹配</li>
+<li>完美匹配：$M$ 包含了所有顶点</li>
+<li>最优匹配：$M$ 是赋权图中权值最大的完全匹配</li>
+<li>因子分解：把图分解成若干个边不重的因子的并集</li>
+</ul>
+</li>
+<li>平面图
+<ul>
+<li>平面图：图 $G$ 在平面上有边不交叉的画法</li>
+<li>平面嵌入：图 $G$ 的一种边不交叉的画法</li>
+<li>极大平面图：图 $G$ 点数小于4，或者在任意两个不相邻的顶点之间加一条边后都是不可平面图</li>
+<li>极大外平面图：图 $G$ 中所有顶点都在一个面的边界上</li>
+<li>平面图的对偶图：</li>
+</ul>
+</li>
+<li>着色问题
+<ul>
+<li>边色数：对图 $G$ 进行边着色的最小颜色数</li>
+<li>点色数：对图 $G$ 进行点着色的最小颜色数</li>
+<li>色多项式：对图 $G$ 进行点着色的方式数 $P_k(G)$ 是 $k$ 的多项式</li>
+</ul>
+</li>
+<li>有向图
+<ul>
+<li>强连通性：任意两个点都是双向联通的</li>
+<li>弱连通性：基础图是联通的</li>
+<li>单向联通图：任意两个点是联通的</li>
+</ul>
+</li>
+</ul>
+    </div>
+</section>
+
+ </main>
+    <footer id="footer">
+    <div class="copyright">
+        <p>© Copyright 2023 ✿ Jihan</p>
+        
+        <p>Thanks to <a href="https://katex.org/">katex</a> for the $\LaTeX$ support</p>
+        
+    </div>
+</footer>
+</body>
+
+</html>

@@ -6,7 +6,34 @@
     <description>Recent content in Posts on 拾野知地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Tue, 23 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>图论第七章 图的着色</title>
+      <link>/posts/graph_theory/chapter_7/chapter_7/</link>
+      <pubDate>Fri, 26 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/graph_theory/chapter_7/chapter_7/</guid>
+      <description>&lt;p&gt;UESTC 2022 图论笔记&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>图论第六章 平面图</title>
+      <link>/posts/graph_theory/chapter_6/chapter_6/</link>
+      <pubDate>Thu, 25 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/graph_theory/chapter_6/chapter_6/</guid>
+      <description>&lt;p&gt;UESTC 2022 图论笔记&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>图论第五章 匹配与因子分解</title>
+      <link>/posts/graph_theory/chapter_5/chapter_5/</link>
+      <pubDate>Wed, 24 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/graph_theory/chapter_5/chapter_5/</guid>
+      <description>&lt;p&gt;UESTC 2022 图论笔记&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>如何在vscode中设置一些快捷键</title>
       <link>/posts/how_to_set_vscode/</link>
@@ -17,12 +44,57 @@
     </item>
     
     <item>
+      <title>图论第四章 Euler图与Hamilton图</title>
+      <link>/posts/graph_theory/chapter_4/chapter_4/</link>
+      <pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/graph_theory/chapter_4/chapter_4/</guid>
+      <description>&lt;p&gt;UESTC 2022 图论笔记&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>图论第三章 图的连通性</title>
+      <link>/posts/graph_theory/chapter_3/chapter_3/</link>
+      <pubDate>Mon, 22 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/graph_theory/chapter_3/chapter_3/</guid>
+      <description>&lt;p&gt;UESTC 2022 图论笔记&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>图论第二章 树</title>
+      <link>/posts/graph_theory/chapter_2/chapter_2/</link>
+      <pubDate>Sun, 21 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/graph_theory/chapter_2/chapter_2/</guid>
+      <description>&lt;p&gt;UESTC 2022 图论笔记&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>图论第一章 图的基本概念</title>
+      <link>/posts/graph_theory/chapter_1/chapter_1/</link>
+      <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/graph_theory/chapter_1/chapter_1/</guid>
+      <description>&lt;p&gt;UESTC 2022 图论笔记&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>一些对二分查找的理解</title>
       <link>/posts/binary_search/</link>
       <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/binary_search/</guid>
       <description>&lt;p&gt;对二分查找的理解，以leetcode34为例&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>图论第零章 图论符号表与概念表</title>
+      <link>/posts/graph_theory/chapter_0/chapter_0/</link>
+      <pubDate>Fri, 19 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/graph_theory/chapter_0/chapter_0/</guid>
+      <description>&lt;p&gt;UESTC 2022 图论笔记&lt;/p&gt;</description>
     </item>
     
     <item>

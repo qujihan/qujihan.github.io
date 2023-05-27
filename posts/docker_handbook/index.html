@@ -49,7 +49,7 @@
             
                 <a href="/tags/docker">docker</a>
             
-                <a href="/tags/handbook">handbook</a>
+                <a href="/tags/%E6%89%8B%E5%86%8C">手册</a>
             
         </div>
     
@@ -59,7 +59,7 @@
           ·
         </span>
         <span>
-          224字
+          258字
         </span>
         <span class="split">
           ·
@@ -101,7 +101,7 @@
 </span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#007020;font-weight:bold">WORKDIR</span><span style="color:#4070a0"> /root/</span><span style="">
 </span></span></span><span style="display:flex;"><span><span style="">
 </span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic"># set volume</span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic"># VOLUME [ &#34;root/src&#34;, &#34;root/data&#34; ]</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#007020;font-weight:bold">VOLUME</span> [ <span style="color:#4070a0">&#34;root/src&#34;</span>, <span style="color:#4070a0">&#34;root/data&#34;</span> ]<span style="">
 </span></span></span><span style="display:flex;"><span><span style="">
 </span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic"># change apt sources, use tsinghua mirror</span><span style="">
 </span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic"># Note: only for ubuntu:22.04</span><span style="">
@@ -123,8 +123,15 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    apt install -y curl git <span style="color:#666">&amp;&amp;</span><span style="color:#4070a0;font-weight:bold">\
 </span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    apt clean --dry-run<span style="">
 </span></span></span><span style="display:flex;"><span><span style="">
+</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic"># set proxy</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#007020;font-weight:bold">RUN</span> <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;HOST_IP=</span><span style="color:#007020;font-weight:bold">$(</span>grep -oP <span style="color:#4070a0">&#39;(?&lt;=nameserver\ ).*&#39;</span> /etc/resolv.conf<span style="color:#007020;font-weight:bold">)</span><span style="color:#4070a0">&#34;</span> &gt;&gt; .bashrc <span style="color:#666">&amp;&amp;</span><span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;PROXY_ADDR=\&#34;http://\$HOST_IP:7890\&#34;&#34;</span> &gt;&gt; .bashrc <span style="color:#666">&amp;&amp;</span><span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;HTTP_PROXY=\&#34;\$PORXY_ADDR\&#34;&#34;</span> &gt;&gt; .bashrc <span style="color:#666">&amp;&amp;</span><span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;HTTPS_PROXY=\&#34;\$PORXY_ADDR\&#34;&#34;</span> &gt;&gt; .bashrc <span style="color:#666">&amp;&amp;</span><span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    /bin/bash -c <span style="color:#4070a0">&#34;source .bashrc&#34;</span><span style="">
 </span></span></span><span style="display:flex;"><span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#007020;font-weight:bold">RUN</span> <span style="color:#007020">echo</span> <span style="color:#bb60d5">PS1</span><span style="color:#666">=</span><span style="color:#4070a0;font-weight:bold">\&#34;</span><span style="color:#666">[</span><span style="color:#70a0d0">${</span><span style="color:#bb60d5">user</span><span style="color:#70a0d0">}</span>@lab <span style="color:#4070a0;font-weight:bold">\\</span>W<span style="color:#666">]</span> <span style="color:#4070a0;font-weight:bold">\\</span>$ <span style="color:#4070a0;font-weight:bold">\&#34;</span> &gt;&gt; .bashrc<span style="">
+</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic"># set hostname</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#007020;font-weight:bold">RUN</span> <span style="color:#007020">echo</span> <span style="color:#bb60d5">PS1</span><span style="color:#666">=</span><span style="color:#4070a0;font-weight:bold">\&#34;</span><span style="color:#666">[</span><span style="color:#70a0d0">${</span><span style="color:#bb60d5">user</span><span style="color:#70a0d0">}</span>@docker <span style="color:#4070a0;font-weight:bold">\\</span>W<span style="color:#666">]</span> <span style="color:#4070a0;font-weight:bold">\\</span>$ <span style="color:#4070a0;font-weight:bold">\&#34;</span> &gt;&gt; .bashrc<span style="">
 </span></span></span></code></pre></div>
     </div>
 </section>
@@ -132,7 +139,8 @@
  </main>
     <footer id="footer">
     <div class="copyright">
-        © Copyright 2023  ✿ Jihan
+        <p>© Copyright 2023 ✿ Jihan</p>
+        
     </div>
 </footer>
 </body>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>拾野知地</title>
-    <link>/</link>
-    <description>Recent content on 拾野知地</description>
+    <title>graph theory on 拾野知地</title>
+    <link>/tags/graph-theory/</link>
+    <description>Recent content in graph theory on 拾野知地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Fri, 26 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/graph-theory/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>图论第七章 图的着色</title>
       <link>/posts/graph_theory/chapter_7/chapter_7/</link>
@@ -32,15 +32,6 @@
       
       <guid>/posts/graph_theory/chapter_5/chapter_5/</guid>
       <description>&lt;p&gt;UESTC 2022 图论笔记&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>如何在vscode中设置一些快捷键</title>
-      <link>/posts/how_to_set_vscode/</link>
-      <pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/how_to_set_vscode/</guid>
-      <description>&lt;p&gt;WIP.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -80,57 +71,12 @@
     </item>
     
     <item>
-      <title>一些对二分查找的理解</title>
-      <link>/posts/binary_search/</link>
-      <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/binary_search/</guid>
-      <description>&lt;p&gt;对二分查找的理解，以leetcode34为例&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>图论第零章 图论符号表与概念表</title>
       <link>/posts/graph_theory/chapter_0/chapter_0/</link>
       <pubDate>Fri, 19 May 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/graph_theory/chapter_0/chapter_0/</guid>
       <description>&lt;p&gt;UESTC 2022 图论笔记&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Docker使用手册</title>
-      <link>/posts/docker_handbook/</link>
-      <pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/docker_handbook/</guid>
-      <description>&lt;p&gt;Docker的一些使用记录&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Windows中将Docker数据转到其他盘符</title>
-      <link>/posts/moving_docker_wsl_files/</link>
-      <pubDate>Wed, 15 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/moving_docker_wsl_files/</guid>
-      <description>&lt;p&gt;如何将Docker中的数据转移到其他盘符&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>那些我重装windows/macos/ubuntu时会做的事情</title>
-      <link>/posts/reload_machine/</link>
-      <pubDate>Wed, 15 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/reload_machine/</guid>
-      <description>&lt;p&gt;这是一篇自用，但是大家可以参考的文章。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>使用Hugo的一些特性去画图</title>
-      <link>/posts/markdown/</link>
-      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/markdown/</guid>
-      <description>&lt;p&gt;当把代码的类型改成goat的时候,就可以画图了&lt;/p&gt;</description>
     </item>
     
   </channel>

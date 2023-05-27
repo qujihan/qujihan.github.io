@@ -115,6 +115,16 @@ pre code {
     color: silver;
 }
 
+.markdown-image {
+    text-align: center;
+}
+
+.markdown-image img{
+    width: 50%;
+    height: 50%;
+    float: inline-start;
+    vertical-align: middle;
+}
 
 
 /* part-profile */

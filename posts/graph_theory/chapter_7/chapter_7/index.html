@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html lang="zh">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="">
+
+    
+    <meta name="theme-color" content="#ffffff"/>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.min.css">
+
+    
+    <title>拾野知地</title>
+    <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAZhJREFUOE9908uLj3EUx/HXuF/LXYqhSAi506CMIsrKf2DHepqN7JQFG1s75U8QC+VSLgu5xUgpcpsMMkLCuPbR+dXP5PHsvs9zns95n8/5fDv8/XRgIlZjG5Yh7+7jIvrwAT9bv+Vj+zMW69GDTZhRxS9wCydxCZ+aBGZhPw5gNobQj8d1DsXRevdHYzjBfBzGDrzHU1wu9L0YjUN41ESwoApCcga3q9sX7MJGHC+ifxLMw74qOI9X5cFILEEoTuFJE0Hm3o275fzXKhyFRejCWQw0CUzASkzBDbytwulYV75EvHELI5D51+IZHpbAYnTiJl7/LwepH4/lmIMrJbAFL2sbn9uD077GzDkVc7EUGScdQ7WmsB8goRrEj/YcjMFCbC+j4npCMwkRfofuQr+GC5WFoRCkQ+ZLAvcgq0zeU/Qdvwo54Yq5z3EaJ+JTBNJ9M45hFdI9P76pHHwrP7LiJDHod9CLqy2BDTiIFZiMcYWeu5Cbl3NEk8iPuIcjuN4aYRq2YmcZljFmlkgmaBEFP7fyXN2Rwd8ZzWIhP28MMgAAAABJRU5ErkJggg==">
+
+    
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js" integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+    
+</head>
+
+<body>
+    
+
+<nav class="navigation">
+	
+		<a href="/"> <span class="arrow">←</span>首页</a>
+	
+	<a href="/posts">归档</a>
+	<a href="/tags">标签</a>
+	<a href="/about">关于</a>
+
+	
+	
+	  <a class="button" href="">订阅</a>
+	
+</nav>
+
+
+    <main class="main"> 
+
+<section id="single">
+    <h1 class="title">图论第七章 图的着色</h1>
+    
+        <div class="tags">
+            
+                <a href="/tags/graph-theory">graph theory</a>
+            
+        </div>
+    
+    <div class="tip">
+        <time datetime="2023-05-26 00:00:00 &#43;0000 UTC">2023年05月26日</time>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          1114字
+        </span>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          3分钟
+        </span>
+    </div>
+
+    
+<aside class="toc">
+    <details>
+        <summary>
+            目录
+        </summary>
+        <div>
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#柒-着色问题">柒 着色问题</a>
+      <ul>
+        <li><a href="#边着色-划分安排问题-colorred大题">边着色 划分安排问题 $\color{red}{大题}$</a></li>
+        <li><a href="#点着色-冲突安排问题-colorred大题">点着色 冲突安排问题 $\color{red}{大题}$</a></li>
+        <li><a href="#色多项式-colorred大题">色多项式 $\color{red}{大题}$</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</aside>
+
+    <div class="content">
+      <p>UESTC 2022 图论笔记</p>
+<h2 id="柒-着色问题">柒 着色问题 <a href="#%e6%9f%92-%e7%9d%80%e8%89%b2%e9%97%ae%e9%a2%98" class="anchor">🔗</a></h2><ul>
+<li>边色数：对图 $G$ 进行边着色的最小颜色数，使用 $\chi&rsquo;(G)$ 表示</li>
+<li>点色数：对图 $G$ 进行点着色的最小颜色数，使用 $\chi(G)$ 表示</li>
+<li>色多项式：使用k种颜色对图 $G$ 进行点着色的方式数 $P_k(G)$ 是 $k$ 的多项式</li>
+<li>理想子图：设$H$是图$G$的生成子图，若$H$的每个分支均为完全图，那么$H$是$G$的理想子图，使用 $N_r(G)$ 表示具有r个分支的理想子图的个数</li>
+</ul>
+<h3 id="边着色-划分安排问题-colorred大题">边着色 划分安排问题 $\color{red}{大题}$ <a href="#%e8%be%b9%e7%9d%80%e8%89%b2-%e5%88%92%e5%88%86%e5%ae%89%e6%8e%92%e9%97%ae%e9%a2%98-colorred%e5%a4%a7%e9%a2%98" class="anchor">🔗</a></h3><ul>
+<li>（格尼，1916）若 $G$ 是偶图，那么 $\chi&rsquo;(G) = \Delta$</li>
+<li>（<strong>维津定理</strong>，1964）若 $G$ 是简单图，那么 $\chi&rsquo;(G) = \Delta$或者$\chi&rsquo;(G) = \Delta + 1$
+<strong>特殊的简单图的边着色</strong></li>
+<li>$G$ 是简单图且 $\Delta(G) &gt; 0$，如果 $G$ 中只有<strong>一个</strong>最大度的点或者<strong>两个相邻</strong>的最大度的点，那么 $\chi&rsquo;(G) = \Delta(G)$ （去掉一条边，使用维津定理去证明）</li>
+<li>$G$ 是简单图，如果点数 $n=2k+1$，且边数 $m &gt; k\Delta$，那么 $\chi&rsquo;(G) = \Delta(G)+1$
+<ul>
+<li>（反证）由维津定理设 $\chi&rsquo;(G)=\Delta(G)+1$，那么对于每个分配后的色组来说，包含带边数至多是 $(n-1)/2=k \Rightarrow m(G) \leq \Delta k$ ，与条件矛盾</li>
+</ul>
+</li>
+<li>$G$ 是奇数阶$\Delta$正则单图，如果 $\Delta&gt;0$，那么 $\chi&rsquo;(G) = \Delta(G)+1$
+<ul>
+<li>设 $n =2k+1$（奇数阶），那么 $m(G) = n\Delta/2 = (2k+1)\Delta/2 &gt;k\Delta$，那么由上一个定理可以证明</li>
+</ul>
+</li>
+</ul>
+<h3 id="点着色-冲突安排问题-colorred大题">点着色 冲突安排问题 $\color{red}{大题}$ <a href="#%e7%82%b9%e7%9d%80%e8%89%b2-%e5%86%b2%e7%aa%81%e5%ae%89%e6%8e%92%e9%97%ae%e9%a2%98-colorred%e5%a4%a7%e9%a2%98" class="anchor">🔗</a></h3><p><strong>没有找到可以算出点色素的算法</strong></p>
+<ul>
+<li>任意图有 $\chi(G) \leq \Delta(G) + 1$</li>
+<li>（Brooks定理）$G$ 是连通简单图，如果既不是奇圈，也不是连通图，那么 $\chi(G) \leq \Delta(G)$</li>
+<li>$\chi(G) \leq \Delta_2(G)+1$  $\color{red}{不考}$
+<ul>
+<li>$\Delta_2(G)$：次大度，就是<strong>周围没有比自己大的点</strong>的点的集合中的最大度</li>
+</ul>
+</li>
+</ul>
+<h4 id="四色定理与五色定理">四色定理与五色定理 <a href="#%e5%9b%9b%e8%89%b2%e5%ae%9a%e7%90%86%e4%b8%8e%e4%ba%94%e8%89%b2%e5%ae%9a%e7%90%86" class="anchor">🔗</a></h4><ul>
+<li>每个平面都是四/五可着色的</li>
+</ul>
+<h3 id="色多项式-colorred大题">色多项式 $\color{red}{大题}$ <a href="#%e8%89%b2%e5%a4%9a%e9%a1%b9%e5%bc%8f-colorred%e5%a4%a7%e9%a2%98" class="anchor">🔗</a></h3><ul>
+<li>递推计数法
+<ul>
+<li>$G$ 是简单图，那么任意$e\subseteq E(G)$，有 $P_k(G) = P_k(G-e)-P_k(G\cdot e)$</li>
+<li>设 $e=uv$， 对 $G-e$ 着色可以分为两个部分
+<ol>
+<li>$u$与$v$是不同的颜色，那么就是$G$的着色数</li>
+<li>$u$与$v$是相同的颜色，那么就是$G\cdot e$的着色数</li>
+</ol>
+</li>
+<li>有用的结论
+<ul>
+<li>若 $k&lt;\chi(G)$，那么 $P_k(G)=0$</li>
+<li>若 $G$ 是空图，那么$P_k(G)=k^n$</li>
+<li>$P_k(K_n)=k(k-1)&hellip;(k-n+1)$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>理想子图计数法 $\color{red}{不考}$
+<ul>
+<li>$q_r(G)$表示的是将简单图$G$的顶点集合$V$划分成r个不同的色组的色划分，那么$q_r(G)=N_r(\bar{G})&hellip;&hellip;.(1\leq r\leq|V|)$</li>
+<li>$P_k(G)= \sum\limits_{i=1}\limits^{n}N_i(\bar{G})[k]_i$，其中 $[k]_i=k(k-1)(k-2)&hellip;(k-i+1)$</li>
+<li>点独立集对应补图的完全图，补图的完全子图对应的是原图的点独立集，点独立集对应的是点着色的色组 =&gt; 那么补图中的具有r个分支的理想子图对应原图中的一个r色划分</li>
+</ul>
+</li>
+</ul>
+    </div>
+</section>
+
+ </main>
+    <footer id="footer">
+    <div class="copyright">
+        <p>© Copyright 2023 ✿ Jihan</p>
+        
+        <p>Thanks to <a href="https://katex.org/">katex</a> for the $\LaTeX$ support</p>
+        
+    </div>
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="zh">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="">
+
+    
+    <meta name="theme-color" content="#ffffff"/>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.min.css">
+
+    
+    <title>拾野知地</title>
+    <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAZhJREFUOE9908uLj3EUx/HXuF/LXYqhSAi506CMIsrKf2DHepqN7JQFG1s75U8QC+VSLgu5xUgpcpsMMkLCuPbR+dXP5PHsvs9zns95n8/5fDv8/XRgIlZjG5Yh7+7jIvrwAT9bv+Vj+zMW69GDTZhRxS9wCydxCZ+aBGZhPw5gNobQj8d1DsXRevdHYzjBfBzGDrzHU1wu9L0YjUN41ESwoApCcga3q9sX7MJGHC+ifxLMw74qOI9X5cFILEEoTuFJE0Hm3o275fzXKhyFRejCWQw0CUzASkzBDbytwulYV75EvHELI5D51+IZHpbAYnTiJl7/LwepH4/lmIMrJbAFL2sbn9uD077GzDkVc7EUGScdQ7WmsB8goRrEj/YcjMFCbC+j4npCMwkRfofuQr+GC5WFoRCkQ+ZLAvcgq0zeU/Qdvwo54Yq5z3EaJ+JTBNJ9M45hFdI9P76pHHwrP7LiJDHod9CLqy2BDTiIFZiMcYWeu5Cbl3NEk8iPuIcjuN4aYRq2YmcZljFmlkgmaBEFP7fyXN2Rwd8ZzWIhP28MMgAAAABJRU5ErkJggg==">
+
+    
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js" integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+    
+</head>
+
+<body>
+    
+
+<nav class="navigation">
+	
+		<a href="/"> <span class="arrow">←</span>首页</a>
+	
+	<a href="/posts">归档</a>
+	<a href="/tags">标签</a>
+	<a href="/about">关于</a>
+
+	
+	
+	  <a class="button" href="">订阅</a>
+	
+</nav>
+
+
+    <main class="main"> 
+
+<section id="single">
+    <h1 class="title">图论第五章 匹配与因子分解</h1>
+    
+        <div class="tags">
+            
+                <a href="/tags/graph-theory">graph theory</a>
+            
+        </div>
+    
+    <div class="tip">
+        <time datetime="2023-05-24 00:00:00 &#43;0000 UTC">2023年05月24日</time>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          227字
+        </span>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          1分钟
+        </span>
+    </div>
+
+    
+<aside class="toc">
+    <details>
+        <summary>
+            目录
+        </summary>
+        <div>
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#伍-匹配与因子分解-colorred大题">伍 匹配与因子分解 $\color{red}{大题}$</a></li>
+  </ul>
+</nav>
+        </div>
+    </details>
+</aside>
+
+    <div class="content">
+      <p>UESTC 2022 图论笔记</p>
+<h2 id="伍-匹配与因子分解-colorred大题">伍 匹配与因子分解 $\color{red}{大题}$ <a href="#%e4%bc%8d-%e5%8c%b9%e9%85%8d%e4%b8%8e%e5%9b%a0%e5%ad%90%e5%88%86%e8%a7%a3-colorred%e5%a4%a7%e9%a2%98" class="anchor">🔗</a></h2><ul>
+<li>（Hall定理）设 $G=(X,Y)$ 是偶图，则 $G$ 存在饱和 $X$ 每个顶点匹配 当且仅当 $|N(S)| \geq |S|$，对所有的 $S \subseteq X$ 成立
+<ul>
+<li>如果 $G$ 是 $k(k&gt;0)$ 正则偶图，那么存在完美匹配</li>
+</ul>
+</li>
+<li>（Konig，1931）在偶图中，最大匹配的边数等于最小覆盖的顶点数</li>
+<li>$K_{2n}$ 可以 1 因子分解</li>
+<li>$K_{2n}$ 可以分解为 1个 1因子 和 $n-2$个 2因子 的和</li>
+<li>$K_{2n+1}$ 可以 2 因子分解</li>
+<li>具有 H 圈的 3正则偶图可以 1 因子分解</li>
+<li>每个没有割边的 3正则图 可以分解成 1个 1因子 和 1个 2因子 的和
+<strong>最优匹配算法</strong>：p111</li>
+</ul>
+    </div>
+</section>
+
+ </main>
+    <footer id="footer">
+    <div class="copyright">
+        <p>© Copyright 2023 ✿ Jihan</p>
+        
+        <p>Thanks to <a href="https://katex.org/">katex</a> for the $\LaTeX$ support</p>
+        
+    </div>
+</footer>
+</body>
+
+</html>
