@@ -268,7 +268,7 @@ nav.navigation a.button {
     color: #757575;
     margin-top: 12px;
     word-break: normal;
-    overflow-wrap: anywhere;
+    /* overflow-wrap: anywhere; */
     margin-bottom: 46px;
 }
 

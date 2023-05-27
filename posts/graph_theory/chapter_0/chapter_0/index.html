@@ -4,12 +4,12 @@
 <head>
     
     <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="">
 
     
-    <meta name="theme-color" content="#ffffff"/>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.min.css">
@@ -21,16 +21,20 @@
     
     
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js" integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+    integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+    integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         renderMathInElement(document.body, {
             delimiters: [
-                {left: "$$", right: "$$", display: true},
-                {left: "$", right: "$", display: false}
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false }
             ]
         });
     });
@@ -73,13 +77,13 @@
           ·
         </span>
         <span>
-          1201字
+          1574字
         </span>
         <span class="split">
           ·
         </span>
         <span>
-          3分钟
+          4分钟
         </span>
     </div>
 
@@ -102,7 +106,7 @@
 </aside>
 
     <div class="content">
-      <p>UESTC 2022 图论笔记</p>
+      <p>一些常用的概念以及定义个整理表</p>
 <h2 id="图的统计符号">图的统计符号 <a href="#%e5%9b%be%e7%9a%84%e7%bb%9f%e8%ae%a1%e7%ac%a6%e5%8f%b7" class="anchor">🔗</a></h2><ul>
 <li>$n(G)$：图的点</li>
 <li>$m(G)$：图的边</li>
@@ -118,11 +122,12 @@
 <li>$r(G)$：<strong>半径</strong>（通俗版本：这个图的最小离心率）</li>
 <li>$A(G):$ 图$G$的邻接矩阵</li>
 <li>$D(G):$ 图$G$的度对角矩阵</li>
+<li>$N_G(S):$图$G$中与点集$S$相邻的顶点的集合</li>
 <li>$\alpha(G):$ 图$G$的最小点覆盖数</li>
 <li>$deg(f)$：表示面$f$中含有边的个数（割边算两个）</li>
 <li>$o(G):$ $G$ 中的奇分支的个数</li>
 <li>$\chi(G)$: $G$ 点色数</li>
-<li>$\chi&rsquo;(G):$ $G$ 边色数</li>
+<li>$\chi^\prime(G):$ $G$ 边色数</li>
 <li>$N_{G}(S):$ 可以简写成 $N(S)$ ，表示与 $S$ 中的顶点相邻的所有顶点的集合</li>
 <li>$q_r(G)$表示的是将简单图$G$的顶点集合$V$划分成r个不同的色组的色划分</li>
 </ul>
@@ -136,14 +141,18 @@
 <ul>
 <li>简单图：无环、无重边的图</li>
 <li>图的度序列：每个点的度构成的非负整数组</li>
-<li>图的图序列：一个非负整数组是一个图的度序列，那么称为图序列/可图序列 ✱例题1</li>
+<li>图的图序列：一个非负整数组是一个图的度序列，那么称为图序列/可图序列</li>
 <li>图的同构：$G_1 \cong G_2$</li>
 <li>图的补图：图$G$的补图就是完全图减去图$G$</li>
 <li>自补图：补图与自身是相同的图</li>
 <li>图的计算-对称差：$G_1 \bigtriangleup G_2$ ：两个图的并集减去两个图的交集</li>
 <li>图的计算-联图：$G_1 \vee G_2$ ：$G_1$ 的每一个顶点与 $G_2$ 的每一个顶点连接在一起</li>
-<li>图的计算-积图：$G_1 \times G_2$ ：??</li>
-<li>偶图（二部图）：有两个点集合A、B，每条边的一个端点在A集合，另一个端点在B集合</li>
+<li>图的计算-积图：$G_1 \times G_2$</li>
+<li>偶图（二部图）：有两个点集合A、B，每条边的一个端点在A集合，另一个端点在B集合
+<ul>
+<li>判定定理：不含奇圈</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>树
@@ -153,7 +162,7 @@
 <li>生成树：包含图 $G$ 所有顶点的树就是图 $G$ 的生成树</li>
 <li>最小生成树：赋权图中总权值最小的生成树</li>
 <li>根树：非平凡有向树中那个入度为0的结点</li>
-<li>完全m元树：每个分支都是 $m$ 个结点的树</li>
+<li>完全$m$元树：每个分支都是 $m$ 个结点的树</li>
 </ul>
 </li>
 <li>Euler图与Hamilton图
@@ -165,11 +174,23 @@
 </li>
 <li>匹配与因子分解
 <ul>
-<li>匹配 = 边独立集 = 对集合：图 $G$ 的边子集 $M$ 中的任意两个边都没有共同顶点</li>
+<li>匹配 = 边独立集 = 对集：图 $G$ 的边子集 $M$ 中的任意两个边都没有共同顶点</li>
+<li>饱和点与非饱和点：匹配的边取到的点就是饱和点，否则就是非饱和点</li>
+<li>$M$交错路：如果$M$是图$G$的匹配，$G$中的一条由$M$中的边与非$M$中的边交错形成的路，称为$M$交错路</li>
+<li>$M$可扩路：如果$M$交错路的起点和终点都是非饱和点，那就是$M$可扩路</li>
+<li>$M$交错树：$G=(X,Y),M,u$分别是$G$的匹配和非饱和点，如果$v\in V(H)$，且$\forall v \in V(H),(u,v)$路是可交错路，那么称$H$是$G$扎根于点$u$的$M$交错树
+<ul>
+<li><div class="markdown-image">
+  <img src="M%e4%ba%a4%e9%94%99%e6%a0%91.png" alt="M交错树"  />
+</div></li>
+</ul>
+</li>
 <li>最大匹配：$M$ 是包含边数最多的匹配</li>
 <li>完美匹配：$M$ 包含了所有顶点</li>
 <li>最优匹配：$M$ 是赋权图中权值最大的完全匹配</li>
+<li>点覆盖：如果$G$中的每条边至少一个顶点在顶点子集$K$里面，称$K$是$G$的一个点覆盖。$min|K|$称为最小点覆盖</li>
 <li>因子分解：把图分解成若干个边不重的因子的并集</li>
+<li>可$n$因子分解：如果把一个图可以分解成若干$n$因子的并，称为$G$是可$n$因子分解的</li>
 </ul>
 </li>
 <li>平面图

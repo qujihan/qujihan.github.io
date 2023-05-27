@@ -4,12 +4,12 @@
 <head>
     
     <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="">
 
     
-    <meta name="theme-color" content="#ffffff"/>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.min.css">
@@ -21,16 +21,20 @@
     
     
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js" integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+    integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+    integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         renderMathInElement(document.body, {
             delimiters: [
-                {left: "$$", right: "$$", display: true},
-                {left: "$", right: "$", display: false}
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false }
             ]
         });
     });
@@ -73,13 +77,13 @@
           ·
         </span>
         <span>
-          227字
+          3990字
         </span>
         <span class="split">
           ·
         </span>
         <span>
-          1分钟
+          8分钟
         </span>
     </div>
 
@@ -92,7 +96,13 @@
         <div>
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#伍-匹配与因子分解-colorred大题">伍 匹配与因子分解 $\color{red}{大题}$</a></li>
+    <li><a href="#伍-匹配与因子分解">伍 匹配与因子分解</a>
+      <ul>
+        <li><a href="#匹配问题">匹配问题</a></li>
+        <li><a href="#因子分解问题">因子分解问题</a></li>
+        <li><a href="#匈牙利算法与最优匹配">匈牙利算法与最优匹配</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
         </div>
@@ -100,20 +110,242 @@
 </aside>
 
     <div class="content">
-      <p>UESTC 2022 图论笔记</p>
-<h2 id="伍-匹配与因子分解-colorred大题">伍 匹配与因子分解 $\color{red}{大题}$ <a href="#%e4%bc%8d-%e5%8c%b9%e9%85%8d%e4%b8%8e%e5%9b%a0%e5%ad%90%e5%88%86%e8%a7%a3-colorred%e5%a4%a7%e9%a2%98" class="anchor">🔗</a></h2><ul>
-<li>（Hall定理）设 $G=(X,Y)$ 是偶图，则 $G$ 存在饱和 $X$ 每个顶点匹配 当且仅当 $|N(S)| \geq |S|$，对所有的 $S \subseteq X$ 成立
+      <p>UESTC 图论第5章的笔记,(mac 与 ios可能有适配问题)</p>
+<h2 id="伍-匹配与因子分解">伍 匹配与因子分解 <a href="#%e4%bc%8d-%e5%8c%b9%e9%85%8d%e4%b8%8e%e5%9b%a0%e5%ad%90%e5%88%86%e8%a7%a3" class="anchor">🔗</a></h2><h3 id="匹配问题">匹配问题 <a href="#%e5%8c%b9%e9%85%8d%e9%97%ae%e9%a2%98" class="anchor">🔗</a></h3><ul>
+<li>Berge定理/贝尔热定理：$G$的匹配$M$是最大匹配当且仅当$G$不包含$M$可扩路
 <ul>
-<li>如果 $G$ 是 $k(k&gt;0)$ 正则偶图，那么存在完美匹配</li>
+<li>证明
+<ul>
+<li>必要性：有可扩路就可以反转路做到再增加一条边(关键字：交换)</li>
+<li>充分性：显然(可反证)</li>
 </ul>
 </li>
-<li>（Konig，1931）在偶图中，最大匹配的边数等于最小覆盖的顶点数</li>
+<li>提供了扩充图的匹配的思路</li>
+</ul>
+</li>
+<li>Hall定理/婚姻定理：设$G=(X,Y)$是偶图,则$G$存在饱和$X$每个顶点匹配 <strong>当且仅当</strong> $\forall S \subseteq X ,|N(S)| \geq |S|$
+<ul>
+<li>另一种表述：设$G=(X,Y)$是偶图,如果存在$X$的子集$S$使得$|N(S)|&lt;|S|$,那么$G$中不存在$X$到$Y$的匹配</li>
+<li>证明
+<ul>
+<li>必要性：每个$S$中的点总要匹配一个$N(S)$的点嘛,所以显然得证</li>
+<li>充分性：反证(太麻烦,不写了)</li>
+</ul>
+</li>
+<li>推论
+<ul>
+<li>★ 如果 $G$ 是 $k(k&gt;0)$ 正则偶图,那么存在完美匹配
+<ul>
+<li>证明：由于是正则偶图,所以$k|X| = k|Y| \Rightarrow |X|=|Y|$.另外设$E_1$与$E_2$分别是$S$与$N(S)$关联的边,有$E_1 \subseteq E_2$(形象理解：我朋友的朋友的总数一定大于我朋友的数量(我朋友一定认识我,这就保证有一个了)),因而有$|E_1| = k|S| \leq |E_2| = k|N(S)| \Rightarrow |S| \leq |N(S)|$.结合两个结论,所有存在完美匹配</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>设$M$是$G$的匹配,$K$是$G$的覆盖,若$|M|=|K|$,那么$M$是最大匹配,$K$是最小点覆盖
+<ul>
+<li>证明：设$M^\ast,K^\ast$分别是$G$的最大匹配与最小点覆盖,由定义可以得知$|M^\ast| \leq |K^\ast|$,(匹配的一条边至少与一个点覆盖相关联),所以$|M| \leq |M^\ast| \leq |K^\ast| \leq |K|$,再加上题目所给$|M|=|K|$,得证</li>
+</ul>
+</li>
+<li>Konig定理/格尼定理/最大最小定理：在偶图中,最大匹配的边数等于最小覆盖的顶点数
+<ul>
+<li>证明类似Hall定理思想</li>
+<li>应用：布尔矩阵中包含所有“1”的线的最少数目 等于 具有性质 “任意两个1都不在同一条线上的1的最大数目”
+<ul>
+<li>min(nums(覆盖所有1的线)) == max(nums(不同行不同列的1))</li>
+<li>一个布尔矩阵arr可以模型为偶图 =&gt; 行是X点集,列是Y点集,<code>arr[i][j] == 1</code> 时候连线</li>
+<li>模拟后,前者就是最小点覆盖的点数,后者就是最大匹配包含的边数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Tutte定理/托特定理：$G$有完美匹配的充要条件是 $\forall S \subset V(G),o(G-S) \leq |S|$
+<ul>
+<li>证明太麻烦</li>
+<li>推论
+<ul>
+<li>一棵树有完美匹配,当且仅当 $\forall v \in V(G),o(G-v)=1$
+<ul>
+<li>证明
+<ul>
+<li>必要性：由Tutte定理可知,$o(G-v)\leq1$.另外因为有完美匹配,所以$G$一定是偶阶树,去掉一个点后一定是至少一个奇分支存在,那么$o(G-v)\geq1$,所以$o(G-v)=1$</li>
+<li>充分性：由于任意一个点都是$o(G-v)=1$的,所以令$M={e(v)|是由v连接到G-v的奇分支的边,v\in V(G)}$,这个$M$就是一个完美匹配了(设$C_v$是$G-v$的奇分支,$vu$是$G$中由$v$连接到奇分支的边,那么显然,由$u$连接到$G-u$的奇分支的边也是$uv$)</li>
+<li>充分性证明图：<div class="markdown-image">
+  <img src="%e6%89%98%e7%89%b9%e5%ae%9a%e7%90%86%e6%8e%a8%e8%ae%ba%e8%af%81%e6%98%8e.png" alt="托特定理证明图"  />
+</div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Peterson定理/皮特森定理：没有割边的3正则图存在完美匹配(充分条件)
+<ul>
+<li>证明：$S \subset V,  G_1,G_2,G_3,&hellip;,G_k$是$G-S$的所以奇分支,$m_i(1\leq i\leq k)$表示端点分别属于$S$和$G_i$的边数.在$G_i$中,其总度数是$2|E(G_i)|$,其点在$G$中的总度数为$3|V(G_i)|$ (3正则图),所以$m_i = 3|V(G_i)| -2|E(G_i)|$,$m_i$是奇数且$\geq3$(3奇数-偶数,$G$无割边),那么$o(G-S)=k \leq \frac{1}{3}\sum\limits_{i=1}\limits^k m_i \leq \frac{1}{3} \sum\limits_{v\in S} d(v) = \frac{1}{3} \cdot 3 |S| = |S|$,由托特定理可以得知$G$有完美匹配</li>
+<li><div class="markdown-image">
+  <img src="%e7%9a%ae%e7%89%b9%e6%a3%ae%e5%9b%be%e8%af%81%e6%98%8e.png" alt="皮特森图证明"  />
+</div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>$K_{2n},K_{n,n}$的完美匹配的个数
+<ul>
+<li>$K_{2n}$：$(2n-1)!!$
+<ul>
+<li>$K_{2n} = (2n-1)K_{2n-2}$,$K_{2n}$的任意一个顶点有$2n-1$种匹配方法,归纳可得</li>
+</ul>
+</li>
+<li>$K_{n,n}$：$n!$</li>
+</ul>
+</li>
+</ul>
+<h3 id="因子分解问题">因子分解问题 <a href="#%e5%9b%a0%e5%ad%90%e5%88%86%e8%a7%a3%e9%97%ae%e9%a2%98" class="anchor">🔗</a></h3><ul>
 <li>$K_{2n}$ 可以 1 因子分解</li>
 <li>$K_{2n}$ 可以分解为 1个 1因子 和 $n-2$个 2因子 的和</li>
 <li>$K_{2n+1}$ 可以 2 因子分解</li>
 <li>具有 H 圈的 3正则偶图可以 1 因子分解</li>
-<li>每个没有割边的 3正则图 可以分解成 1个 1因子 和 1个 2因子 的和
-<strong>最优匹配算法</strong>：p111</li>
+<li>每个没有割边的 3正则图 可以分解成 1个 1因子 和 1个 2因子 的和</li>
+</ul>
+<p>例题：证明$K_{6n-2}$有一个3因子分解</p>
+<p>$K_{6n-2}= K_{2(3n-1)}$,所以,可以分解为$6n-3$个边不重的1因子之和.而任意3个1因子可以并成一个3因子.所以,共可以并成$2n-1$个3因子.即$K_{6n-2}$可以分解为$2n-1$个3因子的和.</p>
+<h3 id="匈牙利算法与最优匹配">匈牙利算法与最优匹配 <a href="#%e5%8c%88%e7%89%99%e5%88%a9%e7%ae%97%e6%b3%95%e4%b8%8e%e6%9c%80%e4%bc%98%e5%8c%b9%e9%85%8d" class="anchor">🔗</a></h3><h4 id="在偶图中寻找完美匹配">在偶图中寻找完美匹配 <a href="#%e5%9c%a8%e5%81%b6%e5%9b%be%e4%b8%ad%e5%af%bb%e6%89%be%e5%ae%8c%e7%be%8e%e5%8c%b9%e9%85%8d" class="anchor">🔗</a></h4><p>设$G=(X,Y),|X|=|Y|$,在$G$中求完美匹配$M$
+$M$<strong>交错树</strong>：$G=(X,Y),M,u$分别是$G$的匹配和非饱和点,如果$v\in V(H)$,且$\forall v \in V(H),(u,v)$路是可交错路,那么称$H$是$G$扎根于点$u$的$M$交错树
+<div class="markdown-image">
+  <img src="M%e4%ba%a4%e9%94%99%e6%a0%91.png" alt="M交错树"  />
+</div></p>
+<p>在一个时刻,$M$交错树有两种情形
+<div class="markdown-image">
+  <img src="M%e4%ba%a4%e9%94%99%e8%b7%af%e7%9a%84%e4%b8%a4%e7%a7%8d%e6%83%85%e5%86%b5.png" alt="M交错路的两种情况"  />
+</div>
+① 除了$u$外,$H$中所有点都是$M$饱和点,且在$M$上配对(前面)</p>
+<ul>
+<li>令$S=V(H)\cap X,T=V(H)\cap Y$(使用$S,T$表示属于在$X,Y$中的顶点),显然$T \subseteq N(S)$
+<ul>
+<li>若$N(S)=T$,那么$S-u$的点于$T$的点可以一一配对 =&gt; $|T|=|S|-1$,那么$|N(S)|=|S|-1&lt;|S|$,那么由Hall定理可知没有完美匹配</li>
+<li>若$N(S)\subset T$,那就 $\exists y\in N(S)-T$,且$xy \notin M$,$x \in X$
+<ul>
+<li>$y$是$M$的饱和点,那就长两条边(下图右)变成①</li>
+<li>$y$是$M$的非饱和点,那就长一条边(下图左)变成②</li>
+<li><div class="markdown-image">
+  <img src="M%e4%ba%a4%e9%94%99%e8%b7%af%e7%9a%84%e7%94%9f%e9%95%bf.png" alt="M交错路的生长"  />
+</div>
+② $H$中包含除了$u$以外的$M$非饱和点(后面)
+找到一条$M$可扩路,对匹配进行修改直到找到完美匹配或者判定没有完美匹配</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="匈牙利算法">匈牙利算法 <a href="#%e5%8c%88%e7%89%99%e5%88%a9%e7%ae%97%e6%b3%95" class="anchor">🔗</a></h4><p>设$M$是初始匹配,$H$是扎根于$M$非饱和点$u$的交错树,令$S=V(H)\cap X,T=V(H)\cap Y$(使用$S,T$表示属于在$X,Y$中的顶点)</p>
+<ul>
+<li>① $M$饱和$X$的所有顶点,停止</li>
+<li>① $M$没有饱和$X$的所有顶点,设$u$为$X$中$M$的非饱和顶点,置$S={u},T=\Phi$
+<ul>
+<li>② 如果$N(S)=T$,不存在完美匹配</li>
+<li>② 如果$T \in N(S)$,设$y \in N(S)-T$
+<ul>
+<li>③ 若$y$是$M$饱和点,且$yz \in M$,置$S=S\cup{z},T=T\cup{y}$  =&gt; 到②</li>
+<li>③ 若$y$是$M$非饱和点,设$P$为$M$可扩路,置$M_1=M\bigtriangleup E(P)$ =&gt; 到①</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>例题：讨论下图是否存在完美匹配
+<div class="markdown-image">
+  <img src="%e5%8c%88%e7%89%99%e5%88%a9%e7%ae%97%e6%b3%95.png" alt="匈牙利算法"  />
+</div>
+解：
+取初始匹配是$M = {x_1y_1,x_2y_3}$
+① $M$没有饱和$X$中的所有顶点,令$S={ x_3},T=\Phi$
+② 此时$N(S) = {y_2,y_3} \neq T$,设 $y=y_2\in N(S)-T$
+③ $y_2$是非饱和点,那么加上 $y_2$ 与 边$x_3y_2$,置$M=M\bigtriangleup E(P)={x_1y_1,x_2y_3,x_3y_2}$ =&gt;①
+<div class="markdown-image">
+  <img src="%e5%8c%88%e7%89%99%e5%88%a9%e7%ae%97%e6%b3%95%e6%89%a7%e8%a1%8c%e4%b8%80%e6%ac%a1.png" alt="匈牙利算法执行一次"  />
+</div></p>
+<p>① $M$没有饱和$X$中的所有顶点,令$S={ x_4},T=\Phi$
+② 此时$N(S) = {y_2,y_3} \neq T$,设 $y=y_2 \in N(S)-T$
+③ $y_2$是饱和点,$x_3y_2 \in M$,置$S=S\cup{x_3},T=T\cup{y_2}$ =&gt;②
+② 此时$N(S) = {y_2,y_3} \neq T$,设 $y=y_3 \in N(S)-T$
+③ $y_3$是饱和点,$x_2y_3 \in M$,置$S=S\cup{x_2},T=T\cup{y_3}$ =&gt;②
+② $N(S)=T$,不存在完美匹配
+<div class="markdown-image">
+  <img src="%e5%8c%88%e7%89%99%e5%88%a9%e7%ae%97%e6%b3%95%e6%89%a7%e8%a1%8c%e5%90%8e%e5%87%a0%e6%ac%a1.png" alt="匈牙利算法执行后几次"  />
+</div></p>
+<h4 id="在偶图中寻找最大匹配">在偶图中寻找最大匹配 <a href="#%e5%9c%a8%e5%81%b6%e5%9b%be%e4%b8%ad%e5%af%bb%e6%89%be%e6%9c%80%e5%a4%a7%e5%8c%b9%e9%85%8d" class="anchor">🔗</a></h4><p>(匈牙利算法的修改)
+设$M$是初始匹配</p>
+<ul>
+<li>① $S=\Phi, T=\Phi$
+<ul>
+<li>② 若$X-S$已经$M$饱和,停止</li>
+<li>② 若$X-S$没有$M$饱和,设$u$是$X-S$中的一个非饱和点,置$S=S\cup{u}$
+<ul>
+<li>③ 若$N(S)=T$ =&gt; ⑤</li>
+<li>③ 若$N(S)\neq T$,设$y\in N(S)-T$
+<ul>
+<li>④ 如果$y$是$M$饱和的,设$yz \in M$,置$S=S\cup{z},T=T\cup{y}$ =&gt; ③</li>
+<li>④ 如果$y$是$M$非饱和的,存在$(u,y)$交错路是$M$可扩路$P$,置$M=M\bigtriangleup E(P)$ =&gt; 到①</li>
+</ul>
+</li>
+<li>⑤ 若$X-S=\Phi$,停止</li>
+<li>⑤ 若$X-S\neq\Phi$ =&gt; ②</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="最优匹配算法-库恩算法">最优匹配算法 库恩算法 <a href="#%e6%9c%80%e4%bc%98%e5%8c%b9%e9%85%8d%e7%ae%97%e6%b3%95-%e5%ba%93%e6%81%a9%e7%ae%97%e6%b3%95" class="anchor">🔗</a></h4><p>设图$G$是边赋权完全偶图$K_{n,n}$,$X={x_1,x_2,&hellip;,x_n},Y={y_1,y_2,&hellip;,y_n},w_{ij}=w(x_i,y_j)$,求$G$中一个具有最大权值的完美匹配</p>
+<p>定义1：设$G=(X,Y),\forall x \in X,y \in Y$,有$l(x)+l(y) \geq w(xy)$,那么称$l$是赋权完全偶图$G$的可行顶点标号
+下面给出一个常用的标号方式(还有别的,这个比较普遍)
+$$
+\begin{cases}
+l(x) = \mathop{max}\limits_{y \in Y}\enspace w(xy),x \in X \cr
+l(y)=0,y\in Y
+\end{cases}
+$$</p>
+<p>定义2：设$l$是赋权完全偶图$G=(X,Y)$的可行顶点标号,令$E_l={xy \in E(G) | l(x) + l(y) = w(xy)}$,称$G_l = G[E_l]$是$G$的对应于$l$的相对子图</p>
+<p>例：方括号内是定义1,星号是定义2
+$$
+W =
+\begin{bmatrix}
+3&amp; 5 &amp; 5 &amp; 4 &amp; 1 \cr
+2&amp; 2 &amp; 0 &amp; 2 &amp; 2 \cr
+2&amp; 4 &amp; 4 &amp; 1 &amp; 0 \cr
+0&amp; 1 &amp; 1 &amp; 0 &amp; 0 \cr
+1&amp; 2 &amp; 1 &amp; 3 &amp; 3
+\end{bmatrix}
+$$</p>
+<p>$$
+W =
+\begin{bmatrix}
+[0]&amp;[0]&amp;[0]&amp;[0]&amp;[0]&amp;        \cr
+3&amp; 5*&amp; 5* &amp; 4 &amp; 1 &amp;[5]     \cr
+2*&amp; 2* &amp; 0 &amp; 2* &amp; 2* &amp;[2]  \cr
+2&amp; 4* &amp; 4* &amp; 1 &amp; 0 &amp;[4]    \cr
+0&amp; 1* &amp; 1* &amp; 0 &amp; 0 &amp;[1]    \cr
+1&amp; 2 &amp; 1 &amp; 3* &amp; 3* &amp;[3]    \cr
+\end{bmatrix}
+$$</p>
+<ul>
+<li>设$l$是赋权完全偶图$G=(X,Y)$的可行顶点标号,若相等字母$G_l$有完美匹配$M^\ast$,那么$M^\ast$也是图$G$的最优匹配</li>
+</ul>
+<p><strong>算法</strong>：
+给定一个初始标号$l$,在$G_l$任选一个匹配</p>
+<ul>
+<li>① 若$X$是饱和的,则$M$是最优匹配</li>
+<li>① 若$X$不是饱和的,令$u$是$M$非饱和点,置$S={u},T=\Phi$
+<ul>
+<li>② 若$T \subset N_{G_l}(S)$ =&gt; ③</li>
+<li>② 若$T \not\subset N_{G_l}(S)$,计算$\alpha_l=\mathop{min}\limits_{x \in S,y \notin T}{l(x)+l(y)-w(xy)}$ $$\hat{l} = \begin{cases} l(v) = l(v) - \alpha_l,v \in S\ l(v) = l(v) + \alpha_l,v \in T\ l(v),\enspace others \end{cases}$$给出新的可行顶点标号,在新的标号下开始
+<ul>
+<li>③ 在$N_{Gl}(S)-T$中选择点$y$,若$y$是$M$饱和的,$yz\in M$,置$S=S\cup{z},T=T\cup{y}$ =&gt;②</li>
+<li>③ 若$y$是$M$不饱和的,设$P$是$G_1$中$M$可扩路,置$M=M\bigtriangleup E(P)$ =&gt;①</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
     </div>
 </section>
