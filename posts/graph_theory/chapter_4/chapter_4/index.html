@@ -77,7 +77,7 @@
           ·
         </span>
         <span>
-          4170字
+          4159字
         </span>
         <span class="split">
           ·
@@ -187,7 +187,9 @@
 <li>Bondy-Chvatal定理/邦迪-沙瓦达定理/度序列判定定理(充分条件):设简单图的度序列是$(d_1,d_2,&hellip;,d_n),d_1 \leq d_2 \leq d_3 \leq &hellip; \leq d_n,n\geq 3$,那么$\forall m &lt; \frac{n}{2}$,满足$d_m &gt; m$或者$d_{n-m} \geq n-m$,那么图$G$是$H$图</li>
 </ul>
 <h4 id="非h图问题">非H图问题 <a href="#%e9%9d%9eh%e5%9b%be%e9%97%ae%e9%a2%98" class="anchor">🔗</a></h4><p>定义:如果一个图$G$的度不弱于其他非$H$图,那么称之为度极大非$H$图</p>
-<p>定义:$C_{m,n}=K_m \vee (\bar{K}<em>m + K</em>{n-2m}), 1\leq m&lt;\frac{n}{2}$ (不是$H$图,取$S=V(k_m),\omega(G-S)=m+1&gt;|S|=m$,所以不是$H$图)</p>
+<p>定义:
+$$C_{m,n}=K_m \vee(\bar{K_m}+K_{n-2m}),1\leq m&lt;\frac{n}{2}$$
+(一定不是$H$图,因为取$S=V(K_m),\omega(G-S)=m+1&gt;|S|=m$,所以不是$H$图)</p>
 <p>可以将每一个$C_{m,n}$图看成$\bar{K_m},K_m,K_{n-2m}$三个部分(就像下面例题的图一样),那么这三部分都是使用$\vee$连接起来的,可以想象这三部分的度分别是$m,n-m-1,n-1$,那么可以求出总度数,从而求出总边数</p>
 <ul>
 <li>Chvatal定理/沙瓦达定理:若$G$是$n\geq3$的非$H$简单图,那么$G$度弱于某个$C_{m,n}$图
