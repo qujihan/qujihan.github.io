@@ -77,7 +77,7 @@
           ·
         </span>
         <span>
-          4026字
+          4170字
         </span>
         <span class="split">
           ·
@@ -101,6 +101,7 @@
         <li><a href="#中国邮递员问题">中国邮递员问题</a></li>
         <li><a href="#hamilton-图">Hamilton 图</a></li>
         <li><a href="#超哈密尔顿图与超可迹图">超哈密尔顿图与超可迹图</a></li>
+        <li><a href="#e图与h图的关系">E图与H图的关系</a></li>
       </ul>
     </li>
   </ul>
@@ -114,6 +115,7 @@
 <h2 id="肆-euler-图与-hamilton-图">肆 Euler 图与 Hamilton 图 <a href="#%e8%82%86-euler-%e5%9b%be%e4%b8%8e-hamilton-%e5%9b%be" class="anchor">🔗</a></h2><h3 id="中国邮递员问题">中国邮递员问题 <a href="#%e4%b8%ad%e5%9b%bd%e9%82%ae%e9%80%92%e5%91%98%e9%97%ae%e9%a2%98" class="anchor">🔗</a></h3><ul>
 <li>若$W$是图$G$中一条包含所有边的闭通道,则$W$存在最小长度的充要条件是 ① 每一条边最多重复经过一次 ② 在$G$的每一个圈中,重复经过的边的数目不超过圈的长度的一半</li>
 </ul>
+<p>联通而且每个点的度数是偶数就是E图了</p>
 <h3 id="hamilton-图">Hamilton 图 <a href="#hamilton-%e5%9b%be" class="anchor">🔗</a></h3><h4 id="判定问题">判定问题 <a href="#%e5%88%a4%e5%ae%9a%e9%97%ae%e9%a2%98" class="anchor">🔗</a></h4><p>每个点都走一次的问题</p>
 <ul>
 <li>性质定理(必要条件):若图$G$是$H$图,那么对于任一顶点子集$S$,有$\omega(G - S) \le |S|$
@@ -185,7 +187,7 @@
 <li>Bondy-Chvatal定理/邦迪-沙瓦达定理/度序列判定定理(充分条件):设简单图的度序列是$(d_1,d_2,&hellip;,d_n),d_1 \leq d_2 \leq d_3 \leq &hellip; \leq d_n,n\geq 3$,那么$\forall m &lt; \frac{n}{2}$,满足$d_m &gt; m$或者$d_{n-m} \geq n-m$,那么图$G$是$H$图</li>
 </ul>
 <h4 id="非h图问题">非H图问题 <a href="#%e9%9d%9eh%e5%9b%be%e9%97%ae%e9%a2%98" class="anchor">🔗</a></h4><p>定义:如果一个图$G$的度不弱于其他非$H$图,那么称之为度极大非$H$图</p>
-<p>定义:$C_{m,n}=K_m \vee (\bar{K}<em>m + K</em>{n-2m}), 1\leq m&lt;\frac{n}{2}$(不是$H$图,取$S=V(k_m),\omega(G-S)=m+1&gt;|S|=m$,所以不是$H$图)</p>
+<p>定义:$C_{m,n}=K_m \vee (\bar{K}<em>m + K</em>{n-2m}), 1\leq m&lt;\frac{n}{2}$ (不是$H$图,取$S=V(k_m),\omega(G-S)=m+1&gt;|S|=m$,所以不是$H$图)</p>
 <p>可以将每一个$C_{m,n}$图看成$\bar{K_m},K_m,K_{n-2m}$三个部分(就像下面例题的图一样),那么这三部分都是使用$\vee$连接起来的,可以想象这三部分的度分别是$m,n-m-1,n-1$,那么可以求出总度数,从而求出总边数</p>
 <ul>
 <li>Chvatal定理/沙瓦达定理:若$G$是$n\geq3$的非$H$简单图,那么$G$度弱于某个$C_{m,n}$图
@@ -244,18 +246,24 @@ Thomassen图就是一个超可迹图(四个区域高度对称)
 <div class="markdown-image">
   <img src="Thomassen%e5%9b%be.png" alt="Thomassen图"  />
 </div></p>
-<p>证明:</p>
+<h3 id="e图与h图的关系">E图与H图的关系 <a href="#e%e5%9b%be%e4%b8%8eh%e5%9b%be%e7%9a%84%e5%85%b3%e7%b3%bb" class="anchor">🔗</a></h3><p><div class="markdown-image">
+  <img src="H%e5%9b%be%e4%b8%8eE%e5%9b%be.png" alt="H图与E图"  />
+</div>
+线图:$V(L(G))=E(G),(e_1,e_2)\in E(L(G)) \Leftrightarrow$在$G$中有边$e_1,e_2$邻接(就是原图中的点边映射,点成边,边成点)</p>
+<p>$L^n(G)=L(L^{n-1}(G))$</p>
+<p><div class="markdown-image">
+  <img src="%e7%ba%bf%e5%9b%be.png" alt="线图"  />
+</div></p>
+<p>n次细分图$S_n(G)$:是指在原图的每个边上插入n个2度顶点</p>
+<p><div class="markdown-image">
+  <img src="n%e5%88%86%e5%9b%be.png" alt="n分图"  />
+</div></p>
 <ul>
-<li>先证明不是$H$图(图分成ⅠⅡⅢ Ⅳ四个部分,设起点与终点分别是$\alpha ,\beta$ ),不失去一般性,设$\alpha \in I \cup {a}$
-<ul>
-<li>断言1:$I \cup {a}$中不存在以$a,c,d$三个点中任意两点为断点的$H$路
-<ul>
-<li>证明:如果存在那么就可以推出Peterson图是$H$图</li>
-</ul>
-</li>
-<li>断言2:</li>
-</ul>
-</li>
+<li>线图的点数等于边数,若$e-uv$是一条边,那么他作为线图的点的度数$d(e)=d(u)+d(v)+2$</li>
+<li>$G=(n,m)$, 那么他的线图的边数为 $m(E(L(G))) = -m + \frac{1}{2}\sum\limits_{v\in V(G)}d^2(v)$</li>
+<li>若$G$是$E$图,那么$L(G)$既是$H$图又是$E$图</li>
+<li>若$G$是$H$图,那么$L(G)$是$H$图</li>
+<li>$G$是$E$图,的充要条件是$S_3(G)$是$H$图</li>
 </ul>
     </div>
 </section>

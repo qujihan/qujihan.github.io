@@ -77,7 +77,7 @@
           ·
         </span>
         <span>
-          176字
+          448字
         </span>
         <span class="split">
           ·
@@ -94,21 +94,44 @@
             目录
         </summary>
         <div>
-            <nav id="TableOfContents"></nav>
+            <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#壹-图的基本概念">壹 图的基本概念</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
         </div>
     </details>
 </aside>
 
     <div class="content">
       <p>UESTC 图论第1章的笔记</p>
-<p><strong>握手定理</strong>
-顶点的度的和是边数的二倍,也就是 $\sum\limits_{v \in V(G)}d(v) = 2m$
-推论</p>
+<h3 id="壹-图的基本概念">壹 图的基本概念 <a href="#%e5%a3%b9-%e5%9b%be%e7%9a%84%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5" class="anchor">🔗</a></h3><ul>
+<li>顶点的度的和是边数的二倍,也就是 $\sum\limits_{v \in V(G)}d(v) = 2m$
+<ul>
+<li>推论
 <ul>
 <li>任何图中,度数为奇数的点的数量是偶数</li>
-<li>正则图的阶数与度数不同时为奇数
-<strong>Turan定理</strong> :(确定了在某个图不包含 $K_{m+1}$ 为其子图时能够具有的最大边数) 如果图 $G$ 不包含 $K_{m+1}$, 那么 $G$ 的度弱于某个完全 l部图 $H$,如果他们有相同的度序列,那么他们两个是同构的
-<strong>偶图判定定理</strong> :图 $G$ 是偶图 当且仅当 $G$ 中不存在奇回路</li>
+<li>正则图的阶数与度数不同时为奇数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>设有非负整数组$\Pi  = (d_1,d_2,d_3,\dots,d_n)$，且$\sum\limits_{i = 1}\limits^{n}d_i = 2m$是一个偶数，$n-1 \ge d_1 \ge d_2 \ge \dots \ge d_n$，那么它可图的充要条件是$\Pi&rsquo;=(d_2-1,d_3-1,\dots,d_{d_{1}+1},d_{d_{2}+1},\dots,d_n)$是可图的</li>
+<li>一个简单图$G$的n个顶点的度不能互不相同
+<ul>
+<li>证明:n个顶点的度互不相同，那么就只可能是 $0,1,2,\dots,n-1$，但是$0$与$n-1$不可能同时存在</li>
+</ul>
+</li>
+<li>Turan定理/托兰定理:如果图$G$不包含$K_{m+1}$, 那么$G$的度弱于某个完全l部图$H$,如果他们有相同的度序列,那么他们两个是同构的
+<ul>
+<li>确定了在某个图不包含$K_{m+1}$为其子图时能够具有的最大边数</li>
+</ul>
+</li>
+<li>偶图判定定理:图$G$是偶图 当且仅当$G$中不存在奇回路</li>
 </ul>
     </div>
 </section>
