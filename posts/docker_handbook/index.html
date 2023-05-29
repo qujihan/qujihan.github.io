@@ -59,7 +59,7 @@
           ·
         </span>
         <span>
-          258字
+          281字
         </span>
         <span class="split">
           ·
@@ -122,6 +122,10 @@
 </span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#007020;font-weight:bold">RUN</span> apt update <span style="color:#666">&amp;&amp;</span><span style="color:#4070a0;font-weight:bold">\
 </span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    apt install -y curl git <span style="color:#666">&amp;&amp;</span><span style="color:#4070a0;font-weight:bold">\
 </span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    apt clean --dry-run<span style="">
+</span></span></span><span style="display:flex;"><span><span style="">
+</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic"># set ln</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#007020;font-weight:bold">RUN</span> <span style="color:#007020">test</span> ! -f /usr/bin/cc  <span style="color:#666">&amp;&amp;</span> ln -s clang-12 /usr/bin/cc<span style="">
+</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#007020;font-weight:bold">RUN</span> <span style="color:#007020">test</span> ! -f /usr/bin/g++ <span style="color:#666">&amp;&amp;</span> ln -s clang++-12 /usr/bin/g++<span style="">
 </span></span></span><span style="display:flex;"><span><span style="">
 </span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic"># set proxy</span><span style="">
 </span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#007020;font-weight:bold">RUN</span> <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;HOST_IP=</span><span style="color:#007020;font-weight:bold">$(</span>grep -oP <span style="color:#4070a0">&#39;(?&lt;=nameserver\ ).*&#39;</span> /etc/resolv.conf<span style="color:#007020;font-weight:bold">)</span><span style="color:#4070a0">&#34;</span> &gt;&gt; .bashrc <span style="color:#666">&amp;&amp;</span><span style="color:#4070a0;font-weight:bold">\
