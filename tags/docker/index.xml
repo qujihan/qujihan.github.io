@@ -16,14 +16,5 @@
       <description>&lt;p&gt;Docker的一些使用记录&lt;/p&gt;</description>
     </item>
     
-    <item>
-      <title>Windows中将Docker数据转到其他盘符</title>
-      <link>/posts/moving_docker_wsl_files/</link>
-      <pubDate>Wed, 15 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/moving_docker_wsl_files/</guid>
-      <description>&lt;p&gt;如何将Docker中的数据转移到其他盘符&lt;/p&gt;</description>
-    </item>
-    
   </channel>
 </rss>

@@ -59,7 +59,7 @@
           ·
         </span>
         <span>
-          281字
+          369字
         </span>
         <span class="split">
           ·
@@ -80,6 +80,11 @@
   <ul>
     <li><a href="#基本的docker操作">基本的Docker操作</a></li>
     <li><a href="#dockerfile">dockerfile</a></li>
+    <li><a href="#其他">其他</a>
+      <ul>
+        <li><a href="#如何将docker中的数据转移到其他盘符">如何将Docker中的数据转移到其他盘符</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
         </div>
@@ -90,7 +95,9 @@
       <p>Docker的一些使用记录</p>
 <h2 id="基本的docker操作">基本的Docker操作 <a href="#%e5%9f%ba%e6%9c%ac%e7%9a%84docker%e6%93%8d%e4%bd%9c" class="anchor">🔗</a></h2><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker volume create volume_name
 </span></span><span style="display:flex;"><span>docker build -t image_name --build-arg <span style="color:#bb60d5">arch</span><span style="color:#666">=</span>amd64  .
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># mac/linux</span>
 </span></span><span style="display:flex;"><span>docker run -it --name cmu -v ~/docker_data/:/root/data image_name
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># windows</span>
 </span></span><span style="display:flex;"><span>docker run -it --name container_name -v volume_name:root/data image_name
 </span></span><span style="display:flex;"><span>docker <span style="color:#007020">exec</span> -it container_name /bin/bash
 </span></span></code></pre></div><h2 id="dockerfile">dockerfile <a href="#dockerfile" class="anchor">🔗</a></h2><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#4070a0"> ubuntu:22.04</span><span style="">
@@ -136,7 +143,18 @@
 </span></span></span><span style="display:flex;"><span><span style="">
 </span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic"># set hostname</span><span style="">
 </span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#007020;font-weight:bold">RUN</span> <span style="color:#007020">echo</span> <span style="color:#bb60d5">PS1</span><span style="color:#666">=</span><span style="color:#4070a0;font-weight:bold">\&#34;</span><span style="color:#666">[</span><span style="color:#70a0d0">${</span><span style="color:#bb60d5">user</span><span style="color:#70a0d0">}</span>@docker <span style="color:#4070a0;font-weight:bold">\\</span>W<span style="color:#666">]</span> <span style="color:#4070a0;font-weight:bold">\\</span>$ <span style="color:#4070a0;font-weight:bold">\&#34;</span> &gt;&gt; .bashrc<span style="">
-</span></span></span></code></pre></div>
+</span></span></span></code></pre></div><h2 id="其他">其他 <a href="#%e5%85%b6%e4%bb%96" class="anchor">🔗</a></h2><h3 id="如何将docker中的数据转移到其他盘符">如何将Docker中的数据转移到其他盘符 <a href="#%e5%a6%82%e4%bd%95%e5%b0%86docker%e4%b8%ad%e7%9a%84%e6%95%b0%e6%8d%ae%e8%bd%ac%e7%a7%bb%e5%88%b0%e5%85%b6%e4%bb%96%e7%9b%98%e7%ac%a6" class="anchor">🔗</a></h3><p>以下皆是以移动到D:/wsl为例</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wsl --export docker-desktop D:<span style="color:#4070a0;font-weight:bold">\w</span>sl<span style="color:#4070a0;font-weight:bold">\d</span>ocker-desktop.tar
+</span></span><span style="display:flex;"><span>wsl --export docker-desktop-data D:<span style="color:#4070a0;font-weight:bold">\w</span>sl<span style="color:#4070a0;font-weight:bold">\d</span>ocker-desktop-data.tar
+</span></span><span style="display:flex;"><span>wsl --unregister docker-desktop
+</span></span><span style="display:flex;"><span>wsl --unregister docker-desktop-data
+</span></span><span style="display:flex;"><span>wsl --import docker-desktop D:<span style="color:#4070a0;font-weight:bold">\w</span>sl<span style="color:#4070a0;font-weight:bold">\d</span>ocker-desktop D:<span style="color:#4070a0;font-weight:bold">\w</span>sl<span style="color:#4070a0;font-weight:bold">\d</span>ocker-desktop.tar --version <span style="color:#40a070">2</span>
+</span></span><span style="display:flex;"><span>wsl --import docker-desktop-data D:<span style="color:#4070a0;font-weight:bold">\w</span>sl<span style="color:#4070a0;font-weight:bold">\d</span>ocker-desktop-data D:<span style="color:#4070a0;font-weight:bold">\w</span>sl<span style="color:#4070a0;font-weight:bold">\d</span>ocker-desktop-data.tar --version <span style="color:#40a070">2</span>
+</span></span></code></pre></div><p>参考：</p>
+<ol>
+<li><a href="https://github.com/docker/for-win/issues/5829">Moving Docker wsl files #5829 docker/for-win</a></li>
+<li><a href="https://github.com/microsoft/WSL/issues/4320#issuecomment-571758494">Move VHD File · Issue #4320 microsoft/WSL</a></li>
+</ol>
     </div>
 </section>
 

@@ -26,15 +26,6 @@
     </item>
     
     <item>
-      <title>Windows中将Docker数据转到其他盘符</title>
-      <link>/posts/moving_docker_wsl_files/</link>
-      <pubDate>Wed, 15 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/moving_docker_wsl_files/</guid>
-      <description>&lt;p&gt;如何将Docker中的数据转移到其他盘符&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>那些我重装windows/macos/ubuntu时会做的事情</title>
       <link>/posts/reload_machine/</link>
       <pubDate>Wed, 15 Mar 2023 00:00:00 +0000</pubDate>
@@ -46,7 +37,7 @@
     <item>
       <title>使用Hugo的一些特性去画图</title>
       <link>/posts/markdown/</link>
-      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/markdown/</guid>
       <description>&lt;p&gt;当把代码的类型改成goat的时候,就可以画图了&lt;/p&gt;</description>
