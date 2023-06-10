@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="zh">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="">
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.min.css">
+
+    
+    <title>拾野知地</title>
+    <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAZhJREFUOE9908uLj3EUx/HXuF/LXYqhSAi506CMIsrKf2DHepqN7JQFG1s75U8QC+VSLgu5xUgpcpsMMkLCuPbR+dXP5PHsvs9zns95n8/5fDv8/XRgIlZjG5Yh7+7jIvrwAT9bv+Vj+zMW69GDTZhRxS9wCydxCZ+aBGZhPw5gNobQj8d1DsXRevdHYzjBfBzGDrzHU1wu9L0YjUN41ESwoApCcga3q9sX7MJGHC+ifxLMw74qOI9X5cFILEEoTuFJE0Hm3o275fzXKhyFRejCWQw0CUzASkzBDbytwulYV75EvHELI5D51+IZHpbAYnTiJl7/LwepH4/lmIMrJbAFL2sbn9uD077GzDkVc7EUGScdQ7WmsB8goRrEj/YcjMFCbC+j4npCMwkRfofuQr+GC5WFoRCkQ+ZLAvcgq0zeU/Qdvwo54Yq5z3EaJ+JTBNJ9M45hFdI9P76pHHwrP7LiJDHod9CLqy2BDTiIFZiMcYWeu5Cbl3NEk8iPuIcjuN4aYRq2YmcZljFmlkgmaBEFP7fyXN2Rwd8ZzWIhP28MMgAAAABJRU5ErkJggg==">
+
+    
+    
+</head>
+
+<body>
+    
+
+<nav class="navigation">
+	
+		<a href="/"> <span class="arrow">←</span>首页</a>
+	
+	<a href="/posts">归档</a>
+	<a href="/tags">标签</a>
+	<a href="/about">关于</a>
+
+	
+	
+	  <a class="button" href="">订阅</a>
+	
+</nav>
+
+
+    <main class="main"> 
+
+<section id="single">
+    <h1 class="title">记录我在刷Leetcode时候用到的Golang</h1>
+    
+        <div class="tags">
+            
+                <a href="/tags/golang">golang</a>
+            
+                <a href="/tags/handbook">handbook</a>
+            
+        </div>
+    
+    <div class="tip">
+        <time datetime="2023-06-02 00:00:00 &#43;0000 UTC">2023年06月02日</time>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          47字
+        </span>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          1分钟
+        </span>
+    </div>
+
+    
+<aside class="toc">
+    <details>
+        <summary>
+            目录
+        </summary>
+        <div>
+            <nav id="TableOfContents"></nav>
+        </div>
+    </details>
+</aside>
+
+    <div class="content">
+      <p>在二维数组中添加元素</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span>temp <span style="color:#666">:=</span> []<span style="color:#902000">int</span>{intervals[<span style="color:#40a070">0</span>][<span style="color:#40a070">0</span>], intervals[<span style="color:#40a070">0</span>][<span style="color:#40a070">1</span>]}
+</span></span><span style="display:flex;"><span>ans = <span style="color:#007020">append</span>(ans, <span style="color:#007020">append</span>([]<span style="color:#902000">int</span>{}, temp<span style="color:#666">...</span>))
+</span></span></code></pre></div><p>定义函数</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">main</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">var</span> check <span style="color:#007020;font-weight:bold">func</span>(i, j, index <span style="color:#902000">int</span>) <span style="color:#902000">bool</span>
+</span></span><span style="display:flex;"><span>    check = <span style="color:#007020;font-weight:bold">func</span>(i, j, index <span style="color:#902000">int</span>) <span style="color:#902000">bool</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#60a0b0;font-style:italic">// this is function body.
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"></code></pre></div>
+    </div>
+</section>
+
+ </main>
+    <footer id="footer">
+    <div class="copyright">
+        <p>© Copyright 2023 ✿ Jihan</p>
+        
+    </div>
+</footer>
+</body>
+
+</html>

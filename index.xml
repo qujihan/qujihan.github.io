@@ -6,7 +6,16 @@
     <description>Recent content on 拾野知地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Fri, 26 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>记录我在刷Leetcode时候用到的Golang</title>
+      <link>/posts/golang/</link>
+      <pubDate>Fri, 02 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/golang/</guid>
+      <description>在二维数组中添加元素 temp := []int{intervals[0][0], intervals[0][1]} ans = append(ans, append([]int{}, temp...)) 定义函数 func main(){ var check func(i, j, index int) bool check = func(i, j, index int) bool { // this is function body. } }</description>
+    </item>
+    
     <item>
       <title>图论第七章 图的着色</title>
       <link>/posts/graph_theory/chapter_7/chapter_7/</link>
