@@ -13,7 +13,7 @@
       <pubDate>Fri, 02 Jun 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/golang/</guid>
-      <description>在二维数组中添加元素 temp := []int{intervals[0][0], intervals[0][1]} ans = append(ans, append([]int{}, temp...)) 定义函数 func main(){ var check func(i, j, index int) bool check = func(i, j, index int) bool { // this is function body. } }</description>
+      <description>&lt;p&gt;WIP.&lt;/p&gt;</description>
     </item>
     
   </channel>
