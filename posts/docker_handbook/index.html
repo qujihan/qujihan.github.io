@@ -59,7 +59,7 @@
           ·
         </span>
         <span>
-          369字
+          268字
         </span>
         <span class="split">
           ·
@@ -110,23 +110,9 @@
 </span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic"># set volume</span><span style="">
 </span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#007020;font-weight:bold">VOLUME</span> [ <span style="color:#4070a0">&#34;root/src&#34;</span>, <span style="color:#4070a0">&#34;root/data&#34;</span> ]<span style="">
 </span></span></span><span style="display:flex;"><span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic"># change apt sources, use tsinghua mirror</span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic"># Note: only for ubuntu:22.04</span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#007020;font-weight:bold">RUN</span> <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">[</span> <span style="color:#70a0d0">${</span><span style="color:#bb60d5">arch</span><span style="color:#70a0d0">}</span> <span style="color:#666">=</span> amd64 <span style="color:#666">]</span>; <span style="color:#4070a0;font-weight:bold">\
-</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    <span style="color:#007020;font-weight:bold">then</span> <span style="color:#4070a0;font-weight:bold">\
-</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    <span style="color:#007020">echo</span> deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy main restricted universe multiverse &gt; /etc/apt/sources.list; <span style="color:#4070a0;font-weight:bold">\
-</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    <span style="color:#007020">echo</span> deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-updates main restricted universe multiverse &gt;&gt; /etc/apt/sources.list; <span style="color:#4070a0;font-weight:bold">\
-</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    <span style="color:#007020">echo</span> deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-backports main restricted universe multiverse &gt;&gt; /etc/apt/sources.list; <span style="color:#4070a0;font-weight:bold">\
-</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    <span style="color:#007020">echo</span> deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ jammy-security main restricted universe multiverse &gt;&gt; /etc/apt/sources.list; <span style="color:#4070a0;font-weight:bold">\
-</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    <span style="color:#007020;font-weight:bold">else</span> <span style="color:#4070a0;font-weight:bold">\
-</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    <span style="color:#007020">echo</span> deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy main restricted universe multiverse &gt; /etc/apt/sources.list; <span style="color:#4070a0;font-weight:bold">\
-</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    <span style="color:#007020">echo</span> deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy-updates main restricted universe multiverse &gt;&gt; /etc/apt/sources.list; <span style="color:#4070a0;font-weight:bold">\
-</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    <span style="color:#007020">echo</span> deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy-backports main restricted universe multiverse &gt;&gt; /etc/apt/sources.list; <span style="color:#4070a0;font-weight:bold">\
-</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    <span style="color:#007020">echo</span> deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu-ports/ jammy-security main restricted universe multiverse &gt;&gt; /etc/apt/sources.list; <span style="color:#4070a0;font-weight:bold">\
-</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    <span style="color:#007020;font-weight:bold">fi</span><span style="">
-</span></span></span><span style="display:flex;"><span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic"># install apps</span><span style="">
-</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#007020;font-weight:bold">RUN</span> apt update <span style="color:#666">&amp;&amp;</span><span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#60a0b0;font-style:italic"># change apt sources, use tsinghua mirror, and install application</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#007020;font-weight:bold">RUN</span> sed -i <span style="color:#4070a0">&#39;s/ports\.ubuntu\.com/mirrors.tuna.tsinghua.edu.cn/g&#39;</span> /etc/apt/sources.list <span style="color:#666">&amp;&amp;</span><span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    apt update <span style="color:#666">&amp;&amp;</span><span style="color:#4070a0;font-weight:bold">\
 </span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    apt install -y curl git <span style="color:#666">&amp;&amp;</span><span style="color:#4070a0;font-weight:bold">\
 </span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    apt clean --dry-run<span style="">
 </span></span></span><span style="display:flex;"><span><span style="">
