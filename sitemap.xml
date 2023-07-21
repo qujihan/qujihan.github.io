@@ -2,35 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/tags/makefile/</loc>
+    <lastmod>2023-07-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/makefile/</loc>
+    <lastmod>2023-07-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/</loc>
+    <lastmod>2023-07-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2023-07-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/template/</loc>
+    <lastmod>2023-07-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2023-07-21T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/tags/golang/</loc>
     <lastmod>2023-06-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/handbook/</loc>
     <lastmod>2023-06-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/</loc>
-    <lastmod>2023-06-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2023-06-02T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/posts/golang/</loc>
     <lastmod>2023-06-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/</loc>
-    <lastmod>2023-06-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/graph-theory/</loc>
-    <lastmod>2023-05-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/graph_theory/chapter_7/chapter_7/</loc>
-    <lastmod>2023-05-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/graph_theory/chapter_6/chapter_6/</loc>
-    <lastmod>2023-05-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/graph_theory/chapter_5/chapter_5/</loc>
-    <lastmod>2023-05-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/vscode/</loc>
     <lastmod>2023-05-23T00:00:00+00:00</lastmod>
@@ -38,26 +35,11 @@
     <loc>/posts/how_to_set_vscode/</loc>
     <lastmod>2023-05-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/graph_theory/chapter_4/chapter_4/</loc>
-    <lastmod>2023-05-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/graph_theory/chapter_3/chapter_3/</loc>
-    <lastmod>2023-05-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/graph_theory/chapter_2/chapter_2/</loc>
-    <lastmod>2023-05-21T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/tags/algorithm/</loc>
-    <lastmod>2023-05-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/graph_theory/chapter_1/chapter_1/</loc>
     <lastmod>2023-05-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/binary_search/</loc>
     <lastmod>2023-05-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/graph_theory/chapter_0/chapter_0/</loc>
-    <lastmod>2023-05-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/docker/</loc>
     <lastmod>2023-04-23T00:00:00+00:00</lastmod>
@@ -76,12 +58,6 @@
   </url><url>
     <loc>/posts/reload_machine/</loc>
     <lastmod>2023-03-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/markdown/</loc>
-    <lastmod>2023-02-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/markdown/</loc>
-    <lastmod>2023-02-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/about/</loc>
   </url><url>

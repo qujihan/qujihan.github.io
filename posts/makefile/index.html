@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="zh">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="">
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.min.css">
+
+    
+    <title>拾野知地</title>
+    <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAZhJREFUOE9908uLj3EUx/HXuF/LXYqhSAi506CMIsrKf2DHepqN7JQFG1s75U8QC+VSLgu5xUgpcpsMMkLCuPbR+dXP5PHsvs9zns95n8/5fDv8/XRgIlZjG5Yh7+7jIvrwAT9bv+Vj+zMW69GDTZhRxS9wCydxCZ+aBGZhPw5gNobQj8d1DsXRevdHYzjBfBzGDrzHU1wu9L0YjUN41ESwoApCcga3q9sX7MJGHC+ifxLMw74qOI9X5cFILEEoTuFJE0Hm3o275fzXKhyFRejCWQw0CUzASkzBDbytwulYV75EvHELI5D51+IZHpbAYnTiJl7/LwepH4/lmIMrJbAFL2sbn9uD077GzDkVc7EUGScdQ7WmsB8goRrEj/YcjMFCbC+j4npCMwkRfofuQr+GC5WFoRCkQ+ZLAvcgq0zeU/Qdvwo54Yq5z3EaJ+JTBNJ9M45hFdI9P76pHHwrP7LiJDHod9CLqy2BDTiIFZiMcYWeu5Cbl3NEk8iPuIcjuN4aYRq2YmcZljFmlkgmaBEFP7fyXN2Rwd8ZzWIhP28MMgAAAABJRU5ErkJggg==">
+
+    
+    
+</head>
+
+<body>
+    
+
+<nav class="navigation">
+	
+		<a href="/"> <span class="arrow">←</span>首页</a>
+	
+	<a href="/posts">归档</a>
+	<a href="/tags">标签</a>
+	<a href="/about">关于</a>
+
+	
+	
+	  <a class="button" href="">订阅</a>
+	
+</nav>
+
+
+    <main class="main"> 
+
+<section id="single">
+    <h1 class="title">Makefile的一些模板</h1>
+    
+        <div class="tags">
+            
+                <a href="/tags/template">template</a>
+            
+                <a href="/tags/makefile">makefile</a>
+            
+        </div>
+    
+    <div class="tip">
+        <time datetime="2023-07-21 00:00:00 &#43;0000 UTC">2023年07月21日</time>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          78字
+        </span>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          1分钟
+        </span>
+    </div>
+
+    
+<aside class="toc">
+    <details>
+        <summary>
+            目录
+        </summary>
+        <div>
+            <nav id="TableOfContents"></nav>
+        </div>
+    </details>
+</aside>
+
+    <div class="content">
+      <div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-makefile" data-lang="makefile"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">EXE</span><span style="color:#666">:=</span> exe
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">EXECUTABLE</span><span style="color:#666">:=</span> <span style="color:#007020;font-weight:bold">$(</span>EXE<span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">LIBDIR</span><span style="color:#666">:=</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">LIBS</span><span style="color:#666">:=</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">INCLUDES</span><span style="color:#666">:=</span>.
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">SRCDIR</span><span style="color:#666">:=</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">CC</span><span style="color:#666">:=</span>g++
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">CFLAGS</span><span style="color:#666">:=</span> -g -Wall -O0  
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">CPPFLAGS</span><span style="color:#666">:=</span> <span style="color:#007020;font-weight:bold">$(</span>CFLAGS<span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">CPPFLAGS</span><span style="color:#666">+=</span> <span style="color:#007020;font-weight:bold">$(</span>addprefix -I,<span style="color:#007020;font-weight:bold">$(</span>INCLUDES<span style="color:#007020;font-weight:bold">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">CPPFLAGS</span><span style="color:#666">+=</span> -I.
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">CPPFLAGS</span><span style="color:#666">+=</span> -MMD
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">RM-F</span><span style="color:#666">:=</span> rm -f
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">SRCS</span><span style="color:#666">:=</span> <span style="color:#007020;font-weight:bold">$(</span>wildcard *.cpp<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">$(</span>wildcard <span style="color:#007020;font-weight:bold">$(</span>addsuffix /*.cpp, <span style="color:#007020;font-weight:bold">$(</span>SRCDIR<span style="color:#007020;font-weight:bold">)))</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">OBJS</span><span style="color:#666">:=</span> <span style="color:#007020;font-weight:bold">$(</span>patsubst %.cpp,%.o,<span style="color:#007020;font-weight:bold">$(</span>SRCS<span style="color:#007020;font-weight:bold">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">DEPS</span><span style="color:#666">:=</span> <span style="color:#007020;font-weight:bold">$(</span>patsubst %.o,%.d,<span style="color:#007020;font-weight:bold">$(</span>OBJS<span style="color:#007020;font-weight:bold">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">MISSING_DEPS</span><span style="color:#666">:=</span> <span style="color:#007020;font-weight:bold">$(</span>filter-out <span style="color:#007020;font-weight:bold">$(</span>wildcard <span style="color:#007020;font-weight:bold">$(</span>DEPS<span style="color:#007020;font-weight:bold">))</span>,<span style="color:#007020;font-weight:bold">$(</span>DEPS<span style="color:#007020;font-weight:bold">))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#06287e">.PHONY </span><span style="color:#666">:</span> all deps objs clean
+</span></span><span style="display:flex;"><span><span style="color:#06287e">all</span><span style="color:#666">:</span><span style="color:#007020;font-weight:bold">$(</span><span style="color:#bb60d5">EXECUTABLE</span><span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#06287e">deps</span><span style="color:#666">:</span><span style="color:#007020;font-weight:bold">$(</span><span style="color:#bb60d5">DEPS</span><span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#06287e">objs</span><span style="color:#666">:</span><span style="color:#007020;font-weight:bold">$(</span><span style="color:#bb60d5">OBJS</span><span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#06287e">clean</span><span style="color:#666">:</span>
+</span></span><span style="display:flex;"><span>	@<span style="color:#007020;font-weight:bold">$(</span>RM-F<span style="color:#007020;font-weight:bold">)</span> *.o
+</span></span><span style="display:flex;"><span>	@<span style="color:#007020;font-weight:bold">$(</span>RM-F<span style="color:#007020;font-weight:bold">)</span> *.d
+</span></span><span style="display:flex;"><span>	@<span style="color:#007020;font-weight:bold">$(</span>RM-F<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">$(</span>EXE<span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="">ifneq</span> <span style="">(</span><span style="color:#007020;font-weight:bold">$(</span><span style="color:#bb60d5">MISSING_DEPS</span><span style="color:#007020;font-weight:bold">)</span><span style="">,)</span>
+</span></span><span style="display:flex;"><span><span style="color:#06287e">$(MISSING_DEPS)</span><span style="color:#666">:</span>
+</span></span><span style="display:flex;"><span>	@<span style="color:#007020;font-weight:bold">$(</span>RM-F<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">$(</span>patsubst %.d,%.o,<span style="color:#bb60d5">$@</span><span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="">endif</span>
+</span></span><span style="display:flex;"><span><span style="">-include</span> <span style="color:#007020;font-weight:bold">$(</span><span style="color:#bb60d5">DEPS</span><span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#06287e">$(EXECUTABLE) </span><span style="color:#666">:</span> <span style="color:#007020;font-weight:bold">$(</span><span style="color:#bb60d5">OBJS</span><span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#007020;font-weight:bold">$(</span>CC<span style="color:#007020;font-weight:bold">)</span> -o <span style="color:#007020;font-weight:bold">$(</span>EXECUTABLE<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">$(</span>OBJS<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">$(</span>addprefix -L,<span style="color:#007020;font-weight:bold">$(</span>LIBDIR<span style="color:#007020;font-weight:bold">))</span> <span style="color:#007020;font-weight:bold">$(</span>addprefix -l,<span style="color:#007020;font-weight:bold">$(</span>LIBS<span style="color:#007020;font-weight:bold">))</span>
+</span></span></code></pre></div>
+    </div>
+</section>
+
+ </main>
+    <footer id="footer">
+    <div class="copyright">
+        <p>© Copyright 2023 ✿ Jihan</p>
+        
+    </div>
+</footer>
+</body>
+
+</html>

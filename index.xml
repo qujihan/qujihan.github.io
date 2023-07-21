@@ -6,7 +6,16 @@
     <description>Recent content on 拾野知地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Fri, 02 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Makefile的一些模板</title>
+      <link>/posts/makefile/</link>
+      <pubDate>Fri, 21 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/makefile/</guid>
+      <description>EXE:= exe EXECUTABLE:= $(EXE) LIBDIR:= LIBS:= INCLUDES:=. SRCDIR:= CC:=g++ CFLAGS:= -g -Wall -O0 CPPFLAGS:= $(CFLAGS) CPPFLAGS+= $(addprefix -I,$(INCLUDES)) CPPFLAGS+= -I. CPPFLAGS+= -MMD RM-F:= rm -f SRCS:= $(wildcard *.cpp) $(wildcard $(addsuffix /*.cpp, $(SRCDIR))) OBJS:= $(patsubst %.cpp,%.o,$(SRCS)) DEPS:= $(patsubst %.o,%.d,$(OBJS)) MISSING_DEPS:= $(filter-out $(wildcard $(DEPS)),$(DEPS)) .PHONY : all deps objs clean all:$(EXECUTABLE) deps:$(DEPS) objs:$(OBJS) clean: @$(RM-F) *.o @$(RM-F) *.d @$(RM-F) $(EXE) ifneq ($(MISSING_DEPS),) $(MISSING_DEPS): @$(RM-F) $(patsubst %.d,%.o,$@) endif -include $(DEPS) $(EXECUTABLE) : $(OBJS)</description>
+    </item>
+    
     <item>
       <title>记录我在刷Leetcode时候用到的Golang</title>
       <link>/posts/golang/</link>
@@ -17,75 +26,12 @@
     </item>
     
     <item>
-      <title>图论第七章 图的着色</title>
-      <link>/posts/graph_theory/chapter_7/chapter_7/</link>
-      <pubDate>Fri, 26 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/graph_theory/chapter_7/chapter_7/</guid>
-      <description>&lt;p&gt;UESTC 图论第7章的笔记&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>图论第六章 平面图</title>
-      <link>/posts/graph_theory/chapter_6/chapter_6/</link>
-      <pubDate>Thu, 25 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/graph_theory/chapter_6/chapter_6/</guid>
-      <description>&lt;p&gt;UESTC 图论第6章的笔记&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>图论第五章 匹配与因子分解</title>
-      <link>/posts/graph_theory/chapter_5/chapter_5/</link>
-      <pubDate>Wed, 24 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/graph_theory/chapter_5/chapter_5/</guid>
-      <description>&lt;p&gt;UESTC 图论第5章的笔记&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>如何在VSCode中设置一些快捷键</title>
+      <title>在VSCode中设置一些快捷键</title>
       <link>/posts/how_to_set_vscode/</link>
       <pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/how_to_set_vscode/</guid>
       <description>&lt;p&gt;WIP.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>图论第四章 Euler图与Hamilton图</title>
-      <link>/posts/graph_theory/chapter_4/chapter_4/</link>
-      <pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/graph_theory/chapter_4/chapter_4/</guid>
-      <description>&lt;p&gt;UESTC 图论第4章的笔记&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>图论第三章 图的连通性</title>
-      <link>/posts/graph_theory/chapter_3/chapter_3/</link>
-      <pubDate>Mon, 22 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/graph_theory/chapter_3/chapter_3/</guid>
-      <description>&lt;p&gt;UESTC 图论第3章的笔记&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>图论第二章 树</title>
-      <link>/posts/graph_theory/chapter_2/chapter_2/</link>
-      <pubDate>Sun, 21 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/graph_theory/chapter_2/chapter_2/</guid>
-      <description>&lt;p&gt;UESTC 图论第2章的笔记&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>图论第一章 图的基本概念</title>
-      <link>/posts/graph_theory/chapter_1/chapter_1/</link>
-      <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/graph_theory/chapter_1/chapter_1/</guid>
-      <description>&lt;p&gt;UESTC 图论第1章的笔记&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -98,15 +44,6 @@
     </item>
     
     <item>
-      <title>图论第零章 图论符号表与概念表</title>
-      <link>/posts/graph_theory/chapter_0/chapter_0/</link>
-      <pubDate>Fri, 19 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/graph_theory/chapter_0/chapter_0/</guid>
-      <description>&lt;p&gt;一些常用的概念以及定义的整理表&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Docker使用手册</title>
       <link>/posts/docker_handbook/</link>
       <pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate>
@@ -116,21 +53,12 @@
     </item>
     
     <item>
-      <title>那些我重装windows/macos/ubuntu时会做的事情</title>
+      <title>重装机器时会做的事情</title>
       <link>/posts/reload_machine/</link>
       <pubDate>Wed, 15 Mar 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/reload_machine/</guid>
       <description>&lt;p&gt;这是一篇自用，但是大家可以参考的文章。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>使用Hugo的一些特性去画图</title>
-      <link>/posts/markdown/</link>
-      <pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/markdown/</guid>
-      <description>&lt;p&gt;当把代码的类型改成goat的时候,就可以画图了&lt;/p&gt;</description>
     </item>
     
   </channel>

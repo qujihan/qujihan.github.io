@@ -43,7 +43,7 @@
     <main class="main"> 
 
 <section id="single">
-    <h1 class="title">如何在VSCode中设置一些快捷键</h1>
+    <h1 class="title">在VSCode中设置一些快捷键</h1>
     
         <div class="tags">
             
@@ -59,7 +59,7 @@
           ·
         </span>
         <span>
-          195字
+          408字
         </span>
         <span class="split">
           ·
@@ -134,7 +134,84 @@
 </span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;command&#34;</span>: <span style="color:#4070a0">&#34;workbench.action.quickOpenSelectPrevious&#34;</span>,
 </span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;when&#34;</span>: <span style="color:#4070a0">&#34;inQuickOpen&#34;</span>
 </span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="">/*</span> <span style="">FileExplorer</span> <span style="">*/</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// open file or folder
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;key&#34;</span>: <span style="color:#4070a0">&#34;o&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;command&#34;</span>: <span style="color:#4070a0">&#34;explorer.openAndPassFocus&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;when&#34;</span>: <span style="color:#4070a0">&#34;filesExplorerFocus &amp;&amp; foldersViewVisible &amp;&amp; !explorerResourceReadonly &amp;&amp; !inputFocus&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;key&#34;</span>: <span style="color:#4070a0">&#34;o&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;command&#34;</span>: <span style="color:#4070a0">&#34;list.select&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;when&#34;</span>: <span style="color:#4070a0">&#34;listFocus &amp;&amp; !inputFocus&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// open to side
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;key&#34;</span>: <span style="color:#4070a0">&#34;ctrl+o&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;command&#34;</span>: <span style="color:#4070a0">&#34;explorer.openToSide&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;when&#34;</span>: <span style="color:#4070a0">&#34;explorerViewletFocus &amp;&amp; foldersViewVisible &amp;&amp; !inputFocus&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// delete
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;key&#34;</span>: <span style="color:#4070a0">&#34;d&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;command&#34;</span>: <span style="color:#4070a0">&#34;deleteFile&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;when&#34;</span>: <span style="color:#4070a0">&#34;filesExplorerFocus &amp;&amp; foldersViewVisible &amp;&amp; !explorerResourceReadonly &amp;&amp; !inputFocus&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// create new file
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;key&#34;</span>: <span style="color:#4070a0">&#34;a&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;command&#34;</span>: <span style="color:#4070a0">&#34;explorer.newFile&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;when&#34;</span>: <span style="color:#4070a0">&#34;filesExplorerFocus &amp;&amp; foldersViewVisible &amp;&amp; !inputFocus&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// cut
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;key&#34;</span>: <span style="color:#4070a0">&#34;x&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;command&#34;</span>: <span style="color:#4070a0">&#34;filesExplorer.cut&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;when&#34;</span>: <span style="color:#4070a0">&#34;filesExplorerFocus &amp;&amp; foldersViewVisible &amp;&amp; !explorerResourceIsRoot &amp;&amp; !explorerResourceReadonly &amp;&amp; !inputFocus&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// copy
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;key&#34;</span>: <span style="color:#4070a0">&#34;y&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;command&#34;</span>: <span style="color:#4070a0">&#34;filesExplorer.copy&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;when&#34;</span>: <span style="color:#4070a0">&#34;filesExplorerFocus &amp;&amp; foldersViewVisible &amp;&amp; !explorerResourceIsRoot &amp;&amp; !inputFocus&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// paste
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;key&#34;</span>: <span style="color:#4070a0">&#34;p&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;command&#34;</span>: <span style="color:#4070a0">&#34;filesExplorer.paste&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;when&#34;</span>: <span style="color:#4070a0">&#34;filesExplorerFocus &amp;&amp; foldersViewVisible &amp;&amp; !explorerResourceReadonly &amp;&amp; !inputFocus&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// fresh
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;key&#34;</span>: <span style="color:#4070a0">&#34;R&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;command&#34;</span>: <span style="color:#4070a0">&#34;workbench.files.action.refreshFilesExplorer&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;when&#34;</span>: <span style="color:#4070a0">&#34;filesExplorerFocus &amp;&amp; foldersViewVisible &amp;&amp; !explorerResourceIsRoot &amp;&amp; !explorerResourceReadonly &amp;&amp; !inputFocus&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic">// rename
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;key&#34;</span>: <span style="color:#4070a0">&#34;r&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;command&#34;</span>: <span style="color:#4070a0">&#34;renameFile&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#062873;font-weight:bold">&#34;when&#34;</span>: <span style="color:#4070a0">&#34;filesExplorerFocus &amp;&amp; foldersViewVisible &amp;&amp; !explorerResourceIsRoot &amp;&amp; !explorerResourceReadonly &amp;&amp; !inputFocus&#34;</span>
+</span></span><span style="display:flex;"><span>    },
 </span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><p>.vscodevimrc</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#4070a0">&#34; Set Windows Keymaps &#34;</span>
+</span></span><span style="display:flex;"><span>nmap <span style="color:#666">&lt;</span>Leader<span style="color:#666">&gt;</span>ff actions.find
+</span></span><span style="display:flex;"><span>nmap <span style="color:#666">&lt;</span>Leader<span style="color:#666">&gt;&lt;</span>Leader<span style="color:#666">&gt;&lt;</span>Leader<span style="color:#666">&gt;</span> workbench.action.toggleFullScreen
+</span></span><span style="display:flex;"><span>nmap <span style="color:#666">&lt;</span>Leader<span style="color:#666">&gt;</span>wa workbench.action.toggleActivityBarVisibility
+</span></span><span style="display:flex;"><span>nmap <span style="color:#666">&lt;</span>Leader<span style="color:#666">&gt;</span>wb workbench.action.toggleSidebarVisibility
+</span></span><span style="display:flex;"><span>nmap <span style="color:#666">&lt;</span>Leader<span style="color:#666">&gt;</span>wt workbench.action.toggleMenuBar
+</span></span><span style="display:flex;"><span>nmap <span style="color:#666">&lt;</span>Leader<span style="color:#666">&gt;</span>wz workbench.action.toggleZenMode
+</span></span><span style="display:flex;"><span>nmap <span style="color:#666">&lt;</span>Leader<span style="color:#666">&gt;</span>b debug.toggleBreakpoint
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#4070a0">&#34; Set LSP Keymaps &#34;</span>
+</span></span><span style="display:flex;"><span>nmap <span style="color:#666">&lt;</span>Leader<span style="color:#666">&gt;</span>lf editor.action.formatDocument
+</span></span><span style="display:flex;"><span>nmap <span style="color:#666">&lt;</span>Leader<span style="color:#666">&gt;</span>la editor.action.quickFix
+</span></span><span style="display:flex;"><span>nmap [d editor.action.marker.prev
+</span></span><span style="display:flex;"><span>nmap ]d editor.action.marker.next
+</span></span><span style="display:flex;"><span>nmap K editor.action.showHover
 </span></span></code></pre></div>
     </div>
 </section>
