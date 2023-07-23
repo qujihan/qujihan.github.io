@@ -32,6 +32,14 @@ blockquote {
     color: #757575;
 }
 
+p strong {
+text-decoration: underline;
+  text-decoration-color: var(--shadow-color);
+  text-decoration-style: wavy;
+  text-decoration-thickness: 2px;
+  box-shadow: 0 1px 3px var(--shadow-color);
+}
+
 table {
     width: 100%;
     margin: 40px 0;
@@ -90,6 +98,7 @@ tr:nth-child(odd)>td {
 /* 行内代码 */
 code {
     font-family: "Fira Code","LXGW WenKai Lite";
+    font-weight: 300;
     color: darkseagreen;
     background: #f3f3f5;
 }
@@ -97,6 +106,7 @@ code {
 /* 行内代码 */
 p code {
     font-family: "Fira Code","LXGW WenKai Lite";
+    font-weight: 300;
     color: darkseagreen;
     background: #f3f3f5;
 }
@@ -104,9 +114,8 @@ p code {
 /* 代码段 */
 pre code {
     font-family: "Fira Code","LXGW WenKai Lite";
+    font-weight: 300;
     font-size: 15px;
-    /* color:darkseagreen; */
-    /* background:#f3f3f5; */
 }
 
 /* 每一个标题后面的标志 */
