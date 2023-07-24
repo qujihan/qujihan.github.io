@@ -2,11 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/tags/gdb/</loc>
+    <lastmod>2023-07-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/gdb/</loc>
+    <lastmod>2023-07-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/handbook/</loc>
+    <lastmod>2023-07-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/posts/</loc>
-    <lastmod>2023-07-23T00:00:00+00:00</lastmod>
+    <lastmod>2023-07-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/</loc>
-    <lastmod>2023-07-23T00:00:00+00:00</lastmod>
+    <lastmod>2023-07-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2023-07-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/util/</loc>
     <lastmod>2023-07-23T00:00:00+00:00</lastmod>
@@ -20,9 +32,6 @@
     <loc>/posts/read-daily/</loc>
     <lastmod>2023-07-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/</loc>
-    <lastmod>2023-07-23T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/tags/makefile/</loc>
     <lastmod>2023-07-21T00:00:00+00:00</lastmod>
   </url><url>
@@ -33,9 +42,6 @@
     <lastmod>2023-07-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/golang/</loc>
-    <lastmod>2023-06-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/handbook/</loc>
     <lastmod>2023-06-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/golang/</loc>

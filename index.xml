@@ -6,7 +6,16 @@
     <description>Recent content on 拾野知地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Sun, 23 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GDB小册子</title>
+      <link>/posts/gdb/</link>
+      <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/gdb/</guid>
+      <description>&lt;p&gt;GDB 的学习记录&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>开源 工具/软件/数据 整理</title>
       <link>/posts/some_software/</link>
