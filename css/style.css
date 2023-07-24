@@ -32,12 +32,12 @@ blockquote {
     color: #757575;
 }
 
+strong,
 p strong {
-text-decoration: underline;
-  text-decoration-color: var(--shadow-color);
-  text-decoration-style: wavy;
-  text-decoration-thickness: 2px;
-  box-shadow: 0 1px 3px var(--shadow-color);
+    text-decoration: underline;
+    text-decoration-color: #00aa00;
+    text-decoration-style: wavy;
+    text-decoration-thickness: 1px;
 }
 
 table {
@@ -95,7 +95,6 @@ tr:nth-child(odd)>td {
 
 */
 
-/* 行内代码 */
 code {
     font-family: "Fira Code","LXGW WenKai Lite";
     font-weight: 300;
@@ -104,6 +103,8 @@ code {
 }
 
 /* 行内代码 */
+ul code,
+li code,
 p code {
     font-family: "Fira Code","LXGW WenKai Lite";
     font-weight: 300;

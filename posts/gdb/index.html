@@ -109,11 +109,15 @@
 <ul>
 <li>启动的时候 <code>gdb --args &lt;exe&gt;</code></li>
 <li>在启动后 <code>set args &lt;args&gt;</code></li>
-<li>在启动后 <code>r &lt;args&gt;</code>
-<strong>附加到进程</strong></li>
+<li>在启动后 <code>r &lt;args&gt;</code></li>
+</ul>
+<p><strong>附加到进程</strong></p>
+<ul>
 <li><code>gdb attach &lt;pid&gt;</code></li>
-<li><code>gdb --pid &lt;pid&gt;</code>
-<strong>设置断点</strong></li>
+<li><code>gdb --pid &lt;pid&gt;</code></li>
+</ul>
+<p><strong>设置断点</strong></p>
+<ul>
 <li>行数断点设置: <code>break/b filename:line</code></li>
 <li>函数断点设置: <code>break/b function_name</code></li>
 <li>条件断点设置: <code>break/b condition</code>
@@ -122,8 +126,10 @@
 </ul>
 </li>
 <li>正则断点设置: <code>rb regex</code></li>
-<li>临时断点设置: <code>tb breakpoint</code>
-<strong>断点管理</strong></li>
+<li>临时断点设置: <code>tb breakpoint</code></li>
+</ul>
+<p><strong>断点管理</strong></p>
+<ul>
 <li>查看断点: <code>info/i breakpoints/b</code></li>
 <li>禁用/启动断点: <code>disable/enable breakpoint_num</code></li>
 <li>删除断点: <code>delete breakpoint</code>
@@ -139,8 +145,8 @@
 </span></span><span style="display:flex;"><span>p *point
 </span></span><span style="display:flex;"><span>p arg
 </span></span><span style="display:flex;"><span>end
-</span></span></code></pre></div><p><strong>显示变量信息</strong>
-<code>set print pretty</code>: 设置显示的结构体好看一点</p>
+</span></span></code></pre></div><p><strong>显示变量信息</strong></p>
+<p><code>set print pretty</code>: 设置显示的结构体好看一点</p>
 <ul>
 <li><code>p arg_name</code></li>
 <li><code>info arg</code></li>
@@ -156,45 +162,59 @@
 </ul>
 </li>
 <li><strong>提示</strong> 此时不显示派生类的类型, 需要 <code>set print object on</code></li>
-<li>其他参数可以在<a href="https://sourceware.org/gdb/onlinedocs/gdb/Symbols.html#Symbols">这里</a>看到, ptyps与whatis参加相同
-<strong>修改变量</strong></li>
+<li>其他参数可以在<a href="https://sourceware.org/gdb/onlinedocs/gdb/Symbols.html#Symbols">这里</a>看到, ptyps与whatis参加相同</li>
 </ul>
 </li>
+</ul>
+<p><strong>修改变量</strong></p>
+<ul>
 <li><code>p i=10</code>
 <ul>
-<li>将i修改为10
-<strong>查看内存</strong></li>
+<li>将i修改为10</li>
 </ul>
 </li>
+</ul>
+<p><strong>查看内存</strong></p>
+<ul>
 <li><code>e /opts addr</code>
 <ul>
 <li><code>/10b</code>: 显示10byte</li>
-<li><code>/s</code>: 显示字符串
-<strong>修改内存</strong></li>
+<li><code>/s</code>: 显示字符串</li>
 </ul>
 </li>
-<li><code>set addr = xxx</code>
-<strong>查看寄存器</strong></li>
+</ul>
+<p><strong>修改内存</strong></p>
+<ul>
+<li><code>set addr = xxx</code></li>
+</ul>
+<p><strong>查看寄存器</strong></p>
+<ul>
 <li><code>i registers</code>: 查看所有的寄存器</li>
 <li><code>i r rdi</code>: 查看具体的寄存器
 <ul>
-<li><code>rdi rsi rdx rcx r8 r9</code>: 函数参数在寄存器中的顺序
-<strong>修改寄存器</strong></li>
+<li><code>rdi rsi rdx rcx r8 r9</code>: 函数参数在寄存器中的顺序</li>
 </ul>
 </li>
+</ul>
+<p><strong>修改寄存器</strong></p>
+<ul>
 <li><code>p $rip=0xaaaaaa </code>或者 <code>set var $pc=0xaaaaaa </code>
 <ul>
-<li>一般可以配合行号地址使用: <code>info line 15</code> -&gt; <code>p $rip=0x222222</code>
-<strong>查看汇编</strong></li>
+<li>一般可以配合行号地址使用: <code>info line 15</code> -&gt; <code>p $rip=0x222222</code></li>
 </ul>
 </li>
+</ul>
+<p><strong>查看汇编</strong></p>
+<ul>
 <li><code>disasemble /opts</code>: 查看汇编指令
 <ul>
 <li>/m: 汇编命令与源码一一对应</li>
-<li>/r: 显示汇编指令的原始字节
-<strong>执行过程</strong></li>
+<li>/r: 显示汇编指令的原始字节</li>
 </ul>
 </li>
+</ul>
+<p><strong>执行过程</strong></p>
+<ul>
 <li>step-over:单步执行:遇到函数就跳过函数
 <ul>
 <li><code>next</code> 或者 <code>n</code></li>
@@ -207,8 +227,10 @@
 </li>
 <li><code>skip func_name</code>: 跳过执行某个函数(实际还是执行了,只是不进去而已, 下同)</li>
 <li><code>skip file_name</code>: 跳过执行某文件内的所有函数</li>
-<li><code>skip -gfi common/*</code>: 跳过common文件里的所有文件
-<strong>观察点管理</strong></li>
+<li><code>skip -gfi common/*</code>: 跳过common文件里的所有文件</li>
+</ul>
+<p><strong>观察点管理</strong></p>
+<ul>
 <li><code>watch arg_name</code>: 当 <code>arg_name</code> 被写的时候就会停止
 <ul>
 <li><code>watch arg_name thread 1</code>: 只有当线程1读的时候会停止(<code>i threads</code> 可以查看当前所有的进程)</li>
@@ -218,11 +240,15 @@
 <li><code>rwatch arg_name</code>: 读的时候就会停止</li>
 <li><code>awatch arg_name</code>: 读写的时候都会停止</li>
 <li><code>info watch</code>: 显示所有的观察点</li>
-<li><code>delete/disable/enable watch_num</code>
-<strong>捕获点管理</strong></li>
-<li><code>cache event</code>: 当捕获到事件的时候就会停止下来 <a href="https://sourceware.org/gdb/onlinedocs/gdb/Set-Catchpoints.html">event list</a>
-<strong>源代码查看</strong>
-<code>set listsize 20 </code>: 设置可以查看的代码行数为20</li>
+<li><code>delete/disable/enable watch_num</code></li>
+</ul>
+<p><strong>捕获点管理</strong></p>
+<ul>
+<li><code>cache event</code>: 当捕获到事件的时候就会停止下来 <a href="https://sourceware.org/gdb/onlinedocs/gdb/Set-Catchpoints.html">event list</a></li>
+</ul>
+<p><strong>源代码查看</strong></p>
+<p><code>set listsize 20 </code>: 设置可以查看的代码行数为20</p>
+<ul>
 <li><code>list/l</code>: 显示代码(默认10行)</li>
 <li><code>list/l filename:line</code>: 查看指定文件指定行数的代码</li>
 <li><code>list/l function</code>: 查看指定函数的代码</li>
@@ -234,30 +260,42 @@
 </ul>
 </li>
 <li><code>forward-search regex</code>: 向前搜索</li>
-<li><code>reverse-search regex</code>: 循环搜索
-<strong>窗口管理</strong></li>
+<li><code>reverse-search regex</code>: 循环搜索</li>
+</ul>
+<p><strong>窗口管理</strong></p>
+<ul>
 <li><code>layout src/asm/reg</code></li>
 <li><code>layout split</code></li>
 <li><code>focus/fs src/asm/reg/cmd</code></li>
 <li><code>info win</code></li>
-<li><code>ctrl+x+a</code>
-<strong>函数栈管理</strong></li>
+<li><code>ctrl+x+a</code></li>
+</ul>
+<p><strong>函数栈管理</strong></p>
+<ul>
 <li><code>backtrace/bt</code>: 查看栈回溯信息</li>
 <li><code>frame n</code>: 切换栈帧</li>
-<li><code>info f n</code>: 查看栈帧
-<strong>调用函数</strong>
-<code>p</code> 会显示void的返回值而<code>call</code>不会</li>
+<li><code>info f n</code>: 查看栈帧</li>
+</ul>
+<p><strong>调用函数</strong></p>
+<p><code>p</code> 会显示void的返回值而<code>call</code>不会</p>
+<ul>
 <li><code>p express</code></li>
-<li><code>call express</code>
-<strong>与外部的交互</strong>
-<code>set logging on/off</code>: log输出管理
+<li><code>call express</code></li>
+</ul>
+<p><strong>与外部的交互</strong></p>
+<p><code>set logging on/off</code>: log输出管理
 <code>set logging file filename</code>: 设置输出文件
-<code>set logging overwrite</code>: 覆盖输出文件(默认是追加)</li>
+<code>set logging overwrite</code>: 覆盖输出文件(默认是追加)</p>
+<ul>
 <li><code>shell/! command</code>: 执行外部命令</li>
-<li><code>pipe/| command | grep test</code>: 管道符
-<strong>退出当前函数</strong></li>
-<li><code>finish</code>
-<strong>退出调试</strong></li>
+<li><code>pipe/| command | grep test</code>: 管道符</li>
+</ul>
+<p><strong>退出当前函数</strong></p>
+<ul>
+<li><code>finish</code></li>
+</ul>
+<p><strong>退出调试</strong></p>
+<ul>
 <li><code>detach</code></li>
 <li><code>quit</code> 或者 <code>q</code></li>
 </ul>
@@ -295,15 +333,15 @@
 <li><code>remove-inferior</code>: 删除一个inferior</li>
 <li><code>detach inferior num</code>: 将进程取消attach</li>
 </ul>
-<h3 id="父子进程调试">父子进程调试 <a href="#%e7%88%b6%e5%ad%90%e8%bf%9b%e7%a8%8b%e8%b0%83%e8%af%95" class="anchor">🔗</a></h3><p><code>set follow-fork-mode child/parent </code>: 设置调试跟随父进程还是子进程
-<code>set detach-on-fork on/off</code>: 设置在fork子进程后会不会分离
-如果想父进程和子进程一起调试, 就需要将<code>detach-on-fork</code>设置为<code>off</code>, 然后就可以一起调试了</p>
-<h2 id="简单的内存检查">简单的内存检查 <a href="#%e7%ae%80%e5%8d%95%e7%9a%84%e5%86%85%e5%ad%98%e6%a3%80%e6%9f%a5" class="anchor">🔗</a></h2><p><code>call malloc_stats()</code>: 调用系统的函数去查看内存信息
-<code>call malloc_info(0, stdout)</code>: stdout是标准输出(也可以是其他文件)输出的是xml格式
-<code>gcc -fsanitize=address</code>: 使得gcc检查 内存/堆/栈/全局内存/释放后使用(野指针) 问题</p>
+<h3 id="父子进程调试">父子进程调试 <a href="#%e7%88%b6%e5%ad%90%e8%bf%9b%e7%a8%8b%e8%b0%83%e8%af%95" class="anchor">🔗</a></h3><p><code>set follow-fork-mode child/parent </code>: 设置调试跟随父进程还是子进程</p>
+<p><code>set detach-on-fork on/off</code>: 设置在fork子进程后会不会分离</p>
+<p>如果想父进程和子进程一起调试, 就需要将<code>detach-on-fork</code>设置为<code>off</code>, 然后就可以一起调试了</p>
+<h2 id="简单的内存检查">简单的内存检查 <a href="#%e7%ae%80%e5%8d%95%e7%9a%84%e5%86%85%e5%ad%98%e6%a3%80%e6%9f%a5" class="anchor">🔗</a></h2><p><code>call malloc_stats()</code>: 调用系统的函数去查看内存信息</p>
+<p><code>call malloc_info(0, stdout)</code>: stdout是标准输出(也可以是其他文件)输出的是xml格式</p>
+<p><code>gcc -fsanitize=address</code>: 使得gcc检查 内存/堆/栈/全局内存/释放后使用(野指针) 问题</p>
 <h2 id="调试符号">调试符号 <a href="#%e8%b0%83%e8%af%95%e7%ac%a6%e5%8f%b7" class="anchor">🔗</a></h2><h3 id="gdb-命令">gdb 命令 <a href="#gdb-%e5%91%bd%e4%bb%a4" class="anchor">🔗</a></h3><p><strong>附加调试信息去调试</strong>
-<code>gdb --sysbol=release-section -exec=release</code>
-<strong>写二进制文件</strong>(破解可用)
+<code>gdb --sysbol=release-section -exec=release</code></p>
+<p><strong>写二进制文件</strong>(破解可用)
 <code>gdb --write filename</code>(gdb默认只读)</p>
 <h3 id="strip-命令">strip 命令 <a href="#strip-%e5%91%bd%e4%bb%a4" class="anchor">🔗</a></h3><p>去掉debug信息
 <code>strip -g with_debug_info_file -o outfile</code></p>
