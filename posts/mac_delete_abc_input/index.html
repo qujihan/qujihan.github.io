@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="zh">
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="">
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.min.css">
+
+    
+    <title>拾野知地</title>
+    <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAZhJREFUOE9908uLj3EUx/HXuF/LXYqhSAi506CMIsrKf2DHepqN7JQFG1s75U8QC+VSLgu5xUgpcpsMMkLCuPbR+dXP5PHsvs9zns95n8/5fDv8/XRgIlZjG5Yh7+7jIvrwAT9bv+Vj+zMW69GDTZhRxS9wCydxCZ+aBGZhPw5gNobQj8d1DsXRevdHYzjBfBzGDrzHU1wu9L0YjUN41ESwoApCcga3q9sX7MJGHC+ifxLMw74qOI9X5cFILEEoTuFJE0Hm3o275fzXKhyFRejCWQw0CUzASkzBDbytwulYV75EvHELI5D51+IZHpbAYnTiJl7/LwepH4/lmIMrJbAFL2sbn9uD077GzDkVc7EUGScdQ7WmsB8goRrEj/YcjMFCbC+j4npCMwkRfofuQr+GC5WFoRCkQ+ZLAvcgq0zeU/Qdvwo54Yq5z3EaJ+JTBNJ9M45hFdI9P76pHHwrP7LiJDHod9CLqy2BDTiIFZiMcYWeu5Cbl3NEk8iPuIcjuN4aYRq2YmcZljFmlkgmaBEFP7fyXN2Rwd8ZzWIhP28MMgAAAABJRU5ErkJggg==">
+
+    
+    
+</head>
+
+<body>
+    
+
+<nav class="navigation">
+	
+		<a href="/"> <span class="arrow">←</span>首页</a>
+	
+	<a href="/posts">归档</a>
+	<a href="/tags">标签</a>
+	<a href="/about">关于</a>
+
+	
+
+	
+</nav>
+    <main class="main"> 
+
+<section id="single">
+    <h1 class="title">在M系列芯片中删除自带的ABC输入法</h1>
+    
+        <div class="tags">
+            
+                <a href="/tags/mac">mac</a>
+            
+        </div>
+    
+    <div class="tip">
+        <time datetime="2023-07-29 00:00:00 &#43;0000 UTC">2023年07月29日</time>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          198字
+        </span>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          1分钟
+        </span>
+    </div>
+    
+
+    <div class="content">
+      <p>在使用Mac的过程中, 我使用的是开源的 Rime 输入法, 这款输入法自己可以切换中英文输入, 那么Mac自带的ABC输入法就不那么需要了, 否则会在有的时候打乱思路</p>
+<h1 id="关闭系统完整性保护-sip">关闭系统完整性保护 SIP <a href="#%e5%85%b3%e9%97%ad%e7%b3%bb%e7%bb%9f%e5%ae%8c%e6%95%b4%e6%80%a7%e4%bf%9d%e6%8a%a4-sip" class="anchor">🔗</a></h1><p>关机长按指纹键, 进入恢复模式</p>
+<p>在顶部的菜单栏中的实用工具中找到终端, 输入 <code>csrutil disable</code></p>
+<p>如果输出下面的表示禁用成功</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>Successfully disabled System Integrity Protection. Please restart the machine <span style="color:#007020;font-weight:bold">for</span> the changes to take effect. 
+</span></span></code></pre></div><h1 id="修改comapplehitoolboxplist文件">修改com.apple.HIToolbox.plist文件 <a href="#%e4%bf%ae%e6%94%b9comapplehitoolboxplist%e6%96%87%e4%bb%b6" class="anchor">🔗</a></h1><p>位于 ~/Library/Preferences/com.apple.HIToolbox.plist</p>
+<p>删掉有关ABC的内容就可以了</p>
+    </div>
+</section>
+
+ </main>
+    <footer id="footer">
+    <div class="copyright">
+        <p>© Copyright 2023 ✿ Jihan</p>
+        
+    </div>
+</footer>
+</body>
+
+</html>
