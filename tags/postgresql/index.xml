@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>postgresql on 拾野知地</title>
+    <link>/tags/postgresql/</link>
+    <description>Recent content in postgresql on 拾野知地</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 04 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>源码安装PG</title>
+      <link>/posts/pg/</link>
+      <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/pg/</guid>
+      <description>安装Docker镜像 docker run -it --name pg -v data:/root/data ubuntu:22.04 注意：这里配置了一个volume,Windows下的 \docker-desktop-data\data\docker\volumes\data\_data 目录与docker内的root/data 共享空间 如</description>
+    </item>
+    
+  </channel>
+</rss>

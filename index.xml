@@ -6,9 +6,27 @@
     <description>Recent content on 拾野知地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Sat, 29 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>在M系列芯片中删除自带的ABC输入法</title>
+      <title>源码安装PG</title>
+      <link>/posts/pg/</link>
+      <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/pg/</guid>
+      <description>安装Docker镜像 docker run -it --name pg -v data:/root/data ubuntu:22.04 注意：这里配置了一个volume,Windows下的 \docker-desktop-data\data\docker\volumes\data\_data 目录与docker内的root/data 共享空间 如</description>
+    </item>
+    
+    <item>
+      <title>Emacs 手册</title>
+      <link>/posts/emacs/</link>
+      <pubDate>Wed, 02 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/emacs/</guid>
+      <description>&lt;p&gt;配置神之编辑器&lt;strong&gt;Emacs&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>在 M1/M2 Mac中删除自带的ABC输入法</title>
       <link>/posts/mac_delete_abc_input/</link>
       <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
       
@@ -22,7 +40,7 @@
       <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/gdb/</guid>
-      <description>&lt;p&gt;GDB 的学习记录&lt;/p&gt;</description>
+      <description>&lt;p&gt;最好的手册终究还是&lt;a href=&#34;https://sourceware.org/gdb/onlinedocs/gdb/index.html&#34;&gt;官方手册&lt;/a&gt;！&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -44,7 +62,7 @@
     </item>
     
     <item>
-      <title>推荐的开源 工具/软件/书籍 整理</title>
+      <title>整理的开源 工具/软件/书籍</title>
       <link>/posts/recommend_things/</link>
       <pubDate>Sun, 23 Jul 2023 00:00:00 +0000</pubDate>
       
