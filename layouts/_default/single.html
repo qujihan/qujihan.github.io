@@ -12,7 +12,7 @@
     <div class="flex mx-auto mt-4 mb-4">
         {{ range .Params.tags }}
         <div class="ml-2 bg-gray-200 hover:font-bold hover:text-blue-500 rounded-3xl">
-            <a class="px-2" href="{{ absURL "/tags/" }}{{ . | urlize }}">{{ . }}</a>
+            <a class="px-2  hover:font-bold hover:text-blue-500" href="{{ absURL "/tags/" }}{{ . | urlize }}">{{ . }}</a>
         </div>
         {{ end }}
     </div>
