@@ -12,9 +12,7 @@
 {{ range .Pages }}
 <section class="flex my-5">
     {{/* Date */}}
-    <a>
-        <time datetime="{{ .PublishDate }}">{{ i18n "publishDateShort" . }}</time>
-    </a>
+    <a><time datetime="{{ .PublishDate }}">{{ i18n "publishDateShort" . }}</time></a>
 
     {{/* Title */}}
     <a class="px-4 text-base hover:font-bold hover:text-blue-500" href="{{ .Permalink }}">
