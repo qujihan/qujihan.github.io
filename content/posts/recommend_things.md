@@ -48,12 +48,7 @@ tags:
 [Linux C 编程一站式学习](http://me.52fhy.com/linux-c/)
 
 
-
 # 书籍
-
-
-
-
 ## C++
 [C/C++编程规范指南 360质量工程部](https://github.com/Qihoo360/safe-rules)
 
@@ -66,28 +61,26 @@ tags:
 [C++哪些事](https://light-city.github.io/)
 
 [Google 开源项目风格指南(中文)](https://zh-google-styleguide.readthedocs.io/en/latest/contents/)
-
 ## Rust
 [Learn Rust Easy](https://rustycab.github.io/LearnRustEasy/)
 
+[通过例子学 Rust](https://rustwiki.org/zh-CN/rust-by-example/index.html)
 ## Go
 [Go 指南/Go 语言之旅](https://tour.go-zh.org/)
 
 [Effective Go](https://golang.google.cn/doc/effective_go)
 
+[Go by Example(中文)](https://gobyexample-cn.github.io/)
 ## Git
 [Git Pro(中文)](https://git.oschina.net/progit/)
-
 ## Linux
 [Linux 命令行](http://billie66.github.io/TLCL/)
-
 ## Makefile / CMake
 [跟我一起写Makefile](https://seisman.github.io/how-to-write-makefile/index.html)
 
 [CMake 入门实战](https://www.hahack.com/codes/cmake/)
 
 [Modern CMake(中文翻译)](https://modern-cmake-cn.github.io/Modern-CMake-zh_CN/)
-
 ## Vim/NeoVim
 [Vim 从入门到精通](https://github.com/wsdjeg/vim-galore-zh_cn)
 

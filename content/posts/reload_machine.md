@@ -29,7 +29,7 @@ scoop install sudo git starship
 
 scoop bucket add extras
 
-scoop install obsidian wechat potplayer trafficmonitor snipaste powertoys wezterm zotero autohotkey
+scoop install obsidian wechat potplayer trafficmonitor snipaste powertoys wezterm zotero
 
 scoop install goland idea-ultimate pycharm-professional clion
 

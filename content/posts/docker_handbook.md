@@ -22,7 +22,7 @@ docker exec -it container_name /bin/bash
 ```
 
 ## dockerfile
-```dockerfile
+```shell
 FROM ubuntu:22.04
 ARG arch=amd64
 ARG user=user
