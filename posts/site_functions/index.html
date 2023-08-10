@@ -206,10 +206,20 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">tags</span>: 
 </span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">handbooks</span>
 </span></span><span style="display:flex;"><span>    ---
-</span></span></code></pre></div><p>当<code>math: true</code> 的时候, 可以使用 $LaTex$ 去渲染数学公式</p>
+</span></span></code></pre></div><h3 id="math">Math</h3>
+<p>当<code>math: true</code> 的时候, 可以使用 $\LaTeX$ 去渲染数学公式</p>
+<h3 id="viz">Viz</h3>
 <p>当<code>viz: true</code> 的时候, 可以使用语言为<code>viz-dot</code>的代码块去渲染graphviz代码, 生成svg图片</p>
+<p>例如:</p>
+<pre tabindex="0"><code class="language-viz-dot" data-lang="viz-dot">digraph {
+  a -&gt; b
+}
+</code></pre><p>就是使用下面的代码渲染出来的(```后面跟的是viz-dot)</p>
+<pre tabindex="0"><code>digraph {
+  a -&gt; b
+}
+</code></pre><h3 id="top">Top</h3>
 <p>当<code>top: true</code> 的时候, 可以在主页显示</p>
-
 </div>
 
 
@@ -219,7 +229,7 @@
 <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
     
     <a class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
-        href="/posts/hugo/"><span class="mr-1.5">←</span><span>Hugo: 实现Github Page 内容与样式分离在不同的分支</span></a>
+        href="/posts/reload_machine/"><span class="mr-1.5">←</span><span>重装机器所需操作一览</span></a>
     
 
     
