@@ -1,4 +1,3 @@
-languageCode = 'en-us'
 title = '拾野知地'
 paginate = 7
 copyright = "Jihan"
@@ -30,12 +29,11 @@ weight = 30
 
 [params]
 author = "Jihan"
-subtitle = "subtitle"
-description = "description description description description description "
+subtitle = "A student @ UESTC"
+description = "杂记以及学习过程的记录"
 rss = true
 math = true
-footer = "Jihan"
-showSummary = true
+showSummary = false
 
 [[params.social]]
 name = "Github"

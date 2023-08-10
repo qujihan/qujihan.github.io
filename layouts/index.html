@@ -21,19 +21,21 @@
         </div>
 
         {{/* Summary */}}
+        {{ if .Site.Params.showSummary }}
         <div class="text-sm">
-            {{ if .Site.Params.showSummary }}
             {{ .Summary | plainify | htmlUnescape }}
-            {{ end }}
         </div>
+        {{ end }}
+
         {{ end }}
     </div>
     {{ end }}
     {{ end }}
 
-    {{/* <div class="pt-10 pb-5">
+    {{/*  <div class="pt-16 pb-5">
         <a class="font-bold text-3xl"> Recent Posts </a>
-    </div> */}}
+    </div>  */}}
+
     {{/* not top posts */}}
     {{ range $paginator.Pages }}
     <div class="pb-5">
@@ -41,11 +43,13 @@
         <div class="text-xl">
             <pre><a class="font-wenkai" href="{{ .RelPermalink }}">{{ .Title }}</a></pre>
         </div>
+
+        {{ if .Site.Params.showSummary }}
         <div class="text-sm">
-            {{ if .Site.Params.showSummary }}
             {{ .Summary | plainify | htmlUnescape }}
-            {{ end }}
         </div>
+        {{ end }}
+
         {{ end }}
     </div>
     {{ end }}
