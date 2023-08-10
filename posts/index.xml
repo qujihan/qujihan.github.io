@@ -5,7 +5,8 @@
     <link>/posts/</link>
     <description>Recent content in Posts on 拾野知地</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
+    <language>en-us</language>
+    <copyright>Jihan</copyright>
     <lastBuildDate>Fri, 04 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>源码安装PG</title>
@@ -13,7 +14,7 @@
       <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/pg/</guid>
-      <description>安装Docker镜像 docker run -it --name pg -v data:/root/data ubuntu:22.04 注意：这里配置了一个volume,Windows下的 \docker-desktop-data\data\docker\volumes\data\_data 目录与docker内的root/data 共享空间 如</description>
+      <description>&lt;p&gt;天天看就天天有收获!嘿嘿!&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -122,6 +123,24 @@
       
       <guid>/posts/reload_machine/</guid>
       <description>&lt;p&gt;这是一篇自用，但是大家可以参考的文章。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hugo: 实现Github Page 内容与样式分离在不同的分支</title>
+      <link>/posts/hugo/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>记录本站实现的功能</title>
+      <link>/posts/site_functions/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/site_functions/</guid>
+      <description>这个就是本文的md文件的头部部分 --- author: &amp;#34;Jihan&amp;#34; title: &amp;#34;记录本站实现的功能&amp;#34; date: &amp;#34;2023-01-01&amp;#34; math: true viz: true # top: true top: false tags: - handbooks --- 当math: true 的时候, 可以使用 $LaTex$</description>
     </item>
     
   </channel>

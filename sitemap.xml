@@ -77,6 +77,9 @@
     <loc>/posts/binary_search/</loc>
     <lastmod>2023-05-20T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>/about/</loc>
+    <lastmod>2023-04-23T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/tags/docker/</loc>
     <lastmod>2023-04-23T00:00:00+00:00</lastmod>
   </url><url>
@@ -92,7 +95,14 @@
     <loc>/posts/reload_machine/</loc>
     <lastmod>2023-03-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/about/</loc>
+    <loc>/tags/handbooks/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/hugo/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/site_functions/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/categories/</loc>
   </url>

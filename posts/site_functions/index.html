@@ -9,7 +9,7 @@
     <link rel="preload stylesheet" as="style" href="/css/style.min.css" />
 
     
-    <title>algorithm - 拾野知地</title>
+    <title>记录本站实现的功能 - 拾野知地</title>
 
     
     <link rel="shortcut icon" type="image/png"
@@ -23,7 +23,47 @@
 
     
     
-    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+    integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+    integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false }
+            ]
+        });
+    });
+</script>
+    <script type="text/javascript" src="//cdn.bootcss.com/viz.js/1.3.0/viz.js"> </script>
+<script type="text/javascript">
+    function get_pic() {
+        var vizPrefix = "language-viz-";
+        Array.prototype.forEach.call(document.querySelectorAll("[class^=" + vizPrefix + "]"), function (x) {
+            var engine;
+            x.getAttribute("class").split(" ").forEach(function (cls) {
+                if (cls.startsWith(vizPrefix)) {
+                    engine = cls.substr(vizPrefix.length);
+                }
+            });
+            var image = new DOMParser().parseFromString(Viz(x.innerText, { format: "svg", engine: engine }), "image/svg+xml");
+            x.parentNode.insertBefore(image.documentElement, x);
+            x.style.display = 'none'
+        });
+
+        const svgImages = document.querySelectorAll('svg'); 
+        svgImages.forEach(svg => {
+            svg.classList.add('mx-auto')
+        });
+    }
+    window.onload = get_pic
+</script>
 
     
     <link rel="stylesheet"
@@ -127,41 +167,63 @@
 
 </header><div class="px-8 pb-16 pt-12 relative">
 
-<div class="text-center pt-10 pb-10">
-    <a class="text-3xl">algorithm</a>
+
+
+<div class="flex flex-col flex-wrap pb-16">
+    
+    <a class="text-4xl mx-auto">
+        记录本站实现的功能
+    </a>
+
+    
+    <div class="flex mx-auto mt-4 mb-4">
+        
+        <div class="ml-2 bg-gray-200 hover:font-bold hover:text-blue-500 rounded-3xl">
+            <a class="px-2" href="/tags/handbooks">handbooks</a>
+        </div>
+        
+    </div>
+
+    
+    <div class="mx-auto">
+        <time datetime=" 2023/01/01">2023/1/1</time>
+    </div>
+</div>
+
+
+
+
+<div>
+    <p>这个就是本文的md文件的头部部分</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>    ---
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">author</span>: <span style="color:#e6db74">&#34;Jihan&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">title</span>: <span style="color:#e6db74">&#34;记录本站实现的功能&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">date</span>: <span style="color:#e6db74">&#34;2023-01-01&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">math</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">viz</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># top: true</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">top</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">tags</span>: 
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">handbooks</span>
+</span></span><span style="display:flex;"><span>    ---
+</span></span></code></pre></div><p>当<code>math: true</code> 的时候, 可以使用 $LaTex$ 去渲染数学公式</p>
+<p>当<code>viz: true</code> 的时候, 可以使用语言为<code>viz-dot</code>的代码块去渲染graphviz代码, 生成svg图片</p>
+<p>当<code>top: true</code> 的时候, 可以在主页显示</p>
+
 </div>
 
 
 
 
 
-<section class="flex my-5">
+<nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
     
-    <a>
-        <time datetime="2023-05-20 00:00:00 &#43;0000 UTC">05/20</time>
-    </a>
+    <a class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+        href="/posts/hugo/"><span class="mr-1.5">←</span><span>Hugo: 实现Github Page 内容与样式分离在不同的分支</span></a>
+    
 
     
-    <a class="px-4 text-base" href="/posts/binary_search/">
-        二分查找的理解
-    </a>
-
-    
-    
-    <div class="flex items-center ">
-        
-        <div class="hidden md:block ml-1 
-       bg-gray-200 
-        hover:font-bold hover:text-blue-500
-        rounded-3xl ">
-            <a class="px-2 pt-0 pb-0 text-xs " href="/tags/algorithm">algorithm
-            </a>
-        </div>
-
-        
-    </div>
-    
-</section>
+</nav>
 
 
 
@@ -170,6 +232,16 @@
         </div>
     </main><footer class="pb-20 px-10 text-xs text-gray-500">
     <div class="flex flex-col">
+        
+        <div class="hidden md:block mx-auto">
+            <p class="mx-auto"> 
+                感谢
+                 <a href="https://katex.org/">$\KaTeX$</a> 
+                 <a href="https://github.com/mdaines/viz-js"> 和 </a> 
+                 <a href="https://github.com/mdaines/viz-js">viz.js</a> 
+                提供支持
+            </p>
+        </div>
         
 
         <div class="hidden md:block mx-auto">

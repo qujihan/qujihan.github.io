@@ -1,111 +1,285 @@
 <!DOCTYPE html>
-
-<html lang="zh">
-<head>
+<html><head>
 	<meta name="generator" content="Hugo 0.115.4">
-    
-    <meta charset="utf-8">
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.min.css">
+    
+    <link rel="preload stylesheet" as="style" href="/css/style.min.css" />
 
     
     <title>拾野知地</title>
-    <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAZhJREFUOE9908uLj3EUx/HXuF/LXYqhSAi506CMIsrKf2DHepqN7JQFG1s75U8QC+VSLgu5xUgpcpsMMkLCuPbR+dXP5PHsvs9zns95n8/5fDv8/XRgIlZjG5Yh7+7jIvrwAT9bv+Vj+zMW69GDTZhRxS9wCydxCZ+aBGZhPw5gNobQj8d1DsXRevdHYzjBfBzGDrzHU1wu9L0YjUN41ESwoApCcga3q9sX7MJGHC+ifxLMw74qOI9X5cFILEEoTuFJE0Hm3o275fzXKhyFRejCWQw0CUzASkzBDbytwulYV75EvHELI5D51+IZHpbAYnTiJl7/LwepH4/lmIMrJbAFL2sbn9uD077GzDkVc7EUGScdQ7WmsB8goRrEj/YcjMFCbC+j4npCMwkRfofuQr+GC5WFoRCkQ+ZLAvcgq0zeU/Qdvwo54Yq5z3EaJ+JTBNJ9M45hFdI9P76pHHwrP7LiJDHod9CLqy2BDTiIFZiMcYWeu5Cbl3NEk8iPuIcjuN4aYRq2YmcZljFmlkgmaBEFP7fyXN2Rwd8ZzWIhP28MMgAAAABJRU5ErkJggg==">
+
+    
+    <link rel="shortcut icon" type="image/png"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAABWklEQVQ4jY3UwU5TQRTG8V9qYEOoAdZ9AX0DAgtiWEMQ6StoIOlzKBJfomFl4jtI2OFGiS1p3ehaF5UFLExd3HPppNzpvV9yFufcmX/Od+bOUK1ldHGOIW4jhlE7ijWN9BI/MK2JMQ4WgZ7gfbLhK3p4jhWsYj+6TMGnaFUBS9gd3uQWYQ0/56DvqmyWsJ1FNkKvPB7Bfvlx2WxmrzOAS1wkebsCOAqWrtnMcjYv8DnJn1YAp9G580h6tUZnOsoA+3ATybOGsA38ygCHMIlktQbUjs5ysGmwFgI7+JisqYvJIssd/G4IerDcwpcA7M4BP2C9ZgzzumJ2Yt8U169UanMTWw06PKT4GcdROM4At7BdAxthqdx8EMV7vIjapwYdpbE37/80gZ4oDulPQ9jbqoG2FK9GuegaZ/iOfzWw3JVF8WqMGnQ1qrKZ05LiovcxwN+IQdQOJQeQ6j9hwsao7vZBvQAAAABJRU5ErkJggg== ">
 
     
     
-</head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.min.css">
 
-<body>
+
+    
+    
     
 
-<nav class="navigation">
-	
-	<a href="/posts">归档</a>
-	<a href="/tags">标签</a>
-	<a href="/about">关于</a>
+    
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles/default.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/languages/go.min.js"></script>
+    <script>hljs.highlightAll();</script>
 
-	
 
-	
-	<a class="button" href="">订阅</a>
-	
-</nav>
-    <main class="main"> 
-<header class="profile">
-    <img class="avatar" alt="avatar" src="/img/avatar.jpg">
-    <h1>拾野知地</h1>
-    <h2></h2>
-</header>
-<div id="list-page">
-    
-    
-    
-    
-    
-    <section class="item">
-        <div>
-            <h1 class="title"><a href='/posts/binary_search/'>二分查找的理解</a></h1>
-            <div class="date">
-                <time datetime="2023-05-20 00:00:00 &#43;0000 UTC">2023/05/20</time>
-            </div>
+</head><body class="duration-200 ease-out 
+            text-black dark:text-white
+            prose prose-neutral dark:prose-invert
+            font-wenkai
+            ">
+    <main>
+        <div class="mx-auto min-h-[calc(100%-9rem)] max-w-4xl"><header>
+    <nav class="pt-5 px-10 flex">
+        <div class="left-0 hidden md:flex">
+            
+            <a href="/" class="text-3xl">拾野知地</a>
         </div>
-        
-    </section>
-    
-    
-    
-    <section class="item">
-        <div>
-            <h1 class="title"><a href='/posts/docker_handbook/'>Docker 手册</a></h1>
-            <div class="date">
-                <time datetime="2023-04-23 00:00:00 &#43;0000 UTC">2023/04/23</time>
-            </div>
-        </div>
-        
-    </section>
-    
-    
-    
-    <section class="item">
-        <div>
-            <h1 class="title"><a href='/posts/reload_machine/'>重装机器所需操作一览</a></h1>
-            <div class="date">
-                <time datetime="2023-03-15 00:00:00 &#43;0000 UTC">2023/03/15</time>
-            </div>
-        </div>
-        
-    </section>
-    
 
-    
-    <div class="pagination">
+        <div class="flex mx-auto items-end">
+            
+            
+            <a class="px-2" href="/">主页</a>
+            
+            <a class="px-2" href="/posts/">归档</a>
+            
+            <a class="px-2" href="/about/">关于本站</a>
+            
+        </div>
+
         
-        <span class="prev">
-            <a href="/">
-                <span class="arrow">←</span> 上一页
+
+        <div class="right-0 hidden md:flex items-end">
+            
+            
+            
+
+            
+            
+            <a href="https://www.github.com/qujihan" class="items-end mr-2 ml-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                </svg>
             </a>
-        </span>
-        
+            
 
+            
+            
+
+            
+            
+
+
+            
+
+            
+            
+
+            
+            
+            <a href="https://www.x.com/Quhaha4" class="items-end mr-2 ml-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                </svg>
+            </a>
+            
+
+            
+            
+
+
+            
+
+            
+            
+
+            
+            
+
+            
+            
+            <a href="/index.xml" class="items-end mr-2 ml-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                    <path
+                        d="M5.5 12a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-3-8.5a1 1 0 0 1 1-1c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1-1 6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1-1-1z" />
+                </svg>
+            </a>
+            
+
+
+            
+        </div>
+    </nav>
+
+</header><div class="px-8 pb-16 pt-12 relative">
+
+
+
+
+<div>
+    
+
+    
+    
+    
+    <div class="pb-5">
+        
+        <div class="text-xl">
+            <pre><a class="font-wenkai" href="/posts/makefile/">Makefile 模板</a></pre>
+        </div>
+        <div class="text-sm">
+            
+            WIP.
+
+            
+        </div>
+        
+    </div>
+    
+    <div class="pb-5">
+        
+        <div class="text-xl">
+            <pre><a class="font-wenkai" href="/posts/golang/">Golang Leetcode 模板</a></pre>
+        </div>
+        <div class="text-sm">
+            
+            WIP.
+
+            
+        </div>
+        
+    </div>
+    
+    <div class="pb-5">
+        
+        <div class="text-xl">
+            <pre><a class="font-wenkai" href="/posts/how_to_set_vscode/">在VSCode中设置一些快捷键</a></pre>
+        </div>
+        <div class="text-sm">
+            
+            WIP.
+
+            
+        </div>
+        
+    </div>
+    
+    <div class="pb-5">
+        
+        <div class="text-xl">
+            <pre><a class="font-wenkai" href="/posts/binary_search/">二分查找的理解</a></pre>
+        </div>
+        <div class="text-sm">
+            
+            对二分查找的理解，以leetcode34为例
+
+            
+        </div>
+        
+    </div>
+    
+    <div class="pb-5">
+        
+        <div class="text-xl">
+            <pre><a class="font-wenkai" href="/posts/docker_handbook/">Docker 手册</a></pre>
+        </div>
+        <div class="text-sm">
+            
+            Docker的一些使用记录
+
+            
+        </div>
+        
+    </div>
+    
+    <div class="pb-5">
+        
+        <div class="text-xl">
+            <pre><a class="font-wenkai" href="/posts/reload_machine/">重装机器所需操作一览</a></pre>
+        </div>
+        <div class="text-sm">
+            
+            这是一篇自用，但是大家可以参考的文章。
+
+            
+        </div>
+        
+    </div>
+    
+    <div class="pb-5">
+        
+        <div class="text-xl">
+            <pre><a class="font-wenkai" href="/posts/hugo/">Hugo: 实现Github Page 内容与样式分离在不同的分支</a></pre>
+        </div>
+        <div class="text-sm">
+            
+            
+            
+        </div>
         
     </div>
     
 </div>
- </main>
-    <footer id="footer">
-    <div class="copyright">
-        <p>© Copyright 2023 ✿ Jihan</p>
+
+
+<div class="flex pt-10">
+    
+
+    
+    <a class="right-0" href="/">
+        <span>←</span> 上一页
+    </a>
+     
+
+    <a class="mx-auto"></a>
+
+    
+    <a class="left-0" href="/page/3/">
+        下一页<span>→</span>
+    </a>
+     
+
+     
+</div>
+
+
+
+
+
+            </div>
+        </div>
+    </main><footer class="pb-20 px-10 text-xs text-gray-500">
+    <div class="flex flex-col">
         
+
+        <div class="hidden md:block mx-auto">
+            
+        </div>
     </div>
-</footer>
-</body>
+
+    <div class="flex">
+        <div class="mx-auto">
+            <a class="mx-auto"> &copy; Copyright 2023 ✿ </a>
+            <a href="/">Jihan</a>
+        </div>
+    </div>
+
+
+</footer></body>
 
 </html>

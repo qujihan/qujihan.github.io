@@ -1,113 +1,176 @@
 <!DOCTYPE html>
-
-<html lang="zh">
-<head>
-    
-    <meta charset="utf-8">
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="">
+<html><head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     
-    <link rel="stylesheet" href="/css/style.css">
+    
+    <link rel="preload stylesheet" as="style" href="/css/style.min.css" />
+
+    
+    <title>二分查找的理解 - 拾野知地</title>
+
+    
+    <link rel="shortcut icon" type="image/png"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAABWklEQVQ4jY3UwU5TQRTG8V9qYEOoAdZ9AX0DAgtiWEMQ6StoIOlzKBJfomFl4jtI2OFGiS1p3ehaF5UFLExd3HPppNzpvV9yFufcmX/Od+bOUK1ldHGOIW4jhlE7ijWN9BI/MK2JMQ4WgZ7gfbLhK3p4jhWsYj+6TMGnaFUBS9gd3uQWYQ0/56DvqmyWsJ1FNkKvPB7Bfvlx2WxmrzOAS1wkebsCOAqWrtnMcjYv8DnJn1YAp9G580h6tUZnOsoA+3ATybOGsA38ygCHMIlktQbUjs5ysGmwFgI7+JisqYvJIssd/G4IerDcwpcA7M4BP2C9ZgzzumJ2Yt8U169UanMTWw06PKT4GcdROM4At7BdAxthqdx8EMV7vIjapwYdpbE37/80gZ4oDulPQ9jbqoG2FK9GuegaZ/iOfzWw3JVF8WqMGnQ1qrKZ05LiovcxwN+IQdQOJQeQ6j9hwsao7vZBvQAAAABJRU5ErkJggg== ">
+
+    
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.min.css">
 
-    
-    <title>拾野知地</title>
-    <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAZhJREFUOE9908uLj3EUx/HXuF/LXYqhSAi506CMIsrKf2DHepqN7JQFG1s75U8QC+VSLgu5xUgpcpsMMkLCuPbR+dXP5PHsvs9zns95n8/5fDv8/XRgIlZjG5Yh7+7jIvrwAT9bv+Vj+zMW69GDTZhRxS9wCydxCZ+aBGZhPw5gNobQj8d1DsXRevdHYzjBfBzGDrzHU1wu9L0YjUN41ESwoApCcga3q9sX7MJGHC+ifxLMw74qOI9X5cFILEEoTuFJE0Hm3o275fzXKhyFRejCWQw0CUzASkzBDbytwulYV75EvHELI5D51+IZHpbAYnTiJl7/LwepH4/lmIMrJbAFL2sbn9uD077GzDkVc7EUGScdQ7WmsB8goRrEj/YcjMFCbC+j4npCMwkRfofuQr+GC5WFoRCkQ+ZLAvcgq0zeU/Qdvwo54Yq5z3EaJ+JTBNJ9M45hFdI9P76pHHwrP7LiJDHod9CLqy2BDTiIFZiMcYWeu5Cbl3NEk8iPuIcjuN4aYRq2YmcZljFmlkgmaBEFP7fyXN2Rwd8ZzWIhP28MMgAAAABJRU5ErkJggg==">
 
     
     
-</head>
-
-<body>
     
 
-<nav class="navigation">
-	
-		<a href="/"> <span class="arrow">←</span>首页</a>
-	
-	<a href="/posts">归档</a>
-	<a href="/tags">标签</a>
-	<a href="/about">关于</a>
-
-	
-
-	
-</nav>
-    <main class="main"> 
-
-<section id="single">
-    <h1 class="title">二分查找的理解</h1>
     
-        <div class="tags">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles/default.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/languages/go.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+
+</head><body class="duration-200 ease-out 
+            text-black dark:text-white
+            prose prose-neutral dark:prose-invert
+            font-wenkai
+            ">
+    <main>
+        <div class="mx-auto min-h-[calc(100%-9rem)] max-w-4xl"><header>
+    <nav class="pt-5 px-10 flex">
+        <div class="left-0 hidden md:flex">
             
-                <a href="/tags/algorithm">algorithm</a>
+            <a href="/" class="text-3xl">拾野知地</a>
+        </div>
+
+        <div class="flex mx-auto items-end">
+            
+            
+            <a class="px-2" href="/">主页</a>
+            
+            <a class="px-2" href="/posts/">归档</a>
+            
+            <a class="px-2" href="/about/">关于本站</a>
             
         </div>
+
+        
+
+        <div class="right-0 hidden md:flex items-end">
+            
+            
+            
+
+            
+            
+            <a href="https://www.github.com/qujihan" class="items-end mr-2 ml-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+            </a>
+            
+
+            
+            
+
+            
+            
+
+
+            
+
+            
+            
+
+            
+            
+            <a href="https://www.x.com/Quhaha4" class="items-end mr-2 ml-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                </svg>
+            </a>
+            
+
+            
+            
+
+
+            
+
+            
+            
+
+            
+            
+
+            
+            
+            <a href="/index.xml" class="items-end mr-2 ml-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                    <path
+                        d="M5.5 12a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-3-8.5a1 1 0 0 1 1-1c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1-1 6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1-1-1z" />
+                </svg>
+            </a>
+            
+
+
+            
+        </div>
+    </nav>
+
+</header><div class="px-8 pb-16 pt-12 relative">
+
+
+
+<div class="flex flex-col flex-wrap pb-16">
     
-    <div class="tip">
-        <time datetime="2023-05-20 00:00:00 &#43;0000 UTC">2023年05月20日</time>
-        <span class="split">
-          ·
-        </span>
-        <span>
-          742字
-        </span>
-        <span class="split">
-          ·
-        </span>
-        <span>
-          2分钟
-        </span>
+    <a class="text-4xl mx-auto">
+        二分查找的理解
+    </a>
+
+    
+    <div class="flex mx-auto mt-4 mb-4">
+        
+        <div class="ml-2 bg-gray-200 hover:font-bold hover:text-blue-500 rounded-3xl">
+            <a class="px-2" href="/tags/algorithm">algorithm</a>
+        </div>
+        
     </div>
-    
-      
-<aside class="toc">
-    <details>
-        <summary>
-            目录
-        </summary>
-        <div>
-            <nav id="TableOfContents">
-  <ul>
-    <li><a href="#二分框架">二分框架</a></li>
-    <li><a href="#具体理解以left-right为例">具体理解(以[left, right]为例)</a></li>
-    <li><a href="#其他区间-code-snippets">其他区间 code snippets</a>
-      <ul>
-        <li><a href="#left-right">[left, right)</a></li>
-        <li><a href="#left-right-1">(left, right)</a></li>
-      </ul>
-    </li>
-    <li><a href="#一些转换">一些转换</a></li>
-    <li><a href="#leetcode34">Leetcode34</a></li>
-  </ul>
-</nav>
-        </div>
-    </details>
-</aside>
 
     
+    <div class="mx-auto">
+        <time datetime=" 2023/05/20">2023/5/20</time>
+    </div>
+</div>
 
-    <div class="content">
-      <p>对二分查找的理解，以leetcode34为例</p>
-<h2 id="二分框架">二分框架 <a href="#%e4%ba%8c%e5%88%86%e6%a1%86%e6%9e%b6" class="anchor">🔗</a></h2><p>在二分查找中，虽然有许多需要注意到细节，但是总体框架还是比较统一的，所以先说一下大框架</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">binary_search</span>(nums []<span style="color:#902000">int</span>, target <span style="color:#902000">int</span>) <span style="color:#902000">int</span> {
-</span></span><span style="display:flex;"><span>	left, right <span style="color:#666">:=</span> <span style="color:#666">...</span> <span style="color:#60a0b0;font-style:italic">// 初始化两边的参数 决定了是开区间还是闭区间
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>
-</span></span><span style="display:flex;"><span>	<span style="color:#60a0b0;font-style:italic">// 在不同的区间类型选择里 使用不同的operator
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>	<span style="color:#007020;font-weight:bold">for</span> left operator right {
-</span></span><span style="display:flex;"><span>		mid <span style="color:#666">:=</span> left <span style="color:#666">+</span> (right <span style="color:#666">-</span> left)<span style="color:#666">/</span><span style="color:#40a070">2</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#007020;font-weight:bold">if</span> nums[mid] operator target {
-</span></span><span style="display:flex;"><span>			change left point
-</span></span><span style="display:flex;"><span>		} <span style="color:#007020;font-weight:bold">else</span> {
-</span></span><span style="display:flex;"><span>			change right point
+
+
+
+<div>
+    <p>对二分查找的理解，以leetcode34为例</p>
+<h2 id="二分框架">二分框架</h2>
+<p>在二分查找中，虽然有许多需要注意到细节，但是总体框架还是比较统一的，所以先说一下大框架</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">binary_search</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">left</span>, <span style="color:#a6e22e">right</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">...</span> <span style="color:#75715e">// 初始化两边的参数 决定了是开区间还是闭区间
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 在不同的区间类型选择里 使用不同的operator
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">left</span> <span style="color:#a6e22e">operator</span> <span style="color:#a6e22e">right</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">mid</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">left</span> <span style="color:#f92672">+</span> (<span style="color:#a6e22e">right</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">left</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">mid</span>] <span style="color:#a6e22e">operator</span> <span style="color:#a6e22e">target</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">change</span> <span style="color:#a6e22e">left</span> <span style="color:#a6e22e">point</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">change</span> <span style="color:#a6e22e">right</span> <span style="color:#a6e22e">point</span>
 </span></span><span style="display:flex;"><span>		}
 </span></span><span style="display:flex;"><span>	}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	<span style="color:#007020;font-weight:bold">return</span> left or right
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">left</span> <span style="color:#a6e22e">or</span> <span style="color:#a6e22e">right</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>总结一下，在经典的二分中，需要改变的点就是：</p>
 <ol>
@@ -141,67 +204,102 @@
 <li>在伪代码中使用了类似 golang 的语法，for 在语言中的作用与 c/c++ 中的 while 一样</li>
 <li>更新 mid 的操作，其实等同于 <code>mid := (left + right)/2</code> ，但是如伪代码所写，可以防止溢出</li>
 </ol>
-<h2 id="具体理解以left-right为例">具体理解(以[left, right]为例) <a href="#%e5%85%b7%e4%bd%93%e7%90%86%e8%a7%a3%e4%bb%a5left-right%e4%b8%ba%e4%be%8b" class="anchor">🔗</a></h2><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// [left, right]
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// [left, len(nums)] 是符合更新right的那个if条件的集合
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// [0, right] 是符合更新left的那个if条件的集合
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">binary_search_1</span>(nums []<span style="color:#902000">int</span>, target <span style="color:#902000">int</span>) <span style="color:#902000">int</span> {
-</span></span><span style="display:flex;"><span>	left, right <span style="color:#666">:=</span> <span style="color:#40a070">0</span>, <span style="color:#007020">len</span>(nums)<span style="color:#666">-</span><span style="color:#40a070">1</span> <span style="color:#60a0b0;font-style:italic">// [left, right]
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>	<span style="color:#007020;font-weight:bold">for</span> left <span style="color:#666">&lt;=</span> right {
-</span></span><span style="display:flex;"><span>		mid <span style="color:#666">:=</span> left <span style="color:#666">+</span> (right<span style="color:#666">-</span>left)<span style="color:#666">/</span><span style="color:#40a070">2</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#007020;font-weight:bold">if</span> nums[mid] &lt; target { <span style="color:#60a0b0;font-style:italic">// or &lt;=,&gt;,&gt;=
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>			left = mid <span style="color:#666">+</span> <span style="color:#40a070">1</span>
-</span></span><span style="display:flex;"><span>		} <span style="color:#007020;font-weight:bold">else</span> {
-</span></span><span style="display:flex;"><span>			right = mid <span style="color:#666">-</span> <span style="color:#40a070">1</span>
+<h2 id="具体理解以left-right为例">具体理解(以[left, right]为例)</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// [left, right]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// [left, len(nums)] 是符合更新right的那个if条件的集合
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// [0, right] 是符合更新left的那个if条件的集合
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">binary_search_1</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">left</span>, <span style="color:#a6e22e">right</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">nums</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#75715e">// [left, right]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">left</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">right</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">mid</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">left</span> <span style="color:#f92672">+</span> (<span style="color:#a6e22e">right</span><span style="color:#f92672">-</span><span style="color:#a6e22e">left</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">mid</span>] &lt; <span style="color:#a6e22e">target</span> { <span style="color:#75715e">// or &lt;=,&gt;,&gt;=
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#a6e22e">left</span> = <span style="color:#a6e22e">mid</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">right</span> = <span style="color:#a6e22e">mid</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span>		}
 </span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>	<span style="color:#007020;font-weight:bold">return</span> left <span style="color:#60a0b0;font-style:italic">// or right
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
-</span></span></code></pre></div><h2 id="其他区间-code-snippets">其他区间 code snippets <a href="#%e5%85%b6%e4%bb%96%e5%8c%ba%e9%97%b4-code-snippets" class="anchor">🔗</a></h2><h3 id="left-right">[left, right) <a href="#left-right" class="anchor">🔗</a></h3><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// [left, right)
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// [left, len(nums)] 是符合更新right的那个if条件的集合
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// [0, right) 是符合更新left的那个if条件的集合
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">binary_search_2</span>(nums []<span style="color:#902000">int</span>, target <span style="color:#902000">int</span>) <span style="color:#902000">int</span> {
-</span></span><span style="display:flex;"><span>	left, right <span style="color:#666">:=</span> <span style="color:#40a070">0</span>, <span style="color:#007020">len</span>(nums) <span style="color:#60a0b0;font-style:italic">// [left, right)
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>	<span style="color:#007020;font-weight:bold">for</span> left &lt; right {
-</span></span><span style="display:flex;"><span>		mid <span style="color:#666">:=</span> left <span style="color:#666">+</span> (right<span style="color:#666">-</span>left)<span style="color:#666">/</span><span style="color:#40a070">2</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#007020;font-weight:bold">if</span> nums[mid] &lt; target { <span style="color:#60a0b0;font-style:italic">// or &lt;=,&gt;,&gt;=
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>			left = mid <span style="color:#666">+</span> <span style="color:#40a070">1</span>
-</span></span><span style="display:flex;"><span>		} <span style="color:#007020;font-weight:bold">else</span> {
-</span></span><span style="display:flex;"><span>			right = mid
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">left</span> <span style="color:#75715e">// or right
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h2 id="其他区间-code-snippets">其他区间 code snippets</h2>
+<h3 id="left-right">[left, right)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// [left, right)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// [left, len(nums)] 是符合更新right的那个if条件的集合
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// [0, right) 是符合更新left的那个if条件的集合
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">binary_search_2</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">left</span>, <span style="color:#a6e22e">right</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">nums</span>) <span style="color:#75715e">// [left, right)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">left</span> &lt; <span style="color:#a6e22e">right</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">mid</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">left</span> <span style="color:#f92672">+</span> (<span style="color:#a6e22e">right</span><span style="color:#f92672">-</span><span style="color:#a6e22e">left</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">mid</span>] &lt; <span style="color:#a6e22e">target</span> { <span style="color:#75715e">// or &lt;=,&gt;,&gt;=
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#a6e22e">left</span> = <span style="color:#a6e22e">mid</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">right</span> = <span style="color:#a6e22e">mid</span>
 </span></span><span style="display:flex;"><span>		}
 </span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>	<span style="color:#007020;font-weight:bold">return</span> left <span style="color:#60a0b0;font-style:italic">// or right
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
-</span></span></code></pre></div><h3 id="left-right-1">(left, right) <a href="#left-right-1" class="anchor">🔗</a></h3><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// (left, rihgt)
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// (left, len(nums)] 是符合更新right的那个if条件的集合
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// [0, right) 是符合更新left的那个if条件的集合
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">binary_search_3</span>(nums []<span style="color:#902000">int</span>, target <span style="color:#902000">int</span>) <span style="color:#902000">int</span> {
-</span></span><span style="display:flex;"><span>	left, right <span style="color:#666">:=</span> <span style="color:#666">-</span><span style="color:#40a070">1</span>, <span style="color:#007020">len</span>(nums) <span style="color:#60a0b0;font-style:italic">//(left, rihgt)
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>	<span style="color:#007020;font-weight:bold">for</span> left<span style="color:#666">+</span><span style="color:#40a070">1</span> &lt; right {
-</span></span><span style="display:flex;"><span>		mid <span style="color:#666">:=</span> left <span style="color:#666">+</span> (right<span style="color:#666">-</span>left)<span style="color:#666">/</span><span style="color:#40a070">2</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#007020;font-weight:bold">if</span> nums[mid] &lt; target { <span style="color:#60a0b0;font-style:italic">// or &lt;=,&gt;,&gt;=
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>			left = mid
-</span></span><span style="display:flex;"><span>		} <span style="color:#007020;font-weight:bold">else</span> {
-</span></span><span style="display:flex;"><span>			right = mid
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">left</span> <span style="color:#75715e">// or right
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h3 id="left-right-1">(left, right)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// (left, rihgt)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// (left, len(nums)] 是符合更新right的那个if条件的集合
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// [0, right) 是符合更新left的那个if条件的集合
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">binary_search_3</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">left</span>, <span style="color:#a6e22e">right</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, len(<span style="color:#a6e22e">nums</span>) <span style="color:#75715e">//(left, rihgt)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">left</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> &lt; <span style="color:#a6e22e">right</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">mid</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">left</span> <span style="color:#f92672">+</span> (<span style="color:#a6e22e">right</span><span style="color:#f92672">-</span><span style="color:#a6e22e">left</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">mid</span>] &lt; <span style="color:#a6e22e">target</span> { <span style="color:#75715e">// or &lt;=,&gt;,&gt;=
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>			<span style="color:#a6e22e">left</span> = <span style="color:#a6e22e">mid</span>
+</span></span><span style="display:flex;"><span>		} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">right</span> = <span style="color:#a6e22e">mid</span>
 </span></span><span style="display:flex;"><span>		}
 </span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>	<span style="color:#007020;font-weight:bold">return</span> left <span style="color:#60a0b0;font-style:italic">// or right
-</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span>}
-</span></span></code></pre></div><h2 id="一些转换">一些转换 <a href="#%e4%b8%80%e4%ba%9b%e8%bd%ac%e6%8d%a2" class="anchor">🔗</a></h2><p>对于整数而言 <br>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">left</span> <span style="color:#75715e">// or right
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h2 id="一些转换">一些转换</h2>
+<p>对于整数而言 <br>
 <code>indexOf(&gt;=target)</code> <br>
 <code>indexOf(&gt;target)</code>  (相当于 <code>indexOf(&gt;=target)+1</code>) <br>
 <code>indexOf(&lt;target)</code>  (相当于 <code>indexOf(&gt;=target)-1</code>) <br>
 <code>indexOf(&lt;=target)</code> (相当于 <code>indexOf(&gt;target)-1</code>)</p>
-<h2 id="leetcode34">Leetcode34 <a href="#leetcode34" class="anchor">🔗</a></h2>
-    </div>
-</section>
+<h2 id="leetcode34">Leetcode34</h2>
+</div>
 
- </main>
-    <footer id="footer">
-    <div class="copyright">
-        <p>© Copyright 2023 ✿ Jihan</p>
+
+
+
+
+<nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+        href="/posts/how_to_set_vscode/"><span class="mr-1.5">←</span><span>在VSCode中设置一些快捷键</span></a>
+    
+
+    
+    <a class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+        href="/posts/docker_handbook/"><span>Docker 手册</span><span class="ml-1.5">→</span></a>
+    
+</nav>
+
+
+
+
+            </div>
+        </div>
+    </main><footer class="pb-20 px-10 text-xs text-gray-500">
+    <div class="flex flex-col">
         
+
+        <div class="hidden md:block mx-auto">
+            
+        </div>
     </div>
-</footer>
-</body>
+
+    <div class="flex">
+        <div class="mx-auto">
+            <a class="mx-auto"> &copy; Copyright 2023 ✿ </a>
+            <a href="/">Jihan</a>
+        </div>
+    </div>
+
+
+</footer></body>
 
 </html>

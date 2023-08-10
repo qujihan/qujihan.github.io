@@ -1,111 +1,166 @@
 <!DOCTYPE html>
-
-<html lang="zh">
-<head>
-    
-    <meta charset="utf-8">
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="">
+<html><head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     
-    <link rel="stylesheet" href="/css/style.css">
+    
+    <link rel="preload stylesheet" as="style" href="/css/style.min.css" />
+
+    
+    <title>GDB 手册 - 拾野知地</title>
+
+    
+    <link rel="shortcut icon" type="image/png"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAABWklEQVQ4jY3UwU5TQRTG8V9qYEOoAdZ9AX0DAgtiWEMQ6StoIOlzKBJfomFl4jtI2OFGiS1p3ehaF5UFLExd3HPppNzpvV9yFufcmX/Od+bOUK1ldHGOIW4jhlE7ijWN9BI/MK2JMQ4WgZ7gfbLhK3p4jhWsYj+6TMGnaFUBS9gd3uQWYQ0/56DvqmyWsJ1FNkKvPB7Bfvlx2WxmrzOAS1wkebsCOAqWrtnMcjYv8DnJn1YAp9G580h6tUZnOsoA+3ATybOGsA38ygCHMIlktQbUjs5ysGmwFgI7+JisqYvJIssd/G4IerDcwpcA7M4BP2C9ZgzzumJ2Yt8U169UanMTWw06PKT4GcdROM4At7BdAxthqdx8EMV7vIjapwYdpbE37/80gZ4oDulPQ9jbqoG2FK9GuegaZ/iOfzWw3JVF8WqMGnQ1qrKZ05LiovcxwN+IQdQOJQeQ6j9hwsao7vZBvQAAAABJRU5ErkJggg== ">
+
+    
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.min.css">
 
-    
-    <title>拾野知地</title>
-    <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAZhJREFUOE9908uLj3EUx/HXuF/LXYqhSAi506CMIsrKf2DHepqN7JQFG1s75U8QC+VSLgu5xUgpcpsMMkLCuPbR+dXP5PHsvs9zns95n8/5fDv8/XRgIlZjG5Yh7+7jIvrwAT9bv+Vj+zMW69GDTZhRxS9wCydxCZ+aBGZhPw5gNobQj8d1DsXRevdHYzjBfBzGDrzHU1wu9L0YjUN41ESwoApCcga3q9sX7MJGHC+ifxLMw74qOI9X5cFILEEoTuFJE0Hm3o275fzXKhyFRejCWQw0CUzASkzBDbytwulYV75EvHELI5D51+IZHpbAYnTiJl7/LwepH4/lmIMrJbAFL2sbn9uD077GzDkVc7EUGScdQ7WmsB8goRrEj/YcjMFCbC+j4npCMwkRfofuQr+GC5WFoRCkQ+ZLAvcgq0zeU/Qdvwo54Yq5z3EaJ+JTBNJ9M45hFdI9P76pHHwrP7LiJDHod9CLqy2BDTiIFZiMcYWeu5Cbl3NEk8iPuIcjuN4aYRq2YmcZljFmlkgmaBEFP7fyXN2Rwd8ZzWIhP28MMgAAAABJRU5ErkJggg==">
 
     
     
-</head>
-
-<body>
     
 
-<nav class="navigation">
-	
-		<a href="/"> <span class="arrow">←</span>首页</a>
-	
-	<a href="/posts">归档</a>
-	<a href="/tags">标签</a>
-	<a href="/about">关于</a>
-
-	
-
-	
-</nav>
-    <main class="main"> 
-
-<section id="single">
-    <h1 class="title">GDB 手册</h1>
     
-        <div class="tags">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles/default.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/languages/go.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+
+</head><body class="duration-200 ease-out 
+            text-black dark:text-white
+            prose prose-neutral dark:prose-invert
+            font-wenkai
+            ">
+    <main>
+        <div class="mx-auto min-h-[calc(100%-9rem)] max-w-4xl"><header>
+    <nav class="pt-5 px-10 flex">
+        <div class="left-0 hidden md:flex">
             
-                <a href="/tags/gdb">gdb</a>
+            <a href="/" class="text-3xl">拾野知地</a>
+        </div>
+
+        <div class="flex mx-auto items-end">
             
-                <a href="/tags/handbook">handbook</a>
+            
+            <a class="px-2" href="/">主页</a>
+            
+            <a class="px-2" href="/posts/">归档</a>
+            
+            <a class="px-2" href="/about/">关于本站</a>
             
         </div>
+
+        
+
+        <div class="right-0 hidden md:flex items-end">
+            
+            
+            
+
+            
+            
+            <a href="https://www.github.com/qujihan" class="items-end mr-2 ml-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+            </a>
+            
+
+            
+            
+
+            
+            
+
+
+            
+
+            
+            
+
+            
+            
+            <a href="https://www.x.com/Quhaha4" class="items-end mr-2 ml-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                </svg>
+            </a>
+            
+
+            
+            
+
+
+            
+
+            
+            
+
+            
+            
+
+            
+            
+            <a href="/index.xml" class="items-end mr-2 ml-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                    <path
+                        d="M5.5 12a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-3-8.5a1 1 0 0 1 1-1c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1-1 6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1-1-1z" />
+                </svg>
+            </a>
+            
+
+
+            
+        </div>
+    </nav>
+
+</header><div class="px-8 pb-16 pt-12 relative">
+
+
+
+<div class="flex flex-col flex-wrap pb-16">
     
-    <div class="tip">
-        <time datetime="2023-07-24 00:00:00 &#43;0000 UTC">2023年07月24日</time>
-        <span class="split">
-          ·
-        </span>
-        <span>
-          1786字
-        </span>
-        <span class="split">
-          ·
-        </span>
-        <span>
-          4分钟
-        </span>
+    <a class="text-4xl mx-auto">
+        GDB 手册
+    </a>
+
+    
+    <div class="flex mx-auto mt-4 mb-4">
+        
+        <div class="ml-2 bg-gray-200 hover:font-bold hover:text-blue-500 rounded-3xl">
+            <a class="px-2" href="/tags/gdb">gdb</a>
+        </div>
+        
+        <div class="ml-2 bg-gray-200 hover:font-bold hover:text-blue-500 rounded-3xl">
+            <a class="px-2" href="/tags/handbook">handbook</a>
+        </div>
+        
     </div>
-    
-      
-<aside class="toc">
-    <details>
-        <summary>
-            目录
-        </summary>
-        <div>
-            <nav id="TableOfContents">
-  <ul>
-    <li><a href="#多线程">多线程</a>
-      <ul>
-        <li><a href="#死锁问题">死锁问题</a></li>
-      </ul>
-    </li>
-    <li><a href="#跳转执行反向执行">跳转执行/反向执行</a></li>
-    <li><a href="#多进程">多进程</a>
-      <ul>
-        <li><a href="#父子进程调试">父子进程调试</a></li>
-      </ul>
-    </li>
-    <li><a href="#简单的内存检查">简单的内存检查</a></li>
-    <li><a href="#调试符号">调试符号</a>
-      <ul>
-        <li><a href="#gdb-命令">gdb 命令</a></li>
-        <li><a href="#strip-命令">strip 命令</a></li>
-        <li><a href="#objcopy-命令">objcopy 命令</a></li>
-      </ul>
-    </li>
-    <li><a href="#core-dump-核心转储">core dump 核心转储</a></li>
-  </ul>
-</nav>
-        </div>
-    </details>
-</aside>
 
     
+    <div class="mx-auto">
+        <time datetime=" 2023/07/24">2023/7/24</time>
+    </div>
+</div>
 
-    <div class="content">
-      <p>最好的手册终究还是<a href="https://sourceware.org/gdb/onlinedocs/gdb/index.html">官方手册</a>！</p>
-<h1 id="简易查询表">简易查询表 <a href="#%e7%ae%80%e6%98%93%e6%9f%a5%e8%af%a2%e8%a1%a8" class="anchor">🔗</a></h1><p><strong>指定参数</strong></p>
+
+
+
+<div>
+    <p>最好的手册终究还是<a href="https://sourceware.org/gdb/onlinedocs/gdb/index.html">官方手册</a>！</p>
+<h1 id="简易查询表">简易查询表</h1>
+<p><strong>指定参数</strong></p>
 <ul>
 <li>启动的时候 <code>gdb --args &lt;exe&gt;</code></li>
 <li>在启动后 <code>set args &lt;args&gt;</code></li>
@@ -141,11 +196,11 @@
 <li>载入断点信息: <code>source b.txt</code></li>
 <li>为point_num断点设置断点的执行代码, 设置后可以使用 <code>i b</code> 查看</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>commands point_num
-</span></span><span style="display:flex;"><span>p *point
-</span></span><span style="display:flex;"><span>p arg
-</span></span><span style="display:flex;"><span>end
-</span></span></code></pre></div><p><strong>显示变量信息</strong></p>
+<pre tabindex="0"><code class="language-gdb_command" data-lang="gdb_command">commands point_num
+p *point
+p arg
+end
+</code></pre><p><strong>显示变量信息</strong></p>
 <p><code>set print pretty</code>: 设置显示的结构体好看一点</p>
 <ul>
 <li><code>p arg_name</code></li>
@@ -299,7 +354,9 @@
 <li><code>detach</code></li>
 <li><code>quit</code> 或者 <code>q</code></li>
 </ul>
-<h1 id="其他记录">其他记录 <a href="#%e5%85%b6%e4%bb%96%e8%ae%b0%e5%bd%95" class="anchor">🔗</a></h1><h2 id="多线程">多线程 <a href="#%e5%a4%9a%e7%ba%bf%e7%a8%8b" class="anchor">🔗</a></h2><p><code>set print thread-events on/off</code>: 设置是否打印线程的日志信息</p>
+<h1 id="其他记录">其他记录</h1>
+<h2 id="多线程">多线程</h2>
+<p><code>set print thread-events on/off</code>: 设置是否打印线程的日志信息</p>
 <ul>
 <li><code>info/i threads</code>: 查看所有线程的信息</li>
 <li><code>b main.cpp:132 thread thread_num</code>: 为线程 thread_num 设置一个断点</li>
@@ -316,16 +373,19 @@
 </ul>
 </li>
 </ul>
-<h3 id="死锁问题">死锁问题 <a href="#%e6%ad%bb%e9%94%81%e9%97%ae%e9%a2%98" class="anchor">🔗</a></h3><p><code>thread apply all bt</code>: 先查看所有的进程的调用栈
+<h3 id="死锁问题">死锁问题</h3>
+<p><code>thread apply all bt</code>: 先查看所有的进程的调用栈
 <code>thread thread_num</code> =&gt; <code>f frame_num</code>: 看每一个进程都是在哪里停住</p>
-<h2 id="跳转执行反向执行">跳转执行/反向执行 <a href="#%e8%b7%b3%e8%bd%ac%e6%89%a7%e8%a1%8c%e5%8f%8d%e5%90%91%e6%89%a7%e8%a1%8c" class="anchor">🔗</a></h2><ul>
+<h2 id="跳转执行反向执行">跳转执行/反向执行</h2>
+<ul>
 <li><code>jump filename:line</code>: 跳转到某一行开始执行</li>
 <li><code>record</code>:反向执行之前需要先记录下来</li>
 <li><code>record stop</code></li>
 <li><code>rn/rs/rc</code>:n/s/c的反向操作</li>
 <li><code>reverse-finish</code>: 反向执行到函数的开始</li>
 </ul>
-<h2 id="多进程">多进程 <a href="#%e5%a4%9a%e8%bf%9b%e7%a8%8b" class="anchor">🔗</a></h2><p><code>set schedule multiple on/off</code>: 多个进程时候可以同时运行(默认是:off)</p>
+<h2 id="多进程">多进程</h2>
+<p><code>set schedule multiple on/off</code>: 多个进程时候可以同时运行(默认是:off)</p>
 <ul>
 <li><code>info inferior</code>: GDB所包含的所有子程序</li>
 <li><code>inferior num</code>: 切换到不同的inferior</li>
@@ -333,20 +393,27 @@
 <li><code>remove-inferior</code>: 删除一个inferior</li>
 <li><code>detach inferior num</code>: 将进程取消attach</li>
 </ul>
-<h3 id="父子进程调试">父子进程调试 <a href="#%e7%88%b6%e5%ad%90%e8%bf%9b%e7%a8%8b%e8%b0%83%e8%af%95" class="anchor">🔗</a></h3><p><code>set follow-fork-mode child/parent </code>: 设置调试跟随父进程还是子进程</p>
+<h3 id="父子进程调试">父子进程调试</h3>
+<p><code>set follow-fork-mode child/parent </code>: 设置调试跟随父进程还是子进程</p>
 <p><code>set detach-on-fork on/off</code>: 设置在fork子进程后会不会分离</p>
 <p>如果想父进程和子进程一起调试, 就需要将<code>detach-on-fork</code>设置为<code>off</code>, 然后就可以一起调试了</p>
-<h2 id="简单的内存检查">简单的内存检查 <a href="#%e7%ae%80%e5%8d%95%e7%9a%84%e5%86%85%e5%ad%98%e6%a3%80%e6%9f%a5" class="anchor">🔗</a></h2><p><code>call malloc_stats()</code>: 调用系统的函数去查看内存信息</p>
+<h2 id="简单的内存检查">简单的内存检查</h2>
+<p><code>call malloc_stats()</code>: 调用系统的函数去查看内存信息</p>
 <p><code>call malloc_info(0, stdout)</code>: stdout是标准输出(也可以是其他文件)输出的是xml格式</p>
 <p><code>gcc -fsanitize=address</code>: 使得gcc检查 内存/堆/栈/全局内存/释放后使用(野指针) 问题</p>
-<h2 id="调试符号">调试符号 <a href="#%e8%b0%83%e8%af%95%e7%ac%a6%e5%8f%b7" class="anchor">🔗</a></h2><h3 id="gdb-命令">gdb 命令 <a href="#gdb-%e5%91%bd%e4%bb%a4" class="anchor">🔗</a></h3><p><strong>附加调试信息去调试</strong>
+<h2 id="调试符号">调试符号</h2>
+<h3 id="gdb-命令">gdb 命令</h3>
+<p><strong>附加调试信息去调试</strong>
 <code>gdb --sysbol=release-section -exec=release</code></p>
 <p><strong>写二进制文件</strong>(破解可用)
 <code>gdb --write filename</code>(gdb默认只读)</p>
-<h3 id="strip-命令">strip 命令 <a href="#strip-%e5%91%bd%e4%bb%a4" class="anchor">🔗</a></h3><p>去掉debug信息
+<h3 id="strip-命令">strip 命令</h3>
+<p>去掉debug信息
 <code>strip -g with_debug_info_file -o outfile</code></p>
-<h3 id="objcopy-命令">objcopy 命令 <a href="#objcopy-%e5%91%bd%e4%bb%a4" class="anchor">🔗</a></h3><p><code>objcopy </code>: 生成debug信息</p>
-<h2 id="core-dump-核心转储">core dump 核心转储 <a href="#core-dump-%e6%a0%b8%e5%bf%83%e8%bd%ac%e5%82%a8" class="anchor">🔗</a></h2><p><strong>命令</strong></p>
+<h3 id="objcopy-命令">objcopy 命令</h3>
+<p><code>objcopy </code>: 生成debug信息</p>
+<h2 id="core-dump-核心转储">core dump 核心转储</h2>
+<p><strong>命令</strong></p>
 <ul>
 <li>为活着的文件生成core dump文件: attach 进程以后,使用<code>generate-core-file</code>可以生成core dump文件</li>
 <li>命令行设置<code>ulimit -c unlimited</code>, <code>echo -e &quot;%e-%p-%t&quot; &gt; /proc/sys/kernel/core_pattern</code>
@@ -358,21 +425,52 @@
 <li>调试崩溃的文件: <code>gdb filename core_dump_file_path</code></li>
 </ul>
 <p>加载core dump: <code>gdb core_dump_filename</code></p>
-<h1 id="links">Links <a href="#links" class="anchor">🔗</a></h1><ul>
+<h1 id="links">Links</h1>
+<ul>
 <li><a href="https://sourceware.org/gdb/current/onlinedocs/gdb.pdf">GDB Manual PDF</a></li>
 <li><a href="https://sourceware.org/gdb/onlinedocs/gdb/index.html">GDB Manual Single page</a></li>
 <li><a href="https://lldb.llvm.org/use/map.html">GDB to LLDB map</a></li>
 </ul>
-    </div>
-</section>
+</div>
 
- </main>
-    <footer id="footer">
-    <div class="copyright">
-        <p>© Copyright 2023 ✿ Jihan</p>
+
+
+
+
+<nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+        href="/posts/mac_delete_abc_input/"><span class="mr-1.5">←</span><span>在 M1/M2 Mac中删除自带的ABC输入法</span></a>
+    
+
+    
+    <a class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+        href="/posts/zotero/"><span>如何配置Zotero</span><span class="ml-1.5">→</span></a>
+    
+</nav>
+
+
+
+
+            </div>
+        </div>
+    </main><footer class="pb-20 px-10 text-xs text-gray-500">
+    <div class="flex flex-col">
         
+
+        <div class="hidden md:block mx-auto">
+            
+        </div>
     </div>
-</footer>
-</body>
+
+    <div class="flex">
+        <div class="mx-auto">
+            <a class="mx-auto"> &copy; Copyright 2023 ✿ </a>
+            <a href="/">Jihan</a>
+        </div>
+    </div>
+
+
+</footer></body>
 
 </html>

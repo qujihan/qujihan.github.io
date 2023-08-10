@@ -5,7 +5,8 @@
     <link>/tags/</link>
     <description>Recent content in Tags on 拾野知地</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
+    <language>en-us</language>
+    <copyright>Jihan</copyright>
     <lastBuildDate>Fri, 04 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>postgresql</title>
@@ -130,6 +131,15 @@
       <pubDate>Wed, 15 Mar 2023 00:00:00 +0000</pubDate>
       
       <guid>/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>handbooks</title>
+      <link>/tags/handbooks/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/handbooks/</guid>
       <description></description>
     </item>
     

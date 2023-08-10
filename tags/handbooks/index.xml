@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>handbooks on 拾野知地</title>
+    <link>/tags/handbooks/</link>
+    <description>Recent content in handbooks on 拾野知地</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Jihan</copyright>
+    <lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/handbooks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo: 实现Github Page 内容与样式分离在不同的分支</title>
+      <link>/posts/hugo/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>记录本站实现的功能</title>
+      <link>/posts/site_functions/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/site_functions/</guid>
+      <description>这个就是本文的md文件的头部部分 --- author: &amp;#34;Jihan&amp;#34; title: &amp;#34;记录本站实现的功能&amp;#34; date: &amp;#34;2023-01-01&amp;#34; math: true viz: true # top: true top: false tags: - handbooks --- 当math: true 的时候, 可以使用 $LaTex$</description>
+    </item>
+    
+  </channel>
+</rss>

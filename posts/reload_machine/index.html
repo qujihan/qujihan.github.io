@@ -1,118 +1,183 @@
 <!DOCTYPE html>
-
-<html lang="zh">
-<head>
-    
-    <meta charset="utf-8">
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="">
+<html><head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     
-    <link rel="stylesheet" href="/css/style.css">
+    
+    <link rel="preload stylesheet" as="style" href="/css/style.min.css" />
+
+    
+    <title>重装机器所需操作一览 - 拾野知地</title>
+
+    
+    <link rel="shortcut icon" type="image/png"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAABWklEQVQ4jY3UwU5TQRTG8V9qYEOoAdZ9AX0DAgtiWEMQ6StoIOlzKBJfomFl4jtI2OFGiS1p3ehaF5UFLExd3HPppNzpvV9yFufcmX/Od+bOUK1ldHGOIW4jhlE7ijWN9BI/MK2JMQ4WgZ7gfbLhK3p4jhWsYj+6TMGnaFUBS9gd3uQWYQ0/56DvqmyWsJ1FNkKvPB7Bfvlx2WxmrzOAS1wkebsCOAqWrtnMcjYv8DnJn1YAp9G580h6tUZnOsoA+3ATybOGsA38ygCHMIlktQbUjs5ysGmwFgI7+JisqYvJIssd/G4IerDcwpcA7M4BP2C9ZgzzumJ2Yt8U169UanMTWw06PKT4GcdROM4At7BdAxthqdx8EMV7vIjapwYdpbE37/80gZ4oDulPQ9jbqoG2FK9GuegaZ/iOfzWw3JVF8WqMGnQ1qrKZ05LiovcxwN+IQdQOJQeQ6j9hwsao7vZBvQAAAABJRU5ErkJggg== ">
+
+    
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.min.css">
 
-    
-    <title>拾野知地</title>
-    <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAZhJREFUOE9908uLj3EUx/HXuF/LXYqhSAi506CMIsrKf2DHepqN7JQFG1s75U8QC+VSLgu5xUgpcpsMMkLCuPbR+dXP5PHsvs9zns95n8/5fDv8/XRgIlZjG5Yh7+7jIvrwAT9bv+Vj+zMW69GDTZhRxS9wCydxCZ+aBGZhPw5gNobQj8d1DsXRevdHYzjBfBzGDrzHU1wu9L0YjUN41ESwoApCcga3q9sX7MJGHC+ifxLMw74qOI9X5cFILEEoTuFJE0Hm3o275fzXKhyFRejCWQw0CUzASkzBDbytwulYV75EvHELI5D51+IZHpbAYnTiJl7/LwepH4/lmIMrJbAFL2sbn9uD077GzDkVc7EUGScdQ7WmsB8goRrEj/YcjMFCbC+j4npCMwkRfofuQr+GC5WFoRCkQ+ZLAvcgq0zeU/Qdvwo54Yq5z3EaJ+JTBNJ9M45hFdI9P76pHHwrP7LiJDHod9CLqy2BDTiIFZiMcYWeu5Cbl3NEk8iPuIcjuN4aYRq2YmcZljFmlkgmaBEFP7fyXN2Rwd8ZzWIhP28MMgAAAABJRU5ErkJggg==">
 
     
     
-</head>
-
-<body>
     
 
-<nav class="navigation">
-	
-		<a href="/"> <span class="arrow">←</span>首页</a>
-	
-	<a href="/posts">归档</a>
-	<a href="/tags">标签</a>
-	<a href="/about">关于</a>
-
-	
-
-	
-</nav>
-    <main class="main"> 
-
-<section id="single">
-    <h1 class="title">重装机器所需操作一览</h1>
     
-        <div class="tags">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles/default.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/languages/go.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+
+</head><body class="duration-200 ease-out 
+            text-black dark:text-white
+            prose prose-neutral dark:prose-invert
+            font-wenkai
+            ">
+    <main>
+        <div class="mx-auto min-h-[calc(100%-9rem)] max-w-4xl"><header>
+    <nav class="pt-5 px-10 flex">
+        <div class="left-0 hidden md:flex">
             
-                <a href="/tags/windows">windows</a>
+            <a href="/" class="text-3xl">拾野知地</a>
+        </div>
+
+        <div class="flex mx-auto items-end">
             
-                <a href="/tags/mac">mac</a>
             
-                <a href="/tags/ubuntu">ubuntu</a>
+            <a class="px-2" href="/">主页</a>
             
-                <a href="/tags/handbook">handbook</a>
+            <a class="px-2" href="/posts/">归档</a>
+            
+            <a class="px-2" href="/about/">关于本站</a>
             
         </div>
+
+        
+
+        <div class="right-0 hidden md:flex items-end">
+            
+            
+            
+
+            
+            
+            <a href="https://www.github.com/qujihan" class="items-end mr-2 ml-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+            </a>
+            
+
+            
+            
+
+            
+            
+
+
+            
+
+            
+            
+
+            
+            
+            <a href="https://www.x.com/Quhaha4" class="items-end mr-2 ml-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                </svg>
+            </a>
+            
+
+            
+            
+
+
+            
+
+            
+            
+
+            
+            
+
+            
+            
+            <a href="/index.xml" class="items-end mr-2 ml-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                    <path
+                        d="M5.5 12a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-3-8.5a1 1 0 0 1 1-1c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1-1 6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1-1-1z" />
+                </svg>
+            </a>
+            
+
+
+            
+        </div>
+    </nav>
+
+</header><div class="px-8 pb-16 pt-12 relative">
+
+
+
+<div class="flex flex-col flex-wrap pb-16">
     
-    <div class="tip">
-        <time datetime="2023-03-15 00:00:00 &#43;0000 UTC">2023年03月15日</time>
-        <span class="split">
-          ·
-        </span>
-        <span>
-          469字
-        </span>
-        <span class="split">
-          ·
-        </span>
-        <span>
-          1分钟
-        </span>
+    <a class="text-4xl mx-auto">
+        重装机器所需操作一览
+    </a>
+
+    
+    <div class="flex mx-auto mt-4 mb-4">
+        
+        <div class="ml-2 bg-gray-200 hover:font-bold hover:text-blue-500 rounded-3xl">
+            <a class="px-2" href="/tags/windows">windows</a>
+        </div>
+        
+        <div class="ml-2 bg-gray-200 hover:font-bold hover:text-blue-500 rounded-3xl">
+            <a class="px-2" href="/tags/mac">mac</a>
+        </div>
+        
+        <div class="ml-2 bg-gray-200 hover:font-bold hover:text-blue-500 rounded-3xl">
+            <a class="px-2" href="/tags/ubuntu">ubuntu</a>
+        </div>
+        
+        <div class="ml-2 bg-gray-200 hover:font-bold hover:text-blue-500 rounded-3xl">
+            <a class="px-2" href="/tags/handbook">handbook</a>
+        </div>
+        
     </div>
-    
-      
-<aside class="toc">
-    <details>
-        <summary>
-            目录
-        </summary>
-        <div>
-            <nav id="TableOfContents">
-  <ul>
-    <li><a href="#windows">Windows</a>
-      <ul>
-        <li><a href="#跳过联网激活使用本地账号">跳过联网激活使用本地账号</a></li>
-        <li><a href="#安装软件">安装软件</a></li>
-      </ul>
-    </li>
-    <li><a href="#macos">MacOS</a>
-      <ul>
-        <li><a href="#安装软件-1">安装软件</a></li>
-      </ul>
-    </li>
-    <li><a href="#ubuntu">Ubuntu</a>
-      <ul>
-        <li><a href="#设置ssh">设置ssh</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-        </div>
-    </details>
-</aside>
 
     
+    <div class="mx-auto">
+        <time datetime=" 2023/03/15">2023/3/15</time>
+    </div>
+</div>
 
-    <div class="content">
-      <p>这是一篇自用，但是大家可以参考的文章。</p>
-<h2 id="windows">Windows <a href="#windows" class="anchor">🔗</a></h2><h3 id="跳过联网激活使用本地账号">跳过联网激活使用本地账号 <a href="#%e8%b7%b3%e8%bf%87%e8%81%94%e7%bd%91%e6%bf%80%e6%b4%bb%e4%bd%bf%e7%94%a8%e6%9c%ac%e5%9c%b0%e8%b4%a6%e5%8f%b7" class="anchor">🔗</a></h3><p>在连接网络的界面按住Shift+F10调出CMD输入<code>OOBE\BYPASSNRO</code></p>
-<h3 id="安装软件">安装软件 <a href="#%e5%ae%89%e8%a3%85%e8%bd%af%e4%bb%b6" class="anchor">🔗</a></h3><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># Needed to run a remote script the first time</span>
+
+
+
+<div>
+    <p>这是一篇自用，但是大家可以参考的文章。</p>
+<h2 id="windows">Windows</h2>
+<h3 id="跳过联网激活使用本地账号">跳过联网激活使用本地账号</h3>
+<p>在连接网络的界面按住Shift+F10调出CMD输入<code>OOBE\BYPASSNRO</code></p>
+<h3 id="安装软件">安装软件</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Needed to run a remote script the first time</span>
 </span></span><span style="display:flex;"><span>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser 
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># set scoop dir is C:\Scoop</span>
-</span></span><span style="display:flex;"><span>md C:<span style="color:#4070a0;font-weight:bold">\S</span>coop 
-</span></span><span style="display:flex;"><span>irm get.scoop.sh -outfile <span style="color:#4070a0">&#39;install.ps1&#39;</span>
-</span></span><span style="display:flex;"><span>.<span style="color:#4070a0;font-weight:bold">\i</span>nstall.ps1 -ScoopDir <span style="color:#4070a0">&#39;C:\Scoop&#39;</span> -ScoopGlobalDir <span style="color:#4070a0">&#39;C:\Scoop&#39;</span> -NoProxy
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># set scoop dir is C:\Scoop</span>
+</span></span><span style="display:flex;"><span>md C:<span style="color:#ae81ff">\S</span>coop 
+</span></span><span style="display:flex;"><span>irm get.scoop.sh -outfile <span style="color:#e6db74">&#39;install.ps1&#39;</span>
+</span></span><span style="display:flex;"><span>.<span style="color:#ae81ff">\i</span>nstall.ps1 -ScoopDir <span style="color:#e6db74">&#39;C:\Scoop&#39;</span> -ScoopGlobalDir <span style="color:#e6db74">&#39;C:\Scoop&#39;</span> -NoProxy
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>scoop install sudo git starship
 </span></span><span style="display:flex;"><span>
@@ -124,48 +189,52 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>scoop install make gcc cmake python go rustup
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># for emacs rime</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># for emacs rime</span>
 </span></span><span style="display:flex;"><span>scoop bucket add wsw0108 https://github.com/wsw0108/scoop-bucket.git
 </span></span><span style="display:flex;"><span>scoop install librime
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>go install github.com/go-delve/delve/cmd/dlv@latest
 </span></span><span style="display:flex;"><span>go install golang.org/x/tools/gopls@latest
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># winget install</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># winget install</span>
 </span></span><span style="display:flex;"><span>winget install Microsoft.PowerShell Microsoft.VisualStudioCode
-</span></span></code></pre></div><h2 id="macos">MacOS <a href="#macos" class="anchor">🔗</a></h2><h3 id="安装软件-1">安装软件 <a href="#%e5%ae%89%e8%a3%85%e8%bd%af%e4%bb%b6-1" class="anchor">🔗</a></h3><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># install brew</span>
-</span></span><span style="display:flex;"><span>/bin/bash -c <span style="color:#4070a0">&#34;</span><span style="color:#007020;font-weight:bold">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span style="color:#007020;font-weight:bold">)</span><span style="color:#4070a0">&#34;</span>
+</span></span></code></pre></div><h2 id="macos">MacOS</h2>
+<h3 id="安装软件-1">安装软件</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># install brew</span>
+</span></span><span style="display:flex;"><span>/bin/bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># software</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># software</span>
 </span></span><span style="display:flex;"><span>brew install --cask docker microsoft-edge zotero
-</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># tools</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># tools</span>
 </span></span><span style="display:flex;"><span>brew install --cask bob snipaste squirrel
-</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># editors</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># editors</span>
 </span></span><span style="display:flex;"><span>brew install --cask visual-studio-code obsidian wezterm
 </span></span><span style="display:flex;"><span>brew install --cask pycharm clion intellij-idea goland
-</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># common software</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># common software</span>
 </span></span><span style="display:flex;"><span>brew install --cask qq qqmusic wechat tencent-lemon feishu
-</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># for delete abc input</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># for delete abc input</span>
 </span></span><span style="display:flex;"><span>brew install --cask plistedit-pro
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># neovim</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># neovim</span>
 </span></span><span style="display:flex;"><span>brew install neovim ripgrep fd
-</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># programming language &amp;&amp; lsp &amp;&amp; dap</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># programming language &amp;&amp; lsp &amp;&amp; dap</span>
 </span></span><span style="display:flex;"><span>brew install cmake go gopls delve typst
-</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># tools</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># tools</span>
 </span></span><span style="display:flex;"><span>brew install lazygit sevenzip stow cloc hugo squirrel
-</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># for zsh</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># for zsh</span>
 </span></span><span style="display:flex;"><span>brew install starship
 </span></span><span style="display:flex;"><span>brew install romkatv/powerlevel10k/powerlevel10k 
 </span></span><span style="display:flex;"><span>brew install zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-git-prompt
 </span></span></code></pre></div><p>安装一些常用的软件: keynote, office, onedrive, ibar, clashX, xcode</p>
-<h2 id="ubuntu">Ubuntu <a href="#ubuntu" class="anchor">🔗</a></h2><h3 id="设置ssh">设置ssh <a href="#%e8%ae%be%e7%bd%aessh" class="anchor">🔗</a></h3><p>配置ssh所需的一些命令（windows mac linux）</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ssh-keygen -t ed25519 -C <span style="color:#4070a0">&#34;qujihan@163.com&#34;</span>
+<h2 id="ubuntu">Ubuntu</h2>
+<h3 id="设置ssh">设置ssh</h3>
+<p>配置ssh所需的一些命令（windows mac linux）</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ssh-keygen -t ed25519 -C <span style="color:#e6db74">&#34;qujihan@163.com&#34;</span>
 </span></span><span style="display:flex;"><span>cat .ssh/id_ed25519.pub
 </span></span><span style="display:flex;"><span>ssh -T git@github.com
 </span></span></code></pre></div><p>在<a href="https://github.com/settings/keys">Github</a>上就可以设置ssh了</p>
 <p>现在在最新版本的 ubuntu 可以使用 snap 去安装 neovim 了</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># install neovim latest</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># install neovim latest</span>
 </span></span><span style="display:flex;"><span>curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 </span></span><span style="display:flex;"><span>chmod u+x nvim.appimage
 </span></span><span style="display:flex;"><span>./nvim.appimage --appimage-extract
@@ -173,34 +242,64 @@
 </span></span><span style="display:flex;"><span>ln -s /squashfs-root/AppRun /usr/bin/nvim
 </span></span></code></pre></div><p>有时候需要设置一下代理才可以访问一些服务 <br>
 就在 <code>~/.bashrc</code>中设置\</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># set proxy (at wsl or docker)</span>
-</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># ~/.bashrc</span>
-</span></span><span style="display:flex;"><span>proxy<span style="color:#666">(){</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#bb60d5">hostip</span><span style="color:#666">=</span><span style="color:#007020;font-weight:bold">$(</span>cat /etc/resolv.conf | grep -oP <span style="color:#4070a0">&#34;(?&lt;=nameserver\ ).*&#34;</span><span style="color:#007020;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#007020">export</span> <span style="color:#bb60d5">http_proxy</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;http://</span><span style="color:#70a0d0">${</span><span style="color:#bb60d5">hostip</span><span style="color:#70a0d0">}</span><span style="color:#4070a0">:7890&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#007020">export</span> <span style="color:#bb60d5">https_proxy</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;http://</span><span style="color:#70a0d0">${</span><span style="color:#bb60d5">hostip</span><span style="color:#70a0d0">}</span><span style="color:#4070a0">:7890&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#007020">export</span> <span style="color:#bb60d5">all_proxy</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;http://</span><span style="color:#70a0d0">${</span><span style="color:#bb60d5">hostip</span><span style="color:#70a0d0">}</span><span style="color:#4070a0">:7890&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># set proxy (at wsl or docker)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ~/.bashrc</span>
+</span></span><span style="display:flex;"><span>proxy<span style="color:#f92672">(){</span>
+</span></span><span style="display:flex;"><span>    hostip<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>cat /etc/resolv.conf | grep -oP <span style="color:#e6db74">&#34;(?&lt;=nameserver\ ).*&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>    export http_proxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://</span><span style="color:#e6db74">${</span>hostip<span style="color:#e6db74">}</span><span style="color:#e6db74">:7890&#34;</span>
+</span></span><span style="display:flex;"><span>    export https_proxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://</span><span style="color:#e6db74">${</span>hostip<span style="color:#e6db74">}</span><span style="color:#e6db74">:7890&#34;</span>
+</span></span><span style="display:flex;"><span>    export all_proxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://</span><span style="color:#e6db74">${</span>hostip<span style="color:#e6db74">}</span><span style="color:#e6db74">:7890&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>unproxy<span style="color:#666">(){</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#007020">unset</span> http_proxy
-</span></span><span style="display:flex;"><span>    <span style="color:#007020">unset</span> https_proxy
-</span></span><span style="display:flex;"><span>    <span style="color:#007020">unset</span> all_proxy
-</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>unproxy<span style="color:#f92672">(){</span>
+</span></span><span style="display:flex;"><span>    unset http_proxy
+</span></span><span style="display:flex;"><span>    unset https_proxy
+</span></span><span style="display:flex;"><span>    unset all_proxy
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#007020">alias</span> <span style="color:#bb60d5">pp</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;proxy&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#007020">alias</span> <span style="color:#bb60d5">up</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;unproxy&#34;</span>
+</span></span><span style="display:flex;"><span>alias pp<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;proxy&#34;</span>
+</span></span><span style="display:flex;"><span>alias up<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;unproxy&#34;</span>
 </span></span></code></pre></div>
-    </div>
-</section>
+</div>
 
- </main>
-    <footer id="footer">
-    <div class="copyright">
-        <p>© Copyright 2023 ✿ Jihan</p>
+
+
+
+
+<nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+        href="/posts/docker_handbook/"><span class="mr-1.5">←</span><span>Docker 手册</span></a>
+    
+
+    
+    <a class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+        href="/posts/hugo/"><span>Hugo: 实现Github Page 内容与样式分离在不同的分支</span><span class="ml-1.5">→</span></a>
+    
+</nav>
+
+
+
+
+            </div>
+        </div>
+    </main><footer class="pb-20 px-10 text-xs text-gray-500">
+    <div class="flex flex-col">
         
+
+        <div class="hidden md:block mx-auto">
+            
+        </div>
     </div>
-</footer>
-</body>
+
+    <div class="flex">
+        <div class="mx-auto">
+            <a class="mx-auto"> &copy; Copyright 2023 ✿ </a>
+            <a href="/">Jihan</a>
+        </div>
+    </div>
+
+
+</footer></body>
 
 </html>
