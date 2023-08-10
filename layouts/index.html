@@ -13,8 +13,8 @@
     {{/* top posts */}}
 
     {{ range $paginator.Pages }}
-    <div class="pb-1">
-        {{ if .Params.top }}
+    {{ if .Params.top }}
+    <div class="pb-5">
         {{/* Items */}}
         <div class="text-xl">
             <pre><a class="font-wenkai" href="{{ .RelPermalink }}">{{ .Title }}</a></pre>
@@ -27,19 +27,19 @@
         </div>
         {{ end }}
 
-        {{ end }}
     </div>
     {{ end }}
     {{ end }}
+    {{ end }}
 
-    {{/*  <div class="pt-16 pb-5">
+    {{/* <div class="pt-16 pb-5">
         <a class="font-bold text-3xl"> Recent Posts </a>
-    </div>  */}}
+    </div> */}}
 
     {{/* not top posts */}}
     {{ range $paginator.Pages }}
+    {{ if not .Params.top }}
     <div class="pb-5">
-        {{ if not .Params.top }}
         <div class="text-xl">
             <pre><a class="font-wenkai" href="{{ .RelPermalink }}">{{ .Title }}</a></pre>
         </div>
@@ -50,8 +50,8 @@
         </div>
         {{ end }}
 
-        {{ end }}
     </div>
+    {{ end }}
     {{ end }}
 </div>
 
