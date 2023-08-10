@@ -1,0 +1,48 @@
+languageCode = 'en-us'
+title = '拾野知地'
+paginate = 7
+copyright = "Jihan"
+hasCJKLanguage = true
+defaultContentLanguage = "zh"
+
+[menu]
+[[menu.main]]
+name = '主页'
+pageRef = '/'
+weight = 10
+[[menu.main]]
+name = '归档'
+pageRef = '/posts'
+weight = 20
+[[menu.main]]
+name = '关于本站'
+pageRef = '/about'
+weight = 30
+# [[menu.footer]]
+#   name = 'Terms'
+#   pageRef = '/terms'
+#   weight = 10
+# [[menu.footer]]
+#   name = 'Privacy'
+#   pageRef = '/privacy'
+#   weight = 20
+
+
+[params]
+author = "Jihan"
+subtitle = "subtitle"
+description = "description description description description description "
+rss = true
+math = true
+footer = "Jihan"
+showSummary = true
+
+[[params.social]]
+name = "Github"
+url = "github.com/qujihan"
+[[params.social]]
+name = "Twitter"
+url = "x.com/Quhaha4"
+[[params.social]]
+name = "Rss"
+url = "/index.xml"

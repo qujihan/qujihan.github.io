@@ -1,0 +1,51 @@
+{{ define "main" }}
+
+
+
+<div class="flex flex-col flex-wrap pb-16">
+    {{/* Title */}}
+    <a class="text-4xl mx-auto">
+        {{ .Title }}
+    </a>
+
+    {{/* Tags */}}
+    <div class="flex mx-auto mt-4 mb-4">
+        {{ range .Params.tags }}
+        <div class="ml-2 bg-gray-200 hover:font-bold hover:text-blue-500 rounded-3xl">
+            <a class="px-2" href="{{ absURL "/tags/" }}{{ . | urlize }}">{{ . }}</a>
+        </div>
+        {{ end }}
+    </div>
+
+    {{/* Date */}}
+    <div class="mx-auto">
+        <time datetime="{{ .PublishDate.Format " 2006/01/02" }}">{{ .PublishDate.Format "2006/1/2" }}</time>
+    </div>
+</div>
+
+
+
+{{/* Content */}}
+<div>
+    {{ .Content }}
+</div>
+
+
+<!-- Post Nav -->
+{{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{ if and (gt (len $pages) 1) (in $pages . ) }}
+<nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    {{ with $pages.Next . }}
+    <a class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+        href="{{ .Permalink }}"><span class="mr-1.5">←</span><span>{{ .Name }}</span></a>
+    {{ end }}<!---->
+
+    {{ with $pages.Prev . }}
+    <a class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+        href="{{ .Permalink }}"><span>{{ .Name }}</span><span class="ml-1.5">→</span></a>
+    {{ end }}
+</nav>
+{{ end }}
+
+
+{{ end }}

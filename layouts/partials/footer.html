@@ -1,0 +1,30 @@
+<footer class="pb-20 px-10 text-xs text-gray-500">
+    <div class="flex flex-col">
+        {{ if or .Params.math .Params.viz}}
+        <div class="hidden md:block mx-auto">
+            <p class="mx-auto"> 
+                感谢
+                {{if .Params.math}} <a href="https://katex.org/">$\KaTeX$</a> {{end}}
+                {{if and .Params.math .Params.viz}} <a href="https://github.com/mdaines/viz-js"> 和 </a> {{end}}
+                {{if .Params.viz}} <a href="https://github.com/mdaines/viz-js">viz.js</a> {{end}}
+                提供支持
+            </p>
+        </div>
+        {{ end }}
+
+        <div class="hidden md:block mx-auto">
+            {{ range .Site.Menus.footer }}
+            <a href="{{ .URL }}"> {{ .Name }}</a>
+            {{ end }}
+        </div>
+    </div>
+
+    <div class="flex">
+        <div class="mx-auto">
+            <a class="mx-auto"> &copy; Copyright {{ now.Format "2006"}} ✿ </a>
+            <a href="{{ relURL "/" }}">{{ .Site.Copyright }}</a>
+        </div>
+    </div>
+
+
+</footer>

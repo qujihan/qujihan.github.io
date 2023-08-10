@@ -1,0 +1,15 @@
+<div class="pt-10 pb-28 flex ">
+    <div class="hidden md:flex mx-10">
+        <img src="{{ relURL "./pic/jihan.jpg"}}" class="w-28 h-auto object-fill rounded-full shadow-lg dark:shadow-black/20" />
+    </div>
+
+
+    <div class="mx-5 flex flex-col">
+        <a class="mb-2 text-xl font-bold">{{ .Site.Params.author }}</a>
+        <a class="mb-4 text-lg font-medium  dark:text-primary-400">
+            {{ .Site.Params.subtitle }}
+        </a>
+        <a class="text-base"> {{.Site.Params.description}} </a>
+    </div>
+
+</div>

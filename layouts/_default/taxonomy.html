@@ -1,0 +1,15 @@
+{{ define "main" }}
+
+<div class="flex flex-wrap justify-center items-center ">
+    {{ range $key, $value := .Data.Terms.Alphabetical }}
+    {{ if $value.Name }}
+    <div class=" mx-3 mt-10 bg-gray-200 hover:font-bold hover:text-blue-500 rounded-3xl">
+        <a class=" px-2 pt-0 pb-0 text-xs" href="{{ relURL "/tags/"}}{{ $value.Name | urlize}}">
+            {{$value.Name }}({{$value.Count}})
+        </a>
+    </div>
+    {{ end }}
+    {{ end }}
+</div>
+
+{{ end }}

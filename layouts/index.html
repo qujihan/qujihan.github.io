@@ -1,0 +1,78 @@
+{{ define "main" }}
+
+{{ $paginator := .Paginate (.Site.RegularPages) }}
+
+{{/* posts list */}}
+<div>
+    {{ if not $paginator.HasPrev }}
+    {{/* {{ partial "profile.html" . }} */}}
+
+    {{/* <div class="pt-10 pb-5">
+        <a class="font-bold text-3xl"> Top Posts </a>
+    </div> */}}
+    {{/* top posts */}}
+
+    {{ range $paginator.Pages }}
+    <div class="pb-1">
+        {{ if .Params.top }}
+        {{/* Items */}}
+        <div class="text-xl">
+            <pre><a class="font-wenkai" href="{{ .RelPermalink }}">{{ .Title }}</a></pre>
+        </div>
+
+        {{/* Summary */}}
+        <div class="text-sm">
+            {{ if .Site.Params.showSummary }}
+            {{ .Summary | plainify | htmlUnescape }}
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+    {{ end }}
+    {{ end }}
+
+    {{/* <div class="pt-10 pb-5">
+        <a class="font-bold text-3xl"> Recent Posts </a>
+    </div> */}}
+    {{/* not top posts */}}
+    {{ range $paginator.Pages }}
+    <div class="pb-5">
+        {{ if not .Params.top }}
+        <div class="text-xl">
+            <pre><a class="font-wenkai" href="{{ .RelPermalink }}">{{ .Title }}</a></pre>
+        </div>
+        <div class="text-sm">
+            {{ if .Site.Params.showSummary }}
+            {{ .Summary | plainify | htmlUnescape }}
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+    {{ end }}
+</div>
+
+{{/* prev page and next page button */}}
+<div class="flex pt-10">
+    {{ if or ($paginator.HasPrev) ($paginator.HasNext) }}
+
+    {{ if $paginator.HasPrev}}
+    <a class="right-0" href="{{.Paginator.Prev.URL}}">
+        <span>←</span> {{i18n "postsNewer"}}
+    </a>
+    {{ end }} {{/* end has prev */}}
+
+    <a class="mx-auto"></a>
+
+    {{ if $paginator.HasNext }}
+    <a class="left-0" href="{{.Paginator.Next.URL}}">
+        {{ i18n "postsOlder" }}<span>→</span>
+    </a>
+    {{ end }} {{/* end has next*/}}
+
+    {{ end }} {{/* end or */}}
+</div>
+
+
+
+
+{{ end }} {{/* define */}}

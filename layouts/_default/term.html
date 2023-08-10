@@ -1,0 +1,41 @@
+{{ define "main" }}
+
+<div class="text-center pt-10 pb-10">
+    <a class="text-3xl">{{ .Params.title }}</a>
+</div>
+
+{{ range .Data.Pages.GroupByDate "2006" }}
+
+{{/* Posts */}}
+{{ range .Pages }}
+<section class="flex my-5">
+    {{/* Date */}}
+    <a>
+        <time datetime="{{ .PublishDate }}">{{ i18n "publishDateShort" . }}</time>
+    </a>
+
+    {{/* Title */}}
+    <a class="px-4 text-base" href="{{ .Permalink }}">
+        {{ .Title }}
+    </a>
+
+    {{/* Tags */}}
+    {{ if .Params.tags }}
+    <div class="flex items-center ">
+        {{ range .Params.tags}}
+        <div class="hidden md:block ml-1 
+       bg-gray-200 
+        hover:font-bold hover:text-blue-500
+        rounded-3xl ">
+            <a class="px-2 pt-0 pb-0 text-xs " href="{{ absURL "/tags/" }}{{ . | urlize }}">{{ . }}
+            </a>
+        </div>
+
+        {{ end }}
+    </div>
+    {{ end }}
+</section>
+{{ end }}
+
+{{ end }}
+{{ end }}
