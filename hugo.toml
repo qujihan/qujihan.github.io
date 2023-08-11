@@ -42,5 +42,8 @@ url = "github.com/qujihan"
 name = "Twitter"
 url = "x.com/Quhaha4"
 [[params.social]]
+name = "Bilibili"
+url = "https://space.bilibili.com/23354145"
+[[params.social]]
 name = "Rss"
 url = "/index.xml"

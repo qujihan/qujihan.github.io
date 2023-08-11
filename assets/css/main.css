@@ -50,8 +50,7 @@
   strong {
     font-weight: bolder;
     /* text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); */
-    background: linear-gradient(rgba(114, 20, 20, 0), #89a5ff) no-repeat center 100% / 100% 4px,
-      linear-gradient(rgba(255, 0, 0, 0), #eeff00) no-repeat center 100% / 100% 4px
+    background: linear-gradient(rgb(229 21 21 / 63%),rgb(243 212 106 / 46%))no-repeat 50% 110%/110% 4px
   }
 }
 
