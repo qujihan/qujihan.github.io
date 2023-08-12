@@ -1,15 +1,42 @@
 ---
 author: "Jihan"
-title: "GDB 手册"
-date: "2023-07-24"
+title: "一些日常使用的手册"
+date: "2023-04-23"
 tags:
-- gdb
-- handbook
+- Handbook
 ---
-最好的手册终究还是[官方手册](https://sourceware.org/gdb/onlinedocs/gdb/index.html)！
 <!--more-->
+# Docker 
 
-# 简易查询表
+## 基本的Docker操作
+
+```shell
+docker volume create volume_name
+docker build -t image_name --build-arg arch=amd64  .
+# mac/linux
+docker run -it --name cmu -v ~/docker_data/:/root/data image_name
+# windows
+docker run -it --name container_name -v volume_name:root/data image_name
+docker exec -it container_name /bin/bash
+```
+
+## 将Docker中的数据转移到其他盘符
+以下皆是以移动到D:/wsl为例
+```shell
+wsl --export docker-desktop D:\wsl\docker-desktop.tar
+wsl --export docker-desktop-data D:\wsl\docker-desktop-data.tar
+wsl --unregister docker-desktop
+wsl --unregister docker-desktop-data
+wsl --import docker-desktop D:\wsl\docker-desktop D:\wsl\docker-desktop.tar --version 2
+wsl --import docker-desktop-data D:\wsl\docker-desktop-data D:\wsl\docker-desktop-data.tar --version 2
+```
+参考：
+1. [Moving Docker wsl files #5829 docker/for-win](https://github.com/docker/for-win/issues/5829)
+2. [Move VHD File · Issue #4320 microsoft/WSL](https://github.com/microsoft/WSL/issues/4320#issuecomment-571758494)
+
+
+# GDB
+
 
 **指定参数**
 - 启动的时候 `gdb --args <exe>`
@@ -152,8 +179,8 @@ end
 - `quit` 或者 `q`
 
 
-# 其他记录
-## 多线程
+## 其他记录
+### 多线程
 `set print thread-events on/off`: 设置是否打印线程的日志信息
 - `info/i threads`: 查看所有线程的信息
 - `b main.cpp:132 thread thread_num`: 为线程 thread_num 设置一个断点
@@ -166,18 +193,18 @@ end
     - `thread/t apply 1 2 3 i locals`
     - `thread/t apply 1-3 i locals`
     - `thread/t apply all bt`
-### 死锁问题
+#### 死锁问题
 `thread apply all bt`: 先查看所有的进程的调用栈
 `thread thread_num` => `f frame_num`: 看每一个进程都是在哪里停住
 
-## 跳转执行/反向执行
+### 跳转执行/反向执行
 - `jump filename:line`: 跳转到某一行开始执行
 - `record`:反向执行之前需要先记录下来
 - `record stop`
 - `rn/rs/rc`:n/s/c的反向操作
 - `reverse-finish`: 反向执行到函数的开始
 
-## 多进程
+### 多进程
 `set schedule multiple on/off`: 多个进程时候可以同时运行(默认是:off)
 - `info inferior`: GDB所包含的所有子程序
 - `inferior num`: 切换到不同的inferior
@@ -185,7 +212,7 @@ end
 - `remove-inferior`: 删除一个inferior
 - `detach inferior num`: 将进程取消attach
 
-### 父子进程调试
+#### 父子进程调试
 `set follow-fork-mode child/parent `: 设置调试跟随父进程还是子进程
 
 
@@ -194,17 +221,17 @@ end
 如果想父进程和子进程一起调试, 就需要将`detach-on-fork`设置为`off`, 然后就可以一起调试了
 
 
-## 简单的内存检查
+### 简单的内存检查
 `call malloc_stats()`: 调用系统的函数去查看内存信息
 
 `call malloc_info(0, stdout)`: stdout是标准输出(也可以是其他文件)输出的是xml格式
 
 `gcc -fsanitize=address`: 使得gcc检查 内存/堆/栈/全局内存/释放后使用(野指针) 问题
 
-## 调试符号
+### 调试符号
 
 
-### gdb 命令
+#### gdb 命令
 
 **附加调试信息去调试**
 `gdb --sysbol=release-section -exec=release`
@@ -215,13 +242,13 @@ end
 
 
 
-### strip 命令
+#### strip 命令
 去掉debug信息
 `strip -g with_debug_info_file -o outfile`
 
-### objcopy 命令
+#### objcopy 命令
 `objcopy `: 生成debug信息
-## core dump 核心转储
+### core dump 核心转储
 
 **命令**
 
@@ -234,7 +261,7 @@ end
 加载core dump: `gdb core_dump_filename`
 
 
-# Links
+## Links
 - [GDB Manual PDF](https://sourceware.org/gdb/current/onlinedocs/gdb.pdf)
 - [GDB Manual Single page](https://sourceware.org/gdb/onlinedocs/gdb/index.html)
 - [GDB to LLDB map](https://lldb.llvm.org/use/map.html)

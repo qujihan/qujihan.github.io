@@ -3,7 +3,7 @@ author: "Jihan"
 title: "源码安装PG"
 date: "2023-08-04"
 tags:
-- postgresql
+- Postgresql
 ---
 天天看就天天有收获!嘿嘿!
 <!--more-->

@@ -1,9 +1,9 @@
 ---
 author: "Jihan"
-title: "一些代码snipaste"
+title: "代码 snipaste"
 date: "2023-06-02"
 tags:
-- handbook
+- Handbook
 ---
 
 <!--more-->

@@ -3,7 +3,7 @@ author: "Jihan"
 title: "二分查找的理解"
 date: "2023-05-20"
 tags:
-- algorithm
+- Algorithm
 ---
 
 对二分查找的理解，以leetcode34为例

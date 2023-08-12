@@ -1,6 +1,6 @@
 ---
 author: "Jihan"
-title: "各种编辑器使用指北"
+title: "Editor/IDE 使用指北"
 date: "2023-07-29"
 tags:
 - Editor

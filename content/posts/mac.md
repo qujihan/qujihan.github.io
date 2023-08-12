@@ -3,7 +3,7 @@ author: "Jihan"
 title: "Mac 使用指北"
 date: "2023-07-29"
 tags:
-- mac
+- Mac
 ---
 记录一些解决的Mac问题, 避免以后无意义的搜索
 <!--more-->
