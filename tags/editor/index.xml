@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Editor on 拾野知地</title>
+    <link>/tags/editor/</link>
+    <description>Recent content in Editor on 拾野知地</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>Jihan</copyright>
+    <lastBuildDate>Sat, 29 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/editor/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>各种编辑器使用指北</title>
+      <link>/posts/ide/</link>
+      <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/ide/</guid>
+      <description>VSCode 一些vscode的基本配置，下面的文件可以在 文件 -&amp;gt; 首选项 -&amp;gt; 设置 ，右上角的第一个文件（悬浮会显示打开更改） { // Font &amp;#34;editor.fontFamily&amp;#34;: &amp;#34;\&amp;#34;FiraCode Nerd Font Mono\&amp;#34;&amp;#34;, // VSCodeVim &amp;#34;vim.useSystemClipboard&amp;#34;: true, &amp;#34;vim.leader&amp;#34;: &amp;#34;&amp;lt;space&amp;gt;&amp;#34;, &amp;#34;vim.vimrc.enable&amp;#34;: true, &amp;#34;vim.surround&amp;#34;:</description>
+    </item>
+    
+  </channel>
+</rss>

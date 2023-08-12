@@ -18,11 +18,20 @@
     </item>
     
     <item>
-      <title>emacs</title>
-      <link>/tags/emacs/</link>
-      <pubDate>Wed, 02 Aug 2023 00:00:00 +0000</pubDate>
+      <title>Editor</title>
+      <link>/tags/editor/</link>
+      <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>/tags/emacs/</guid>
+      <guid>/tags/editor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>/tags/linux/</link>
+      <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/linux/</guid>
       <description></description>
     </item>
     
@@ -32,6 +41,15 @@
       <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
       
       <guid>/tags/mac/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>/tags/windows/</link>
+      <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/windows/</guid>
       <description></description>
     </item>
     
@@ -54,83 +72,11 @@
     </item>
     
     <item>
-      <title>util</title>
-      <link>/tags/util/</link>
-      <pubDate>Sun, 23 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/util/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>makefile</title>
-      <link>/tags/makefile/</link>
-      <pubDate>Fri, 21 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/makefile/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>template</title>
-      <link>/tags/template/</link>
-      <pubDate>Fri, 21 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/template/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>golang</title>
-      <link>/tags/golang/</link>
-      <pubDate>Fri, 02 Jun 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vscode</title>
-      <link>/tags/vscode/</link>
-      <pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/vscode/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>algorithm</title>
       <link>/tags/algorithm/</link>
       <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
       
       <guid>/tags/algorithm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>/tags/docker/</link>
-      <pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ubuntu</title>
-      <link>/tags/ubuntu/</link>
-      <pubDate>Wed, 15 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/ubuntu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>windows</title>
-      <link>/tags/windows/</link>
-      <pubDate>Wed, 15 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/windows/</guid>
       <description></description>
     </item>
     
