@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    
+    
+    <link rel="preload stylesheet" as="style" href="/css/style.min.css" />
+
+    
+    <title>Tomohiko Sakamoto 算法/蔡勒公式 - 拾野知地</title>
+
+    
+    <link rel="shortcut icon" type="image/png"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAABWklEQVQ4jY3UwU5TQRTG8V9qYEOoAdZ9AX0DAgtiWEMQ6StoIOlzKBJfomFl4jtI2OFGiS1p3ehaF5UFLExd3HPppNzpvV9yFufcmX/Od+bOUK1ldHGOIW4jhlE7ijWN9BI/MK2JMQ4WgZ7gfbLhK3p4jhWsYj+6TMGnaFUBS9gd3uQWYQ0/56DvqmyWsJ1FNkKvPB7Bfvlx2WxmrzOAS1wkebsCOAqWrtnMcjYv8DnJn1YAp9G580h6tUZnOsoA+3ATybOGsA38ygCHMIlktQbUjs5ysGmwFgI7+JisqYvJIssd/G4IerDcwpcA7M4BP2C9ZgzzumJ2Yt8U169UanMTWw06PKT4GcdROM4At7BdAxthqdx8EMV7vIjapwYdpbE37/80gZ4oDulPQ9jbqoG2FK9GuegaZ/iOfzWw3JVF8WqMGnQ1qrKZ05LiovcxwN+IQdQOJQeQ6j9hwsao7vZBvQAAAABJRU5ErkJggg== ">
+
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.min.css">
+
+
+    
+    
+    
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles/color-brewer.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/languages/go.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+
+    
+    <script>
+        document.querySelectorAll('a[href]').forEach(link => {
+            if (link.host !== window.location.host) {
+                link.classList.add('link-icon');
+            }
+        });
+    </script>
+
+
+</head><body class="duration-200 ease-out text-black prose prose-neutral font-wenkai ">
+
+    <main class="mx-auto min-h-[calc(100%-9rem)] max-w-4xl"><header>
+    <nav class="pt-5 px-10 flex">
+        <div class="left-0 hidden md:flex">
+            
+            <a href="/" class="text-3xl">拾野知地</a>
+        </div>
+
+        <div class="flex mx-auto items-end">
+            
+            
+            <a class="px-2 hover:font-bold hover:text-blue-500  transition-colors duration-200 ease-in-out"
+                href="/">主页</a>
+            
+            <a class="px-2 hover:font-bold hover:text-blue-500  transition-colors duration-200 ease-in-out"
+                href="/posts/">归档</a>
+            
+            <a class="px-2 hover:font-bold hover:text-blue-500  transition-colors duration-200 ease-in-out"
+                href="/about/">关于本站</a>
+            
+        </div>
+
+        
+
+        <div class="right-0 hidden md:flex items-end">
+            
+            
+
+            
+            
+
+            
+            
+            <a href="https://github.com/qujihan"
+                class="items-end mr-2 ml-2 hover:font-bold hover:text-blue-500  transition-colors duration-200 ease-in-out">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                </svg>
+            </a>
+            
+
+            
+            
+
+            
+            
+
+            
+            
+
+
+            
+
+            
+            
+
+            
+            
+            <a href="https://x.com/Quhaha4"
+                class="items-end mr-2 ml-2 hover:font-bold hover:text-blue-500  transition-colors duration-200 ease-in-out">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                    viewBox="0 0 512 512">
+                    <path
+                        d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+                </svg>
+            </a>
+            
+
+            
+            
+
+            
+            
+
+
+            
+
+            
+            
+
+            
+            
+
+            
+            
+            <a href="https://space.bilibili.com/23354145"
+                class="items-end mr-2 ml-2 hover:font-bold hover:text-blue-500  transition-colors duration-200 ease-in-out">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                    viewBox="0 0 512 512">
+                    <path
+                        d="M488.6 104.1C505.3 122.2 513 143.8 511.9 169.8V372.2C511.5 398.6 502.7 420.3 485.4 437.3C468.2 454.3 446.3 463.2 419.9 464H92.02C65.57 463.2 43.81 454.2 26.74 436.8C9.682 419.4 .7667 396.5 0 368.2V169.8C.7667 143.8 9.682 122.2 26.74 104.1C43.81 87.75 65.57 78.77 92.02 78H121.4L96.05 52.19C90.3 46.46 87.42 39.19 87.42 30.4C87.42 21.6 90.3 14.34 96.05 8.603C101.8 2.868 109.1 0 117.9 0C126.7 0 134 2.868 139.8 8.603L213.1 78H301.1L375.6 8.603C381.7 2.868 389.2 0 398 0C406.8 0 414.1 2.868 419.9 8.603C425.6 14.34 428.5 21.6 428.5 30.4C428.5 39.19 425.6 46.46 419.9 52.19L394.6 78L423.9 78C450.3 78.77 471.9 87.75 488.6 104.1H488.6zM449.8 173.8C449.4 164.2 446.1 156.4 439.1 150.3C433.9 144.2 425.1 140.9 416.4 140.5H96.05C86.46 140.9 78.6 144.2 72.47 150.3C66.33 156.4 63.07 164.2 62.69 173.8V368.2C62.69 377.4 65.95 385.2 72.47 391.7C78.99 398.2 86.85 401.5 96.05 401.5H416.4C425.6 401.5 433.4 398.2 439.7 391.7C446 385.2 449.4 377.4 449.8 368.2L449.8 173.8zM185.5 216.5C191.8 222.8 195.2 230.6 195.6 239.7V273C195.2 282.2 191.9 289.9 185.8 296.2C179.6 302.5 171.8 305.7 162.2 305.7C152.6 305.7 144.7 302.5 138.6 296.2C132.5 289.9 129.2 282.2 128.8 273V239.7C129.2 230.6 132.6 222.8 138.9 216.5C145.2 210.2 152.1 206.9 162.2 206.5C171.4 206.9 179.2 210.2 185.5 216.5H185.5zM377 216.5C383.3 222.8 386.7 230.6 387.1 239.7V273C386.7 282.2 383.4 289.9 377.3 296.2C371.2 302.5 363.3 305.7 353.7 305.7C344.1 305.7 336.3 302.5 330.1 296.2C323.1 289.9 320.7 282.2 320.4 273V239.7C320.7 230.6 324.1 222.8 330.4 216.5C336.7 210.2 344.5 206.9 353.7 206.5C362.9 206.9 370.7 210.2 377 216.5H377z" />
+                </svg>
+            </a>
+            
+
+            
+            
+
+
+            
+
+            
+            
+
+            
+            
+
+            
+            
+
+            
+            
+
+
+            
+
+            
+            
+
+            
+            
+
+            
+            
+
+            
+            
+            <a href="/index.xml"
+                class="items-end mr-2 ml-2 hover:font-bold hover:text-blue-500  transition-colors duration-200 ease-in-out">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                    <path
+                        d="M5.5 12a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-3-8.5a1 1 0 0 1 1-1c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1-1 6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1-1-1z" />
+                </svg>
+            </a>
+            
+
+
+            
+        </div>
+    </nav>
+
+</header><div class="px-8 pb-16 pt-12 relative">
+
+
+
+<div class="flex flex-col flex-wrap pb-16">
+    
+    <a class="text-4xl mx-auto">
+        Tomohiko Sakamoto 算法/蔡勒公式
+    </a>
+
+    
+    <div class="flex mx-auto mt-4 mb-4">
+        
+        <div class="ml-2 bg-gray-200 hover:font-bold hover:text-blue-500 rounded-3xl transition-colors duration-200 ease-in-out">
+            <a class="px-2  hover:font-bold hover:text-blue-500" href="/tags/algorithm">Algorithm</a>
+        </div>
+        
+    </div>
+
+    
+    <div class="mx-auto">
+        <time datetime=" 2023/05/21">2023/5/21</time>
+    </div>
+</div>
+
+
+
+
+<div class="link-decorator code-decorator">
+    <p>对于给定的日期，可以快速算出是周几</p>
+<p><strong>因为格里历（公历）取代儒略历的原因，所以只适用于 1582/10/15 以后</strong></p>
+<p>这里假设第一年一月一日是周一, (巧了, 正好可以完美契合, 不用再外加 offset 修正了)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">algorithm</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">计算年份会产生的 offset
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">主要是二月, 如果:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">1. 一月二月, 其实只计算这一年之前的 offset 就可以了
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   在调用的时候需要 将year-1传入
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">2. 二月以后, 需要计算因为二月产生的偏差
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   在调用的时候需要 将真实的year传入
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   但是这里还会产生一个问题: 年份的offset多了1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">   这就需要在month_util()中解决了: 二月以后(不含二月)以后的 offset-1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">year_util</span>(<span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		1. y 是计算年份产生的 offset
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		   365 = 7 * 52 + 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		   所以过了y年, 就会造成 offset = y
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		2. y/4 - y/100 + y/400 是计算二月产生的 offset
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		   四年一闰 百年不闰 四百年再一闰
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	*/</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">y</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">y</span><span style="color:#f92672">/</span><span style="color:#ae81ff">4</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">y</span><span style="color:#f92672">/</span><span style="color:#ae81ff">100</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">y</span><span style="color:#f92672">/</span><span style="color:#ae81ff">400</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"> 计算月份会产生的 offset
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">month_util</span>() []<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">days_in_month</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">31</span>}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sum</span>, <span style="color:#a6e22e">offset</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, make([]<span style="color:#66d9ef">int</span>, len(<span style="color:#a6e22e">days_in_month</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">idx</span>, <span style="color:#a6e22e">days</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">days_in_month</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">			这里需要响应year_util()中提到的问题
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		*/</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">temp</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// 这里 idx &gt; 1 其实是月份大于二月份
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">idx</span> &gt; <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">				这里offset 可能是 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">				(其实可以枚举出来, 当九月的时候就会导致是0)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">				此时 offset = -1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">				所以 令 offset = 6
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">				类似补码的思想, 这里只是为了都是正整数操作
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">			*/</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">temp</span><span style="color:#f92672">--</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">temp</span> &lt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">temp</span> = <span style="color:#ae81ff">6</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">offset</span>[<span style="color:#a6e22e">idx</span>] = <span style="color:#a6e22e">temp</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">days</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">offset</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">tomohiko_sakamoto</span>(<span style="color:#a6e22e">y</span>, <span style="color:#a6e22e">m</span>, <span style="color:#a6e22e">d</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// 当小于二月份的时候, 既没有当年 年份产生的offset, 也没有 二月产生的 offset
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">// 故而 y--
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">m</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">2</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">y</span><span style="color:#f92672">--</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">year_util</span>(<span style="color:#a6e22e">y</span>) <span style="color:#f92672">+</span> <span style="color:#a6e22e">month_util</span>()[<span style="color:#a6e22e">m</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">d</span>) <span style="color:#f92672">%</span> <span style="color:#ae81ff">7</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="test">Test</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">algorithm</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;testing&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">date</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">y</span>, <span style="color:#a6e22e">m</span>, <span style="color:#a6e22e">d</span>, <span style="color:#a6e22e">w</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">TestTomohikoSakamoto</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">check</span> <span style="color:#f92672">:=</span> []<span style="color:#a6e22e">date</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">/* 年，月，日，星期 */</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">0000</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">1600</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2000</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2001</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2004</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2008</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">6</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2042</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">6</span>},
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">/* 平年3月1日 */</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">1700</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>}, <span style="color:#75715e">/* 注意：1700年是平年 */</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">1800</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">6</span>}, <span style="color:#75715e">/* 注意：1800年是平年 */</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">1900</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>}, <span style="color:#75715e">/* 注意：1900年是平年 */</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">1901</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">1918</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">1958</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">6</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">1988</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">1999</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2100</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>}, <span style="color:#75715e">/* 注意：2100年是平年 */</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2101</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2102</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2103</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2104</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">6</span>}, <span style="color:#75715e">/* 注意：2104年是闰年 */</span> <span style="color:#75715e">/* 不是周2 */</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">9999</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>},
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">/* 2004年的重大节日 */</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2004</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>},   <span style="color:#75715e">/* 元旦 */</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2004</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">22</span>, <span style="color:#ae81ff">4</span>},  <span style="color:#75715e">/*春节*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2004</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">4</span>},   <span style="color:#75715e">/*宵节*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2004</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">1</span>},   <span style="color:#75715e">/*妇女节*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2004</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">5</span>},  <span style="color:#75715e">/*植树节*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2004</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">1</span>},  <span style="color:#75715e">/*投诉节*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2004</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">0</span>},   <span style="color:#75715e">/*清明节*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2004</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">6</span>},   <span style="color:#75715e">/*五一节*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2004</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">2</span>},   <span style="color:#75715e">/*青年节*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2004</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">0</span>},   <span style="color:#75715e">/*母亲节*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2004</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>},   <span style="color:#75715e">/*儿童节*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2004</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">22</span>, <span style="color:#ae81ff">2</span>},  <span style="color:#75715e">/*端午节*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2004</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>},   <span style="color:#75715e">/*建党节*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2004</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>},   <span style="color:#75715e">/*建军节*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2004</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">0</span>},   <span style="color:#75715e">/*父亲节*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2004</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">5</span>},  <span style="color:#75715e">/*教师节*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2004</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">2</span>},  <span style="color:#75715e">/*中秋节*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2004</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>},  <span style="color:#75715e">/*国庆节*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2004</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">3</span>},  <span style="color:#75715e">/*老人节*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2004</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">22</span>, <span style="color:#ae81ff">5</span>}, <span style="color:#75715e">/*重阳节*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2004</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">0</span>},  <span style="color:#75715e">/*立冬节*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2004</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">21</span>, <span style="color:#ae81ff">2</span>}, <span style="color:#75715e">/*冬至节*/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">/* 二十世纪 */</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">1900</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>}, <span style="color:#75715e">/*元旦*/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">1900</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>}, <span style="color:#75715e">/* 公式测试关键点 */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">1918</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">21</span>, <span style="color:#ae81ff">1</span>}, <span style="color:#75715e">/*大寒*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">1918</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">1</span>}, <span style="color:#75715e">/*春节*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">1927</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">6</span>},  <span style="color:#75715e">/*元旦 */</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">1948</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">18</span>, <span style="color:#ae81ff">0</span>}, <span style="color:#75715e">/*腊八节*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">1949</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">6</span>}, <span style="color:#75715e">/*国庆*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">1962</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>},  <span style="color:#75715e">/*劳动节*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">1999</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">5</span>},
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">/* 二十一世纪 */</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2000</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">6</span>},  <span style="color:#75715e">/*元旦*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2018</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">6</span>}, <span style="color:#75715e">/*大寒*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2018</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">5</span>}, <span style="color:#75715e">/*春节*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2027</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>},  <span style="color:#75715e">/*元旦*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2048</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">22</span>, <span style="color:#ae81ff">3</span>}, <span style="color:#75715e">/*腊八节*/</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2099</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">4</span>},
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">/* 二十二世纪 */</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2100</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2100</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">0</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2100</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2100</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">0</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2100</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2100</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">3</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2100</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">5</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2101</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">6</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2101</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">1</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2101</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2101</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">28</span>, <span style="color:#ae81ff">1</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2101</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2101</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">4</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2101</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">6</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2104</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">29</span>, <span style="color:#ae81ff">5</span>}, <span style="color:#75715e">/* 不是周1 */</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2104</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">6</span>},  <span style="color:#75715e">/* 不是周2 */</span>
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2199</span>, <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">31</span>, <span style="color:#ae81ff">2</span>},
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">val</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">check</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">tomohiko_sakamoto</span>(<span style="color:#a6e22e">val</span>.<span style="color:#a6e22e">y</span>, <span style="color:#a6e22e">val</span>.<span style="color:#a6e22e">m</span>, <span style="color:#a6e22e">val</span>.<span style="color:#a6e22e">d</span>) <span style="color:#f92672">!=</span> <span style="color:#a6e22e">val</span>.<span style="color:#a6e22e">w</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;%d %d %d Expected %d but got %d&#34;</span>, <span style="color:#a6e22e">val</span>.<span style="color:#a6e22e">y</span>, <span style="color:#a6e22e">val</span>.<span style="color:#a6e22e">m</span>, <span style="color:#a6e22e">val</span>.<span style="color:#a6e22e">d</span>, <span style="color:#a6e22e">val</span>.<span style="color:#a6e22e">w</span>, <span style="color:#a6e22e">tomohiko_sakamoto</span>(<span style="color:#a6e22e">val</span>.<span style="color:#a6e22e">y</span>, <span style="color:#a6e22e">val</span>.<span style="color:#a6e22e">m</span>, <span style="color:#a6e22e">val</span>.<span style="color:#a6e22e">d</span>))
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</div>
+
+
+
+
+
+<nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+        href="/posts/language_handbooks/"><span class="mr-1.5">←</span><span>代码 snipaste</span></a>
+    
+
+    
+    <a class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+        href="/posts/binary_search/"><span>二分查找的理解</span><span class="ml-1.5">→</span></a>
+    
+</nav>
+
+
+
+
+        </div><footer class="pb-20 px-10 text-xs text-gray-500">
+    <div class="flex flex-col">
+        
+
+        <div class="hidden md:block mx-auto">
+            
+        </div>
+    </div>
+
+    <div class="flex">
+        <div class="mx-auto">
+            <a class="mx-auto"> &copy; Copyright 2023 ✿ </a>
+            <a class="hover:font-bold hover:text-blue-500" href="/">Jihan</a>
+        </div>
+    </div>
+
+
+</footer></main>
+
+
+</body>
+
+</html>

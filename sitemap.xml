@@ -20,6 +20,9 @@
     <loc>/tags/editor/</loc>
     <lastmod>2023-07-29T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>/posts/ide/</loc>
+    <lastmod>2023-07-29T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/tags/linux/</loc>
     <lastmod>2023-07-29T00:00:00+00:00</lastmod>
   </url><url>
@@ -38,17 +41,8 @@
     <loc>/posts/win/</loc>
     <lastmod>2023-07-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/ide/</loc>
-    <lastmod>2023-07-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/gdb/</loc>
-    <lastmod>2023-07-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/gdb/</loc>
-    <lastmod>2023-07-24T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/tags/handbook/</loc>
-    <lastmod>2023-07-24T00:00:00+00:00</lastmod>
+    <lastmod>2023-07-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/read-daily/</loc>
     <lastmod>2023-07-23T00:00:00+00:00</lastmod>
@@ -60,7 +54,10 @@
     <lastmod>2023-06-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/algorithm/</loc>
-    <lastmod>2023-05-20T00:00:00+00:00</lastmod>
+    <lastmod>2023-05-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/tomohiko_sakamoto/</loc>
+    <lastmod>2023-05-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/binary_search/</loc>
     <lastmod>2023-05-20T00:00:00+00:00</lastmod>
@@ -68,11 +65,8 @@
     <loc>/about/</loc>
     <lastmod>2023-04-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/docker_handbook/</loc>
+    <loc>/posts/handbooks/</loc>
     <lastmod>2023-04-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/handbooks/</loc>
-    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/site_functions/</loc>
     <lastmod>2023-01-01T00:00:00+00:00</lastmod>

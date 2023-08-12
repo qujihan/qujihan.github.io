@@ -18,6 +18,15 @@
     </item>
     
     <item>
+      <title>Editor/IDE 使用指北</title>
+      <link>/posts/ide/</link>
+      <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/ide/</guid>
+      <description>VSCode 一些vscode的基本配置，下面的文件可以在 文件 -&amp;gt; 首选项 -&amp;gt; 设置 ，右上角的第一个文件（悬浮会显示打开更改） { // Font &amp;#34;editor.fontFamily&amp;#34;: &amp;#34;\&amp;#34;FiraCode Nerd Font Mono\&amp;#34;&amp;#34;, // VSCodeVim &amp;#34;vim.useSystemClipboard&amp;#34;: true, &amp;#34;vim.leader&amp;#34;: &amp;#34;&amp;lt;space&amp;gt;&amp;#34;, &amp;#34;vim.vimrc.enable&amp;#34;: true, &amp;#34;vim.surround&amp;#34;:</description>
+    </item>
+    
+    <item>
       <title>Mac 使用指北</title>
       <link>/posts/mac/</link>
       <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
@@ -45,24 +54,6 @@
     </item>
     
     <item>
-      <title>各种编辑器使用指北</title>
-      <link>/posts/ide/</link>
-      <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/ide/</guid>
-      <description>VSCode 一些vscode的基本配置，下面的文件可以在 文件 -&amp;gt; 首选项 -&amp;gt; 设置 ，右上角的第一个文件（悬浮会显示打开更改） { // Font &amp;#34;editor.fontFamily&amp;#34;: &amp;#34;\&amp;#34;FiraCode Nerd Font Mono\&amp;#34;&amp;#34;, // VSCodeVim &amp;#34;vim.useSystemClipboard&amp;#34;: true, &amp;#34;vim.leader&amp;#34;: &amp;#34;&amp;lt;space&amp;gt;&amp;#34;, &amp;#34;vim.vimrc.enable&amp;#34;: true, &amp;#34;vim.surround&amp;#34;:</description>
-    </item>
-    
-    <item>
-      <title>GDB 手册</title>
-      <link>/posts/gdb/</link>
-      <pubDate>Mon, 24 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/gdb/</guid>
-      <description>&lt;p&gt;最好的手册终究还是&lt;a href=&#34;https://sourceware.org/gdb/onlinedocs/gdb/index.html&#34;&gt;官方手册&lt;/a&gt;！&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>时看时新列表</title>
       <link>/posts/read-daily/</link>
       <pubDate>Sun, 23 Jul 2023 00:00:00 +0000</pubDate>
@@ -81,12 +72,21 @@
     </item>
     
     <item>
-      <title>一些代码snipaste</title>
+      <title>代码 snipaste</title>
       <link>/posts/language_handbooks/</link>
       <pubDate>Fri, 02 Jun 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/language_handbooks/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Tomohiko Sakamoto 算法/蔡勒公式</title>
+      <link>/posts/tomohiko_sakamoto/</link>
+      <pubDate>Sun, 21 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/tomohiko_sakamoto/</guid>
+      <description>&lt;p&gt;对于给定的日期，可以快速算出是周几&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -100,10 +100,10 @@
     
     <item>
       <title>一些日常使用的手册</title>
-      <link>/posts/docker_handbook/</link>
+      <link>/posts/handbooks/</link>
       <pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>/posts/docker_handbook/</guid>
+      <guid>/posts/handbooks/</guid>
       <description></description>
     </item>
     
