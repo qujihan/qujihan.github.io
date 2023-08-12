@@ -29,11 +29,20 @@
     {{ end }}
 
     {{/* Hightlight https://highlightjs.org/#usage */}}
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles/color-brewer.min.css">
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/languages/go.min.js"></script>
     <script>hljs.highlightAll();</script>
+
+
+    {{/* Add link */}}
+    <script>
+        document.querySelectorAll('a[href]').forEach(link => {
+            if (link.host !== window.location.host) {
+                link.classList.add('link-icon');
+            }
+        });
+    </script>
 
 
 </head>

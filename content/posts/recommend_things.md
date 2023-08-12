@@ -1,9 +1,7 @@
 ---
 author: "Jihan"
-title: "整理的开源 工具/软件/书籍"
+title: "资料的整理"
 date: "2023-07-23"
-tags:
-- util
 ---
 
 
@@ -13,19 +11,15 @@ tags:
 # 软件
 
 **截图为gif**
-
 [ScreenToGif](https://github.com/NickeManarin/ScreenToGif)
 
 **ffmpeg的封装剪辑软件(MacOS)**
-
 [lossless-cut](https://github.com/mifi/lossless-cut)
 
 
 # 工具
-
 ## 字体
-
-[nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
+[Nerd-Fonts](https://github.com/ryanoasis/nerd-fonts)
 
 [LXGW WenKai / 霞鹜文楷](https://github.com/lxgw/LxgwWenKai)
 

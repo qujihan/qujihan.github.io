@@ -50,8 +50,41 @@
   strong {
     font-weight: bolder;
     /* text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); */
-    background: linear-gradient(rgb(229 21 21 / 63%),rgb(243 212 106 / 46%))no-repeat 50% 110%/110% 4px
+    background: linear-gradient(rgb(229 21 21 / 63%), rgb(243 212 106 / 46%))no-repeat 50% 110%/110% 4px
   }
+}
+
+@layer components {
+  .link-decorator a {
+    position: relative;
+    text-decoration: none;
+    color: #19afc6;
+    /* 浅蓝色 */
+    transition: color 0.3s ease;
+    /* 平滑过渡效果 */
+  }
+
+  .link-decorator a:hover {
+    color: #1368df;
+    /* 深蓝色，你可以替换成你喜欢的深蓝色 */
+  }
+
+  .link-decorator a::after {
+    content: '\00B6';
+    margin-left: 0.25rem;
+  }
+
+  .link-decorator a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 1px;
+    background-color: currentColor;
+  }
+
+
 }
 
 

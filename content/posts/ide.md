@@ -1,17 +1,13 @@
 ---
 author: "Jihan"
-title: "在VSCode中设置一些快捷键"
-date: "2023-05-23"
+title: "各种编辑器使用指北"
+date: "2023-07-29"
 tags:
-- vscode
-- handbook
+- Editor
 ---
 
-WIP.
-<!--more-->
 
-
-
+# VSCode
 一些vscode的基本配置，下面的文件可以在 文件 -> 首选项 -> 设置 ，右上角的第一个文件（悬浮会显示打开更改）
 ```json
 {
@@ -22,6 +18,8 @@ WIP.
     "vim.useSystemClipboard": true,
     "vim.leader": "<space>",
     "vim.vimrc.enable": true,
+    "vim.surround": true,
+    "vim.sneak": true,
 }
 ```
 
@@ -131,7 +129,7 @@ WIP.
 ]
 ```
 
-.vscodevimrc
+.vscodevimrc(位于~/.vscodevimrc)
 
 ```lua
 " Set Windows Keymaps "
@@ -151,3 +149,23 @@ nmap ]d editor.action.marker.next
 nmap K editor.action.showHover
 
 ```
+
+
+
+
+
+# Jetbrains
+
+
+# Vim/Neovim
+
+# Emacs
+## Dired
+
+- 选择
+  - m 选中
+  - u 取消选中
+  - U 取消所有选中
+  - t 反选
+  - * / 选择所有目录
+  - x 执行所有命令
