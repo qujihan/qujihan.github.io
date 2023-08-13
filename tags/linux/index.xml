@@ -14,7 +14,7 @@
       <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/ubuntu/</guid>
-      <description>Ubuntu 设置ssh 配置ssh所需的一些命令 ssh-keygen -t ed25519 -C &amp;#34;qujihan@163.com&amp;#34; cat .ssh/id_ed25519.pub ssh -T git@github.com 在Github上就可以设置ssh了 现在在最新版本的 ubuntu 可以使用 snap 去安装 neovim 了 # install neovim latest curl -LO</description>
+      <description></description>
     </item>
     
   </channel>

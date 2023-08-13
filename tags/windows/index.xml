@@ -14,7 +14,7 @@
       <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/win/</guid>
-      <description>Windows 跳过联网激活使用本地账号 在连接网络的界面按住Shift+F10调出CMD输入OOBE\BYPASSNRO 安装软件 # Needed to run a remote script the first time Set-ExecutionPolicy RemoteSigned -Scope</description>
+      <description></description>
     </item>
     
   </channel>
