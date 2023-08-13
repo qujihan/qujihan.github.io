@@ -5,7 +5,7 @@ date: "2023-07-29"
 tags:
 - Linux
 ---
-
+<!--more-->
 # Ubuntu
 ## 设置ssh
 

@@ -20,6 +20,16 @@ docker run -it --name container_name -v volume_name:root/data image_name
 docker exec -it container_name /bin/bash
 ```
 
+
+## Docker 多平台 image构建
+
+多平台构建并且push到dockerhub上
+```shell
+docker buildx create --name my_ubuntu --use 
+# 这里省略了docker login之类的步骤
+docker buildx build --platform linux/amd64,linux/arm64 -t qujihan/ubuntu . 
+```
+
 ## 将Docker中的数据转移到其他盘符
 以下皆是以移动到D:/wsl为例
 ```shell

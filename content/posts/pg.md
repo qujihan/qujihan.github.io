@@ -5,7 +5,6 @@ date: "2023-08-04"
 tags:
 - Postgresql
 ---
-天天看就天天有收获!嘿嘿!
 <!--more-->
 
 **安装Docker镜像**
