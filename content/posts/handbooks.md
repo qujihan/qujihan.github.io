@@ -3,7 +3,7 @@ author: "Jihan"
 title: "一些日常使用的手册"
 date: "2023-04-23"
 tags:
-- Handbook
+- Snipaste
 ---
 <!--more-->
 # Docker 
@@ -46,7 +46,7 @@ wsl --import docker-desktop-data D:\wsl\docker-desktop-data D:\wsl\docker-deskto
 
 
 # GDB
-
+如果可以选择的话, 现在更推荐使用lldb啦!
 
 **指定参数**
 - 启动的时候 `gdb --args <exe>`

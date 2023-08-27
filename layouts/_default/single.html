@@ -32,7 +32,7 @@
 
 
 <!-- Post Nav -->
-{{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{/*  {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
 {{ if and (gt (len $pages) 1) (in $pages . ) }}
 <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
     {{ with $pages.Next . }}
@@ -45,7 +45,7 @@
         href="{{ .Permalink }}"><span>{{ .Name }}</span><span class="ml-1.5">→</span></a>
     {{ end }}
 </nav>
-{{ end }}
+{{ end }}  */}}
 
 
 {{ end }}

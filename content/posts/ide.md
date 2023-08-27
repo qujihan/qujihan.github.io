@@ -13,6 +13,7 @@ tags:
 {
     // Font
     "editor.fontFamily": "\"FiraCode Nerd Font Mono\"",
+    "terminal.integrated.fontFamily": "\"FiraCode Nerd Font Mono\"",
 
     // VSCodeVim
     "vim.useSystemClipboard": true,
