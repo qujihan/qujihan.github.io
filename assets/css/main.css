@@ -9,48 +9,41 @@
 
   h1 {
     @apply text-3xl;
-    font-weight:bold;
+    font-weight: bold;
     padding-top: 30pt;
     padding-bottom: 20pt;
-    margin-bottom: 10pt;
     text-align: center
-
   }
 
   h2 {
     @apply text-3xl;
-    font-weight:bold;
+    font-weight: bold;
     padding-top: 30pt;
     padding-bottom: 20pt;
-    margin-bottom: 10pt;
   }
 
   h3 {
     @apply text-2xl;
-    font-weight:bold;
+    font-weight: bold;
     padding-top: 30pt;
     padding-bottom: 20pt;
-    margin-bottom: 10pt;
   }
 
   h4 {
     @apply text-xl;
-    font-weight:bold;
+    font-weight: bold;
     padding-top: 30pt;
     padding-bottom: 20pt;
-    margin-bottom: 10pt;
   }
 
   h5 {
     @apply text-lg;
     padding-top: 10pt;
-    margin-bottom: 10pt;
   }
 
   h6 {
     @apply text-base;
     padding-top: 10pt;
-    margin-bottom: 10pt;
   }
 
   .highlight {
@@ -70,6 +63,8 @@
   .link-decorator a {
     position: relative;
     text-decoration: none;
+    padding-left: 1px;
+    padding-right: 1px;
     color: #19afc6;
     /* 浅蓝色 */
     transition: color 0.3s ease;
@@ -77,29 +72,26 @@
   }
 
   .link-decorator a:hover {
-    color: #1368df;
     /* 深蓝色，你可以替换成你喜欢的深蓝色 */
+    color: #1368df;
   }
 
   .link-decorator a::after {
     /* https://www.fuhaoku.net/blocks */
-    /* content: '\21AF'; */
-    content: '\21B5';
-    /* margin-left: 0.1rem; */
+    /* content: '\21B5'; */
+    content: '\21AF';
     margin-left: 0.15rem;
   }
 
   .link-decorator a::before {
     content: '';
     position: absolute;
-    left: 0;
-    right: 0;
+    left: 1px;
+    right: 1px;
     bottom: -2px;
     height: 1px;
     background-color: currentColor;
   }
-
-
 }
 
 
