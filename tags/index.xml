@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Jihan</copyright>
-    <lastBuildDate>Fri, 04 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 26 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go</title>
+      <link>/tags/go/</link>
+      <pubDate>Sat, 26 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/go/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Postgresql</title>
       <link>/tags/postgresql/</link>
@@ -27,29 +36,11 @@
     </item>
     
     <item>
-      <title>Linux</title>
-      <link>/tags/linux/</link>
+      <title>Machine</title>
+      <link>/tags/machine/</link>
       <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mac</title>
-      <link>/tags/mac/</link>
-      <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/mac/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Windows</title>
-      <link>/tags/windows/</link>
-      <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/windows/</guid>
+      <guid>/tags/machine/</guid>
       <description></description>
     </item>
     
@@ -59,6 +50,15 @@
       <pubDate>Sun, 23 Jul 2023 00:00:00 +0000</pubDate>
       
       <guid>/tags/handbook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Snipaste</title>
+      <link>/tags/snipaste/</link>
+      <pubDate>Fri, 02 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/snipaste/</guid>
       <description></description>
     </item>
     

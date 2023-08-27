@@ -9,7 +9,7 @@
     <link rel="preload stylesheet" as="style" href="/css/style.min.css" />
 
     
-    <title>Windows 使用指北 - 拾野知地</title>
+    <title>Machine - 拾野知地</title>
 
     
     <link rel="shortcut icon" type="image/png"
@@ -189,89 +189,41 @@
 
 </header><div class="px-8 pb-16 pt-12 relative">
 
+<div class="text-center pt-10 pb-10">
+    <a class="text-3xl">Machine</a>
+</div>
 
 
-<div class="flex flex-col flex-wrap pb-16">
+
+
+
+<section class="flex my-5">
     
-    <a class="text-4xl mx-auto">
-        Windows 使用指北
+    <a>
+        <time datetime="2023-07-29 00:00:00 &#43;0000 UTC">07/29</time>
     </a>
 
     
-    <div class="flex mx-auto mt-4 mb-4">
+    <a class="px-4 text-base" href="/posts/machine_reload/">
+        Mac/Win/Linux 使用指北
+    </a>
+
+    
+    
+    <div class="flex items-center ">
         
-        <div class="ml-2 bg-gray-200 hover:font-bold hover:text-blue-500 rounded-3xl transition-colors duration-200 ease-in-out">
-            <a class="px-2  hover:font-bold hover:text-blue-500" href="/tags/windows">Windows</a>
+        <div class="hidden md:block ml-1 
+       bg-gray-200 
+        hover:font-bold hover:text-blue-500  transition-colors duration-200 ease-in-out
+        rounded-3xl ">
+            <a class="px-2 pt-0 pb-0 text-xs " href="/tags/machine">Machine
+            </a>
         </div>
+
         
     </div>
-
     
-    <div class="mx-auto">
-        <time datetime=" 2023/07/29">2023/7/29</time>
-    </div>
-</div>
-
-
-
-
-<div class="link-decorator code-decorator">
-    <h1 id="windows">Windows</h1>
-<h2 id="跳过联网激活使用本地账号">跳过联网激活使用本地账号</h2>
-<p>在连接网络的界面按住Shift+F10调出CMD输入<code>OOBE\BYPASSNRO</code></p>
-<h2 id="安装软件">安装软件</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Needed to run a remote script the first time</span>
-</span></span><span style="display:flex;"><span>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser 
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># set scoop dir is C:\Scoop</span>
-</span></span><span style="display:flex;"><span>md C:<span style="color:#ae81ff">\S</span>coop 
-</span></span><span style="display:flex;"><span>irm get.scoop.sh -outfile <span style="color:#e6db74">&#39;install.ps1&#39;</span>
-</span></span><span style="display:flex;"><span>.<span style="color:#ae81ff">\i</span>nstall.ps1 -ScoopDir <span style="color:#e6db74">&#39;C:\Scoop&#39;</span> -ScoopGlobalDir <span style="color:#e6db74">&#39;C:\Scoop&#39;</span> -NoProxy
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>scoop bucket add extras
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Terminal tools</span>
-</span></span><span style="display:flex;"><span>scoop install sudo git starship
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Tools</span>
-</span></span><span style="display:flex;"><span>scoop install wechat trafficmonitor snipaste powertoys zotero
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Editor</span>
-</span></span><span style="display:flex;"><span>scoop install obsidian wezterm 
-</span></span><span style="display:flex;"><span>winget install Microsoft.PowerShell Microsoft.VisualStudioCode
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># IDE</span>
-</span></span><span style="display:flex;"><span>scoop install goland idea-ultimate pycharm-professional clion
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># language</span>
-</span></span><span style="display:flex;"><span>scoop install make gcc clangd cmake python rustup
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Emacs</span>
-</span></span><span style="display:flex;"><span>scoop bucket add wsw0108 https://github.com/wsw0108/scoop-bucket.git
-</span></span><span style="display:flex;"><span>scoop install emacs librime
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Go</span>
-</span></span><span style="display:flex;"><span>scoop install go
-</span></span><span style="display:flex;"><span>go install github.com/go-delve/delve/cmd/dlv@latest
-</span></span><span style="display:flex;"><span>go install golang.org/x/tools/gopls@latest
-</span></span></code></pre></div>
-</div>
-
-
-
-
-
-<nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
-    
-    <a class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
-        href="/posts/ubuntu/"><span class="mr-1.5">←</span><span>Ubuntu 使用指北</span></a>
-    
-
-    
-    <a class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
-        href="/posts/read-daily/"><span>时看时新列表</span><span class="ml-1.5">→</span></a>
-    
-</nav>
+</section>
 
 
 

@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Jihan</copyright>
-    <lastBuildDate>Fri, 04 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 26 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang 中的工作区模式的实践</title>
+      <link>/posts/go_workspace/</link>
+      <pubDate>Sat, 26 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/go_workspace/</guid>
+      <description>&lt;p&gt;这篇文章来自于2022年4月5日, Go开发组的Beth Brown写的一篇名字为&lt;a href=&#34;https://go.dev/blog/get-familiar-with-workspaces&#34;&gt;Get familiar with workspaces&lt;/a&gt;的博客的读后笔记&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>源码安装PG</title>
       <link>/posts/pg/</link>
@@ -27,56 +36,29 @@
     </item>
     
     <item>
-      <title>Mac 使用指北</title>
-      <link>/posts/mac/</link>
+      <title>Mac/Win/Linux 使用指北</title>
+      <link>/posts/machine_reload/</link>
       <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>/posts/mac/</guid>
+      <guid>/posts/machine_reload/</guid>
       <description>&lt;p&gt;记录一些解决的Mac问题, 避免以后无意义的搜索&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Ubuntu 使用指北</title>
-      <link>/posts/ubuntu/</link>
-      <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/ubuntu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Windows 使用指北</title>
-      <link>/posts/win/</link>
-      <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/win/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>时看时新列表</title>
-      <link>/posts/read-daily/</link>
+      <title>记录一些东西</title>
+      <link>/posts/record/</link>
       <pubDate>Sun, 23 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>/posts/read-daily/</guid>
+      <guid>/posts/record/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>资料的整理</title>
-      <link>/posts/recommend_things/</link>
-      <pubDate>Sun, 23 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/recommend_things/</guid>
-      <description>&lt;p&gt;这些都是我推荐的开源 工具/软件/书籍&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>代码 snipaste</title>
-      <link>/posts/language_handbooks/</link>
+      <link>/posts/language_snipaste/</link>
       <pubDate>Fri, 02 Jun 2023 00:00:00 +0000</pubDate>
       
-      <guid>/posts/language_handbooks/</guid>
+      <guid>/posts/language_snipaste/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on 拾野知地</title>
+    <link>/tags/go/</link>
+    <description>Recent content in Go on 拾野知地</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>Jihan</copyright>
+    <lastBuildDate>Sat, 26 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang 中的工作区模式的实践</title>
+      <link>/posts/go_workspace/</link>
+      <pubDate>Sat, 26 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/go_workspace/</guid>
+      <description>&lt;p&gt;这篇文章来自于2022年4月5日, Go开发组的Beth Brown写的一篇名字为&lt;a href=&#34;https://go.dev/blog/get-familiar-with-workspaces&#34;&gt;Get familiar with workspaces&lt;/a&gt;的博客的读后笔记&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

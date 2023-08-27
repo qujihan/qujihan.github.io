@@ -9,7 +9,7 @@
     <link rel="preload stylesheet" as="style" href="/css/style.min.css" />
 
     
-    <title>Mac 使用指北 - 拾野知地</title>
+    <title>Mac/Win/Linux 使用指北 - 拾野知地</title>
 
     
     <link rel="shortcut icon" type="image/png"
@@ -194,14 +194,14 @@
 <div class="flex flex-col flex-wrap pb-16">
     
     <a class="text-4xl mx-auto">
-        Mac 使用指北
+        Mac/Win/Linux 使用指北
     </a>
 
     
     <div class="flex mx-auto mt-4 mb-4">
         
         <div class="ml-2 bg-gray-200 hover:font-bold hover:text-blue-500 rounded-3xl transition-colors duration-200 ease-in-out">
-            <a class="px-2  hover:font-bold hover:text-blue-500" href="/tags/mac">Mac</a>
+            <a class="px-2  hover:font-bold hover:text-blue-500" href="/tags/machine">Machine</a>
         </div>
         
     </div>
@@ -245,34 +245,93 @@
 </span></span><span style="display:flex;"><span>brew install romkatv/powerlevel10k/powerlevel10k 
 </span></span><span style="display:flex;"><span>brew install zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-git-prompt
 </span></span></code></pre></div><p>安装一些常用的软件: keynote, office, onedrive, ibar, clashX, xcode</p>
-<h1 id="删除系统自带的abc输入法">删除系统自带的ABC输入法</h1>
+<h2 id="删除系统自带的abc输入法">删除系统自带的ABC输入法</h2>
 <p>在使用Mac的过程中, 我使用的是开源的 Rime 输入法, 这款输入法自己可以切换中英文输入, 那么Mac自带的ABC输入法就不那么需要了, 否则会在有的时候打乱思路</p>
 <p>以下仅仅在M系列芯片实验过</p>
-<h2 id="关闭系统完整性保护-sip">关闭系统完整性保护 SIP</h2>
+<h3 id="关闭系统完整性保护-sip">关闭系统完整性保护 SIP</h3>
 <p>关机长按指纹键, 进入恢复模式</p>
 <p>在顶部的菜单栏中的实用工具中找到终端, 输入 <code>csrutil disable</code></p>
 <p>如果输出下面的表示禁用成功
 <code>Successfully disabled System Integrity Protection. Please restart the machine for the changes to take effect. </code></p>
-<h2 id="修改comapplehitoolboxplist文件">修改com.apple.HIToolbox.plist文件</h2>
+<h3 id="修改comapplehitoolboxplist文件">修改com.apple.HIToolbox.plist文件</h3>
 <p>位于 ~/Library/Preferences/com.apple.HIToolbox.plist</p>
 <p>删掉有关ABC的内容就可以了</p>
+<h1 id="windows">Windows</h1>
+<h2 id="跳过联网激活使用本地账号">跳过联网激活使用本地账号</h2>
+<p>在连接网络的界面按住Shift+F10调出CMD输入<code>OOBE\BYPASSNRO</code></p>
+<h2 id="安装软件-1">安装软件</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Needed to run a remote script the first time</span>
+</span></span><span style="display:flex;"><span>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># set scoop dir is C:\Scoop</span>
+</span></span><span style="display:flex;"><span>md C:<span style="color:#ae81ff">\S</span>coop 
+</span></span><span style="display:flex;"><span>irm get.scoop.sh -outfile <span style="color:#e6db74">&#39;install.ps1&#39;</span>
+</span></span><span style="display:flex;"><span>.<span style="color:#ae81ff">\i</span>nstall.ps1 -ScoopDir <span style="color:#e6db74">&#39;C:\Scoop&#39;</span> -ScoopGlobalDir <span style="color:#e6db74">&#39;C:\Scoop&#39;</span> -NoProxy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scoop bucket add extras
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Terminal tools</span>
+</span></span><span style="display:flex;"><span>scoop install sudo git starship
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Tools</span>
+</span></span><span style="display:flex;"><span>scoop install wechat trafficmonitor snipaste powertoys zotero
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Editor</span>
+</span></span><span style="display:flex;"><span>scoop install obsidian wezterm 
+</span></span><span style="display:flex;"><span>winget install Microsoft.PowerShell Microsoft.VisualStudioCode
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># IDE</span>
+</span></span><span style="display:flex;"><span>scoop install goland idea-ultimate pycharm-professional clion
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># language</span>
+</span></span><span style="display:flex;"><span>scoop install make gcc clangd cmake python rustup
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Emacs</span>
+</span></span><span style="display:flex;"><span>scoop bucket add wsw0108 https://github.com/wsw0108/scoop-bucket.git
+</span></span><span style="display:flex;"><span>scoop install emacs librime
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Go</span>
+</span></span><span style="display:flex;"><span>scoop install go
+</span></span><span style="display:flex;"><span>go install github.com/go-delve/delve/cmd/dlv@latest
+</span></span><span style="display:flex;"><span>go install golang.org/x/tools/gopls@latest
+</span></span></code></pre></div><h1 id="ubuntu">Ubuntu</h1>
+<h2 id="设置ssh">设置ssh</h2>
+<p>配置ssh所需的一些命令</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ssh-keygen -t ed25519 -C <span style="color:#e6db74">&#34;qujihan@163.com&#34;</span>
+</span></span><span style="display:flex;"><span>cat .ssh/id_ed25519.pub
+</span></span><span style="display:flex;"><span>ssh -T git@github.com
+</span></span></code></pre></div><p>在<a href="https://github.com/settings/keys">Github</a>上就可以设置ssh了</p>
+<p>现在在最新版本的 ubuntu 可以使用 snap 去安装 neovim 了</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># install neovim latest</span>
+</span></span><span style="display:flex;"><span>curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+</span></span><span style="display:flex;"><span>chmod u+x nvim.appimage
+</span></span><span style="display:flex;"><span>./nvim.appimage --appimage-extract
+</span></span><span style="display:flex;"><span>mv squashfs-root /
+</span></span><span style="display:flex;"><span>ln -s /squashfs-root/AppRun /usr/bin/nvim
+</span></span></code></pre></div><p>有时候需要设置一下代理才可以访问一些服务 <br>
+就在 <code>~/.bashrc</code>中设置\</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># set proxy (at wsl or docker)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ~/.bashrc</span>
+</span></span><span style="display:flex;"><span>proxy<span style="color:#f92672">(){</span>
+</span></span><span style="display:flex;"><span>    hostip<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>cat /etc/resolv.conf | grep -oP <span style="color:#e6db74">&#34;(?&lt;=nameserver\ ).*&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>    export http_proxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://</span><span style="color:#e6db74">${</span>hostip<span style="color:#e6db74">}</span><span style="color:#e6db74">:7890&#34;</span>
+</span></span><span style="display:flex;"><span>    export https_proxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://</span><span style="color:#e6db74">${</span>hostip<span style="color:#e6db74">}</span><span style="color:#e6db74">:7890&#34;</span>
+</span></span><span style="display:flex;"><span>    export all_proxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://</span><span style="color:#e6db74">${</span>hostip<span style="color:#e6db74">}</span><span style="color:#e6db74">:7890&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>unproxy<span style="color:#f92672">(){</span>
+</span></span><span style="display:flex;"><span>    unset http_proxy
+</span></span><span style="display:flex;"><span>    unset https_proxy
+</span></span><span style="display:flex;"><span>    unset all_proxy
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>alias pp<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;proxy&#34;</span>
+</span></span><span style="display:flex;"><span>alias up<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;unproxy&#34;</span>
+</span></span></code></pre></div>
 </div>
 
 
 
-
-
-<nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
-    
-    <a class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
-        href="/posts/ide/"><span class="mr-1.5">←</span><span>Editor/IDE 使用指北</span></a>
-    
-
-    
-    <a class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
-        href="/posts/ubuntu/"><span>Ubuntu 使用指北</span><span class="ml-1.5">→</span></a>
-    
-</nav>
 
 
 
