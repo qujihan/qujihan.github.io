@@ -8,21 +8,23 @@ tags:
 ---
 <!--more-->
 
-# 日常翻阅
+
+# 一些项目的博客
+
+
 ######
 [阿里云数据库内核月报](https://github.com/tangwz/db-monthly)
 
 ######
-[Talent Plan Courses](https://github.com/pingcap/talent-plan)
+[OpenACID](https://blog.openacid.com/): 来自databend, 以后想看看他的  将paxos于raft统一到一个协议下, 太强了 (但是还没看)
 
 ######
-[awesome-database-learning](https://github.com/pingcap/awesome-database-learning)
+[DSDSD CWI](https://dsdsd.da.cwi.nl/) /  [DuckDB Blog](https://duckdb.org/news/)
 
 ######
-[DSDSD CWI](https://dsdsd.da.cwi.nl/)
+[C++中文周刊](https://github.com/wanghenshui/cppweeklynews) /  [ISO C++ Blog](https://isocpp.org/blog)
 
 # 一些大佬的博客
-
 ######
 [虎哥](http://bohutang.me/):原来就职于阿里的大佬, 因为其[ClickHouse](https://clickhouse.com/docs/zh)和他的朋友们系列而关注 
 
@@ -55,7 +57,6 @@ tags:
 
 ######
 [Xianting Lu](http://celthi.github.io/): effective-debugging的中文译者, 他的C++驿站与Rust系列日后打算看一下
-
 # 别人的List
 
 ######
@@ -70,32 +71,14 @@ tags:
 ######
 [开源优化器资料](https://zhuanlan.zhihu.com/p/609987395): 与上面的是一个作者, 闲暇的时候可以看看
 
-# 一些项目的博客
-
-######
-[C++中文周刊](https://github.com/wanghenshui/cppweeklynews)
-
-######
-[ISO C++ Blog](https://isocpp.org/blog)
-
-######
-[DuckDB Blog](https://duckdb.org/news/)
-
-######
-[OpenACID](https://blog.openacid.com/): 来自databend, 以后想看看他的  将paxos于raft统一到一个协议下, 太强了 (但是还没看)
-
-# 一些资源
+# 一些资料
 
 ### 软件
 ######
-截图为gif:[ScreenToGif](https://github.com/NickeManarin/ScreenToGif)
+[ScreenToGif](https://github.com/NickeManarin/ScreenToGif)
 
-### 字体
-######
-[Nerd-Fonts](https://github.com/ryanoasis/nerd-fonts)
-
-######
-[LXGW WenKai / 霞鹜文楷](https://github.com/lxgw/LxgwWenKai)
+### 字体与图标
+[Nerd-Fonts](https://github.com/ryanoasis/nerd-fonts)  / [图标库](https://fontawesome.com/) / [霞鹜文楷](https://github.com/lxgw/LxgwWenKai)
 
 ### 课程
 ######
@@ -122,6 +105,9 @@ tags:
 
 ######
 [TiDB的SQL Layer Course](https://github.com/talent-plan/tinysql)
+
+######
+[Talent Plan Courses](https://github.com/pingcap/talent-plan)
 
 ######
 [Linux C 编程一站式学习](http://me.52fhy.com/linux-c/)
@@ -197,3 +183,16 @@ tags:
 
 ######
 [证明扫雷是图灵完备的](https://web.mat.bham.ac.uk/R.W.Kaye/minesw/)
+
+######
+[RISC-V CPU core writen in ANSI C](https://github.com/mnurzia/rv)
+
+######
+[一个C写的正则引擎](https://github.com/Water-Melon/Melon/blob/master/src/mln_regexp.c)
+
+其实这个c语言库用来学习写一些小东西也是挺好的嘞~
+
+
+# TodoList
+
+[Btree](https://github.com/google/btree): Google写的Btree库, ~900lines of Go, 学习一下工业界的代码,可以参考[这篇博客](https://wingsxdu.com/posts/data-structure/btree/)
