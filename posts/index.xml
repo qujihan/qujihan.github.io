@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Jihan</copyright>
-    <lastBuildDate>Sat, 26 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 29 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>那些有意思的比特运算</title>
+      <link>/posts/bit_operator/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/bit_operator/</guid>
+      <description>异或 异或的意思就是无进位相加, 就是没有进位的相加. 满足交换律与结合律 例如 A : 01101110 B : 10011101 A^B: 11110011 所以 由无进位相加的理解可以得到, 0^A = A, A^A = 0 由交互律</description>
+    </item>
+    
     <item>
       <title>Golang 中的工作区模式的实践</title>
       <link>/posts/go_workspace/</link>
