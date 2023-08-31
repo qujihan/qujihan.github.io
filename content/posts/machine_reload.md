@@ -8,6 +8,9 @@ tags:
 记录一些机器重装之类的问题, 避免以后无意义的搜索
 <!--more-->
 
+
+
+
 # MacOS
 ## 安装软件
 ```shell
@@ -103,19 +106,8 @@ go install golang.org/x/tools/gopls@latest
 
 ```
 
-# Ubuntu
-## 设置ssh
-
-
-配置ssh所需的一些命令
-```shell
-ssh-keygen -t ed25519 -C "qujihan@163.com"
-cat .ssh/id_ed25519.pub
-ssh -T git@github.com
-```
-在[Github](https://github.com/settings/keys)上就可以设置ssh了
-
-现在在最新版本的 ubuntu 可以使用 snap 去安装 neovim 了
+# Ubuntu/WSL
+安装Neovim, 现在在最新版本的 ubuntu 可以使用 snap 去安装 neovim 了
 ```shell
 # install neovim latest
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
@@ -125,8 +117,8 @@ mv squashfs-root /
 ln -s /squashfs-root/AppRun /usr/bin/nvim
 ```
 
-有时候需要设置一下代理才可以访问一些服务 \
-就在 `~/.bashrc`中设置\
+## Proxy
+有时候需要设置一下代理才可以访问一些服务, 就在 `~/.bashrc`中设置
 ```shell
 # set proxy (at wsl or docker)
 # ~/.bashrc
@@ -146,3 +138,33 @@ unproxy(){
 alias pp="proxy"
 alias up="unproxy"
 ```
+
+
+# 共有的部分
+## 设置ssh
+
+
+配置ssh所需的一些命令
+```shell
+ssh-keygen -t ed25519 -C "qujihan@163.com"
+cat .ssh/id_ed25519.pub
+ssh -T git@github.com
+```
+在[Github](https://github.com/settings/keys)上就可以设置ssh了
+
+最近遇到了一些22端口的问题, 可以将访问端口改为443
+
+~/.ssh/config(没有就创建一个)
+
+另外, vscode使用ssh连接的时候改的也是这个文件, 注意不要冲突
+```config
+Host github.com
+  Hostname ssh.github.com
+  Port 443
+
+Host localhost
+  HostName localhost
+  User jihan
+  Port 2222
+```
+**第一个就可以了**, localhost只是记录一下这个模板
