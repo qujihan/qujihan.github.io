@@ -98,10 +98,10 @@ tags:
 
 ######
 [MIT-6.081 操作系统(课程翻译)](https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/)
-[MIT-6.081 操作系统(中文翻译文档)](http://xv6.dgs.zone/)
+[MIT-6.081 操作系统(文档 中文翻译)](http://xv6.dgs.zone/)
 
 ######
-[MIT-6.8540 分布式系统(课程翻译)](http://xv6.dgs.zone/)
+[MIT-6.8540 分布式系统(课程翻译)](https://mit-public-courses-cn-translatio.gitbook.io/mit6-824/)
 
 ######
 [TiDB的SQL Layer Course](https://github.com/talent-plan/tinysql)
