@@ -80,6 +80,9 @@ tags:
 ### 字体与图标
 [Nerd-Fonts](https://github.com/ryanoasis/nerd-fonts)  / [图标库](https://fontawesome.com/) / [霞鹜文楷](https://github.com/lxgw/LxgwWenKai)
 
+### 一些实用工具
+[结构C++语法糖](https://cppinsights.io/)
+
 ### 课程
 ######
 [CS144](https://github.com/CS144/minnow)
@@ -126,6 +129,8 @@ tags:
 
 [Google 开源项目风格指南(中文)](https://zh-google-styleguide.readthedocs.io/en/latest/contents/)
 
+[Effective Modern Cpp](https://github.com/CnTransGroup/EffectiveModernCppChinese)
+
 
 #### Rust
 [Learn Rust Easy](https://rustycab.github.io/LearnRustEasy/)
@@ -154,6 +159,8 @@ tags:
 [跟我一起写Makefile](https://seisman.github.io/how-to-write-makefile/index.html)
 
 [CMake 入门实战](https://www.hahack.com/codes/cmake/)
+
+[CMake Cookbook](https://github.com/xiaoweiChen/CMake-Cookbook) / [在线阅读](https://www.bookstack.cn/read/CMake-Cookbook/README.md)
 
 [Modern CMake(中文翻译)](https://modern-cmake-cn.github.io/Modern-CMake-zh_CN/)
 
