@@ -152,7 +152,8 @@ nmap K editor.action.showHover
 ```
 
 
-
+### 在VSCode中设置Debug的一些问题
+[Variables Reference](https://code.visualstudio.com/docs/editor/variables-reference)
 
 
 # Jetbrains
