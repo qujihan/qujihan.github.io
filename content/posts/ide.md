@@ -21,6 +21,11 @@ tags:
     "vim.vimrc.enable": true,
     "vim.surround": true,
     "vim.sneak": true,
+
+    // 显示.git文件
+    "files.exclude": {
+        "**/.git": false
+    },
 }
 ```
 

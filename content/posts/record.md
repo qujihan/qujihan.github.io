@@ -50,15 +50,19 @@ tags:
 [Ben Hoyt](https://benhoyt.com/writings/): 一位Go大佬, 因为其写的一段[go实现正则](https://benhoyt.com/writings/rob-pike-regex/)而认识, 还有一些有意思的项目, 例如使用Go实现一个简单的git([gogit](https://benhoyt.com/writings/gogit/)), [Mugo](https://benhoyt.com/writings/mugo/)一个可以自举的compiler(Go的子集)
 
 ######
-[Lan Tian](https://lantian.pub/): 关于其 NixOS 系列文章, 但是没怎么看过, 
+[面向信仰编程](https://draveness.me/): 一个Go大佬, 写的 Go语言设计与实现很好, Blog 内容质量也很高
+
+######
+[Lan Tian](https://lantian.pub/): 想看其 NixOS 系列文章, 但是没怎么看过, 
 
 ######
 [manateelazycat](https://manateelazycat.github.io/index.html): Emacs 大佬, lsp-bridge 作者, 本来打算看看Emacs的, 但是没时间, 以后看看
 
 ######
 [Xianting Lu](http://celthi.github.io/): effective-debugging的中文译者, 他的C++驿站与Rust系列日后打算看一下
-# 别人的List
 
+
+# 别人的List
 ######
 [Awesome-database-learn](https://github.com/pingcap/awesome-database-learning): PingCap整理的资料, 应该是传播最广的了
 
@@ -70,6 +74,12 @@ tags:
 
 ######
 [开源优化器资料](https://zhuanlan.zhihu.com/p/609987395): 与上面的是一个作者, 闲暇的时候可以看看
+
+######
+[Awesome-dbdev](https://github.com/huachaohuang/awesome-dbdev): 数据库开发的材料
+
+######
+[Database System](https://github.com/Sunt-ing/database-system-readings)
 
 # 一些资料
 
@@ -107,6 +117,9 @@ tags:
 [MIT-6.8540 分布式系统(课程翻译)](https://mit-public-courses-cn-translatio.gitbook.io/mit6-824/)
 
 ######
+[计算机程序的构造与解释](https://github.com/DeathKing/Learning-SICP)
+
+######
 [TiDB的SQL Layer Course](https://github.com/talent-plan/tinysql)
 
 ######
@@ -117,23 +130,65 @@ tags:
 
 ### 书籍
 #### C/C++
-[C/C++编程规范指南 360质量工程部](https://github.com/Qihoo360/safe-rules)
+按照我理想的阅读顺序排序(有我没有看过的, 那些都是想当然排序的)
 
-[C++20 STL Cookbook](https://github.com/xiaoweiChen/CPP-20-STL-Cookbook)
+[C++ Primer](): 经典
 
-[Modern C++ Tutorial](https://github.com/changkun/modern-cpp-tutorial)
+[Effective Cpp](): 经典, 但是听老的了, 结合 Effective Modern Cpp 看(同一个作者)
 
-[Modern C++ Cheatsheet](https://github.com/AnthonyCalandra/modern-cpp-features)
+[More Effective Cpp](): 经典
 
-[C++哪些事](https://light-city.github.io/)
+[Effective Modern Cpp](https://github.com/CnTransGroup/EffectiveModernCppChinese): 正在成为经典
 
-[Google 开源项目风格指南(中文)](https://zh-google-styleguide.readthedocs.io/en/latest/contents/)
+[C++ Core Guidelines](https://github.com/lynnboy/CppCoreGuidelines-zh-CN): C++之父的作品, 有许多C++17相关的内存
 
-[Effective Modern Cpp](https://github.com/CnTransGroup/EffectiveModernCppChinese)
+[C++20 STL Cookbook](https://github.com/xiaoweiChen/CPP-20-STL-Cookbook): 结合C++20特性更好的利用STL
 
+[C/C++编程规范指南](https://github.com/Qihoo360/safe-rules): 主要看看C/C++的UB(Undefined Behavior)
+
+[Google 开源项目风格指南(中文)](https://zh-google-styleguide.readthedocs.io/en/latest/contents/): Google代码风格是比较广泛的标准了吧
+
+[Modern C++ Tutorial](https://github.com/changkun/modern-cpp-tutorial): 一些小Tips, 总的来说还是可以的
+
+[Modern C++ Cheatsheet](https://github.com/AnthonyCalandra/modern-cpp-features): 英文的, 算是现代features集合的索引吧
+
+[C++那些事](https://light-city.github.io/): 用处不大, 一种类似八股的东西
+
+#### Go
+按照我理想的阅读顺序排序(有我没有看过的, 那些都是想当然排序的)
+
+[Go 指南/Go 语言之旅](https://tour.go-zh.org/): 最最基础的入门了
+
+[Go 语言圣经](https://golang-china.github.io/gopl-zh/): 没看完, 应该是类似C++ Primer在C++领域的生态位吧
+
+[Go 语言设计与实现](https://draveness.me/golang/): 入门深入理解Go的第一本书
+
+[Master Go 第一版](https://www.bookstack.cn/read/Mastering_Go_ZH_CN/README.md) [Master Go 第二版](https://hantmac.gitbook.io/mastering-go-second/): 第二版是第一版的补充
+
+[Go 语言高级编程](https://chai2010.cn/advanced-go-programming-book/index.html): 涉及了CGO, Go汇编, RPC, 分布式相关内容
+
+[Go by Example(中文)](https://gobyexample-cn.github.io/): 一些代码 Snipaste
+
+[Go advice](https://github.com/cristaloleg/go-advice/blob/master/README_ZH.md): 很短, 半天就可以看完
+
+[Uber Go Style Guide](https://github.com/uber-go/guide): 代码风格指南
+
+[Effective Go](https://golang.google.cn/doc/effective_go): 官网资料
+
+[Go 语言原本](https://github.com/golang-design/under-the-hood): 研究源码的, 还没看过
+
+[Go 八股文](https://www.topgoer.cn/docs/gomianshiti/mianshiti): 八股文, 闲的时候可以看看
 
 #### Rust
+[Rust 程序设计语言](https://kaisery.github.io/trpl-zh-cn/title-page.html): Rust社区维护的教程
+
+[Rust 语言圣经](https://course.rs/about-book.html)
+
 [Learn Rust Easy](https://rustycab.github.io/LearnRustEasy/)
+
+[Rust 原子与锁](https://atomics.rs/about-book.html)
+
+[Google 出的 Rust教程](https://google.github.io/comprehensive-rust/)
 
 [通过例子学 Rust](https://rustwiki.org/zh-CN/rust-by-example/index.html)
 
@@ -142,18 +197,13 @@ tags:
 
 [LLDB Toturil](https://lldb.llvm.org/use/tutorial.html)
 
-#### Go
-[Go 指南/Go 语言之旅](https://tour.go-zh.org/)
-
-[Effective Go](https://golang.google.cn/doc/effective_go)
-
-[Go by Example(中文)](https://gobyexample-cn.github.io/)
-
 #### Git
 [Git Pro(中文)](https://git.oschina.net/progit/)
 
 #### Linux
 [Linux 命令行](http://billie66.github.io/TLCL/)
+
+[Efficient Linux at the Command Line](https://www.oreilly.com/library/view/efficient-linux-at/9781098113391/): 听说这个书不错, 但是没有看过
 
 #### Makefile / CMake
 [跟我一起写Makefile](https://seisman.github.io/how-to-write-makefile/index.html)
@@ -189,20 +239,16 @@ tags:
 # 有意思的东西
 
 ######
-[Rust写的Todolist](https://github.com/cuppar/rtd)
-
-######
 [证明扫雷是图灵完备的](https://web.mat.bham.ac.uk/R.W.Kaye/minesw/)
 
 ######
 [RISC-V CPU core writen in ANSI C](https://github.com/mnurzia/rv)
 
-######
-[一个C写的正则引擎](https://github.com/Water-Melon/Melon/blob/master/src/mln_regexp.c)
-
-其实这个c语言库用来学习写一些小东西也是挺好的嘞~
-
-
 # TodoList
+[Btree](https://github.com/google/btree): Google写的Btree库, 阅读参考[这篇博客](https://wingsxdu.com/posts/data-structure/btree/), ~900lines of Go
 
-[Btree](https://github.com/google/btree): Google写的Btree库, ~900lines of Go, 学习一下工业界的代码,可以参考[这篇博客](https://wingsxdu.com/posts/data-structure/btree/)
+[BoltDB](https://github.com/boltdb/bolt): 嵌入式的, kv数据库, 带有完整 MVCC 的实现的数据库, ~7000lines of Go
+
+[Etcd-raft](https://github.com/etcd-io/etcd/tree/main/contrib/raftexample): etcd的raft实现, ~1000lines of Go
+
+[ToyDB](): 结构清晰的, 带有实现思路的, 分布式的, 带事务的, 数据库, ~13000lines of Rust
