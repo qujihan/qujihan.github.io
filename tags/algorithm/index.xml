@@ -9,7 +9,7 @@
     <copyright>Jihan</copyright>
     <lastBuildDate>Tue, 29 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>那些有意思的比特运算</title>
+      <title>[ALGO] 有意思的比特运算</title>
       <link>/posts/bit_operator/</link>
       <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
       
@@ -18,7 +18,7 @@
     </item>
     
     <item>
-      <title>Tomohiko Sakamoto 算法/蔡勒公式</title>
+      <title>[Algo] Tomohiko Sakamoto</title>
       <link>/posts/tomohiko_sakamoto/</link>
       <pubDate>Sun, 21 May 2023 00:00:00 +0000</pubDate>
       
@@ -27,7 +27,7 @@
     </item>
     
     <item>
-      <title>二分查找的理解</title>
+      <title>[ALGO] 二分查找的理解</title>
       <link>/posts/binary_search/</link>
       <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
       
