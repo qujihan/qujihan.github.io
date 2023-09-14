@@ -1,6 +1,6 @@
 ---
 author: "Jihan"
-title: "二分查找的理解"
+title: "[ALGO] 二分查找的理解"
 date: "2023-05-20"
 tags:
 - Algorithm

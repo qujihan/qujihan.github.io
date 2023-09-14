@@ -1,6 +1,6 @@
 ---
 author: "Jihan"
-title: "那些有意思的比特运算"
+title: "[ALGO] 有意思的比特运算"
 date: "2023-08-29"
 tags:
 - Algorithm

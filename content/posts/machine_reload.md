@@ -18,7 +18,7 @@ tags:
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # software
-brew install --cask docker microsoft-edge zotero
+brew install --cask microsoft-edge zotero
 # tools
 brew install --cask bob snipaste squirrel
 # editors
@@ -32,17 +32,14 @@ brew install --cask plistedit-pro
 # neovim
 brew install neovim ripgrep fd
 # programming language && lsp && dap
-brew install cmake go gopls delve typst
+brew install cmake go gopls delve typst node rust
 # tools
-brew install lazygit sevenzip stow cloc hugo squirrel
+brew install yazi lazygit sevenzip stow cloc hugo squirrel
 # for zsh
 brew install starship
-brew install romkatv/powerlevel10k/powerlevel10k 
 brew install zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-git-prompt
 ```
 安装一些常用的软件: keynote, office, onedrive, ibar, clashX, xcode
-
-
 
 ## 删除系统自带的ABC输入法
 在使用Mac的过程中, 我使用的是开源的 Rime 输入法, 这款输入法自己可以切换中英文输入, 那么Mac自带的ABC输入法就不那么需要了, 否则会在有的时候打乱思路

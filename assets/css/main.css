@@ -50,6 +50,29 @@
     margin-top: 20px;
   }
 
+  ol {
+    @apply list-triangle
+  }
+
+  ul {
+    @apply list-shadowed_white_circle
+  }
+
+  ul ul {
+    @apply pl-8
+  }
+
+  li {
+    @apply mt-2 mb-2 hover:list-heavy_rightwards_arrow
+    /* @apply hover:list-heavy_rightwards_arrow */
+  }
+
+
+
+  blockquote {
+    @apply mt-4 mb-4 p-4 rounded-lg bg-gray-100 text-gray-600 border-l-4 border-gray-400 transition-all duration-300 ease-in-out hover:bg-gray-200
+  }
+
   strong {
     font-weight: bolder;
     /* text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); */

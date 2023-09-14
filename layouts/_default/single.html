@@ -4,21 +4,13 @@
 
 <div class="flex flex-col flex-wrap pb-16">
     {{/* Title */}}
-    <a class="text-4xl mx-auto">
+    <a class="text-3xl mx-auto">
         {{ .Title }}
     </a>
 
-    {{/* Tags */}}
-    <div class="flex mx-auto mt-4 mb-4">
-        {{ range .Params.tags }}
-        <div class="ml-2 bg-gray-200 hover:font-bold hover:text-blue-500 rounded-3xl transition-colors duration-200 ease-in-out">
-            <a class="px-2  hover:font-bold hover:text-blue-500" href="{{ absURL "/tags/" }}{{ . | urlize }}">{{ . }}</a>
-        </div>
-        {{ end }}
-    </div>
 
     {{/* Date */}}
-    <div class="mx-auto">
+    <div class="pt-8 mx-auto">
         <time datetime="{{ .PublishDate.Format " 2006/01/02" }}">{{ .PublishDate.Format "2006/1/2" }}</time>
     </div>
 </div>
@@ -32,7 +24,7 @@
 
 
 <!-- Post Nav -->
-{{/*  {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{/* {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
 {{ if and (gt (len $pages) 1) (in $pages . ) }}
 <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
     {{ with $pages.Next . }}
@@ -45,7 +37,35 @@
         href="{{ .Permalink }}"><span>{{ .Name }}</span><span class="ml-1.5">→</span></a>
     {{ end }}
 </nav>
-{{ end }}  */}}
+{{ end }} */}}
+
+{{/* Tags */}}
+<!-- <div class="mt-24 flex flex-auto">
+    {{ range .Params.tags }}
+    <div
+        class="ml-2  bg-gray-100 hover:font-bold hover:text-blue-500 rounded-3xl transition-colors duration-200 ease-in-out">
+        <a class="px-2  hover:font-bold hover:text-blue-500" href="{{ absURL " /tags/" }}{{ . | urlize }}">{{ . }}</a>
+    </div>
+    {{ end }}
+</div> -->
+
+
+<div class="pt-16 flex-auto flex flex-col space-y-2">
+    <div class="flex space-x-2">
+        {{ range .Params.tags }}
+
+        <div style="padding-top: 0.2em; padding-bottom: 0.2rem"
+            class="flex items-center space-x-1 text-xs px-2 bg-gray-200 text-gray-800 rounded-full hover:text-blue-500  transition-colors duration-200 ease-in-out">
+            <div style="width: 0.4rem; height: 0.4rem" class="bg-gray-500 rounded-full"></div>
+            <a href="{{ absURL " /tags/"}}{{ . | urlize }}"> {{ . }} </a>
+        </div>
+
+
+        {{ end }}
+    </div>
+</div>
+
+
 
 
 {{ end }}

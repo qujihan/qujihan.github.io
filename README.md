@@ -6,9 +6,9 @@
 ```shell
 # 安装 npm
 scoop install nodejs
-brew install nodejs
-
+brew install node
 # 安装 tailwindcss
+npm install --save-dev  tailwindcss
 
 # 运行 tailwindcss
 # 这个通过main.css 生成 style.css 且不断查看更改

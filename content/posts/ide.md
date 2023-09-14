@@ -21,6 +21,7 @@ tags:
     "vim.vimrc.enable": true,
     "vim.surround": true,
     "vim.sneak": true,
+    "vim.foldfix": true,
 
     // 显示.git文件
     "files.exclude": {
