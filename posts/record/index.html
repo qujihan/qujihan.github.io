@@ -22,13 +22,15 @@
 
 
     
-    
+
     
 
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles/color-brewer.min.css">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles/panda-syntax-light.min.css">
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/languages/go.min.js"></script>
+    
     <script>hljs.highlightAll();</script>
 
 
@@ -42,7 +44,7 @@
     </script>
 
 
-</head><body class="duration-200 ease-out text-black prose prose-neutral font-wenkai ">
+</head><body class="duration-200 ease-out text-black prose prose-neutral font-wenkai bg-gray-50">
 
     <main class="mx-auto min-h-[calc(100%-9rem)] max-w-4xl"><header>
     <nav class="pt-5 px-10 flex">
@@ -235,16 +237,6 @@
 <li><a href="https://github.com/heidihoward/distributed-consensus-reading-list">分布式公式算法List</a></li>
 </ul>
 <h1 id="一些资料">一些资料</h1>
-<h3 id="字体与图标">字体与图标</h3>
-<ul>
-<li><a href="https://github.com/ryanoasis/nerd-fonts">Nerd-Fonts</a></li>
-<li><a href="https://fontawesome.com/">图标库</a></li>
-<li><a href="https://github.com/lxgw/LxgwWenKai">霞鹜文楷</a></li>
-</ul>
-<h3 id="一些实用工具">一些实用工具</h3>
-<ul>
-<li><a href="https://cppinsights.io/">结构C++语法糖</a></li>
-</ul>
 <h3 id="课程">课程</h3>
 <ul>
 <li><a href="https://github.com/CS144/minnow">CS144</a></li>
@@ -285,6 +277,11 @@
 <li><a href="https://github.com/changkun/modern-cpp-tutorial">Modern C++ Tutorial</a>: 一些小Tips, 总的来说还是可以的</li>
 <li><a href="https://github.com/AnthonyCalandra/modern-cpp-features">Modern C++ Cheatsheet</a>: 英文的, 算是现代features集合的索引吧</li>
 <li><a href="https://light-city.github.io/">C++那些事</a>: 用处不大, 一种类似八股的东西</li>
+<li>一些工具
+<ul>
+<li><a href="https://cppinsights.io/">结构C++语法糖</a></li>
+</ul>
+</li>
 </ul>
 <h4 id="go">Go</h4>
 <p>按照我理想的阅读顺序排序(有我没有看过的, 那些都是想当然排序的)</p>
@@ -352,53 +349,20 @@
 <li><a href="https://github.com/lymslive/vimllearn">VimL 语言编程指北路</a>: vimL学习</li>
 <li><a href="https://learnvimscriptthehardway.stevelosh.com/">Learn Vimscript the Hard Way</a>: : vimL学习, 英文的, 不常看</li>
 </ul>
-<h1 id="有意思的东西">有意思的东西</h1>
-<ul>
-<li><a href="https://web.mat.bham.ac.uk/R.W.Kaye/minesw/">证明扫雷是图灵完备的</a></li>
-<li><a href="https://github.com/mnurzia/rv">RISC-V CPU core writen in ANSI C</a></li>
-</ul>
-<h1 id="走读代码列表">走读代码列表</h1>
-<ul>
-<li><a href="https://github.com/google/btree">Btree</a>: Google写的Btree库, 阅读参考<a href="https://wingsxdu.com/posts/data-structure/btree/">这篇博客</a>, ~900 lines of Go</li>
-<li><a href="https://github.com/boltdb/bolt">BoltDB</a>: 嵌入式的, kv数据库, 带有完整 MVCC 的实现的数据库, ~7000 lines of Go</li>
-<li><a href="https://github.com/etcd-io/etcd/tree/main/contrib/raftexample">Etcd-raft</a>: etcd的raft实现, ~1000 lines of Go</li>
-<li><a href="https://github.com/erikgrinaker/toydb">ToyDB</a>: 结构清晰的, 带有实现思路的, 分布式的, 带事务的, 数据库, ~13000 lines of Rust</li>
-<li><a href="https://github.com/apache/kvrocks">Apache KVRocks</a>, Apache的, 兼容Redis的, 分布式的存储引擎, ~28000 lines of C++</li>
-<li><a href="https://github.com/sogou/workflow">Workflow</a>: sogou开发的, 贼牛逼的构建, ~39000 lines of C/C++
-<ul>
-<li><a href="https://github.com/barenboim/json-parser">json-parser</a>, ~900 lines of C</li>
-<li><a href="https://github.com/sogou/srpc">srpc</a></li>
-<li>参考这位知乎<a href="https://www.zhihu.com/people/liyingxin1412/posts">1412</a>(workflow开发人员)的文章</li>
-</ul>
-</li>
-</ul>
 </div>
-
-
-
-
-
-
-
 
 
 <div class="pt-16 flex-auto flex flex-col space-y-2">
     <div class="flex space-x-2">
         
-
         <div style="padding-top: 0.2em; padding-bottom: 0.2rem"
             class="flex items-center space-x-1 text-xs px-2 bg-gray-200 text-gray-800 rounded-full hover:text-blue-500  transition-colors duration-200 ease-in-out">
             <div style="width: 0.4rem; height: 0.4rem" class="bg-gray-500 rounded-full"></div>
             <a href="%20/tags/handbook"> Handbook </a>
         </div>
-
-
         
     </div>
 </div>
-
-
-
 
 
         </div><footer class="pb-20 px-10 text-xs text-gray-500">

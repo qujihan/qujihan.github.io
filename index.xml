@@ -7,9 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Jihan</copyright>
-    <lastBuildDate>Tue, 29 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>[ALGO] 有意思的比特运算</title>
+      <title>Golang 实践记录</title>
+      <link>/posts/go_pritace/</link>
+      <pubDate>Mon, 09 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/go_pritace/</guid>
+      <description>在二维数组中添加元素 temp := []int{intervals[0][0], intervals[0][1]} ans = append(ans, append([]int{}, temp...)) 定义函数 func main(){ var check func(i, j, index int) bool check = func(i, j, index int) bool { // this is function body. } } 自定义ListNode type ListNode struct { Val int Next *ListNode } func main(){ list</description>
+    </item>
+    
+    <item>
+      <title>一些Git的使用经历</title>
+      <link>/posts/git_pritace/</link>
+      <pubDate>Mon, 02 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/git_pritace/</guid>
+      <description>git submodule git rebase</description>
+    </item>
+    
+    <item>
+      <title>[Algo] 有意思的比特运算</title>
       <link>/posts/bit_operator/</link>
       <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
       
@@ -18,7 +36,16 @@
     </item>
     
     <item>
-      <title>源码安装PG</title>
+      <title>C&#43;&#43;的实践记录</title>
+      <link>/posts/cpp_pritace/</link>
+      <pubDate>Sat, 26 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/cpp_pritace/</guid>
+      <description>构建工具 makefile EXE:= exe EXECUTABLE:= $(EXE) LIBDIR:= LIBS:= INCLUDES:=. SRCDIR:= CC:=g++ CFLAGS:= -g -Wall -O0 CPPFLAGS:= $(CFLAGS) CPPFLAGS+= $(addprefix -I,$(INCLUDES)) CPPFLAGS+= -I. CPPFLAGS+= -MMD RM-F:= rm -f SRCS:= $(wildcard *.cpp) $(wildcard $(addsuffix /*.cpp, $(SRCDIR))) OBJS:= $(patsubst %.cpp,%.o,$(SRCS)) DEPS:= $(patsubst %.o,%.d,$(OBJS)) MISSING_DEPS:= $(filter-out $(wildcard $(DEPS)),$(DEPS)) .PHONY : all deps objs clean all:$(EXECUTABLE) deps:$(DEPS) objs:$(OBJS) clean: @$(RM-F) *.o @$(RM-F) *.d @$(RM-F) $(EXE) ifneq ($(MISSING_DEPS),) $(MISSING_DEPS): @$(RM-F) $(patsubst %.d,%.o,$@) endif</description>
+    </item>
+    
+    <item>
+      <title>源码安装PG(使用Docker)</title>
       <link>/posts/pg/</link>
       <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
       
@@ -41,7 +68,7 @@
       <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/machine_reload/</guid>
-      <description>&lt;p&gt;记录一些机器重装之类的问题, 避免以后无意义的搜索&lt;/p&gt;</description>
+      <description></description>
     </item>
     
     <item>
@@ -50,15 +77,6 @@
       <pubDate>Sun, 23 Jul 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/record/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>代码 snipaste</title>
-      <link>/posts/language_snipaste/</link>
-      <pubDate>Fri, 02 Jun 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/language_snipaste/</guid>
       <description></description>
     </item>
     
@@ -72,7 +90,7 @@
     </item>
     
     <item>
-      <title>[ALGO] 二分查找的理解</title>
+      <title>[Algo] 二分查找的理解</title>
       <link>/posts/binary_search/</link>
       <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
       
@@ -81,7 +99,7 @@
     </item>
     
     <item>
-      <title>一些日常使用的手册</title>
+      <title>容器使用笔记</title>
       <link>/posts/handbooks/</link>
       <pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate>
       
@@ -95,6 +113,15 @@
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/site_functions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/posts/cpp_easy_forget/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/cpp_easy_forget/</guid>
       <description></description>
     </item>
     

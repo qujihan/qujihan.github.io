@@ -22,13 +22,15 @@
 
 
     
-    
+
     
 
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles/color-brewer.min.css">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles/panda-syntax-light.min.css">
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/languages/go.min.js"></script>
+    
     <script>hljs.highlightAll();</script>
 
 
@@ -42,7 +44,7 @@
     </script>
 
 
-</head><body class="duration-200 ease-out text-black prose prose-neutral font-wenkai ">
+</head><body class="duration-200 ease-out text-black prose prose-neutral font-wenkai bg-gray-50">
 
     <main class="mx-auto min-h-[calc(100%-9rem)] max-w-4xl"><header>
     <nav class="pt-5 px-10 flex">
@@ -199,93 +201,85 @@
 
 
 <div class="link-decorator code-decorator">
-    <p>记录一些机器重装之类的问题, 避免以后无意义的搜索</p>
-<h1 id="macos">MacOS</h1>
+    <h1 id="macos">MacOS</h1>
 <h2 id="安装软件">安装软件</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># install brew</span>
 </span></span><span style="display:flex;"><span>/bin/bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># software</span>
-</span></span><span style="display:flex;"><span>brew install --cask microsoft-edge zotero
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># tools</span>
-</span></span><span style="display:flex;"><span>brew install --cask bob snipaste squirrel
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># editors</span>
-</span></span><span style="display:flex;"><span>brew install --cask visual-studio-code obsidian wezterm
-</span></span><span style="display:flex;"><span>brew install --cask pycharm clion intellij-idea goland
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># common software</span>
-</span></span><span style="display:flex;"><span>brew install --cask qq qqmusic wechat tencent-lemon feishu
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># for delete abc input</span>
-</span></span><span style="display:flex;"><span>brew install --cask plistedit-pro
-</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>echo; echo <span style="color:#e6db74">&#39;eval &#34;$(/opt/homebrew/bin/brew shellenv)&#34;&#39;</span><span style="color:#f92672">)</span> &gt;&gt; /Users/qujihan/.zprofile
+</span></span><span style="display:flex;"><span>eval <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>/opt/homebrew/bin/brew shellenv<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># install software</span>
+</span></span><span style="display:flex;"><span>brew install --cask microsoft-edge bob snipaste squirrel visual-studio-code obsidian wezterm qq qqmusic wechat tencent-lemon feishu
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># install language</span>
+</span></span><span style="display:flex;"><span>brew install cmake go rustup node typst python@3.11
+</span></span><span style="display:flex;"><span>rustup-init
+</span></span><span style="display:flex;"><span>rustup update
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># install tools</span>
+</span></span><span style="display:flex;"><span>brew install yazi stow cloc hugo starship nushell podman
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># neovim</span>
 </span></span><span style="display:flex;"><span>brew install neovim ripgrep fd
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># programming language &amp;&amp; lsp &amp;&amp; dap</span>
-</span></span><span style="display:flex;"><span>brew install cmake go gopls delve typst node rust
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># tools</span>
-</span></span><span style="display:flex;"><span>brew install yazi lazygit sevenzip stow cloc hugo squirrel
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># for zsh</span>
-</span></span><span style="display:flex;"><span>brew install starship
-</span></span><span style="display:flex;"><span>brew install zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-git-prompt
-</span></span></code></pre></div><p>安装一些常用的软件: keynote, office, onedrive, ibar, clashX, xcode</p>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># config squirrel</span>
+</span></span><span style="display:flex;"><span>git clone git@github.com:qujihan/Rime.git /Users/qujihan/Library/Rime
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># config mac tools </span>
+</span></span><span style="display:flex;"><span>git clone --recurse-submodules git@github.com:qujihan/.dotfiles.git ~/.dotfiles
+</span></span><span style="display:flex;"><span>~/.dotfiles/mac.sh -install
+</span></span></code></pre></div><p>安装一些常用的软件: office, oneDrive, iBar, clashX, Xcode</p>
 <h2 id="删除系统自带的abc输入法">删除系统自带的ABC输入法</h2>
-<p>在使用Mac的过程中, 我使用的是开源的 Rime 输入法, 这款输入法自己可以切换中英文输入, 那么Mac自带的ABC输入法就不那么需要了, 否则会在有的时候打乱思路</p>
-<p>以下仅仅在M系列芯片实验过</p>
-<h3 id="关闭系统完整性保护-sip">关闭系统完整性保护 SIP</h3>
-<p>关机长按指纹键, 进入恢复模式</p>
-<p>在顶部的菜单栏中的实用工具中找到终端, 输入 <code>csrutil disable</code></p>
-<p>如果输出下面的表示禁用成功
-<code>Successfully disabled System Integrity Protection. Please restart the machine for the changes to take effect. </code></p>
-<h3 id="修改comapplehitoolboxplist文件">修改com.apple.HIToolbox.plist文件</h3>
-<p>位于 ~/Library/Preferences/com.apple.HIToolbox.plist</p>
-<p>删掉有关ABC的内容就可以了</p>
-<h1 id="windows">Windows</h1>
+<p>关机长按指纹键, 进入恢复模式, 在顶部的菜单栏中的实用工具中找到终端, 输入 <code>csrutil disable</code>, 如果输出下面的表示禁用成功</p>
+<pre tabindex="0"><code>Successfully disabled System Integrity Protection. Please restart the machine for the changes to take effect. 
+</code></pre><p>修改com.apple.HIToolbox.plist文件, 重启即可</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 备份plist文件</span>
+</span></span><span style="display:flex;"><span>cp ~/Library/Preferences/com.apple.HIToolbox.plist  ~/Library/Preferences/com.apple.HIToolbox.plist.backup
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 这里使用下面的指令看一下是不是这个样子(第一个Dict的Name是ABC)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># AppleEnabledInputSources = Array {</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#         Dict {</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#             InputSourceKind = Keyboard Layout</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#             KeyboardLayout Name = ABC</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#             KeyboardLayout ID = 252</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#         }</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#         ......</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#     }</span>
+</span></span><span style="display:flex;"><span>/usr/libexec/PlistBuddy -c <span style="color:#e6db74">&#34;Print&#34;</span>  ~/Library/Preferences/com.apple.HIToolbox.plist 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 删除ABC输入法</span>
+</span></span><span style="display:flex;"><span>/usr/libexec/PlistBuddy -c <span style="color:#e6db74">&#34;Delete :AppleEnabledInputSources:0&#34;</span>  ~/Library/Preferences/com.apple.HIToolbox.plist 
+</span></span></code></pre></div><h1 id="windows">Windows</h1>
 <h2 id="跳过联网激活使用本地账号">跳过联网激活使用本地账号</h2>
 <p>在连接网络的界面按住Shift+F10调出CMD输入<code>OOBE\BYPASSNRO</code></p>
 <h2 id="安装软件-1">安装软件</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Needed to run a remote script the first time</span>
 </span></span><span style="display:flex;"><span>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser 
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># set scoop dir is C:\Scoop</span>
 </span></span><span style="display:flex;"><span>md C:<span style="color:#ae81ff">\S</span>coop 
 </span></span><span style="display:flex;"><span>irm get.scoop.sh -outfile <span style="color:#e6db74">&#39;install.ps1&#39;</span>
 </span></span><span style="display:flex;"><span>.<span style="color:#ae81ff">\i</span>nstall.ps1 -ScoopDir <span style="color:#e6db74">&#39;C:\Scoop&#39;</span> -ScoopGlobalDir <span style="color:#e6db74">&#39;C:\Scoop&#39;</span> -NoProxy
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>scoop bucket add extras
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Terminal tools</span>
-</span></span><span style="display:flex;"><span>scoop install sudo git starship
-</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scoop install sudo git starship nu
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Tools</span>
-</span></span><span style="display:flex;"><span>scoop install wechat trafficmonitor snipaste powertoys zotero
-</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>scoop install wechat trafficmonitor snipaste powertoys
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Editor</span>
 </span></span><span style="display:flex;"><span>scoop install obsidian wezterm 
 </span></span><span style="display:flex;"><span>winget install Microsoft.PowerShell Microsoft.VisualStudioCode
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># IDE</span>
-</span></span><span style="display:flex;"><span>scoop install goland idea-ultimate pycharm-professional clion
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># language</span>
-</span></span><span style="display:flex;"><span>scoop install make gcc clangd cmake python rustup
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Emacs</span>
-</span></span><span style="display:flex;"><span>scoop bucket add wsw0108 https://github.com/wsw0108/scoop-bucket.git
-</span></span><span style="display:flex;"><span>scoop install emacs librime
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Go</span>
-</span></span><span style="display:flex;"><span>scoop install go
-</span></span><span style="display:flex;"><span>go install github.com/go-delve/delve/cmd/dlv@latest
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Language</span>
+</span></span><span style="display:flex;"><span>scoop install make gcc clangd cmake python rustup go 
+</span></span></code></pre></div><h1 id="其他配置">其他配置</h1>
+<h2 id="配置包管理器镜像">配置包管理器镜像</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># npm</span>
+</span></span><span style="display:flex;"><span>npm config set registry https://registry.npm.taobao.org
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># pip</span>
+</span></span><span style="display:flex;"><span>pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># go</span>
+</span></span><span style="display:flex;"><span>go env -w GO111MODULE<span style="color:#f92672">=</span>on
+</span></span><span style="display:flex;"><span>go env -w GOPROXY<span style="color:#f92672">=</span>https://goproxy.cn,direct
+</span></span></code></pre></div><h2 id="下载语言相关应用">下载语言相关应用</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># About Go </span>
 </span></span><span style="display:flex;"><span>go install golang.org/x/tools/gopls@latest
-</span></span></code></pre></div><h1 id="ubuntuwsl">Ubuntu/WSL</h1>
-<p>安装Neovim, 现在在最新版本的 ubuntu 可以使用 snap 去安装 neovim 了</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># install neovim latest</span>
-</span></span><span style="display:flex;"><span>curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-</span></span><span style="display:flex;"><span>chmod u+x nvim.appimage
-</span></span><span style="display:flex;"><span>./nvim.appimage --appimage-extract
-</span></span><span style="display:flex;"><span>mv squashfs-root /
-</span></span><span style="display:flex;"><span>ln -s /squashfs-root/AppRun /usr/bin/nvim
-</span></span></code></pre></div><h2 id="proxy">Proxy</h2>
-<p>有时候需要设置一下代理才可以访问一些服务, 就在 <code>~/.bashrc</code>中设置</p>
+</span></span><span style="display:flex;"><span>go install github.com/go-delve/delve/cmd/dlv@latest
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># About Rust</span>
+</span></span><span style="display:flex;"><span>cargo install stylua
+</span></span></code></pre></div><h2 id="配置网络代理">配置网络代理</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># set proxy (at wsl or docker)</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># ~/.bashrc</span>
 </span></span><span style="display:flex;"><span>proxy<span style="color:#f92672">(){</span>
@@ -294,25 +288,18 @@
 </span></span><span style="display:flex;"><span>    export https_proxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://</span><span style="color:#e6db74">${</span>hostip<span style="color:#e6db74">}</span><span style="color:#e6db74">:7890&#34;</span>
 </span></span><span style="display:flex;"><span>    export all_proxy<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://</span><span style="color:#e6db74">${</span>hostip<span style="color:#e6db74">}</span><span style="color:#e6db74">:7890&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>unproxy<span style="color:#f92672">(){</span>
 </span></span><span style="display:flex;"><span>    unset http_proxy
 </span></span><span style="display:flex;"><span>    unset https_proxy
 </span></span><span style="display:flex;"><span>    unset all_proxy
 </span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>alias pp<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;proxy&#34;</span>
 </span></span><span style="display:flex;"><span>alias up<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;unproxy&#34;</span>
-</span></span></code></pre></div><h1 id="共有的部分">共有的部分</h1>
-<h2 id="设置ssh">设置ssh</h2>
-<p>配置ssh所需的一些命令</p>
+</span></span></code></pre></div><h2 id="配置-ssh">配置 ssh</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ssh-keygen -t ed25519 -C <span style="color:#e6db74">&#34;qujihan@163.com&#34;</span>
 </span></span><span style="display:flex;"><span>cat .ssh/id_ed25519.pub
 </span></span><span style="display:flex;"><span>ssh -T git@github.com
-</span></span></code></pre></div><p>在<a href="https://github.com/settings/keys">Github</a>上就可以设置ssh了</p>
-<p>最近遇到了一些22端口的问题, 可以将访问端口改为443</p>
-<p>~/.ssh/config(没有就创建一个)</p>
-<p>另外, vscode使用ssh连接的时候改的也是这个文件, 注意不要冲突</p>
+</span></span></code></pre></div><p>在VSCode中配置ssh连接</p>
 <pre tabindex="0"><code class="language-config" data-lang="config">Host github.com
   Hostname ssh.github.com
   Port 443
@@ -321,34 +308,21 @@ Host localhost
   HostName localhost
   User jihan
   Port 2222
-</code></pre><p><strong>第一个就可以了</strong>, localhost只是记录一下这个模板</p>
+</code></pre>
 </div>
-
-
-
-
-
-
-
 
 
 <div class="pt-16 flex-auto flex flex-col space-y-2">
     <div class="flex space-x-2">
         
-
         <div style="padding-top: 0.2em; padding-bottom: 0.2rem"
             class="flex items-center space-x-1 text-xs px-2 bg-gray-200 text-gray-800 rounded-full hover:text-blue-500  transition-colors duration-200 ease-in-out">
             <div style="width: 0.4rem; height: 0.4rem" class="bg-gray-500 rounded-full"></div>
             <a href="%20/tags/machine"> Machine </a>
         </div>
-
-
         
     </div>
 </div>
-
-
-
 
 
         </div><footer class="pb-20 px-10 text-xs text-gray-500">

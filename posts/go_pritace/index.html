@@ -9,7 +9,7 @@
     <link rel="preload stylesheet" as="style" href="/css/style.min.css" />
 
     
-    <title>代码 snipaste - 拾野知地</title>
+    <title>Golang 实践记录 - 拾野知地</title>
 
     
     <link rel="shortcut icon" type="image/png"
@@ -22,13 +22,15 @@
 
 
     
-    
+
     
 
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles/color-brewer.min.css">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles/panda-syntax-light.min.css">
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/languages/go.min.js"></script>
+    
     <script>hljs.highlightAll();</script>
 
 
@@ -42,7 +44,7 @@
     </script>
 
 
-</head><body class="duration-200 ease-out text-black prose prose-neutral font-wenkai ">
+</head><body class="duration-200 ease-out text-black prose prose-neutral font-wenkai bg-gray-50">
 
     <main class="mx-auto min-h-[calc(100%-9rem)] max-w-4xl"><header>
     <nav class="pt-5 px-10 flex">
@@ -185,13 +187,13 @@
 <div class="flex flex-col flex-wrap pb-16">
     
     <a class="text-3xl mx-auto">
-        代码 snipaste
+        Golang 实践记录
     </a>
 
 
     
     <div class="pt-8 mx-auto">
-        <time datetime=" 2023/06/02">2023/6/2</time>
+        <time datetime=" 2023/10/09">2023/10/9</time>
     </div>
 </div>
 
@@ -199,8 +201,7 @@
 
 
 <div class="link-decorator code-decorator">
-    <h1 id="go">Go</h1>
-<p>在二维数组中添加元素</p>
+    <p>在二维数组中添加元素</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#a6e22e">temp</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">intervals</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">intervals</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>]}
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">ans</span> = append(<span style="color:#a6e22e">ans</span>, append([]<span style="color:#66d9ef">int</span>{}, <span style="color:#a6e22e">temp</span><span style="color:#f92672">...</span>))
 </span></span></code></pre></div><p>定义函数</p>
@@ -224,75 +225,15 @@
 </span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">tail</span> = <span style="color:#a6e22e">tail</span>.<span style="color:#a6e22e">Next</span>
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h1 id="makefile">Makefile</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-makefile" data-lang="makefile"><span style="display:flex;"><span>EXE<span style="color:#f92672">:=</span> exe
-</span></span><span style="display:flex;"><span>EXECUTABLE<span style="color:#f92672">:=</span> <span style="color:#66d9ef">$(</span>EXE<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>LIBDIR<span style="color:#f92672">:=</span>
-</span></span><span style="display:flex;"><span>LIBS<span style="color:#f92672">:=</span>
-</span></span><span style="display:flex;"><span>INCLUDES<span style="color:#f92672">:=</span>.
-</span></span><span style="display:flex;"><span>SRCDIR<span style="color:#f92672">:=</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>CC<span style="color:#f92672">:=</span>g++
-</span></span><span style="display:flex;"><span>CFLAGS<span style="color:#f92672">:=</span> -g -Wall -O0  
-</span></span><span style="display:flex;"><span>CPPFLAGS<span style="color:#f92672">:=</span> <span style="color:#66d9ef">$(</span>CFLAGS<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>CPPFLAGS<span style="color:#f92672">+=</span> <span style="color:#66d9ef">$(</span>addprefix -I,<span style="color:#66d9ef">$(</span>INCLUDES<span style="color:#66d9ef">))</span>
-</span></span><span style="display:flex;"><span>CPPFLAGS<span style="color:#f92672">+=</span> -I.
-</span></span><span style="display:flex;"><span>CPPFLAGS<span style="color:#f92672">+=</span> -MMD
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>RM-F<span style="color:#f92672">:=</span> rm -f
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>SRCS<span style="color:#f92672">:=</span> <span style="color:#66d9ef">$(</span>wildcard *.cpp<span style="color:#66d9ef">)</span> <span style="color:#66d9ef">$(</span>wildcard <span style="color:#66d9ef">$(</span>addsuffix /*.cpp, <span style="color:#66d9ef">$(</span>SRCDIR<span style="color:#66d9ef">)))</span>
-</span></span><span style="display:flex;"><span>OBJS<span style="color:#f92672">:=</span> <span style="color:#66d9ef">$(</span>patsubst %.cpp,%.o,<span style="color:#66d9ef">$(</span>SRCS<span style="color:#66d9ef">))</span>
-</span></span><span style="display:flex;"><span>DEPS<span style="color:#f92672">:=</span> <span style="color:#66d9ef">$(</span>patsubst %.o,%.d,<span style="color:#66d9ef">$(</span>OBJS<span style="color:#66d9ef">))</span>
-</span></span><span style="display:flex;"><span>MISSING_DEPS<span style="color:#f92672">:=</span> <span style="color:#66d9ef">$(</span>filter-out <span style="color:#66d9ef">$(</span>wildcard <span style="color:#66d9ef">$(</span>DEPS<span style="color:#66d9ef">))</span>,<span style="color:#66d9ef">$(</span>DEPS<span style="color:#66d9ef">))</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">.PHONY </span><span style="color:#f92672">:</span> all deps objs clean
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">all</span><span style="color:#f92672">:</span><span style="color:#66d9ef">$(</span>EXECUTABLE<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">deps</span><span style="color:#f92672">:</span><span style="color:#66d9ef">$(</span>DEPS<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">objs</span><span style="color:#f92672">:</span><span style="color:#66d9ef">$(</span>OBJS<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">clean</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>	@<span style="color:#66d9ef">$(</span>RM-F<span style="color:#66d9ef">)</span> *.o
-</span></span><span style="display:flex;"><span>	@<span style="color:#66d9ef">$(</span>RM-F<span style="color:#66d9ef">)</span> *.d
-</span></span><span style="display:flex;"><span>	@<span style="color:#66d9ef">$(</span>RM-F<span style="color:#66d9ef">)</span> <span style="color:#66d9ef">$(</span>EXE<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">ifneq</span> <span style="color:#960050;background-color:#1e0010">(</span><span style="color:#66d9ef">$(</span>MISSING_DEPS<span style="color:#66d9ef">)</span><span style="color:#960050;background-color:#1e0010">,)</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$(MISSING_DEPS)</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>	@<span style="color:#66d9ef">$(</span>RM-F<span style="color:#66d9ef">)</span> <span style="color:#66d9ef">$(</span>patsubst %.d,%.o,$@<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">endif</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">-include</span> <span style="color:#66d9ef">$(</span>DEPS<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$(EXECUTABLE) </span><span style="color:#f92672">:</span> <span style="color:#66d9ef">$(</span>OBJS<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">$(</span>CC<span style="color:#66d9ef">)</span> -o <span style="color:#66d9ef">$(</span>EXECUTABLE<span style="color:#66d9ef">)</span> <span style="color:#66d9ef">$(</span>OBJS<span style="color:#66d9ef">)</span> <span style="color:#66d9ef">$(</span>addprefix -L,<span style="color:#66d9ef">$(</span>LIBDIR<span style="color:#66d9ef">))</span> <span style="color:#66d9ef">$(</span>addprefix -l,<span style="color:#66d9ef">$(</span>LIBS<span style="color:#66d9ef">))</span>
 </span></span></code></pre></div>
 </div>
-
-
-
-
-
-
-
 
 
 <div class="pt-16 flex-auto flex flex-col space-y-2">
     <div class="flex space-x-2">
         
-
-        <div style="padding-top: 0.2em; padding-bottom: 0.2rem"
-            class="flex items-center space-x-1 text-xs px-2 bg-gray-200 text-gray-800 rounded-full hover:text-blue-500  transition-colors duration-200 ease-in-out">
-            <div style="width: 0.4rem; height: 0.4rem" class="bg-gray-500 rounded-full"></div>
-            <a href="%20/tags/snipaste"> Snipaste </a>
-        </div>
-
-
-        
     </div>
 </div>
-
-
-
 
 
         </div><footer class="pb-20 px-10 text-xs text-gray-500">

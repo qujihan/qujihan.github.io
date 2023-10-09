@@ -9,7 +9,7 @@
     <link rel="preload stylesheet" as="style" href="/css/style.min.css" />
 
     
-    <title>Snipaste - 拾野知地</title>
+    <title>C&#43;&#43;的实践记录 - 拾野知地</title>
 
     
     <link rel="shortcut icon" type="image/png"
@@ -182,43 +182,77 @@
 
 </header><div class="px-8 pb-16 pt-12 relative">
 
-<div class="text-center pt-10 pb-10">
-    <a class="text-3xl">Snipaste</a>
+
+
+<div class="flex flex-col flex-wrap pb-16">
+    
+    <a class="text-3xl mx-auto">
+        C&#43;&#43;的实践记录
+    </a>
+
+
+    
+    <div class="pt-8 mx-auto">
+        <time datetime=" 2023/08/26">2023/8/26</time>
+    </div>
 </div>
 
 
 
 
+<div class="link-decorator code-decorator">
+    <h1 id="构建工具">构建工具</h1>
+<h2 id="makefile">makefile</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-makefile" data-lang="makefile"><span style="display:flex;"><span>EXE<span style="color:#f92672">:=</span> exe
+</span></span><span style="display:flex;"><span>EXECUTABLE<span style="color:#f92672">:=</span> <span style="color:#66d9ef">$(</span>EXE<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>LIBDIR<span style="color:#f92672">:=</span>
+</span></span><span style="display:flex;"><span>LIBS<span style="color:#f92672">:=</span>
+</span></span><span style="display:flex;"><span>INCLUDES<span style="color:#f92672">:=</span>.
+</span></span><span style="display:flex;"><span>SRCDIR<span style="color:#f92672">:=</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>CC<span style="color:#f92672">:=</span>g++
+</span></span><span style="display:flex;"><span>CFLAGS<span style="color:#f92672">:=</span> -g -Wall -O0  
+</span></span><span style="display:flex;"><span>CPPFLAGS<span style="color:#f92672">:=</span> <span style="color:#66d9ef">$(</span>CFLAGS<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>CPPFLAGS<span style="color:#f92672">+=</span> <span style="color:#66d9ef">$(</span>addprefix -I,<span style="color:#66d9ef">$(</span>INCLUDES<span style="color:#66d9ef">))</span>
+</span></span><span style="display:flex;"><span>CPPFLAGS<span style="color:#f92672">+=</span> -I.
+</span></span><span style="display:flex;"><span>CPPFLAGS<span style="color:#f92672">+=</span> -MMD
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>RM-F<span style="color:#f92672">:=</span> rm -f
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>SRCS<span style="color:#f92672">:=</span> <span style="color:#66d9ef">$(</span>wildcard *.cpp<span style="color:#66d9ef">)</span> <span style="color:#66d9ef">$(</span>wildcard <span style="color:#66d9ef">$(</span>addsuffix /*.cpp, <span style="color:#66d9ef">$(</span>SRCDIR<span style="color:#66d9ef">)))</span>
+</span></span><span style="display:flex;"><span>OBJS<span style="color:#f92672">:=</span> <span style="color:#66d9ef">$(</span>patsubst %.cpp,%.o,<span style="color:#66d9ef">$(</span>SRCS<span style="color:#66d9ef">))</span>
+</span></span><span style="display:flex;"><span>DEPS<span style="color:#f92672">:=</span> <span style="color:#66d9ef">$(</span>patsubst %.o,%.d,<span style="color:#66d9ef">$(</span>OBJS<span style="color:#66d9ef">))</span>
+</span></span><span style="display:flex;"><span>MISSING_DEPS<span style="color:#f92672">:=</span> <span style="color:#66d9ef">$(</span>filter-out <span style="color:#66d9ef">$(</span>wildcard <span style="color:#66d9ef">$(</span>DEPS<span style="color:#66d9ef">))</span>,<span style="color:#66d9ef">$(</span>DEPS<span style="color:#66d9ef">))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">.PHONY </span><span style="color:#f92672">:</span> all deps objs clean
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">all</span><span style="color:#f92672">:</span><span style="color:#66d9ef">$(</span>EXECUTABLE<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">deps</span><span style="color:#f92672">:</span><span style="color:#66d9ef">$(</span>DEPS<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">objs</span><span style="color:#f92672">:</span><span style="color:#66d9ef">$(</span>OBJS<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">clean</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>	@<span style="color:#66d9ef">$(</span>RM-F<span style="color:#66d9ef">)</span> *.o
+</span></span><span style="display:flex;"><span>	@<span style="color:#66d9ef">$(</span>RM-F<span style="color:#66d9ef">)</span> *.d
+</span></span><span style="display:flex;"><span>	@<span style="color:#66d9ef">$(</span>RM-F<span style="color:#66d9ef">)</span> <span style="color:#66d9ef">$(</span>EXE<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">ifneq</span> <span style="color:#960050;background-color:#1e0010">(</span><span style="color:#66d9ef">$(</span>MISSING_DEPS<span style="color:#66d9ef">)</span><span style="color:#960050;background-color:#1e0010">,)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$(MISSING_DEPS)</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>	@<span style="color:#66d9ef">$(</span>RM-F<span style="color:#66d9ef">)</span> <span style="color:#66d9ef">$(</span>patsubst %.d,%.o,$@<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">endif</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">-include</span> <span style="color:#66d9ef">$(</span>DEPS<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$(EXECUTABLE) </span><span style="color:#f92672">:</span> <span style="color:#66d9ef">$(</span>OBJS<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">$(</span>CC<span style="color:#66d9ef">)</span> -o <span style="color:#66d9ef">$(</span>EXECUTABLE<span style="color:#66d9ef">)</span> <span style="color:#66d9ef">$(</span>OBJS<span style="color:#66d9ef">)</span> <span style="color:#66d9ef">$(</span>addprefix -L,<span style="color:#66d9ef">$(</span>LIBDIR<span style="color:#66d9ef">))</span> <span style="color:#66d9ef">$(</span>addprefix -l,<span style="color:#66d9ef">$(</span>LIBS<span style="color:#66d9ef">))</span>
+</span></span></code></pre></div><h2 id="cmake">CMake</h2>
 
-<section class="flex my-5">
-    
-    <a>
-        <time datetime="2023-04-23 00:00:00 &#43;0000 UTC">04/23</time>
-    </a>
+</div>
 
-    
-    <a class="px-4 text-base" href="/posts/handbooks/">
-        容器使用笔记
-    </a>
 
-    
-    
-    <div class="flex items-center ">
-        
-        <div class="hidden md:block ml-1 
-       bg-gray-200 
-        hover:font-bold hover:text-blue-500  transition-colors duration-200 ease-in-out
-        rounded-3xl ">
-            <a class="px-2 pt-0 pb-0 text-xs " href="/tags/snipaste">Snipaste
-            </a>
-        </div>
-
+<div class="pt-16 flex-auto flex flex-col space-y-2">
+    <div class="flex space-x-2">
         
     </div>
-    
-</section>
-
-
+</div>
 
 
         </div><footer class="pb-20 px-10 text-xs text-gray-500">

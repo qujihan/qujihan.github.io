@@ -9,7 +9,7 @@
     <link rel="preload stylesheet" as="style" href="/css/style.min.css" />
 
     
-    <title>一些日常使用的手册 - 拾野知地</title>
+    <title>容器使用笔记 - 拾野知地</title>
 
     
     <link rel="shortcut icon" type="image/png"
@@ -22,13 +22,15 @@
 
 
     
-    
+
     
 
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles/color-brewer.min.css">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles/panda-syntax-light.min.css">
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/languages/go.min.js"></script>
+    
     <script>hljs.highlightAll();</script>
 
 
@@ -42,7 +44,7 @@
     </script>
 
 
-</head><body class="duration-200 ease-out text-black prose prose-neutral font-wenkai ">
+</head><body class="duration-200 ease-out text-black prose prose-neutral font-wenkai bg-gray-50">
 
     <main class="mx-auto min-h-[calc(100%-9rem)] max-w-4xl"><header>
     <nav class="pt-5 px-10 flex">
@@ -185,7 +187,7 @@
 <div class="flex flex-col flex-wrap pb-16">
     
     <a class="text-3xl mx-auto">
-        一些日常使用的手册
+        容器使用笔记
     </a>
 
 
@@ -226,306 +228,20 @@
 <li><a href="https://github.com/docker/for-win/issues/5829">Moving Docker wsl files #5829 docker/for-win</a></li>
 <li><a href="https://github.com/microsoft/WSL/issues/4320#issuecomment-571758494">Move VHD File · Issue #4320 microsoft/WSL</a></li>
 </ol>
-<h1 id="gdb">GDB</h1>
-<p>如果可以选择的话, 现在更推荐使用lldb啦!</p>
-<p><strong>指定参数</strong></p>
-<ul>
-<li>启动的时候 <code>gdb --args &lt;exe&gt;</code></li>
-<li>在启动后 <code>set args &lt;args&gt;</code></li>
-<li>在启动后 <code>r &lt;args&gt;</code></li>
-</ul>
-<p><strong>附加到进程</strong></p>
-<ul>
-<li><code>gdb attach &lt;pid&gt;</code></li>
-<li><code>gdb --pid &lt;pid&gt;</code></li>
-</ul>
-<p><strong>设置断点</strong></p>
-<ul>
-<li>行数断点设置: <code>break/b filename:line</code></li>
-<li>函数断点设置: <code>break/b function_name</code></li>
-<li>条件断点设置: <code>break/b condition</code>
-<ul>
-<li><code>b main.cpp:14 if i==90</code>: 在i=90的时候才会停止</li>
-</ul>
-</li>
-<li>正则断点设置: <code>rb regex</code></li>
-<li>临时断点设置: <code>tb breakpoint</code></li>
-</ul>
-<p><strong>断点管理</strong></p>
-<ul>
-<li>查看断点: <code>info/i breakpoints/b</code></li>
-<li>禁用/启动断点: <code>disable/enable breakpoint_num</code></li>
-<li>删除断点: <code>delete breakpoint</code>
-<ul>
-<li>只使用<code>delete</code>会删除所有的断点</li>
-</ul>
-</li>
-<li>将断点信息保存: <code>save breakpoint b.txt</code></li>
-<li>载入断点信息: <code>source b.txt</code></li>
-<li>为point_num断点设置断点的执行代码, 设置后可以使用 <code>i b</code> 查看</li>
-</ul>
-<pre tabindex="0"><code class="language-gdb_command" data-lang="gdb_command">commands point_num
-p *point
-p arg
-end
-</code></pre><p><strong>显示变量信息</strong></p>
-<p><code>set print pretty</code>: 设置显示的结构体好看一点</p>
-<ul>
-<li><code>p arg_name</code></li>
-<li><code>info arg</code></li>
-<li><code>info functions</code>: 查看函数</li>
-<li><code>info locals</code>: 查看本地变量</li>
-<li><code>whatis /opts arg/function</code>: 查看变量/函数的类型</li>
-<li><code>ptype /opts arg</code>: 查看具体的类型
-<ul>
-<li>opts
-<ul>
-<li><code>/o</code>: 显示偏移量</li>
-<li><code>/m</code>: 不显示成员函数</li>
-</ul>
-</li>
-<li><strong>提示</strong> 此时不显示派生类的类型, 需要 <code>set print object on</code></li>
-<li>其他参数可以在<a href="https://sourceware.org/gdb/onlinedocs/gdb/Symbols.html#Symbols">这里</a>看到, ptyps与whatis参加相同</li>
-</ul>
-</li>
-</ul>
-<p><strong>修改变量</strong></p>
-<ul>
-<li><code>p i=10</code>
-<ul>
-<li>将i修改为10</li>
-</ul>
-</li>
-</ul>
-<p><strong>查看内存</strong></p>
-<ul>
-<li><code>e /opts addr</code>
-<ul>
-<li><code>/10b</code>: 显示10byte</li>
-<li><code>/s</code>: 显示字符串</li>
-</ul>
-</li>
-</ul>
-<p><strong>修改内存</strong></p>
-<ul>
-<li><code>set addr = xxx</code></li>
-</ul>
-<p><strong>查看寄存器</strong></p>
-<ul>
-<li><code>i registers</code>: 查看所有的寄存器</li>
-<li><code>i r rdi</code>: 查看具体的寄存器
-<ul>
-<li><code>rdi rsi rdx rcx r8 r9</code>: 函数参数在寄存器中的顺序</li>
-</ul>
-</li>
-</ul>
-<p><strong>修改寄存器</strong></p>
-<ul>
-<li><code>p $rip=0xaaaaaa </code>或者 <code>set var $pc=0xaaaaaa </code>
-<ul>
-<li>一般可以配合行号地址使用: <code>info line 15</code> -&gt; <code>p $rip=0x222222</code></li>
-</ul>
-</li>
-</ul>
-<p><strong>查看汇编</strong></p>
-<ul>
-<li><code>disasemble /opts</code>: 查看汇编指令
-<ul>
-<li>/m: 汇编命令与源码一一对应</li>
-<li>/r: 显示汇编指令的原始字节</li>
-</ul>
-</li>
-</ul>
-<p><strong>执行过程</strong></p>
-<ul>
-<li>step-over:单步执行:遇到函数就跳过函数
-<ul>
-<li><code>next</code> 或者 <code>n</code></li>
-</ul>
-</li>
-<li>step-into:单步执行:遇到函数进入函数
-<ul>
-<li><code>step</code> 或者 <code>s</code></li>
-</ul>
-</li>
-<li><code>skip func_name</code>: 跳过执行某个函数(实际还是执行了,只是不进去而已, 下同)</li>
-<li><code>skip file_name</code>: 跳过执行某文件内的所有函数</li>
-<li><code>skip -gfi common/*</code>: 跳过common文件里的所有文件</li>
-</ul>
-<p><strong>观察点管理</strong></p>
-<ul>
-<li><code>watch arg_name</code>: 当 <code>arg_name</code> 被写的时候就会停止
-<ul>
-<li><code>watch arg_name thread 1</code>: 只有当线程1读的时候会停止(<code>i threads</code> 可以查看当前所有的进程)</li>
-<li><code>watch arg1 + arg2 &gt; 10</code>: 当符合条件就会停下来</li>
-</ul>
-</li>
-<li><code>rwatch arg_name</code>: 读的时候就会停止</li>
-<li><code>awatch arg_name</code>: 读写的时候都会停止</li>
-<li><code>info watch</code>: 显示所有的观察点</li>
-<li><code>delete/disable/enable watch_num</code></li>
-</ul>
-<p><strong>捕获点管理</strong></p>
-<ul>
-<li><code>cache event</code>: 当捕获到事件的时候就会停止下来 <a href="https://sourceware.org/gdb/onlinedocs/gdb/Set-Catchpoints.html">event list</a></li>
-</ul>
-<p><strong>源代码查看</strong></p>
-<p><code>set listsize 20 </code>: 设置可以查看的代码行数为20</p>
-<ul>
-<li><code>list/l</code>: 显示代码(默认10行)</li>
-<li><code>list/l filename:line</code>: 查看指定文件指定行数的代码</li>
-<li><code>list/l function</code>: 查看指定函数的代码</li>
-<li><code>list/l function1::function2</code>: 查看指定函数的函数的代码</li>
-<li><code>list/l -</code>: 显示前面的代码</li>
-<li><code>search regex</code>: 默认向后搜索
-<ul>
-<li><code>serarch test</code>: 找到所有含有test的代码</li>
-</ul>
-</li>
-<li><code>forward-search regex</code>: 向前搜索</li>
-<li><code>reverse-search regex</code>: 循环搜索</li>
-</ul>
-<p><strong>窗口管理</strong></p>
-<ul>
-<li><code>layout src/asm/reg</code></li>
-<li><code>layout split</code></li>
-<li><code>focus/fs src/asm/reg/cmd</code></li>
-<li><code>info win</code></li>
-<li><code>ctrl+x+a</code></li>
-</ul>
-<p><strong>函数栈管理</strong></p>
-<ul>
-<li><code>backtrace/bt</code>: 查看栈回溯信息</li>
-<li><code>frame n</code>: 切换栈帧</li>
-<li><code>info f n</code>: 查看栈帧</li>
-</ul>
-<p><strong>调用函数</strong></p>
-<p><code>p</code> 会显示void的返回值而<code>call</code>不会</p>
-<ul>
-<li><code>p express</code></li>
-<li><code>call express</code></li>
-</ul>
-<p><strong>与外部的交互</strong></p>
-<p><code>set logging on/off</code>: log输出管理
-<code>set logging file filename</code>: 设置输出文件
-<code>set logging overwrite</code>: 覆盖输出文件(默认是追加)</p>
-<ul>
-<li><code>shell/! command</code>: 执行外部命令</li>
-<li><code>pipe/| command | grep test</code>: 管道符</li>
-</ul>
-<p><strong>退出当前函数</strong></p>
-<ul>
-<li><code>finish</code></li>
-</ul>
-<p><strong>退出调试</strong></p>
-<ul>
-<li><code>detach</code></li>
-<li><code>quit</code> 或者 <code>q</code></li>
-</ul>
-<h2 id="其他记录">其他记录</h2>
-<h3 id="多线程">多线程</h3>
-<p><code>set print thread-events on/off</code>: 设置是否打印线程的日志信息</p>
-<ul>
-<li><code>info/i threads</code>: 查看所有线程的信息</li>
-<li><code>b main.cpp:132 thread thread_num</code>: 为线程 thread_num 设置一个断点</li>
-<li><code>thread/t find</code>: 查找线程</li>
-<li><code>thread/t thread_num</code>: 切换线程</li>
-<li><code>thread/t name</code>: 设置线程名称</li>
-<li><code>thread/t apply thread_num command</code>: 为线程执行命令
-<ul>
-<li><code>thread/t apply 2 p locals</code></li>
-<li><code>thread/t apply 3 bt</code></li>
-<li><code>thread/t apply 1 2 3 i locals</code></li>
-<li><code>thread/t apply 1-3 i locals</code></li>
-<li><code>thread/t apply all bt</code></li>
-</ul>
-</li>
-</ul>
-<h4 id="死锁问题">死锁问题</h4>
-<p><code>thread apply all bt</code>: 先查看所有的进程的调用栈
-<code>thread thread_num</code> =&gt; <code>f frame_num</code>: 看每一个进程都是在哪里停住</p>
-<h3 id="跳转执行反向执行">跳转执行/反向执行</h3>
-<ul>
-<li><code>jump filename:line</code>: 跳转到某一行开始执行</li>
-<li><code>record</code>:反向执行之前需要先记录下来</li>
-<li><code>record stop</code></li>
-<li><code>rn/rs/rc</code>:n/s/c的反向操作</li>
-<li><code>reverse-finish</code>: 反向执行到函数的开始</li>
-</ul>
-<h3 id="多进程">多进程</h3>
-<p><code>set schedule multiple on/off</code>: 多个进程时候可以同时运行(默认是:off)</p>
-<ul>
-<li><code>info inferior</code>: GDB所包含的所有子程序</li>
-<li><code>inferior num</code>: 切换到不同的inferior</li>
-<li><code>add-inferior</code>: 添加一个inferior</li>
-<li><code>remove-inferior</code>: 删除一个inferior</li>
-<li><code>detach inferior num</code>: 将进程取消attach</li>
-</ul>
-<h4 id="父子进程调试">父子进程调试</h4>
-<p><code>set follow-fork-mode child/parent </code>: 设置调试跟随父进程还是子进程</p>
-<p><code>set detach-on-fork on/off</code>: 设置在fork子进程后会不会分离</p>
-<p>如果想父进程和子进程一起调试, 就需要将<code>detach-on-fork</code>设置为<code>off</code>, 然后就可以一起调试了</p>
-<h3 id="简单的内存检查">简单的内存检查</h3>
-<p><code>call malloc_stats()</code>: 调用系统的函数去查看内存信息</p>
-<p><code>call malloc_info(0, stdout)</code>: stdout是标准输出(也可以是其他文件)输出的是xml格式</p>
-<p><code>gcc -fsanitize=address</code>: 使得gcc检查 内存/堆/栈/全局内存/释放后使用(野指针) 问题</p>
-<h3 id="调试符号">调试符号</h3>
-<h4 id="gdb-命令">gdb 命令</h4>
-<p><strong>附加调试信息去调试</strong>
-<code>gdb --sysbol=release-section -exec=release</code></p>
-<p><strong>写二进制文件</strong>(破解可用)
-<code>gdb --write filename</code>(gdb默认只读)</p>
-<h4 id="strip-命令">strip 命令</h4>
-<p>去掉debug信息
-<code>strip -g with_debug_info_file -o outfile</code></p>
-<h4 id="objcopy-命令">objcopy 命令</h4>
-<p><code>objcopy </code>: 生成debug信息</p>
-<h3 id="core-dump-核心转储">core dump 核心转储</h3>
-<p><strong>命令</strong></p>
-<ul>
-<li>为活着的文件生成core dump文件: attach 进程以后,使用<code>generate-core-file</code>可以生成core dump文件</li>
-<li>命令行设置<code>ulimit -c unlimited</code>, <code>echo -e &quot;%e-%p-%t&quot; &gt; /proc/sys/kernel/core_pattern</code>
-<ul>
-<li>第一个是设置 不限制进程的最大数</li>
-<li>第二个是设置 生成的dump文件的名字: 进程名称-pid-time</li>
-</ul>
-</li>
-<li>调试崩溃的文件: <code>gdb filename core_dump_file_path</code></li>
-</ul>
-<p>加载core dump: <code>gdb core_dump_filename</code></p>
-<h2 id="links">Links</h2>
-<ul>
-<li><a href="https://sourceware.org/gdb/current/onlinedocs/gdb.pdf">GDB Manual PDF</a></li>
-<li><a href="https://sourceware.org/gdb/onlinedocs/gdb/index.html">GDB Manual Single page</a></li>
-<li><a href="https://lldb.llvm.org/use/map.html">GDB to LLDB map</a></li>
-</ul>
 </div>
-
-
-
-
-
-
-
 
 
 <div class="pt-16 flex-auto flex flex-col space-y-2">
     <div class="flex space-x-2">
         
-
         <div style="padding-top: 0.2em; padding-bottom: 0.2rem"
             class="flex items-center space-x-1 text-xs px-2 bg-gray-200 text-gray-800 rounded-full hover:text-blue-500  transition-colors duration-200 ease-in-out">
             <div style="width: 0.4rem; height: 0.4rem" class="bg-gray-500 rounded-full"></div>
             <a href="%20/tags/snipaste"> Snipaste </a>
         </div>
-
-
         
     </div>
 </div>
-
-
-
 
 
         </div><footer class="pb-20 px-10 text-xs text-gray-500">
