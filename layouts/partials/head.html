@@ -21,17 +21,19 @@
 
 
     {{/* Partials */}}
+
     {{ if .Params.math }}
     {{- partial "math.html" . -}}
     {{ end }}
+
     {{ if .Params.viz }}
     {{- partial "vizjs.html" . -}}
     {{ end }}
 
-    {{/* Hightlight https://highlightjs.org/#usage */}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles/color-brewer.min.css">
+    {{/* Hightlight https://highlightjs.org/examples */}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles/panda-syntax-light.min.css">
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/languages/go.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/languages/go.min.js"></script> -->
     <script>hljs.highlightAll();</script>
 
 

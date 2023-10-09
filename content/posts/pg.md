@@ -1,6 +1,6 @@
 ---
 author: "Jihan"
-title: "源码安装PG"
+title: "源码安装PG(使用Docker)"
 date: "2023-08-04"
 tags:
 - Postgresql

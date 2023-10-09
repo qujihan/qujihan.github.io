@@ -10,8 +10,6 @@ tags:
 
 
 # 一些项目的博客
-
-
 - [阿里云数据库内核月报](https://github.com/tangwz/db-monthly)
 - [OpenACID](https://blog.openacid.com/): 来自databend, 以后想看看他的  将paxos于raft统一到一个协议下, 太强了 (但是还没看)
 - [DSDSD CWI](https://dsdsd.da.cwi.nl/) /  [DuckDB Blog](https://duckdb.org/news/)
@@ -45,15 +43,6 @@ tags:
 - [分布式公式算法List](https://github.com/heidihoward/distributed-consensus-reading-list)
 
 # 一些资料
-
-### 字体与图标
-- [Nerd-Fonts](https://github.com/ryanoasis/nerd-fonts)  
-- [图标库](https://fontawesome.com/) 
-- [霞鹜文楷](https://github.com/lxgw/LxgwWenKai)
-
-### 一些实用工具
-- [结构C++语法糖](https://cppinsights.io/)
-
 ### 课程
 - [CS144](https://github.com/CS144/minnow)
 - [MIT-missing-semester 计算机教育中缺失的一课(中文翻译)](https://missing-semester-cn.github.io/)
@@ -87,6 +76,8 @@ tags:
 - [Modern C++ Tutorial](https://github.com/changkun/modern-cpp-tutorial): 一些小Tips, 总的来说还是可以的
 - [Modern C++ Cheatsheet](https://github.com/AnthonyCalandra/modern-cpp-features): 英文的, 算是现代features集合的索引吧
 - [C++那些事](https://light-city.github.io/): 用处不大, 一种类似八股的东西
+- 一些工具
+    - [结构C++语法糖](https://cppinsights.io/)
 
 #### Go
 按照我理想的阅读顺序排序(有我没有看过的, 那些都是想当然排序的)
@@ -145,19 +136,3 @@ tags:
 - [Vim 插件开发指南](https://github.com/wsdjeg/vim-plugin-dev-guide): 开发插件, 但是感觉以后用lua开发比较多了, 毕竟比viml开发的效率高多了
 - [VimL 语言编程指北路](https://github.com/lymslive/vimllearn): vimL学习
 - [Learn Vimscript the Hard Way](https://learnvimscriptthehardway.stevelosh.com/): : vimL学习, 英文的, 不常看
-
-# 有意思的东西
-
-- [证明扫雷是图灵完备的](https://web.mat.bham.ac.uk/R.W.Kaye/minesw/)
-- [RISC-V CPU core writen in ANSI C](https://github.com/mnurzia/rv)
-
-# 走读代码列表
-- [Btree](https://github.com/google/btree): Google写的Btree库, 阅读参考[这篇博客](https://wingsxdu.com/posts/data-structure/btree/), ~900 lines of Go
-- [BoltDB](https://github.com/boltdb/bolt): 嵌入式的, kv数据库, 带有完整 MVCC 的实现的数据库, ~7000 lines of Go
-- [Etcd-raft](https://github.com/etcd-io/etcd/tree/main/contrib/raftexample): etcd的raft实现, ~1000 lines of Go
-- [ToyDB](https://github.com/erikgrinaker/toydb): 结构清晰的, 带有实现思路的, 分布式的, 带事务的, 数据库, ~13000 lines of Rust
-- [Apache KVRocks](https://github.com/apache/kvrocks), Apache的, 兼容Redis的, 分布式的存储引擎, ~28000 lines of C++
-- [Workflow](https://github.com/sogou/workflow): sogou开发的, 贼牛逼的构建, ~39000 lines of C/C++
-    - [json-parser](https://github.com/barenboim/json-parser), ~900 lines of C
-    - [srpc](https://github.com/sogou/srpc)
-    - 参考这位知乎[1412](https://www.zhihu.com/people/liyingxin1412/posts)(workflow开发人员)的文章

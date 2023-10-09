@@ -22,50 +22,17 @@
     {{ .Content }}
 </div>
 
-
-<!-- Post Nav -->
-{{/* {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
-{{ if and (gt (len $pages) 1) (in $pages . ) }}
-<nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
-    {{ with $pages.Next . }}
-    <a class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
-        href="{{ .Permalink }}"><span class="mr-1.5">←</span><span>{{ .Name }}</span></a>
-    {{ end }}<!---->
-
-    {{ with $pages.Prev . }}
-    <a class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
-        href="{{ .Permalink }}"><span>{{ .Name }}</span><span class="ml-1.5">→</span></a>
-    {{ end }}
-</nav>
-{{ end }} */}}
-
 {{/* Tags */}}
-<!-- <div class="mt-24 flex flex-auto">
-    {{ range .Params.tags }}
-    <div
-        class="ml-2  bg-gray-100 hover:font-bold hover:text-blue-500 rounded-3xl transition-colors duration-200 ease-in-out">
-        <a class="px-2  hover:font-bold hover:text-blue-500" href="{{ absURL " /tags/" }}{{ . | urlize }}">{{ . }}</a>
-    </div>
-    {{ end }}
-</div> -->
-
-
 <div class="pt-16 flex-auto flex flex-col space-y-2">
     <div class="flex space-x-2">
         {{ range .Params.tags }}
-
         <div style="padding-top: 0.2em; padding-bottom: 0.2rem"
             class="flex items-center space-x-1 text-xs px-2 bg-gray-200 text-gray-800 rounded-full hover:text-blue-500  transition-colors duration-200 ease-in-out">
             <div style="width: 0.4rem; height: 0.4rem" class="bg-gray-500 rounded-full"></div>
             <a href="{{ absURL " /tags/"}}{{ . | urlize }}"> {{ . }} </a>
         </div>
-
-
         {{ end }}
     </div>
 </div>
-
-
-
 
 {{ end }}

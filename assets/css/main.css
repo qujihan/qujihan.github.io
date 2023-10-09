@@ -17,21 +17,21 @@
 
   h2 {
     @apply text-3xl;
-    font-weight: bold;
+    /* font-weight: bold; */
     padding-top: 30pt;
     padding-bottom: 20pt;
   }
 
   h3 {
     @apply text-2xl;
-    font-weight: bold;
+    /* font-weight: bold; */
     padding-top: 30pt;
     padding-bottom: 20pt;
   }
 
   h4 {
     @apply text-xl;
-    font-weight: bold;
+    /* font-weight: bold; */
     padding-top: 30pt;
     padding-bottom: 20pt;
   }
@@ -44,10 +44,6 @@
   h6 {
     @apply text-base;
     padding-top: 10pt;
-  }
-
-  .highlight {
-    margin-top: 20px;
   }
 
   ol {
@@ -64,10 +60,11 @@
 
   li {
     @apply mt-2 mb-2 hover:list-heavy_rightwards_arrow
-    /* @apply hover:list-heavy_rightwards_arrow */
   }
-
-
+  
+  pre code {
+    @apply mt-5 mb-5 
+  }
 
   blockquote {
     @apply mt-4 mb-4 p-4 rounded-lg bg-gray-100 text-gray-600 border-l-4 border-gray-400 transition-all duration-300 ease-in-out hover:bg-gray-200
@@ -75,27 +72,22 @@
 
   strong {
     font-weight: bolder;
-    /* text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); */
     background: linear-gradient(rgb(229 21 21 / 63%), rgb(243 212 106 / 46%))no-repeat 50% 110%/110% 4px
   }
 }
 
 @layer components {
 
-  /*  这里定义的是超链接的样式  */
   .link-decorator a {
     position: relative;
     text-decoration: none;
     padding-left: 1px;
     padding-right: 1px;
     color: #19afc6;
-    /* 浅蓝色 */
     transition: color 0.3s ease;
-    /* 平滑过渡效果 */
   }
 
   .link-decorator a:hover {
-    /* 深蓝色，你可以替换成你喜欢的深蓝色 */
     color: #1368df;
   }
 

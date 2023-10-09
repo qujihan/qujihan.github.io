@@ -5,117 +5,104 @@ date: "2023-07-29"
 tags:
 - Machine
 ---
-记录一些机器重装之类的问题, 避免以后无意义的搜索
 <!--more-->
-
-
-
 
 # MacOS
 ## 安装软件
 ```shell
 # install brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# software
-brew install --cask microsoft-edge zotero
-# tools
-brew install --cask bob snipaste squirrel
-# editors
-brew install --cask visual-studio-code obsidian wezterm
-brew install --cask pycharm clion intellij-idea goland
-# common software
-brew install --cask qq qqmusic wechat tencent-lemon feishu
-# for delete abc input
-brew install --cask plistedit-pro
-
+(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/qujihan/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+# install software
+brew install --cask microsoft-edge bob snipaste squirrel visual-studio-code obsidian wezterm qq qqmusic wechat tencent-lemon feishu
+# install language
+brew install cmake go rustup node typst python@3.11
+rustup-init
+rustup update
+# install tools
+brew install yazi stow cloc hugo starship nushell podman
 # neovim
 brew install neovim ripgrep fd
-# programming language && lsp && dap
-brew install cmake go gopls delve typst node rust
-# tools
-brew install yazi lazygit sevenzip stow cloc hugo squirrel
-# for zsh
-brew install starship
-brew install zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-git-prompt
+# config squirrel
+git clone git@github.com:qujihan/Rime.git /Users/qujihan/Library/Rime
+# config mac tools 
+git clone --recurse-submodules git@github.com:qujihan/.dotfiles.git ~/.dotfiles
+~/.dotfiles/mac.sh -install
 ```
-安装一些常用的软件: keynote, office, onedrive, ibar, clashX, xcode
-
+安装一些常用的软件: office, oneDrive, iBar, clashX, Xcode
 ## 删除系统自带的ABC输入法
-在使用Mac的过程中, 我使用的是开源的 Rime 输入法, 这款输入法自己可以切换中英文输入, 那么Mac自带的ABC输入法就不那么需要了, 否则会在有的时候打乱思路
-
-以下仅仅在M系列芯片实验过
-### 关闭系统完整性保护 SIP
-关机长按指纹键, 进入恢复模式
-
-在顶部的菜单栏中的实用工具中找到终端, 输入 `csrutil disable`
-
-如果输出下面的表示禁用成功
-`
+关机长按指纹键, 进入恢复模式, 在顶部的菜单栏中的实用工具中找到终端, 输入 `csrutil disable`, 如果输出下面的表示禁用成功
+```
 Successfully disabled System Integrity Protection. Please restart the machine for the changes to take effect. 
-`
-### 修改com.apple.HIToolbox.plist文件
-位于 ~/Library/Preferences/com.apple.HIToolbox.plist
+```
+修改com.apple.HIToolbox.plist文件, 重启即可
+```shell
+# 备份plist文件
+cp ~/Library/Preferences/com.apple.HIToolbox.plist  ~/Library/Preferences/com.apple.HIToolbox.plist.backup
 
-删掉有关ABC的内容就可以了
+# 这里使用下面的指令看一下是不是这个样子(第一个Dict的Name是ABC)
+# AppleEnabledInputSources = Array {
+#         Dict {
+#             InputSourceKind = Keyboard Layout
+#             KeyboardLayout Name = ABC
+#             KeyboardLayout ID = 252
+#         }
+#         ......
+#     }
+/usr/libexec/PlistBuddy -c "Print"  ~/Library/Preferences/com.apple.HIToolbox.plist 
+
+# 删除ABC输入法
+/usr/libexec/PlistBuddy -c "Delete :AppleEnabledInputSources:0"  ~/Library/Preferences/com.apple.HIToolbox.plist 
+```
 
 # Windows
-
 ## 跳过联网激活使用本地账号
 在连接网络的界面按住Shift+F10调出CMD输入`OOBE\BYPASSNRO`
-
 ## 安装软件
 ```shell
 # Needed to run a remote script the first time
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser 
-
 # set scoop dir is C:\Scoop
 md C:\Scoop 
 irm get.scoop.sh -outfile 'install.ps1'
 .\install.ps1 -ScoopDir 'C:\Scoop' -ScoopGlobalDir 'C:\Scoop' -NoProxy
 
 scoop bucket add extras
-
 # Terminal tools
-scoop install sudo git starship
-
+scoop install sudo git starship nu
 # Tools
-scoop install wechat trafficmonitor snipaste powertoys zotero
-
+scoop install wechat trafficmonitor snipaste powertoys
 # Editor
 scoop install obsidian wezterm 
 winget install Microsoft.PowerShell Microsoft.VisualStudioCode
-
-# IDE
-scoop install goland idea-ultimate pycharm-professional clion
-
-# language
-scoop install make gcc clangd cmake python rustup
-
-# Emacs
-scoop bucket add wsw0108 https://github.com/wsw0108/scoop-bucket.git
-scoop install emacs librime
-
-# Go
-scoop install go
-go install github.com/go-delve/delve/cmd/dlv@latest
-go install golang.org/x/tools/gopls@latest
-
+# Language
+scoop install make gcc clangd cmake python rustup go 
 ```
 
-# Ubuntu/WSL
-安装Neovim, 现在在最新版本的 ubuntu 可以使用 snap 去安装 neovim 了
+
+# 其他配置
+
+## 配置包管理器镜像
+```bash
+# npm
+npm config set registry https://registry.npm.taobao.org
+# pip
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+# go
+go env -w GO111MODULE=on
+go env -w GOPROXY=https://goproxy.cn,direct
+```
+## 下载语言相关应用
 ```shell
-# install neovim latest
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-chmod u+x nvim.appimage
-./nvim.appimage --appimage-extract
-mv squashfs-root /
-ln -s /squashfs-root/AppRun /usr/bin/nvim
+# About Go 
+go install golang.org/x/tools/gopls@latest
+go install github.com/go-delve/delve/cmd/dlv@latest
+# About Rust
+cargo install stylua
 ```
 
-## Proxy
-有时候需要设置一下代理才可以访问一些服务, 就在 `~/.bashrc`中设置
+## 配置网络代理
 ```shell
 # set proxy (at wsl or docker)
 # ~/.bashrc
@@ -125,35 +112,21 @@ proxy(){
     export https_proxy="http://${hostip}:7890"
     export all_proxy="http://${hostip}:7890"
 }
-
 unproxy(){
     unset http_proxy
     unset https_proxy
     unset all_proxy
 }
-
 alias pp="proxy"
 alias up="unproxy"
 ```
-
-
-# 共有的部分
-## 设置ssh
-
-
-配置ssh所需的一些命令
+## 配置 ssh
 ```shell
 ssh-keygen -t ed25519 -C "qujihan@163.com"
 cat .ssh/id_ed25519.pub
 ssh -T git@github.com
 ```
-在[Github](https://github.com/settings/keys)上就可以设置ssh了
-
-最近遇到了一些22端口的问题, 可以将访问端口改为443
-
-~/.ssh/config(没有就创建一个)
-
-另外, vscode使用ssh连接的时候改的也是这个文件, 注意不要冲突
+在VSCode中配置ssh连接
 ```config
 Host github.com
   Hostname ssh.github.com
@@ -164,4 +137,3 @@ Host localhost
   User jihan
   Port 2222
 ```
-**第一个就可以了**, localhost只是记录一下这个模板
