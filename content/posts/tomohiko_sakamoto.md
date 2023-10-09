@@ -1,6 +1,6 @@
 ---
 author: "Jihan"
-title: "[Algo] Tomohiko Sakamoto"
+title: "关于日期的Tomohiko Sakamoto算法"
 date: "2023-05-21"
 tags:
 - Algorithm
