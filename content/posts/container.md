@@ -1,10 +1,11 @@
 ---
 author: "Jihan"
-title: "容器使用笔记"
+title: "Docker/Podman 使用笔记"
 date: "2023-04-23"
 tags:
 - Snipaste
 ---
+在是用 Docker/Podman 的过程中有许多的坑与经验, 这里记录一下
 <!--more-->
 # Docker 
 

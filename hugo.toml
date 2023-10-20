@@ -1,52 +1,82 @@
-title = '拾野知地'
-paginate = 20 
+title = '拾 野 知 地'
+paginate = 5 
 copyright = "Jihan"
 hasCJKLanguage = true
 defaultContentLanguage = "zh"
+
+
+[params]
+author = "渠继涵"
+subtitle = "A Student @ UESTC"
+description = "杂记 / 数据库 / 分布式 / 存储 / Rust"
+rss = true
+math = true
 
 [menu]
 [[menu.main]]
 name = '主页'
 pageRef = '/'
+weight = 1
+[[menu.main]]
+name = '所有文章'
+pageRef = '/'
+identifier = 'archive' 
+weight = 5 
+[[menu.main]]
+name = '杂文'
+pageRef = '/posts'
+parent = 'archive'
 weight = 10
 [[menu.main]]
-name = '归档'
-pageRef = '/posts'
+name = '数据库'
+pageRef = '/database'
+parent = 'archive'
 weight = 20
+[[menu.main]]
+name = '分布式'
+pageRef = '/distributed'
+parent = 'archive'
+weight = 30
+[[menu.main]]
+name = '存储'
+pageRef = '/storage'
+parent = 'archive'
+weight = 40 
+
+
+[[menu.main]]
+name = '所有标签'
+pageRef = '/tags'
+weight = 10
 [[menu.main]]
 name = '关于'
 pageRef = '/about'
-weight = 30
-# [[menu.footer]]
-#   name = 'Terms'
-#   pageRef = '/terms'
-#   weight = 10
-# [[menu.footer]]
-#   name = 'Privacy'
-#   pageRef = '/privacy'
-#   weight = 20
+weight = 15
 
-
-[params]
-author = "Jihan"
-subtitle = "A student @ UESTC"
-description = "杂记以及学习过程的记录"
-rss = true
-math = true
-showSummary = false
 
 [[params.social]]
 name = "Github"
 url = "github.com/qujihan"
 [[params.social]]
-name = "Twitter"
-url = "x.com/Quhaha4"
-[[params.social]]
 name = "Bilibili"
 url = "space.bilibili.com/23354145"
 [[params.social]]
-name = "Zhihu"
-url = "zhihu.com/people/qu-ji-han"
-[[params.social]]
 name = "Rss"
 url = "/index.xml"
+
+# https://xyproto.github.io/splash/docs/longer/all.html
+[markup]
+  [markup.highlight]
+    anchorLineNos = true
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ''
+    hl_inline = false
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    noHl = false
+    style = 'friendly'
+    tabWidth = 4

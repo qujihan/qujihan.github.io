@@ -5,6 +5,8 @@ date: "2023-07-29"
 tags:
 - Editor
 ---
+
+在使用编辑器/IDE的过程中, 难免需要设置一些东西, 这里记录一下修改的参数, 日后可能会转移到 .dotfile 仓库中, 毕竟这里还是不太适合跨平台修改
 <!--more-->
 
 # VSCode
@@ -157,23 +159,9 @@ nmap K editor.action.showHover
 
 ```
 
-
 ### 在VSCode中设置Debug的一些问题
 [Variables Reference](https://code.visualstudio.com/docs/editor/variables-reference)
 
 
 # Jetbrains
-
-
 # Vim/Neovim
-
-# Emacs
-## Dired
-
-- 选择
-  - m 选中
-  - u 取消选中
-  - U 取消所有选中
-  - t 反选
-  - * / 选择所有目录
-  - x 执行所有命令

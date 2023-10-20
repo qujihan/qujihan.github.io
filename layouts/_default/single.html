@@ -1,38 +1,29 @@
 {{ define "main" }}
 
-
-
-<div class="flex flex-col flex-wrap pb-16">
-    {{/* Title */}}
-    <a class="text-3xl mx-auto">
-        {{ .Title }}
-    </a>
-
-
-    {{/* Date */}}
-    <div class="pt-8 mx-auto">
-        <time datetime="{{ .PublishDate.Format " 2006/01/02" }}">{{ .PublishDate.Format "2006/1/2" }}</time>
-    </div>
-</div>
-
-
-
-{{/* Content */}}
-<div class="link-decorator code-decorator">
-    {{ .Content }}
-</div>
-
-{{/* Tags */}}
-<div class="pt-16 flex-auto flex flex-col space-y-2">
-    <div class="flex space-x-2">
-        {{ range .Params.tags }}
-        <div style="padding-top: 0.2em; padding-bottom: 0.2rem"
-            class="flex items-center space-x-1 text-xs px-2 bg-gray-200 text-gray-800 rounded-full hover:text-blue-500  transition-colors duration-200 ease-in-out">
-            <div style="width: 0.4rem; height: 0.4rem" class="bg-gray-500 rounded-full"></div>
-            <a href="{{ absURL " /tags/"}}{{ . | urlize }}"> {{ . }} </a>
+<div class="mx-auto w-full md:w-3/4 lg:w-3/4 xl:w-1/2 ">
+    <div class="flex flex-col mt-10">
+        <div class="text-center">
+            <a class="text-3xl">{{ .Title }}</a>
         </div>
-        {{ end }}
+        <div class="text-center mt-4">
+            <a class="text-base text-gray-400">{{ .Params.publishDate.Format "2006-01-02" }} </a>
+        </div>
     </div>
+
+    {{ if .Params.toc}}
+    <div class="markdown-body">
+        <div class="font-wenkai">
+            {{ .TableOfContents }}
+        </div>
+    </div>
+    {{ end }}
+
+    <div class="markdown markdown-body">
+        <div class="font-wenkai">
+            {{ .Content }}
+        </div>
+    </div>
+
 </div>
 
 {{ end }}

@@ -11,17 +11,19 @@
     <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ site.Title }}</title>
 
     {{/* Icon */}}
-    <link rel="shortcut icon" type="image/png"
-        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAABWklEQVQ4jY3UwU5TQRTG8V9qYEOoAdZ9AX0DAgtiWEMQ6StoIOlzKBJfomFl4jtI2OFGiS1p3ehaF5UFLExd3HPppNzpvV9yFufcmX/Od+bOUK1ldHGOIW4jhlE7ijWN9BI/MK2JMQ4WgZ7gfbLhK3p4jhWsYj+6TMGnaFUBS9gd3uQWYQ0/56DvqmyWsJ1FNkKvPB7Bfvlx2WxmrzOAS1wkebsCOAqWrtnMcjYv8DnJn1YAp9G580h6tUZnOsoA+3ATybOGsA38ygCHMIlktQbUjs5ysGmwFgI7+JisqYvJIssd/G4IerDcwpcA7M4BP2C9ZgzzumJ2Yt8U169UanMTWw06PKT4GcdROM4At7BdAxthqdx8EMV7vIjapwYdpbE37/80gZ4oDulPQ9jbqoG2FK9GuegaZ/iOfzWw3JVF8WqMGnQ1qrKZ05LiovcxwN+IQdQOJQeQ6j9hwsao7vZBvQAAAABJRU5ErkJggg== ">
+    {{- partial "pics/icon.html" . -}}
+
 
     {{/* Font */}}
     {{/* https://github.com/chawyehsu/lxgw-wenkai-webfont#use-cdn */}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.min.css">
 
+    {{ if .IsPage }}
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.3.0/github-markdown-light.min.css" />
+    {{ end }}
 
     {{/* Partials */}}
-
     {{ if .Params.math }}
     {{- partial "math.html" . -}}
     {{ end }}
@@ -30,21 +32,83 @@
     {{- partial "vizjs.html" . -}}
     {{ end }}
 
-    {{/* Hightlight https://highlightjs.org/examples */}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles/panda-syntax-light.min.css">
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/languages/go.min.js"></script> -->
-    <script>hljs.highlightAll();</script>
-
-
-    {{/* Add link */}}
+    {{/* js code */}}
+    {{/* header button js */}}
     <script>
-        document.querySelectorAll('a[href]').forEach(link => {
-            if (link.host !== window.location.host) {
-                link.classList.add('link-icon');
-            }
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownParents = document.querySelectorAll('.hugo-menu-parent');
+
+            dropdownParents.forEach(parent => {
+                let hideTimeout;
+                const dropdownMenu = parent.querySelector('.hugo-menu');
+
+                parent.addEventListener('mouseenter', function () {
+                    clearTimeout(hideTimeout);
+                    dropdownMenu.classList.remove('hidden');
+                });
+
+                parent.addEventListener('mouseleave', function () {
+                    hideTimeout = setTimeout(() => {
+                        dropdownMenu.classList.add('hidden');
+                    }, 200); // Hide after 200ms
+                });
+            });
         });
     </script>
 
 
+    {{/* md button */}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('menuToggle').addEventListener('click', function () {
+                const menu = document.getElementById('listMenu');
+                if (menu.classList.contains('hidden')) {
+                    menu.classList.remove('hidden');
+                    setTimeout(() => menu.classList.remove('opacity-0'), 10);
+                } else {
+                    menu.classList.add('opacity-0');
+                    setTimeout(() => menu.classList.add('hidden'), 200);
+                }
+
+
+                let hideTimeout;
+                menu.addEventListener('mouseenter', function () {
+                    clearTimeout(hideTimeout);
+                });
+                menu.addEventListener('mouseleave', function () {
+                    hideTimeout = setTimeout(() => {
+                        menu.classList.add('hidden');
+                    }, 300);
+                });
+
+            });
+        });
+    </script>
+
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            let btn = document.getElementById("scrollTopBtn");
+
+            window.onscroll = function () {
+                // 检查滚动的距离，如果大于300像素则显示按钮，否则隐藏
+                if (window.pageYOffset > 300) {
+                    btn.style.opacity = "1";
+                    btn.style.pointerEvents = "all";
+                } else {
+                    btn.style.opacity = "0";
+                    btn.style.pointerEvents = "none";
+                }
+            };
+
+        });
+
+        function scrollTopFunction() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    </script>
 </head>

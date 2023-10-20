@@ -1,43 +1,25 @@
 {{ define "main" }}
-{{ range .Data.Pages.GroupByDate "2006" }}
 
 
-{{/* Years */}}
-<div>
-    <a class="text-3xl">{{ .Key }}</a>
+<div class="mx-auto w-full md:w-3/4 lg:w-3/4 xl:w-5/8 ">
+    <div class="text-center mt-16 mb-8">
+        <a class="text-3xl">{{.Title}}</a>
+    </div>
+
+    {{ range .Pages.GroupByDate "2006" }}
+
+    <a class="mb-4 text-2xl">{{ .Key }}</a>
+    {{ range .Pages }}
+    <div class="flex flex-wrap">
+        <div class="mx-auto w-full px-8 py-6 ">
+            <a class="text-base mx-4">{{ .Params.publishDate.Format "01-02" }} </a>
+            <a href="{{ .RelPermalink }}"
+                class="text-xl font-bold sm:text-xl text-gray-900 title-font mb-2 red-hover">{{ .Title }}</a>
+        </div>
+    </div>
+    {{ end }} {{/* end inner range .Pages */}}
+
+    {{ end }} {{/* end outer range .Pages.GroupByDate "2006" */}}
 </div>
 
-
-{{/* Posts */}}
-{{ range .Pages }}
-<section class="flex my-5">
-    {{/* Date */}}
-    <a><time datetime="{{ .PublishDate }}">{{ i18n "publishDateShort" . }}</time></a>
-
-    {{/* Title */}}
-    <a class="px-4 text-base hover:font-bold hover:text-blue-500" href="{{ .Permalink }}">
-        {{ .Title }}
-    </a>
-
-    {{/* Tags */}}
-    {{ if .Params.tags }}
-    <div class="flex items-center ">
-        {{ range .Params.tags}}
-        <div class="hidden md:block ml-1 
-       bg-gray-200 
-        hover:font-bold hover:text-blue-500
-        rounded-3xl ">
-            <a class="px-2 pt-0 pb-0 text-xs " href="{{ absURL "/tags/" }}{{ . | urlize }}">{{ . }}
-            </a>
-        </div>
-
-        {{ end }}
-    </div>
-    {{ end }}
-</section>
-
-
-
-{{ end }} {{/* range .Pages */}}
-{{ end }} {{/* ranage .Data.Pages.GroupByDate "2006" */}}
 {{ end }} {{/* define "main" */}}

@@ -1,20 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ .Site.LanguageCode }}">
 {{- partial "head.html" . -}}
-
-<body class="duration-200 ease-out text-black prose prose-neutral font-wenkai bg-gray-50">
-
-    <main class="mx-auto min-h-[calc(100%-9rem)] max-w-4xl">
+<body class="font-wenkai">
+    <main class="">
         {{- partial "header.html" . -}}
 
-        <div class="px-8 pb-16 pt-12 relative">
-            {{- block "main" . }}{{- end }}
-        </div>
+        {{- block "main" . }}{{- end }}
 
         {{- partial "footer.html" . -}}
     </main>
 
-
+    <button id="scrollTopBtn" onclick="scrollTopFunction()"
+        class="fixed bottom-4 right-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg opacity-0 transition-opacity duration-300">回到顶部</button>
 </body>
-
 </html>

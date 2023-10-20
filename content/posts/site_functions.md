@@ -9,6 +9,7 @@ top: false
 tags:
 - Handbook
 ---
+这个网站可以支持的功能, 记录下来等我写博客的时候快速翻阅
 <!--more-->
 
 这个就是本文的md文件的头部部分
@@ -194,3 +195,17 @@ digraph {
 
 ### Top
 当`top: true` 的时候, 可以在主页显示
+
+
+### 表格功能
+
+| Name              | Markdown            | HTML tag             |
+| ----------------- | ------------------- | -------------------- |
+| *Emphasis*        | `*Emphasis*`        | `<em></em>`          |
+| **Strong**        | `**Strong**`        | `<strong></strong>` |
+| `code`            | ``code``            | `<code></code>`      |
+| ~~Strikethrough~~ | `~~Strikethrough~~` | `<del></del`         |
+| <u>Underline</u>  | `<u>underline</u>`  | `<u></u>`            |
+
+### 代码块功能
+[Example](https://gohugo.io/content-management/syntax-highlighting/#example-highlight-shortcode)

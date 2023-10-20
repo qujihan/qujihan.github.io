@@ -1,82 +1,59 @@
 {{ define "main" }}
+<div class="mx-auto w-full md:w-3/4 lg:w-3/4 xl:w-3/5 ">
+    <div class="container px-5 py-24 mx-auto">
 
-{{ $paginator := .Paginate (.Site.RegularPages) }}
-
-{{/* posts list */}}
-<div>
-    {{ if not $paginator.HasPrev }}
-    {{/* {{ partial "profile.html" . }} */}}
-
-    {{/* <div class="pt-10 pb-5">
-        <a class="font-bold text-3xl"> Top Posts </a>
-    </div> */}}
-    {{/* top posts */}}
-
-    {{ range $paginator.Pages }}
-    {{ if .Params.top }}
-    <div class="pb-5">
-        {{/* Items */}}
-        <div class="text-base hover:font-bold hover:text-blue-500 transition-colors duration-200 ease-in-out">
-            <pre><a class="font-wenkai" href="{{ .RelPermalink }}">[置顶] {{ .Title }}</a></pre>
+        <div class="flex flex-col text-center w-full mb-20">
+            <a href="/" class="text-3xl text-gray-900 font-bold mb-4 tracking-widest">{{ .Site.Title }}</a>
+            <p class="mx-auto text-sm text-blue-400  lg:w-2/3">{{.Site.Params.description}}</p>
         </div>
 
-        {{/* Summary */}}
-        {{ if .Site.Params.showSummary }}
-        <div class="text-sm">
-            {{ .Summary | plainify | htmlUnescape }}
-        </div>
-        {{ end }}
+        {{ $paginator := .Paginate (.Site.RegularPages) }}
+        {{ range $paginator.Pages }}
+        <div class="w-full px-8 py-8 border-b border-gray-200">
 
-    </div>
-    {{ end }}
-    {{ end }}
-    {{ end }}
+            <div class="items-center flex justify-between">
+                <div class="text-left"> <a class="text-xl font-bold pb-1 blue-hover" href="{{ .RelPermalink }}">{{
+                        .Title }}</a></div>
+                <div class="text-right"> <a>{{ .Params.publishDate.Format "2006/01/02" }} </a></div>
+            </div>
 
-    {{/* <div class="pt-16 pb-5">
-        <a class="font-bold text-3xl"> Recent Posts </a>
-    </div> */}}
+            <div class="mt-4 items-center">
+                <!-- Summary content -->
+                <span class="text-gray-700 mr-4">
+                    {{ .Summary | plainify | htmlUnescape }}
+                </span>
 
-    {{/* not top posts */}}
-    {{ range $paginator.Pages }}
-    {{ if not .Params.top }}
-    <div class="pb-5">
-        <div class="text-base hover:font-bold hover:text-blue-500 transition-colors duration-200 ease-in-out">
-            <pre><a class="font-wenkai" href="{{ .RelPermalink }}">{{ .Title }}</a></pre>
-        </div>
+                <a href="{{ .RelPermalink }}" class="text-blue-500 hover:text-blue-700">
+                    点击查看更多...
+                </a>
+            </div>
 
-        {{ if .Site.Params.showSummary }}
-        <div class="text-sm">
-            {{ .Summary | plainify | htmlUnescape }}
+
+            <div class="mt-2 flex ">
+                <a class="ml-auto"> Tags:&nbsp;&nbsp; </a>
+                {{ range .Params.tags }}
+                <a class="text-blue-500 hover:text-blue-700 inline-block mr-2" href="/tags/{{ . | urlize }}">#{{ .
+                    }}&nbsp;&nbsp; </a>
+                {{ end }}
+            </div>
         </div>
         {{ end }}
+        <div class="mt-20 flex justify-between">
+            {{ if $paginator.HasPrev }}
+            <a href="{{ $paginator.Prev.URL }}"
+                class="px-4 py-2 border rounded-lg bg-blue-500 text-white hover:bg-blue-600">上一页</a>
+            {{ else }}
+            <span class="px-4 py-2 border rounded-lg bg-gray-300 text-gray-500 cursor-not-allowed">上一页</span>
+            {{ end }}
+
+            {{ if $paginator.HasNext }}
+            <a href="{{ $paginator.Next.URL }}"
+                class="px-4 py-2 border rounded-lg bg-blue-500 text-white hover:bg-blue-600">下一页</a>
+            {{ else }}
+            <span class="px-4 py-2 border rounded-lg bg-gray-300 text-gray-500 cursor-not-allowed">下一页</span>
+            {{ end }}
+        </div>
 
     </div>
-    {{ end }}
-    {{ end }}
 </div>
-
-{{/* prev page and next page button */}}
-<div class="flex pt-10">
-    {{ if or ($paginator.HasPrev) ($paginator.HasNext) }}
-
-    {{ if $paginator.HasPrev}}
-    <a class="right-0 hover:font-bold hover:text-blue-500  transition-colors duration-200 ease-in-out" href="{{.Paginator.Prev.URL}}">
-        <span>←</span> {{i18n "postsNewer"}}
-    </a>
-    {{ end }} {{/* end has prev */}}
-
-    <a class="mx-auto"></a>
-
-    {{ if $paginator.HasNext }}
-    <a class="left-0 hover:font-bold hover:text-blue-500  transition-colors duration-200 ease-in-out" href="{{.Paginator.Next.URL}}">
-        {{ i18n "postsOlder" }}<span>→</span>
-    </a>
-    {{ end }} {{/* end has next*/}}
-
-    {{ end }} {{/* end or */}}
-</div>
-
-
-
-
 {{ end }} {{/* define */}}

@@ -5,6 +5,9 @@ date: "2023-08-26"
 tags:
 ---
 
+在构建C/C++相关程序的时候, 没有go build/cargo build 之类的构建工具, 只能使用 Makefile/CMake 这类工具, 写一个比较通用的模板, 方便以后自己的使用
+<!--more-->
+
 
 # 构建工具
 
