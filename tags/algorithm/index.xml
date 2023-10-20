@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Algorithm on 拾野知地</title>
+    <title>Algorithm on 拾 野 知 地</title>
     <link>/tags/algorithm/</link>
-    <description>Recent content in Algorithm on 拾野知地</description>
+    <description>Recent content in Algorithm on 拾 野 知 地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Jihan</copyright>
@@ -14,7 +14,7 @@
       <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/bit_operator/</guid>
-      <description>异或 异或的意思就是无进位相加, 就是没有进位的相加. 满足交换律与结合律 例如 A : 01101110 B : 10011101 A^B: 11110011 所以 由无进位相加的理解可以得到, 0^A = A, A^A = 0 由交互律</description>
+      <description>&lt;p&gt;在实习过程中使用了位操作去操作bitmap, 学习一下位操作的相关知识, 提高位运算的敏感程度&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -23,7 +23,8 @@
       <pubDate>Sun, 21 May 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/tomohiko_sakamoto/</guid>
-      <description>&lt;p&gt;对于给定的日期，可以快速算出是周几&lt;/p&gt;</description>
+      <description>&lt;p&gt;一个有趣的算法, 对于给定的日期，可以快速算出是周几.&lt;/p&gt;
+&lt;p&gt;这个算法并不是多么高明, 我看中的主要是改进的过程&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -32,7 +33,7 @@
       <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/binary_search/</guid>
-      <description>&lt;p&gt;对二分查找的理解，以leetcode34为例&lt;/p&gt;</description>
+      <description>&lt;p&gt;一些对二分查找的理解, 主要是关于边界问题的思考&lt;/p&gt;</description>
     </item>
     
   </channel>

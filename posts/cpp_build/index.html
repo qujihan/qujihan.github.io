@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head>
+<html lang="zh"><head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -9,245 +9,284 @@
     <link rel="preload stylesheet" as="style" href="/css/style.min.css" />
 
     
-    <title>C&#43;&#43;的项目构建实践记录 - 拾野知地</title>
+    <title>C&#43;&#43;的项目构建实践记录 - 拾 野 知 地</title>
 
-    
-    <link rel="shortcut icon" type="image/png"
-        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAABWklEQVQ4jY3UwU5TQRTG8V9qYEOoAdZ9AX0DAgtiWEMQ6StoIOlzKBJfomFl4jtI2OFGiS1p3ehaF5UFLExd3HPppNzpvV9yFufcmX/Od+bOUK1ldHGOIW4jhlE7ijWN9BI/MK2JMQ4WgZ7gfbLhK3p4jhWsYj+6TMGnaFUBS9gd3uQWYQ0/56DvqmyWsJ1FNkKvPB7Bfvlx2WxmrzOAS1wkebsCOAqWrtnMcjYv8DnJn1YAp9G580h6tUZnOsoA+3ATybOGsA38ygCHMIlktQbUjs5ysGmwFgI7+JisqYvJIssd/G4IerDcwpcA7M4BP2C9ZgzzumJ2Yt8U169UanMTWw06PKT4GcdROM4At7BdAxthqdx8EMV7vIjapwYdpbE37/80gZ4oDulPQ9jbqoG2FK9GuegaZ/iOfzWw3JVF8WqMGnQ1qrKZ05LiovcxwN+IQdQOJQeQ6j9hwsao7vZBvQAAAABJRU5ErkJggg== ">
-
-    
+    <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAABWklEQVQ4jY3UwU5TQRTG8V9qYEOoAdZ9AX0DAgtiWEMQ6StoIOlzKBJfomFl4jtI2OFGiS1p3ehaF5UFLExd3HPppNzpvV9yFufcmX/Od+bOUK1ldHGOIW4jhlE7ijWN9BI/MK2JMQ4WgZ7gfbLhK3p4jhWsYj+6TMGnaFUBS9gd3uQWYQ0/56DvqmyWsJ1FNkKvPB7Bfvlx2WxmrzOAS1wkebsCOAqWrtnMcjYv8DnJn1YAp9G580h6tUZnOsoA+3ATybOGsA38ygCHMIlktQbUjs5ysGmwFgI7+JisqYvJIssd/G4IerDcwpcA7M4BP2C9ZgzzumJ2Yt8U169UanMTWw06PKT4GcdROM4At7BdAxthqdx8EMV7vIjapwYdpbE37/80gZ4oDulPQ9jbqoG2FK9GuegaZ/iOfzWw3JVF8WqMGnQ1qrKZ05LiovcxwN+IQdQOJQeQ6j9hwsao7vZBvQAAAABJRU5ErkJggg== ">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.min.css">
 
+    
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.3.0/github-markdown-light.min.css" />
+    
 
+    
     
 
     
 
     
-
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles/panda-syntax-light.min.css">
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js"></script>
-    
-    <script>hljs.highlightAll();</script>
-
-
     
     <script>
-        document.querySelectorAll('a[href]').forEach(link => {
-            if (link.host !== window.location.host) {
-                link.classList.add('link-icon');
-            }
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownParents = document.querySelectorAll('.hugo-menu-parent');
+
+            dropdownParents.forEach(parent => {
+                let hideTimeout;
+                const dropdownMenu = parent.querySelector('.hugo-menu');
+
+                parent.addEventListener('mouseenter', function () {
+                    clearTimeout(hideTimeout);
+                    dropdownMenu.classList.remove('hidden');
+                });
+
+                parent.addEventListener('mouseleave', function () {
+                    hideTimeout = setTimeout(() => {
+                        dropdownMenu.classList.add('hidden');
+                    }, 200); 
+                });
+            });
         });
     </script>
 
 
-</head><body class="duration-200 ease-out text-black prose prose-neutral font-wenkai bg-gray-50">
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('menuToggle').addEventListener('click', function () {
+                const menu = document.getElementById('listMenu');
+                if (menu.classList.contains('hidden')) {
+                    menu.classList.remove('hidden');
+                    setTimeout(() => menu.classList.remove('opacity-0'), 10);
+                } else {
+                    menu.classList.add('opacity-0');
+                    setTimeout(() => menu.classList.add('hidden'), 200);
+                }
 
-    <main class="mx-auto min-h-[calc(100%-9rem)] max-w-4xl"><header>
-    <nav class="pt-5 px-10 flex">
-        <div class="left-0 hidden md:flex">
-            
-            <a href="/" class="text-3xl">拾野知地</a>
-        </div>
 
-        <div class="flex mx-auto items-end">
-            
-            
-            <a class="px-2 hover:font-bold hover:text-blue-500  transition-colors duration-200 ease-in-out"
-                href="/">主页</a>
-            
-            <a class="px-2 hover:font-bold hover:text-blue-500  transition-colors duration-200 ease-in-out"
-                href="/posts/">归档</a>
-            
-            <a class="px-2 hover:font-bold hover:text-blue-500  transition-colors duration-200 ease-in-out"
-                href="/about/">关于</a>
-            
+                let hideTimeout;
+                menu.addEventListener('mouseenter', function () {
+                    clearTimeout(hideTimeout);
+                });
+                menu.addEventListener('mouseleave', function () {
+                    hideTimeout = setTimeout(() => {
+                        menu.classList.add('hidden');
+                    }, 300);
+                });
+
+            });
+        });
+    </script>
+
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            let btn = document.getElementById("scrollTopBtn");
+
+            window.onscroll = function () {
+                
+                if (window.pageYOffset > 300) {
+                    btn.style.opacity = "1";
+                    btn.style.pointerEvents = "all";
+                } else {
+                    btn.style.opacity = "0";
+                    btn.style.pointerEvents = "none";
+                }
+            };
+
+        });
+
+        function scrollTopFunction() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    </script>
+</head><body class="font-wenkai">
+    <main class=""><div class="p-4 shadow-md">
+    <div class="mx-auto w-full md:w-3/4 lg:w-3/4 xl:w-1/2 ">
+        <div class="mx-auto flex justify-between items-center">
+
+            <a href="/"
+                class="text-blue-300 hover:font-bold hover:text-blue-700  transition-colors duration-200 ease-in-out">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+  <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41 4.157 8.5z"/>
+</svg>
+            </a>
+
+            <div class="hidden md:flex space-x-4 relative items-center">
+                
+                
+                <a href="/" class="blue-hover">主页</a>
+                
+                
+                
+                <div class="hugo-menu-parent relative">
+                    <a class="block">所有文章</a>
+
+                    <div
+                        class="hugo-menu absolute left-0 mt-2 w-full bg-white text-black rounded-lg shadow-md hidden ease-in-out">
+                        
+                        <a href="/posts/" class="block px-1 py-1 mb-1 text-center blue-hover">杂文</a>
+                        
+                        <a href="/database/" class="block px-1 py-1 mb-1 text-center blue-hover">数据库</a>
+                        
+                        <a href="/distributed/" class="block px-1 py-1 mb-1 text-center blue-hover">分布式</a>
+                        
+                        <a href="/storage/" class="block px-1 py-1 mb-1 text-center blue-hover">存储</a>
+                        
+                    </div>
+
+                </div>
+                
+                
+                
+                <a href="/tags/" class="blue-hover">所有标签</a>
+                
+                
+                
+                <a href="/about/" class="blue-hover">关于</a>
+                
+                
+            </div>
+
+            <button id="menuToggle"
+                class="md:hidden px-2 py-1 text-blue-300 hover:font-bold hover:text-blue-700  transition-colors duration-200 ease-in-out">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"  fill="currentColor"  viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+</svg>
+            </button>
+
         </div>
 
         
 
-        <div class="right-0 hidden md:flex items-end">
-            
-            
+
+        <div id="listMenu"
+            class="container mx-auto flex flex-col items-center opacity-0 transition-opacity hidden md:hidden">
 
             
             
-
             
-            
-            <a href="https://github.com/qujihan"
-                class="items-end mr-2 ml-2 hover:font-bold hover:text-blue-500  transition-colors duration-200 ease-in-out">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-                    <path
-                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                </svg>
+            <a href="/" class="text-gray-700 hover:bg-gray-100 px-4 py-2 block">
+                主页
             </a>
             
 
             
             
-
             
             
-
             
             
-
-
+            <a href="/posts/" class="text-gray-700 hover:bg-gray-100 px-4 py-2 block">
+                所有文章↪杂文
+            </a>
             
-
+            <a href="/database/" class="text-gray-700 hover:bg-gray-100 px-4 py-2 block">
+                所有文章↪数据库
+            </a>
             
+            <a href="/distributed/" class="text-gray-700 hover:bg-gray-100 px-4 py-2 block">
+                所有文章↪分布式
+            </a>
             
-
+            <a href="/storage/" class="text-gray-700 hover:bg-gray-100 px-4 py-2 block">
+                所有文章↪存储
+            </a>
             
-            
-
-            
-            
-
-            
-            
-
-
-            
-
             
             
 
             
             
-
             
-            
-            <a href="https://space.bilibili.com/23354145"
-                class="items-end mr-2 ml-2 hover:font-bold hover:text-blue-500  transition-colors duration-200 ease-in-out">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                    viewBox="0 0 512 512">
-                    <path
-                        d="M488.6 104.1C505.3 122.2 513 143.8 511.9 169.8V372.2C511.5 398.6 502.7 420.3 485.4 437.3C468.2 454.3 446.3 463.2 419.9 464H92.02C65.57 463.2 43.81 454.2 26.74 436.8C9.682 419.4 .7667 396.5 0 368.2V169.8C.7667 143.8 9.682 122.2 26.74 104.1C43.81 87.75 65.57 78.77 92.02 78H121.4L96.05 52.19C90.3 46.46 87.42 39.19 87.42 30.4C87.42 21.6 90.3 14.34 96.05 8.603C101.8 2.868 109.1 0 117.9 0C126.7 0 134 2.868 139.8 8.603L213.1 78H301.1L375.6 8.603C381.7 2.868 389.2 0 398 0C406.8 0 414.1 2.868 419.9 8.603C425.6 14.34 428.5 21.6 428.5 30.4C428.5 39.19 425.6 46.46 419.9 52.19L394.6 78L423.9 78C450.3 78.77 471.9 87.75 488.6 104.1H488.6zM449.8 173.8C449.4 164.2 446.1 156.4 439.1 150.3C433.9 144.2 425.1 140.9 416.4 140.5H96.05C86.46 140.9 78.6 144.2 72.47 150.3C66.33 156.4 63.07 164.2 62.69 173.8V368.2C62.69 377.4 65.95 385.2 72.47 391.7C78.99 398.2 86.85 401.5 96.05 401.5H416.4C425.6 401.5 433.4 398.2 439.7 391.7C446 385.2 449.4 377.4 449.8 368.2L449.8 173.8zM185.5 216.5C191.8 222.8 195.2 230.6 195.6 239.7V273C195.2 282.2 191.9 289.9 185.8 296.2C179.6 302.5 171.8 305.7 162.2 305.7C152.6 305.7 144.7 302.5 138.6 296.2C132.5 289.9 129.2 282.2 128.8 273V239.7C129.2 230.6 132.6 222.8 138.9 216.5C145.2 210.2 152.1 206.9 162.2 206.5C171.4 206.9 179.2 210.2 185.5 216.5H185.5zM377 216.5C383.3 222.8 386.7 230.6 387.1 239.7V273C386.7 282.2 383.4 289.9 377.3 296.2C371.2 302.5 363.3 305.7 353.7 305.7C344.1 305.7 336.3 302.5 330.1 296.2C323.1 289.9 320.7 282.2 320.4 273V239.7C320.7 230.6 324.1 222.8 330.4 216.5C336.7 210.2 344.5 206.9 353.7 206.5C362.9 206.9 370.7 210.2 377 216.5H377z" />
-                </svg>
+            <a href="/tags/" class="text-gray-700 hover:bg-gray-100 px-4 py-2 block">
+                所有标签
             </a>
             
 
             
             
-
-
             
-
-            
-            
-
-            
-            
-
-            
-            
-
-            
-            
-
-
-            
-
-            
-            
-
-            
-            
-
-            
-            
-
-            
-            
-            <a href="/index.xml"
-                class="items-end mr-2 ml-2 hover:font-bold hover:text-blue-500  transition-colors duration-200 ease-in-out">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-                    <path
-                        d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
-                    <path
-                        d="M5.5 12a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-3-8.5a1 1 0 0 1 1-1c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1-1 6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1-1-1z" />
-                </svg>
+            <a href="/about/" class="text-gray-700 hover:bg-gray-100 px-4 py-2 block">
+                关于
             </a>
             
 
-
             
+
         </div>
-    </nav>
-
-</header><div class="px-8 pb-16 pt-12 relative">
 
 
-
-<div class="flex flex-col flex-wrap pb-16">
-    
-    <a class="text-3xl mx-auto">
-        C&#43;&#43;的项目构建实践记录
-    </a>
-
-
-    
-    <div class="pt-8 mx-auto">
-        <time datetime=" 2023/08/26">2023/8/26</time>
     </div>
+
 </div>
 
+<div class="mx-auto w-full md:w-3/4 lg:w-3/4 xl:w-1/2 ">
+    <div class="flex flex-col mt-10">
+        <div class="text-center">
+            <a class="text-3xl">C&#43;&#43;的项目构建实践记录</a>
+        </div>
+        <div class="text-center mt-4">
+            <a class="text-base text-gray-400">2023-08-26 </a>
+        </div>
+    </div>
 
+    
 
-
-<div class="link-decorator code-decorator">
-    <h1 id="构建工具">构建工具</h1>
+    <div class="markdown markdown-body">
+        <div class="font-wenkai">
+            <p>在构建C/C++相关程序的时候, 没有go build/cargo build 之类的构建工具, 只能使用 Makefile/CMake 这类工具, 写一个比较通用的模板, 方便以后自己的使用</p>
+<h1 id="构建工具">构建工具</h1>
 <h2 id="makefile">makefile</h2>
 <p>目录结构</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>├── hello.cc
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>├── hello.cc
 </span></span><span style="display:flex;"><span>├── include
 </span></span><span style="display:flex;"><span>│   └── hello.h
 </span></span><span style="display:flex;"><span>├── main
 </span></span><span style="display:flex;"><span>├── main.cc
 </span></span><span style="display:flex;"><span>└── makefile
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-makefile" data-lang="makefile"><span style="display:flex;"><span><span style="color:#a6e22e">main</span><span style="color:#f92672">:</span> hello.o
-</span></span><span style="display:flex;"><span>	g++ -o main main.cc $^ -Iinclude <span style="color:#f92672">&amp;&amp;</span> rm -rf *.o
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-makefile" data-lang="makefile"><span style="display:flex;"><span><span style="color:#06287e">main</span><span style="color:#666">:</span> hello.o
+</span></span><span style="display:flex;"><span>	g++ -o main main.cc $^ -Iinclude <span style="color:#666">&amp;&amp;</span> rm -rf *.o
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">%.o</span><span style="color:#f92672">:</span> %.cc
-</span></span><span style="display:flex;"><span>	g++ -c $&lt; -o $@ -Iinclude
+</span></span><span style="display:flex;"><span><span style="color:#06287e">%.o</span><span style="color:#666">:</span> %.cc
+</span></span><span style="display:flex;"><span>	g++ -c $&lt; -o <span style="color:#bb60d5">$@</span> -Iinclude
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">clean</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span><span style="color:#06287e">clean</span><span style="color:#666">:</span>
 </span></span><span style="display:flex;"><span>	rm -rf *.o main
 </span></span></code></pre></div><p>目录结构</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>├── main.cc
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>├── main.cc
 </span></span><span style="display:flex;"><span>├── makefile
 </span></span><span style="display:flex;"><span>└── src
 </span></span><span style="display:flex;"><span>    ├── hello.cc
 </span></span><span style="display:flex;"><span>    └── include
 </span></span><span style="display:flex;"><span>        └── hello.h
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-makefile" data-lang="makefile"><span style="display:flex;"><span>cc<span style="color:#f92672">=</span>g++
-</span></span><span style="display:flex;"><span>target<span style="color:#f92672">=</span>main
-</span></span><span style="display:flex;"><span>build_dir<span style="color:#f92672">=</span>build
-</span></span><span style="display:flex;"><span>src_dir<span style="color:#f92672">=</span>src .
-</span></span><span style="display:flex;"><span>include_dir<span style="color:#f92672">=</span>src/include
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-makefile" data-lang="makefile"><span style="display:flex;"><span><span style="color:#bb60d5">cc</span><span style="color:#666">=</span>g++
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">target</span><span style="color:#666">=</span>main
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">build_dir</span><span style="color:#666">=</span>build
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">src_dir</span><span style="color:#666">=</span>src .
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">include_dir</span><span style="color:#666">=</span>src/include
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>cflags<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>patsubst %,-I%, <span style="color:#66d9ef">$(</span>include_dir<span style="color:#66d9ef">))</span>
-</span></span><span style="display:flex;"><span>source<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>foreach dir, <span style="color:#66d9ef">$(</span>src_dir<span style="color:#66d9ef">)</span>, <span style="color:#66d9ef">$(</span>wildcard <span style="color:#66d9ef">$(</span>dir<span style="color:#66d9ef">)</span>/*.cc<span style="color:#66d9ef">))</span>
-</span></span><span style="display:flex;"><span>objs<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>patsubst %.cc, <span style="color:#66d9ef">$(</span>build_dir<span style="color:#66d9ef">)</span>/%.o, <span style="color:#66d9ef">$(</span>notdir <span style="color:#66d9ef">$(</span>source<span style="color:#66d9ef">)))</span>
-</span></span><span style="display:flex;"><span>VPATH<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>src_dir<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">cflags</span><span style="color:#666">=</span><span style="color:#007020;font-weight:bold">$(</span>patsubst %,-I%, <span style="color:#007020;font-weight:bold">$(</span>include_dir<span style="color:#007020;font-weight:bold">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">source</span><span style="color:#666">=</span><span style="color:#007020;font-weight:bold">$(</span>foreach dir, <span style="color:#007020;font-weight:bold">$(</span>src_dir<span style="color:#007020;font-weight:bold">)</span>, <span style="color:#007020;font-weight:bold">$(</span>wildcard <span style="color:#007020;font-weight:bold">$(</span>dir<span style="color:#007020;font-weight:bold">)</span>/*.cc<span style="color:#007020;font-weight:bold">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">objs</span><span style="color:#666">=</span><span style="color:#007020;font-weight:bold">$(</span>patsubst %.cc, <span style="color:#007020;font-weight:bold">$(</span>build_dir<span style="color:#007020;font-weight:bold">)</span>/%.o, <span style="color:#007020;font-weight:bold">$(</span>notdir <span style="color:#007020;font-weight:bold">$(</span><span style="color:#007020">source</span><span style="color:#007020;font-weight:bold">)))</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">VPATH</span><span style="color:#666">=</span><span style="color:#007020;font-weight:bold">$(</span>src_dir<span style="color:#007020;font-weight:bold">)</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$(build_dir)/%.o</span><span style="color:#f92672">:</span>%.cc | build
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">$(</span>cc<span style="color:#66d9ef">)</span> <span style="color:#66d9ef">$(</span>cflags<span style="color:#66d9ef">)</span> -c $&lt; -o $@
+</span></span><span style="display:flex;"><span><span style="color:#06287e">$(build_dir)/%.o</span><span style="color:#666">:</span>%.cc | build
+</span></span><span style="display:flex;"><span>	<span style="color:#007020;font-weight:bold">$(</span>cc<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">$(</span>cflags<span style="color:#007020;font-weight:bold">)</span> -c $&lt; -o <span style="color:#bb60d5">$@</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$(target)</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">$(</span>objs<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">$(</span>cc<span style="color:#66d9ef">)</span> $^ -o $@
+</span></span><span style="display:flex;"><span><span style="color:#06287e">$(target)</span><span style="color:#666">:</span> <span style="color:#007020;font-weight:bold">$(</span><span style="color:#bb60d5">objs</span><span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#007020;font-weight:bold">$(</span>cc<span style="color:#007020;font-weight:bold">)</span> $^ -o <span style="color:#bb60d5">$@</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">.PHONY</span><span style="color:#f92672">:</span> clean build
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">clean</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>	rm -rf <span style="color:#66d9ef">$(</span>build_dir<span style="color:#66d9ef">)</span> <span style="color:#66d9ef">$(</span>target<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#06287e">.PHONY</span><span style="color:#666">:</span> clean build
+</span></span><span style="display:flex;"><span><span style="color:#06287e">clean</span><span style="color:#666">:</span>
+</span></span><span style="display:flex;"><span>	rm -rf <span style="color:#007020;font-weight:bold">$(</span>build_dir<span style="color:#007020;font-weight:bold">)</span> <span style="color:#007020;font-weight:bold">$(</span>target<span style="color:#007020;font-weight:bold">)</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">build</span><span style="color:#f92672">:</span>
-</span></span><span style="display:flex;"><span>	mkdir -p <span style="color:#66d9ef">$(</span>build_dir<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#06287e">build</span><span style="color:#666">:</span>
+</span></span><span style="display:flex;"><span>	mkdir -p <span style="color:#007020;font-weight:bold">$(</span>build_dir<span style="color:#007020;font-weight:bold">)</span>
 </span></span></code></pre></div><h3 id="makefile的一些解释">makefile的一些解释</h3>
 <ul>
 <li>自动变量
@@ -259,24 +298,24 @@
 </li>
 </ul>
 <p>例如:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-makefile" data-lang="makefile"><span style="display:flex;"><span><span style="color:#a6e22e">test</span><span style="color:#f92672">:</span> demo.c demo.h main.c
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 上面这个例子中:
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># $&lt; 就是demo.c
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># $^ 就是demo.c demo.h main.c
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># $@ 就是test
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-makefile" data-lang="makefile"><span style="display:flex;"><span><span style="color:#06287e">test</span><span style="color:#666">:</span> demo.c demo.h main.c
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 上面这个例子中:
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># $&lt; 就是demo.c
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># $^ 就是demo.c demo.h main.c
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># $@ 就是test
 </span></span></span></code></pre></div><ul>
 <li>文件搜索
 <code>vpath</code> 与 <code>VPATH</code> 的应用, 其中<code>vpath</code>是关键字,<code>VPATH</code> 是变量</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-makefile" data-lang="makefile"><span style="display:flex;"><span><span style="color:#75715e"># 会从 src 与 ../include 中去搜寻依赖文件
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>VPATH <span style="color:#f92672">=</span> src:../include
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-makefile" data-lang="makefile"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 会从 src 与 ../include 中去搜寻依赖文件
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#bb60d5">VPATH</span> <span style="color:#666">=</span> src:../include
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 在 include 文件中搜索所有的 .h 文件
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># vpath &lt;pattern&gt; &lt;dir&gt;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">vpath</span> <span style="color:#960050;background-color:#1e0010">%.h</span> <span style="color:#960050;background-color:#1e0010">include</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 在 include 文件中搜索所有的 .h 文件
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># vpath &lt;pattern&gt; &lt;dir&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="">vpath</span> <span style="">%.h</span> <span style="">include</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 清除设置好的目录
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">vpath</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 清除设置好的目录
+</span></span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"></span><span style="">vpath</span>
 </span></span></code></pre></div><ul>
 <li>内置函数
 <ul>
@@ -308,53 +347,110 @@
 </li>
 </ul>
 <h2 id="cmake">CMake</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>├── main.cc
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>├── main.cc
 </span></span><span style="display:flex;"><span>├── makefile
 </span></span><span style="display:flex;"><span>└── src
 </span></span><span style="display:flex;"><span>    ├── hello.cc
 </span></span><span style="display:flex;"><span>    └── include
 </span></span><span style="display:flex;"><span>        └── hello.h
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-makefile" data-lang="makefile"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">cmake_minimum_required(VERSION</span> <span style="color:#960050;background-color:#1e0010">3.16)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-makefile" data-lang="makefile"><span style="display:flex;"><span><span style="">cmake_minimum_required(VERSION</span> <span style="">3.16)</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">project(hello)</span>
+</span></span><span style="display:flex;"><span><span style="">project(hello)</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">set(CMAKE_CXX_STANDARD</span> <span style="color:#960050;background-color:#1e0010">14)</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">set(CMAKE_C_STANDARD</span> <span style="color:#960050;background-color:#1e0010">11)</span>
+</span></span><span style="display:flex;"><span><span style="">set(CMAKE_CXX_STANDARD</span> <span style="">14)</span>
+</span></span><span style="display:flex;"><span><span style="">set(CMAKE_C_STANDARD</span> <span style="">11)</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">include_directories(./src/include)</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">file(GLOB_RECURSE</span> <span style="color:#960050;background-color:#1e0010">SOURCES</span> <span style="color:#e6db74">&#34;src/*.cc&#34;</span><span style="color:#960050;background-color:#1e0010">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">add_executable(main</span> <span style="color:#960050;background-color:#1e0010">main.cc</span> <span style="color:#960050;background-color:#1e0010">${SOURCES})</span>
+</span></span><span style="display:flex;"><span><span style="">include_directories(./src/include)</span>
+</span></span><span style="display:flex;"><span><span style="">file(GLOB_RECURSE</span> <span style="">SOURCES</span> <span style="color:#4070a0">&#34;src/*.cc&#34;</span><span style="">)</span>
+</span></span><span style="display:flex;"><span><span style="">add_executable(main</span> <span style="">main.cc</span> <span style="">${SOURCES})</span>
 </span></span></code></pre></div>
-</div>
-
-
-<div class="pt-16 flex-auto flex flex-col space-y-2">
-    <div class="flex space-x-2">
-        
-    </div>
-</div>
-
-
-        </div><footer class="pb-20 px-10 text-xs text-gray-500">
-    <div class="flex flex-col">
-        
-
-        <div class="hidden md:block mx-auto">
-            
         </div>
     </div>
 
-    <div class="flex">
-        <div class="mx-auto">
-            <a class="mx-auto"> &copy; Copyright 2023 ✿ </a>
-            <a class="hover:font-bold hover:text-blue-500" href="/">Jihan</a>
+</div>
+
+<div class="mx-auto w-full md:w-3/4 lg:w-3/4 xl:w-1/2 mt-10">
+    <div class="flex flex-col items-center justify-center">
+        <div class="mx-auto flex mb-1">
+
+
+
+
+
+
+
+<a href="https://github.com/qujihan" class="px-2">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+    <path
+        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+</svg>
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="https://space.bilibili.com/23354145" class="px-2">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 512 512">
+    <path
+        d="M488.6 104.1C505.3 122.2 513 143.8 511.9 169.8V372.2C511.5 398.6 502.7 420.3 485.4 437.3C468.2 454.3 446.3 463.2 419.9 464H92.02C65.57 463.2 43.81 454.2 26.74 436.8C9.682 419.4 .7667 396.5 0 368.2V169.8C.7667 143.8 9.682 122.2 26.74 104.1C43.81 87.75 65.57 78.77 92.02 78H121.4L96.05 52.19C90.3 46.46 87.42 39.19 87.42 30.4C87.42 21.6 90.3 14.34 96.05 8.603C101.8 2.868 109.1 0 117.9 0C126.7 0 134 2.868 139.8 8.603L213.1 78H301.1L375.6 8.603C381.7 2.868 389.2 0 398 0C406.8 0 414.1 2.868 419.9 8.603C425.6 14.34 428.5 21.6 428.5 30.4C428.5 39.19 425.6 46.46 419.9 52.19L394.6 78L423.9 78C450.3 78.77 471.9 87.75 488.6 104.1H488.6zM449.8 173.8C449.4 164.2 446.1 156.4 439.1 150.3C433.9 144.2 425.1 140.9 416.4 140.5H96.05C86.46 140.9 78.6 144.2 72.47 150.3C66.33 156.4 63.07 164.2 62.69 173.8V368.2C62.69 377.4 65.95 385.2 72.47 391.7C78.99 398.2 86.85 401.5 96.05 401.5H416.4C425.6 401.5 433.4 398.2 439.7 391.7C446 385.2 449.4 377.4 449.8 368.2L449.8 173.8zM185.5 216.5C191.8 222.8 195.2 230.6 195.6 239.7V273C195.2 282.2 191.9 289.9 185.8 296.2C179.6 302.5 171.8 305.7 162.2 305.7C152.6 305.7 144.7 302.5 138.6 296.2C132.5 289.9 129.2 282.2 128.8 273V239.7C129.2 230.6 132.6 222.8 138.9 216.5C145.2 210.2 152.1 206.9 162.2 206.5C171.4 206.9 179.2 210.2 185.5 216.5H185.5zM377 216.5C383.3 222.8 386.7 230.6 387.1 239.7V273C386.7 282.2 383.4 289.9 377.3 296.2C371.2 302.5 363.3 305.7 353.7 305.7C344.1 305.7 336.3 302.5 330.1 296.2C323.1 289.9 320.7 282.2 320.4 273V239.7C320.7 230.6 324.1 222.8 330.4 216.5C336.7 210.2 344.5 206.9 353.7 206.5C362.9 206.9 370.7 210.2 377 216.5H377z" />
+</svg>
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/index.xml" class="px-2">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+    <path
+        d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+    <path
+        d="M5.5 12a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-3-8.5a1 1 0 0 1 1-1c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1-1 6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1-1-1z" />
+</svg>
+</a>
+
+
+</div>
+
+        <div class="text-xs text-gray-500 mx-auto">
+            <a> &copy; Copyright 2023 ✿ </a>
+            <a href="/">Jihan</a>
         </div>
+
     </div>
+</div></main>
 
-
-</footer></main>
-
-
+    <button id="scrollTopBtn" onclick="scrollTopFunction()"
+        class="fixed bottom-4 right-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg opacity-0 transition-opacity duration-300">回到顶部</button>
 </body>
-
 </html>

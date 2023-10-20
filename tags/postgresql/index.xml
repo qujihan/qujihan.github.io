@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Postgresql on 拾野知地</title>
+    <title>Postgresql on 拾 野 知 地</title>
     <link>/tags/postgresql/</link>
-    <description>Recent content in Postgresql on 拾野知地</description>
+    <description>Recent content in Postgresql on 拾 野 知 地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Jihan</copyright>
@@ -14,7 +14,7 @@
       <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/pg/</guid>
-      <description></description>
+      <description>&lt;p&gt;记录一下帮助同门按照PG的过程, 以方便我日后去看PG源码的时候可以快速回忆起来&lt;/p&gt;</description>
     </item>
     
   </channel>

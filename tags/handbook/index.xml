@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Handbook on 拾野知地</title>
+    <title>Handbook on 拾 野 知 地</title>
     <link>/tags/handbook/</link>
-    <description>Recent content in Handbook on 拾野知地</description>
+    <description>Recent content in Handbook on 拾 野 知 地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Jihan</copyright>
@@ -14,7 +14,7 @@
       <pubDate>Sun, 23 Jul 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/record/</guid>
-      <description></description>
+      <description>&lt;p&gt;记录一些日常会看的博客/书籍&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -23,7 +23,7 @@
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/site_functions/</guid>
-      <description></description>
+      <description>&lt;p&gt;这个网站可以支持的功能, 记录下来等我写博客的时候快速翻阅&lt;/p&gt;</description>
     </item>
     
   </channel>

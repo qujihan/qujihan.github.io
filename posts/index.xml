@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 拾野知地</title>
+    <title>杂文 on 拾 野 知 地</title>
     <link>/posts/</link>
-    <description>Recent content in Posts on 拾野知地</description>
+    <description>Recent content in 杂文 on 拾 野 知 地</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>Jihan</copyright>
@@ -14,16 +14,17 @@
       <pubDate>Mon, 09 Oct 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/go_pritace/</guid>
-      <description>在二维数组中添加元素 temp := []int{intervals[0][0], intervals[0][1]} ans = append(ans, append([]int{}, temp...)) 定义函数 func main(){ var check func(i, j, index int) bool check = func(i, j, index int) bool { // this is function body. } } 自定义ListNode type ListNode struct { Val int Next *ListNode } func main(){ list</description>
+      <description>&lt;p&gt;记录我使用 Golang 过程中的一些代码片段, 方便日后的复用&lt;/p&gt;
+&lt;p&gt;只是暂时记录, 日后会考虑改成snipaste&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>一些Git的使用经历</title>
+      <title>Git的实践记录分享</title>
       <link>/posts/git_pritace/</link>
       <pubDate>Mon, 02 Oct 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/git_pritace/</guid>
-      <description>git submodule git rebase</description>
+      <description>在过去的许多时间里, 执拗且内存记忆的我总是与Git斗争. 从一开始的害怕到熟悉, 再到现在的勇敢面对, 我经历了良多. 特于此记录下我的斗争过程, 以</description>
     </item>
     
     <item>
@@ -32,7 +33,7 @@
       <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/bit_operator/</guid>
-      <description>异或 异或的意思就是无进位相加, 就是没有进位的相加. 满足交换律与结合律 例如 A : 01101110 B : 10011101 A^B: 11110011 所以 由无进位相加的理解可以得到, 0^A = A, A^A = 0 由交互律</description>
+      <description>&lt;p&gt;在实习过程中使用了位操作去操作bitmap, 学习一下位操作的相关知识, 提高位运算的敏感程度&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -41,7 +42,7 @@
       <pubDate>Sat, 26 Aug 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/cpp_build/</guid>
-      <description>构建工具 makefile 目录结构 ├── hello.cc ├── include │ └── hello.h ├── main ├── main.cc └── makefile main: hello.o g++ -o main main.cc $^ -Iinclude &amp;amp;&amp;amp; rm -rf *.o %.o: %.cc g++ -c $&amp;lt; -o $@ -Iinclude clean: rm -rf *.o main 目录结构 ├── main.cc ├──</description>
+      <description>&lt;p&gt;在构建C/C++相关程序的时候, 没有go build/cargo build 之类的构建工具, 只能使用 Makefile/CMake 这类工具, 写一个比较通用的模板, 方便以后自己的使用&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -50,7 +51,7 @@
       <pubDate>Fri, 04 Aug 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/pg/</guid>
-      <description></description>
+      <description>&lt;p&gt;记录一下帮助同门按照PG的过程, 以方便我日后去看PG源码的时候可以快速回忆起来&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -59,7 +60,7 @@
       <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/ide/</guid>
-      <description></description>
+      <description>&lt;p&gt;在使用编辑器/IDE的过程中, 难免需要设置一些东西, 这里记录一下修改的参数, 日后可能会转移到 .dotfile 仓库中, 毕竟这里还是不太适合跨平台修改&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -68,7 +69,7 @@
       <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/machine_reload/</guid>
-      <description></description>
+      <description>&lt;p&gt;这里记录下我重装机器需要的一些指令, 我平时会把我系统搞的乱七八糟的, 身为强迫症晚期患者, 每三四个月可能就会重装一次系统&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -77,7 +78,7 @@
       <pubDate>Sun, 23 Jul 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/record/</guid>
-      <description></description>
+      <description>&lt;p&gt;记录一些日常会看的博客/书籍&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -86,7 +87,8 @@
       <pubDate>Sun, 21 May 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/tomohiko_sakamoto/</guid>
-      <description>&lt;p&gt;对于给定的日期，可以快速算出是周几&lt;/p&gt;</description>
+      <description>&lt;p&gt;一个有趣的算法, 对于给定的日期，可以快速算出是周几.&lt;/p&gt;
+&lt;p&gt;这个算法并不是多么高明, 我看中的主要是改进的过程&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -95,16 +97,16 @@
       <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/binary_search/</guid>
-      <description>&lt;p&gt;对二分查找的理解，以leetcode34为例&lt;/p&gt;</description>
+      <description>&lt;p&gt;一些对二分查找的理解, 主要是关于边界问题的思考&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>容器使用笔记</title>
-      <link>/posts/handbooks/</link>
+      <title>Docker/Podman 使用笔记</title>
+      <link>/posts/container/</link>
       <pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate>
       
-      <guid>/posts/handbooks/</guid>
-      <description></description>
+      <guid>/posts/container/</guid>
+      <description>&lt;p&gt;在是用 Docker/Podman 的过程中有许多的坑与经验, 这里记录一下&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -113,16 +115,7 @@
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>/posts/site_functions/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/posts/cpp_easy_forget/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/cpp_easy_forget/</guid>
-      <description></description>
+      <description>&lt;p&gt;这个网站可以支持的功能, 记录下来等我写博客的时候快速翻阅&lt;/p&gt;</description>
     </item>
     
   </channel>
