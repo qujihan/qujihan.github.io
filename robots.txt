@@ -1,3 +1,0 @@
-user-agent: *
-disallow:
-sitemap: https://qujihan.com/sitemap.xml
