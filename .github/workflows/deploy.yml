@@ -1,0 +1,45 @@
+# https://github.com/peaceiris/actions-hugo
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+      - dev
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 1
+        
+      - run: |
+          git fetch --all
+          git checkout main
+          first_commit=$(git log --reverse --pretty=format:"%H" | head -n 1)
+          git reset --hard $first_commit
+          git push -f origin main
+          git checkout dev
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build
+        run: hugo 
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: main
+          publish_dir: ./public
+          enable_jekyll: true
+          allow_empty_commit: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-action@users.noreply.com'

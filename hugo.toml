@@ -1,0 +1,22 @@
+# baseURL = "qujihan.github.io"
+title = "拾野地"
+params.description = "渠继涵的个人博客"
+Author = "渠继涵"
+
+# 禁止无关报错
+ignoreLogs = ['warning-goldmark-raw-html']
+
+# 不生成的页面
+disableKinds = ['taxonomy', 'term']
+
+# 代码高亮
+# https://xyproto.github.io/splash/docs/longer/all.html
+# https://xyproto.github.io/splash/docs/all.html
+markup.highlight.style = "friendly"
+
+# 主题相关
+theme = "hyple"
+# [Menus]
+# main = [
+#     { Name = "Github", URL = "https://github.com/qujihan/" },
+# ]
