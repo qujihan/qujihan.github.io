@@ -1,5 +1,5 @@
 # https://github.com/peaceiris/actions-hugo
-name: GitHub Pages
+name: blog_deploy
 
 on:
   push:
