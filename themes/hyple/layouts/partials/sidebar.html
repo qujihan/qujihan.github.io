@@ -1,0 +1,28 @@
+<aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="{{ .Site.BaseURL }}">
+        <h1>{{ .Site.Title }}</h1>
+      </a>
+      <p class="lead">
+        {{ with .Site.Params.description }} {{.}} {{ end }}
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="{{ .Site.BaseURL }}"> 主页</a> </li>
+        <li><a href="{{ .Site.BaseURL }}/posts"> 合集</a> </li>
+        {{ range .Site.Menus.main -}}
+        <li><a href="{{.URL}}"> {{ .Name }}</a></li>
+        {{- end }}
+        <li><a href="{{ .Site.BaseURL }}/about"> 关于</a> </li>
+        <li><a href="{{ .Site.BaseURL }}/index.xml"> RSS</a> </li>
+      </ul>
+    </nav>
+
+    <p>{{ with .Site.Params.copyright }}{{.}}{{ else }} Copyright &copy; {{ now.Format "2006"}} {{ .Site.Author.name }}
+      {{ end }}
+    </p>
+  </div>
+</aside>
